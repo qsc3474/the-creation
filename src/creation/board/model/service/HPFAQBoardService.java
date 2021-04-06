@@ -1,5 +1,8 @@
 package creation.board.model.service;
 
+import static creation.common.jdbc.JDBCTemplate.close;
+import static creation.common.jdbc.JDBCTemplate.getConnection;
+
 import java.sql.Connection;
 import java.util.List;
 
