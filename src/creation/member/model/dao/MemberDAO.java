@@ -31,7 +31,7 @@ public class MemberDAO {
 		
 		try {
 			
-			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "board/faq-mapper.xml"));
+			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "member/member-mapper.xml"));
 			
 		} catch (IOException e) {
 			
