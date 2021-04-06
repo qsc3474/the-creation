@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	나오냐
+	<!-- get post 잘못처리 했을떄 -->
+	<h1 align="center">요청 권한이 없는 페이지 입니다~</h1>
 </body>
 </html>

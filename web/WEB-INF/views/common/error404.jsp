@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	나오냐
+	<h1 align="center">페이지를 찾을 수 없습니다~</h1>
 </body>
 </html>
