@@ -94,5 +94,6 @@ public class HPFAQBoardDTO implements Serializable {
 				+ ", hpBdDrawupDate=" + hpBdDrawupDate + ", hpBdWatched=" + hpBdWatched + ", hpBdFile=" + hpBdFile
 				+ ", hpMemNo=" + hpMemNo + ", writer=" + writer + ", hpBdCategoryNo=" + hpBdCategoryNo + "]";
 	}
+	
 
 }
