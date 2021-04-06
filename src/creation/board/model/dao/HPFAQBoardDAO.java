@@ -1,5 +1,7 @@
 package creation.board.model.dao;
 
+import static creation.common.jdbc.JDBCTemplate.close;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -10,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.greedy.jsp.common.config.ConfigLocation;
 import com.greedy.jsp.member.model.dto.MemberDTO;
 
 import creation.board.model.dto.HPFAQBoardDTO;
+import creation.common.config.ConfigLocation;
 
 public class HPFAQBoardDAO {
 	

@@ -1,8 +1,5 @@
 package creation.board.model.service;
 
-import static com.greedy.jsp.common.jdbc.JDBCTemplate.close;
-import static com.greedy.jsp.common.jdbc.JDBCTemplate.getConnection;
-
 import java.sql.Connection;
 import java.util.List;
 
