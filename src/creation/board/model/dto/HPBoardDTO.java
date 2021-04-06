@@ -3,7 +3,7 @@ package creation.board.model.dto;
 import java.io.Serializable;
 import java.sql.Date;
 
-import com.greedy.jsp.member.model.dto.MemberDTO;
+import creation.member.model.dto.MemberDTO;
 
 public class HPBoardDTO implements Serializable {
 	

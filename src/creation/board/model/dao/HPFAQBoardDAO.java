@@ -14,6 +14,7 @@ import java.util.Properties;
 
 import creation.board.model.dto.HPBoardDTO;
 import creation.common.config.ConfigLocation;
+import creation.member.model.dto.MemberDTO;
 
 public class HPFAQBoardDAO {
 	
@@ -64,7 +65,7 @@ public class HPFAQBoardDAO {
 				boardDTO.setHpBdDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				boardDTO.setHpBdWatched(rset.getInt("HP_BD_WATCHED"));
 				
-				boardDTO.getWriter().setNickname(rset.getString("MEM_NAME"));
+				boardDTO.getWriter().setMemName(rset.getString("MEM_NAME"));
 				
 				boardDTO.setHpBdFile(rset.getString("HP_BD_FILE"));
 				boardDTO.setHpMemNo(rset.getInt("HP_MEM_NO"));
