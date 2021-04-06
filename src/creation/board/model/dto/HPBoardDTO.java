@@ -5,7 +5,7 @@ import java.sql.Date;
 
 import com.greedy.jsp.member.model.dto.MemberDTO;
 
-public class HPFAQBoardDTO implements Serializable {
+public class HPBoardDTO implements Serializable {
 	
 	private static final long serialVersionUID = -1073479308684379783L;
 	
@@ -19,8 +19,8 @@ public class HPFAQBoardDTO implements Serializable {
 	private MemberDTO writer;
 	private String hpBdCategoryNo;
 	
-	public HPFAQBoardDTO() {}
-	public HPFAQBoardDTO(int hpBdNo, String hpBdTitle, String hpBdContent, Date hpBdDrawupDate, int hpBdWatched,
+	public HPBoardDTO() {}
+	public HPBoardDTO(int hpBdNo, String hpBdTitle, String hpBdContent, Date hpBdDrawupDate, int hpBdWatched,
 			String hpBdFile, int hpMemNo, MemberDTO writer, String hpBdCategoryNo) {
 		this.hpBdNo = hpBdNo;
 		this.hpBdTitle = hpBdTitle;

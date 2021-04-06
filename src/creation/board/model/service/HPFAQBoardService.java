@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import creation.board.model.dao.HPFAQBoardDAO;
-import creation.board.model.dto.HPFAQBoardDTO;
+import creation.board.model.dto.HPBoardDTO;
 
 public class HPFAQBoardService {
 
@@ -19,11 +19,11 @@ public class HPFAQBoardService {
 		
 	}
 	
-	public List<HPFAQBoardDTO> selectList() {
+	public List<HPBoardDTO> selectList() {
 		
 		Connection con = getConnection();
 		
-		List<HPFAQBoardDTO> HPFAQList = boardDAO.selectList(con);
+		List<HPBoardDTO> HPFAQList = boardDAO.selectList(con);
 		
 		close(con);
 		

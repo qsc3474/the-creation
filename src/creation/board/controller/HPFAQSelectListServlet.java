@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import creation.board.model.dto.HPFAQBoardDTO;
+import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.service.HPFAQBoardService;
 
 @WebServlet("/hp/faq/select/list")
@@ -18,7 +18,7 @@ public class HPFAQSelectListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("입력");
-		List<HPFAQBoardDTO> HPFAQList = new HPFAQBoardService().selectList();
+		List<HPBoardDTO> HPFAQList = new HPFAQBoardService().selectList();
 		System.out.println(HPFAQList);
 		String path = "";
 		

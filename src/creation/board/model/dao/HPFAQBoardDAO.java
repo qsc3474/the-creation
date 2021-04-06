@@ -12,9 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.greedy.jsp.member.model.dto.MemberDTO;
-
-import creation.board.model.dto.HPFAQBoardDTO;
+import creation.board.model.dto.HPBoardDTO;
 import creation.common.config.ConfigLocation;
 
 public class HPFAQBoardDAO {
@@ -37,14 +35,14 @@ public class HPFAQBoardDAO {
 		
 	}
 
-	public List<HPFAQBoardDTO> selectList(Connection con) {
+	public List<HPBoardDTO> selectList(Connection con) {
 		
 		Statement stmt = null;
 		ResultSet rset = null;
 		
 		String query = prop.getProperty("selectList");
 		
-		List<HPFAQBoardDTO> HPFAQList = null;
+		List<HPBoardDTO> HPFAQList = null;
 		
 		try {
 			int i = 0;
@@ -58,7 +56,7 @@ public class HPFAQBoardDAO {
 				
 				i++;
 				
-				HPFAQBoardDTO boardDTO = new HPFAQBoardDTO();
+				HPBoardDTO boardDTO = new HPBoardDTO();
 				boardDTO.setWriter(new MemberDTO());
 				boardDTO.setHpBdNo(rset.getInt("HP_BD_NO"));
 				boardDTO.setHpBdTitle(rset.getString("HP_BD_TITLE"));
