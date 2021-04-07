@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
     <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
  
     <title>Document</title>
     <!-- 기기(디바이스)별 크기를 인식 하고 1.0으로 확대 및 축소 없이해서 보여줌 -->
@@ -55,7 +55,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="dataTables_length" id="dataTables-example_length">
                                                         <label>
-                                                            <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm" onchange="recordsPerPageChangeAction(this.innerText);">
+                                                            <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm" onchange="recordsPerPageChangeAction();" id="selectOption">
                                                                 <option value="10">10</option>
                                                                 <option value="25">25</option>
                                                                 <option value="50">50</option>
@@ -78,19 +78,19 @@
                                             <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
                                                 <thead>
                                                     <tr role="row">
-                                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 226px;">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 220px;">
                                                             글 번호
                                                         </th>
-                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 335px;">
+                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 330px;">
                                                             제목
                                                         </th>
-                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 317px;">
+                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 315px;">
                                                             작성자
                                                         </th>
-                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 191px;">
+                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 190px;">
                                                             작성일
                                                         </th>
-                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 138px;">
+                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 135px;">
                                                             조회수
                                                         </th>
                                                     </tr>
@@ -183,8 +183,9 @@
 			location.href = link + "?currentPage=" + text;
 		}
 		
-		function recordsPerPageChangeAction(text) {
-			location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo }&recordsPerPage=" + text;
+		function recordsPerPageChangeAction() {
+			const selectValue = document.getElementById("selectOption").value;
+			location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo }&recordsPerPage=" + selectValue;
 		}
 		
 		if(document.getElementById("searchStartPage")){
