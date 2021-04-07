@@ -55,7 +55,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="dataTables_length" id="dataTables-example_length">
                                                         <label>
-                                                            <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm">
+                                                            <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm" onchange="recordsPerPageChangeAction(this.innerText);">
                                                                 <option value="10">10</option>
                                                                 <option value="25">25</option>
                                                                 <option value="50">50</option>
@@ -104,7 +104,7 @@
 																<tr class="gradeA odd">
 			                                                        <td class="sorting_1"><c:out value="${ faq.hpBdNo }"/></td>
 			                                                        <td class=" "><c:out value="${ faq.hpBdTitle }"/></td>
-			                                                        <td class=" "><c:out value="${ faq.writer.nickname }"/></td>
+			                                                        <td class=" "><c:out value="${ faq.writer.memName }"/></td>
 			                                                        <td class="center "><c:out value="${ faq.hpBdDrawupDate }"/></td>
 			                                                        <td class="center "><c:out value="${ faq.hpBdWatched }"/></td>
 			                                                    </tr>
@@ -113,7 +113,7 @@
 																<tr class="gradeA even">
 			                                                        <td class="sorting_1"><c:out value="${ faq.hpBdNo }"/></td>
 			                                                        <td class=" "><c:out value="${ faq.hpBdTitle }"/></td>
-			                                                        <td class=" "><c:out value="${ faq.nickname }"/></td>
+			                                                        <td class=" "><c:out value="${ faq.memName }"/></td>
 			                                                        <td class="center "><c:out value="${ faq.hpBdDrawupDate }"/></td>
 			                                                        <td class="center "><c:out value="${ faq.hpBdWatched }"/></td>
 			                                                    </tr>
@@ -127,41 +127,41 @@
                                                 <!-- 총 게시글 중 몇개가 출력되고 있는지 안내 -->
                                                 <div class="col-sm-6">
                                                     <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">
-                                                        Showing 1 to 10 of 57 entries
+                                                        Showing ${ requestScope.pageInfo.startRow } to ${ requestScope.pageInfo.endRow } of ${ requestScope.pageInfo.totalCount } entries
                                                     </div>
                                                 </div>
-                                                <!-- 게시판 페이지 시작 -->
+                                                <!-- 게시판 페이징 시작 -->
                                                 <div class="col-sm-6">
                                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
-                                                        <ul class="pagination">
-                                                            <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                                                                <a href="#">Previous</a>
-                                                            </li>
-                                                            <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0">
-                                                                <a href="#">1</a>
-                                                            </li>
-                                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                                                                <a href="#">2</a>
-                                                            </li>
-                                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                                                                <a href="#">3</a>
-                                                            </li>
-                                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                                                                <a href="#">4</a>
-                                                            </li>
-                                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                                                                <a href="#">5</a>
-                                                            </li>
-                                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                                                                <a href="#">6</a>
-                                                            </li>
-                                                            <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
-                                                                <a href="#">Next</a>
-                                                            </li>
-                                                        </ul>
+                                                        <div class="pagination">
+                                                            <button id="searchStartPage">
+                                    							<<
+                                                            </button>
+                                                            <button id="searchPrevPage">
+                                    							<
+                                                            </button>
+                                                            <c:forEach var="p" begin="${ requestScope.pageInfo.startPage }" end="${ requestScope.pageInfo.endPage }" step="1">
+                                                            	<c:if test="${ requestScope.pageInfo.pageNo eq p }">
+																	<button disabled>
+	                                                                	<c:out value="${ p }"/>
+	                                                            	</button>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.pageNo ne p }">
+																	<button onclick="pageButtonAction(this.innerText);">
+	                                                                	<c:out value="${ p }"/>
+	                                                            	</button>
+																</c:if>	
+                                                            </c:forEach>
+                                                            <button id="searchNextPage">
+                                                                >
+                                                            </button>
+                                                            <button id="searchMaxPage">
+                                                                >>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!-- 게시판 페이지 종료 -->
+                                                <!-- 게시판 페이징 종료 -->
                                             </div>
                                         </div>
                                     </div>
@@ -176,5 +176,62 @@
         </div>
         <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer>   
     </section>
+    <script>
+	    const link = "${ pageContext.servletContext.contextPath }/hp/faq/select/list";
+		
+		function pageButtonAction(text) {
+			location.href = link + "?currentPage=" + text;
+		}
+		
+		function recordsPerPageChangeAction(text) {
+			location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo }&recordsPerPage=" + text;
+		}
+		
+		if(document.getElementById("searchStartPage")){
+			const $searchStartPage = document.getElementById("searchStartPage");
+			$searchStartPage.onclick = function(){
+				location.href = link + "?currentPage=1";
+			}
+		}
+		
+		if(document.getElementById("searchMaxPage")){
+			const $searchMaxPage = document.getElementById("searchMaxPage");
+			$searchMaxPage.onclick = function(){
+				location.href = link + "?currentPage=${ requestScope.pageInfo.maxPage }";
+			}
+		}
+		
+		if(document.getElementById("searchPrevPage")){
+			const $searchPrevPage = document.getElementById("searchPrevPage");
+			$searchPrevPage.onclick = function(){
+				location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo - 1 }";
+			}
+		}
+		
+		if(document.getElementById("searchNextPage")){
+			const $searchNextPage = document.getElementById("searchNextPage");
+			$searchNextPage.onclick = function(){
+				location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo + 1 }";
+			}
+		}
+		
+		/* 게시글 관련 css 및 이벤트 처리(마우스 호버 및 클릭) */
+		if(document.getElementsByTagName("td")) {
+			const $tds = document.getElementsByTagName("td");
+			for(var i = 0 ; i < $tds.length ; i++) {
+				
+				$tds[i].onmouseenter = function() {
+					this.parentNode.style.cursor = "pointer";
+				}
+				
+				$tds[i].onmouseout = function() {}
+				
+				$tds[i].onclick = function() {
+					const no = this.parentNode.children[0].innerText;
+					location.href = "${ pageContext.servletContext.contextPath }/hp/faq/detail?hpBdNo=" + no;   
+				}
+			}
+		}
+    </script>
 </body>
 </html>

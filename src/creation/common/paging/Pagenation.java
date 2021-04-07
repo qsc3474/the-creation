@@ -1,6 +1,6 @@
-package com.greedy.jsp.common.paging;
+package creation.common.paging;
 
-import com.greedy.jsp.board.model.dto.PageInfoDTO;
+import creation.board.model.dto.PageInfoDTO;
 
 public class Pagenation {
 
@@ -20,6 +20,12 @@ public class Pagenation {
 //		총 페이지 수 계산
 		
 		maxPage =(int)Math.ceil((double) totalCount/limit);
+		
+		if(pageNo > maxPage) {
+			
+			pageNo = maxPage;
+			
+		}
 		
 		
 //		현재 페이지에 보여줄 시작 페이지 수
@@ -53,6 +59,11 @@ public class Pagenation {
 		System.out.println("시작열"+startRow);
 		System.out.println("종료열"+endRow);
 		
+		if(endRow > totalCount) {
+			
+			endRow = totalCount;
+			
+		}
 		
 		PageInfoDTO pageInfo = new PageInfoDTO(pageNo, totalCount,limit,buttonAmount,maxPage,startPage,endPage,startRow,endRow);
 		

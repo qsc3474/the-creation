@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	나오냐
-	
-	테스트 
-	
+	<script>
+		location.replace("${ pageContext.servletContext.contextPath }/hp/faq/select/list");
+	</script>
 </body>
 </html>

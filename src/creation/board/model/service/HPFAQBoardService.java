@@ -1,13 +1,16 @@
 package creation.board.model.service;
 
 import static creation.common.jdbc.JDBCTemplate.close;
+import static creation.common.jdbc.JDBCTemplate.commit;
 import static creation.common.jdbc.JDBCTemplate.getConnection;
+import static creation.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 import java.util.List;
 
 import creation.board.model.dao.HPFAQBoardDAO;
 import creation.board.model.dto.HPBoardDTO;
+import creation.board.model.dto.PageInfoDTO;
 
 public class HPFAQBoardService {
 
@@ -19,15 +22,61 @@ public class HPFAQBoardService {
 		
 	}
 	
-	public List<HPBoardDTO> selectList() {
+	public List<HPBoardDTO> selectList(PageInfoDTO pageInfo) {
 		
 		Connection con = getConnection();
 		
-		List<HPBoardDTO> HPFAQList = boardDAO.selectList(con);
+		List<HPBoardDTO> HPFAQList = boardDAO.selectList(con, pageInfo);
 		
 		close(con);
 		
 		return HPFAQList;
+		
+	}
+
+	public int selectTotalCount() {
+		
+		Connection con = getConnection();
+		
+		int totalCount = boardDAO.selectTotalCount(con);
+		
+		close(con);
+		
+		return totalCount;
+		
+	}
+
+	public HPBoardDTO selectDetail(int no) {
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.increamentBoardCount(con, no);
+		
+		HPBoardDTO board = null;
+		
+		if(result > 0) {
+			
+			board = boardDAO.selectDetail(con, no);
+			
+			if(board != null) {
+				
+				commit(con);
+				
+			} else {
+				
+				rollback(con);
+				
+			}
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return board;
 		
 	}
 
