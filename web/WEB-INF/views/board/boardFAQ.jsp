@@ -56,10 +56,30 @@
                                                     <div class="dataTables_length" id="dataTables-example_length">
                                                         <label>
                                                             <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm" onchange="recordsPerPageChangeAction();" id="selectOption">
-                                                                <option value="10">10</option>
-                                                                <option value="25">25</option>
-                                                                <option value="50">50</option>
-                                                                <option value="100">100</option>
+                                                            	<c:if test="${ requestScope.pageInfo.limit eq 10 }">
+																	<option value="10" selected>10</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit ne 10 }">
+																	<option value="10">10</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit eq 25 }">
+																	<option value="25" selected>25</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit ne 25 }">
+																	<option value="25">25</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit eq 50 }">
+																	<option value="50" selected>50</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit ne 50 }">
+																	<option value="50">50</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit eq 100 }">
+																	<option value="100" selected>100</option>
+																</c:if>
+																<c:if test="${ requestScope.pageInfo.limit ne 100 }">
+																	<option value="100">100</option>
+																</c:if>
                                                             </select>
                                                             records per page
                                                         </label>
@@ -78,7 +98,7 @@
                                             <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
                                                 <thead>
                                                     <tr role="row">
-                                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 220px;">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 180px;">
                                                             글 번호
                                                         </th>
                                                         <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 330px;">
@@ -87,10 +107,10 @@
                                                         <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 315px;">
                                                             작성자
                                                         </th>
-                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 190px;">
+                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 170px;">
                                                             작성일
                                                         </th>
-                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 135px;">
+                                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 120px;">
                                                             조회수
                                                         </th>
                                                     </tr>
@@ -131,15 +151,29 @@
                                                     </div>
                                                 </div>
                                                 <!-- 게시판 페이징 시작 -->
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-8">
                                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                                         <div class="pagination">
-                                                            <button id="searchStartPage">
-                                    							<<
-                                                            </button>
-                                                            <button id="searchPrevPage">
-                                    							<
-                                                            </button>
+                                                        	<c:if test="${ requestScope.pageInfo.pageNo eq 1 }">
+																<button id="searchStartPage" style="visibility: hidden;">
+	                                    							<<
+	                                                            </button>
+															</c:if>
+                                                        	<c:if test="${ requestScope.pageInfo.pageNo ne 1 }">
+																<button id="searchStartPage">
+	                                    							<<
+	                                                            </button>
+															</c:if>
+                                                        	<c:if test="${ requestScope.pageInfo.pageNo eq 1 }">
+																<button id="searchPrevPage" style="visibility: hidden;">
+	                                    							<
+	                                                            </button>
+															</c:if>
+                                                        	<c:if test="${ requestScope.pageInfo.pageNo ne 1 }">
+																<button id="searchPrevPage">
+	                                    							<
+	                                                            </button>
+															</c:if>
                                                             <c:forEach var="p" begin="${ requestScope.pageInfo.startPage }" end="${ requestScope.pageInfo.endPage }" step="1">
                                                             	<c:if test="${ requestScope.pageInfo.pageNo eq p }">
 																	<button disabled>
@@ -152,15 +186,30 @@
 	                                                            	</button>
 																</c:if>	
                                                             </c:forEach>
-                                                            <button id="searchNextPage">
-                                                                >
-                                                            </button>
-                                                            <button id="searchMaxPage">
-                                                                >>
-                                                            </button>
+                                                            <c:if test="${ requestScope.pageInfo.pageNo eq requestScope.pageInfo.maxPage }">
+																<button id="searchNextPage" style="visibility: hidden;">
+	                                                                >
+	                                                            </button>
+															</c:if>
+                                                        	<c:if test="${ requestScope.pageInfo.pageNo ne requestScope.pageInfo.maxPage }">
+																<button id="searchNextPage">
+	                                                                >
+	                                                            </button>
+															</c:if>
+                                                            <c:if test="${ requestScope.pageInfo.pageNo eq requestScope.pageInfo.maxPage }">
+																<button id="searchMaxPage" style="visibility: hidden;">
+	                                                                >>
+	                                                            </button>
+															</c:if>
+                                                        	<c:if test="${ requestScope.pageInfo.pageNo ne requestScope.pageInfo.maxPage }">
+																<button id="searchMaxPage">
+	                                                                >>
+	                                                            </button>
+															</c:if>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <button class="pagination" type="button" id="writeBoard" style="margin-left:20%;">작성하기</button>
                                                 <!-- 게시판 페이징 종료 -->
                                             </div>
                                         </div>
@@ -180,7 +229,7 @@
 	    const link = "${ pageContext.servletContext.contextPath }/hp/faq/select/list";
 		
 		function pageButtonAction(text) {
-			location.href = link + "?currentPage=" + text;
+			location.href = link + "?currentPage=" + text + "&recordsPerPage=${ requestScope.pageInfo.limit }";
 		}
 		
 		function recordsPerPageChangeAction() {
@@ -191,28 +240,35 @@
 		if(document.getElementById("searchStartPage")){
 			const $searchStartPage = document.getElementById("searchStartPage");
 			$searchStartPage.onclick = function(){
-				location.href = link + "?currentPage=1";
+				location.href = link + "?currentPage=1&recordsPerPage=${ requestScope.pageInfo.limit }";
 			}
 		}
 		
 		if(document.getElementById("searchMaxPage")){
 			const $searchMaxPage = document.getElementById("searchMaxPage");
 			$searchMaxPage.onclick = function(){
-				location.href = link + "?currentPage=${ requestScope.pageInfo.maxPage }";
+				location.href = link + "?currentPage=${ requestScope.pageInfo.maxPage }&recordsPerPage=${ requestScope.pageInfo.limit }";
 			}
 		}
 		
 		if(document.getElementById("searchPrevPage")){
 			const $searchPrevPage = document.getElementById("searchPrevPage");
 			$searchPrevPage.onclick = function(){
-				location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo - 1 }";
+				location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo - 1 }&recordsPerPage=${ requestScope.pageInfo.limit }";
 			}
 		}
 		
 		if(document.getElementById("searchNextPage")){
 			const $searchNextPage = document.getElementById("searchNextPage");
 			$searchNextPage.onclick = function(){
-				location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo + 1 }";
+				location.href = link + "?currentPage=${ requestScope.pageInfo.pageNo + 1 }&recordsPerPage=${ requestScope.pageInfo.limit }";
+			}
+		}
+		
+		if(document.getElementById("writeBoard")){
+			const $writeBoard = document.getElementById("writeBoard");
+			$writeBoard.onclick = function(){
+				location.href = "${ pageContext.servletContext.contextPath }/hp/board/insert";
 			}
 		}
 		

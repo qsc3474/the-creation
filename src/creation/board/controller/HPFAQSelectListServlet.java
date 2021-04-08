@@ -45,7 +45,7 @@ public class HPFAQSelectListServlet extends HttpServlet {
 		
 		int limit = 10;
 		
-		if(recordsPerPage != null && !"".equals(recordsPerPage)) {
+		if(recordsPerPage != null && !"def".equals(recordsPerPage) && !"".equals(recordsPerPage)) {
 			
 			limit = Integer.valueOf(recordsPerPage);
 			
