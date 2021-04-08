@@ -27,12 +27,8 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 	
 	String currentPage = request.getParameter("currentPage");
 	
-	System.out.println(currentPage);
-	
-	System.out.println("여기1");
-	
 	int pageNo = 1;
-	
+	System.out.println(currentPage);
 	if(currentPage != null && !"".equals(currentPage)) {
 		
 		pageNo = Integer.valueOf(currentPage);
@@ -42,34 +38,30 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 			pageNo = 1;
 			
 		}
+	}
+		System.out.println(1111);
 		HPNoticeBoardService boardService = new HPNoticeBoardService();
-		System.out.println("여기2");
 
 		int totalCount = boardService.selectTotalCount();
 		
-		String recordsPerPage = request.getParameter("recordsPerPage");
+		
 		
 		int limit = 10;
 		
-		if(recordsPerPage != null && !"".equals(recordsPerPage)) {
-			
-			limit = Integer.valueOf(recordsPerPage);
-			
-		}
 		
 		int buttonAmount = 10;
-		
+		System.out.println(2222222);
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
 		List<HPBoardDTO> HPNCTList = boardService.selectList(pageInfo);
 		
-
+System.out.println(HPNCTList);
 		String path = "";
 		
 		if(!HPNCTList.isEmpty()) {
 			
 			path = "/WEB-INF/views/board/HPnotice.jsp";
-			request.setAttribute("HPnotice", HPNCTList);
+			request.setAttribute("HPNCTList", HPNCTList);
 			request.setAttribute("pageInfo", pageInfo);
 			
 		} else {
@@ -78,13 +70,13 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 			request.setAttribute("message", "공지를 조회하지 못했습니다.");
 			
 		}
-		
+		System.out.println(path);
 		request.getRequestDispatcher(path).forward(request, response);
 	
 	}
 	}
 	
-	}
+	
 
 	
 

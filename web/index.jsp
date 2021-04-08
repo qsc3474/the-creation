@@ -7,15 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
- 	<script>
+ 	<!-- <script>
 		location.replace("${ pageContext.servletContext.contextPath }/hp/faq/select/list");
-	</script> 
+	</script>  --> 
 <%-- 	<jsp:forward page="/WEB-INF/views/board/HPnotice.jsp"></jsp:forward>
  --%>	
 	
-	<!-- <script>
+	 <script>
 	location.replace("${ pageContext.servletContext.contextPath }/hp/notice/select/list");
-	</script> --> 
+	</script> 
 	
 </body>
 </html>

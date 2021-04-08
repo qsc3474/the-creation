@@ -31,9 +31,9 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 	public List<HPBoardDTO> selectList(PageInfoDTO pageInfo) {
 		Connection con = getConnection();
 		
-		List<HPBoardDTO> HPFAQList = hpNctBoardDAO.selectList(con, pageInfo);
+		List<HPBoardDTO> HPNCTList = hpNctBoardDAO.selectList(con, pageInfo);
 		
 		close(con);
-		return HPFAQList;
+		return HPNCTList;
 	}
 }

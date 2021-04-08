@@ -100,7 +100,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="ntc" items="${requestScope.noticeList }">
+											<c:forEach var="ntc" items="${HPNCTList }">
 												<tr class="gradeA odd">
 													<td class="sorting_1"><c:out value="${ ntc.hpBdNo }" /></td>
 													<td class=" "><c:out value="${ ntc.hpBdTitle }" /></td>
