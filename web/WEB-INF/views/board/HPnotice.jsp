@@ -105,10 +105,8 @@
 													<td class="sorting_1"><c:out value="${ ntc.hpBdNo }" /></td>
 													<td class=" "><c:out value="${ ntc.hpBdTitle }" /></td>
 													<td class=" "><c:out value="${ ntc.writer.memName }" /></td>
-													<td class="center "><c:out
-															value="${ ntc.hpBdDrawupDate }" /></td>
-													<td class="center "><c:out
-															value="${ ntc.hpBdWatched }" /></td>
+													<td class="center "><c:out value="${ ntc.hpBdDrawupDate }" /></td>
+													<td class="center "><c:out value="${ ntc.hpBdWatched }" /></td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -119,6 +117,8 @@
 
 									<div class="dataTables_paginate paging_simple_numbers"
 										id="dataTables-example_paginate" style="text-align: center;">
+										
+										<!--페이지 처리  -->
 										<div class="pageingArea" align="center">
 											<button id="searchStartPage"><<</button>
 
