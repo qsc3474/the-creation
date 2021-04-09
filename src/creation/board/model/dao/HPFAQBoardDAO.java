@@ -203,4 +203,35 @@ public class HPFAQBoardDAO {
 		
 	}
 
+	public int insertBoard(Connection con, HPBoardDTO insertBoard) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertBoard");
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, insertBoard.getHpBdTitle());
+			pstmt.setString(2, insertBoard.getHpBdContent());
+			pstmt.setInt(3, insertBoard.getWriter().getMemNo());
+			pstmt.setString(4, insertBoard.getHpBdCategoryNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+		
+	}
+
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,13 +23,20 @@
                 <form name="form" id="form" role="form" method="post"
                     action="${pageContext.request.contextPath}/hp/board/insert">
                     <div class="mb-12">
-                            <label for="title">선택</label>
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                              <option selected>게시글</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
+	                    <label for="title">선택</label>
+	                    <select class="custom-select mr-sm-2" name="boardCategory" id="boardCategory">
+							<option value="def" selected>게시글</option>
+							<option value="RV">후기게시판</option>
+							<option value="QNA">QnA</option>
+							<option value="FAQ">자주묻는질문</option>
+							<option value="INFO">정보게시판</option>
+	                   		<option value="NTC">공지사항</option>
+	                      <%-- <c:if test="${ sessionScope.loginMember.memKind == 'M' }">
+	                      	<option value="FAQ">자주묻는질문</option>
+	                     	<option value="INFO">정보게시판</option>
+	                     	<option value="NTC">공지사항</option>
+	                      </c:if> --%>
+	                    </select>
                     </div>
                     <div class="mb-12">
                         <label for="title">제목</label>
@@ -36,7 +44,9 @@
                     </div>
                     <div class="mb-12">
                         <label for="reg_id">작성자</label>
-                        <input type="text" class="form-control" name="reg_id" id="reg_id" placeholder="이름을 입력해 주세요">
+                        <%-- <input type="text" class="form-control" name="writer" id="writer" value="${ sessionScope.loginMember.memName }" readonly> --%>
+                        <input type="hidden" name="memberNo" value="${sessionScope.loginMember.memNo }">
+                        <input type="text" class="form-control" name="writer" id="writer" placeholder="이름을 입력해 주세요">
                     </div>
                     <div class="mb-12">
                         <label for="content">내용</label>
@@ -50,21 +60,13 @@
                         <input type="file" class="form-control" id="inputGroupFile02">
                       </div>
                     </div>
-                </form>
                 <div class="text-center" style="margin-top: 20px;">
-                    <button type="button" class="btn btn-primary btn-lg" id="btnSave">저장</button>
+                    <button type="submit" class="btn btn-primary btn-lg" id="btnSave">저장</button>
                     <button type="button" class="btn btn-secondary btn-lg" id="btnList">목록</button>
                 </div>
+              	 </form>
         </div>
         <script>
-            $(document).on('click', '#btnSave', function (e) {
-
-                e.preventDefault();
-
-                $("#form").submit();
-
-            });
-
             $(document).on('click', '#btnList', function (e) {
 
                 e.preventDefault();

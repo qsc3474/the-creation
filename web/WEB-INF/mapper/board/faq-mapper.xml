@@ -70,4 +70,29 @@
 		  JOIN MEM_INFO B ON(A.HP_MEM_NO = B.MEM_NO)
 		 WHERE A.HP_BD_NO = ?
 	</entry>
+	<entry key="insertBoard">
+		INSERT
+		  INTO HOSPITAL_BD
+		(
+		  HP_BD_NO
+		, HP_BD_TITLE
+		, HP_BD_CONTENT
+		, HP_BD_DRAWUP_DATE
+		, HP_BD_WATCHED
+		, HP_BD_FILE
+		, HP_MEM_NO
+		, HP_BD_CATEGORY_NO
+		)
+		VALUES
+		(
+		  SEQ_HP_BD_NO.NEXTVAL
+		, ?
+		, ?
+		, DEFAULT
+		, DEFAULT
+		, NULL
+		, ?
+		, ?
+		)
+	</entry>
 </properties>

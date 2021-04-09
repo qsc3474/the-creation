@@ -36,9 +36,9 @@
 				successMessage = "공지사항 수정에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
 				break;
-			case "updateNotice" :
-				successMessage = "공지사항 수정에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+			case "insertboard" :
+				successMessage = "게시글 작성에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
 				break;
 			}
 			

@@ -80,4 +80,26 @@ public class HPFAQBoardService {
 		
 	}
 
+	public int insertBoard(HPBoardDTO insertBoard) {
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.insertBoard(con, insertBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+	}
+
 }
