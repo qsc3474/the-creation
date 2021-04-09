@@ -70,7 +70,7 @@
 					<nav class="secondary-navigation pull-right">
 						<ul>
 							<li>
-								<a href="${ pageContext.servletContext.contextPath }/WEB-INF/views/member/memberLogin.jsp">회원가입</a>
+								<a href="${ pageContext.servletContext.contextPath }/member/regist">회원가입</a>
 							</li>
 							<li><a href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
 							<li><a href="myPage.html">마이페이지</a></li>
