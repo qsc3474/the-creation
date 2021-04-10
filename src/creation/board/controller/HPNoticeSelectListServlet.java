@@ -55,7 +55,7 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 		
 		List<HPBoardDTO> HPNCTList = boardService.selectList(pageInfo);
 		
-System.out.println(HPNCTList);
+		System.out.println(HPNCTList);
 		String path = "";
 		
 		if(!HPNCTList.isEmpty()) {

@@ -181,7 +181,7 @@
 	<!-- /. ROW  -->
 	
 	<script>
-	const link = "${pageContext.servletContext.contextPath}/board/list"
+	const link = "${pageContext.servletContext.contextPath}/hp/notice/select/list"
 	/* 페이지 번호 클릭시 실행되는 함수 */
 	function pageButtonAction(text) {
 		location.href= link+"?currentPage="+text;

@@ -60,7 +60,7 @@
 						<li class="menu-item-has-children">
 							<a href="notice.html">커뮤니티</a>
 							<ul class="sub-menu">
-								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
 								<li><a href="notice.html">병원소식</a></li>
 								<li><a href="notice.html">블로그</a></li>
 								<li><a href="notice.html">오시는길</a></li>
