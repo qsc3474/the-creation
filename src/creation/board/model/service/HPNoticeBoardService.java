@@ -1,7 +1,9 @@
 package creation.board.model.service;
 
 import static creation.common.jdbc.JDBCTemplate.close;
+import static creation.common.jdbc.JDBCTemplate.commit;
 import static creation.common.jdbc.JDBCTemplate.getConnection;
+import static creation.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 import java.util.List;
@@ -35,5 +37,38 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 		
 		close(con);
 		return HPNCTList;
+	}
+
+	public HPBoardDTO selectDetail(int no) {
+	Connection con = getConnection();
+		
+		int result = hpNctBoardDAO.increamentBoardCount(con, no);
+		
+		HPBoardDTO board = null;
+		
+		if(result > 0) {
+			
+			board = hpNctBoardDAO.selectDetail(con, no);
+			
+			if(board != null) {
+				
+				commit(con);
+				
+			} else {
+				
+				rollback(con);
+				
+			}
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return board;
+		
 	}
 }

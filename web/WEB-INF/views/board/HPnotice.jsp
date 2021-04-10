@@ -213,6 +213,23 @@
 			location.href=link+"?currentPage=${requestScope.pageInfo.pageNo+1}";
 		}
 	}
+	/* 게시글 관련 css 및 이벤트 처리(마우스 호버 및 클릭) */
+	if(document.getElementsByTagName("td")) {
+		const $tds = document.getElementsByTagName("td");
+		for(var i = 0 ; i < $tds.length ; i++) {
+			
+			$tds[i].onmouseenter = function() {
+				this.parentNode.style.cursor = "pointer";
+			}
+			
+			$tds[i].onmouseout = function() {}
+			
+			$tds[i].onclick = function() {
+				const no = this.parentNode.children[0].innerText;
+				location.href = "${ pageContext.servletContext.contextPath }/hp/notice/detail?hpBdNo=" + no;   
+			}
+		}
+	}
 		</script>
 		
 		</body>
