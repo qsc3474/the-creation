@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
+	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	<div id="main_content">
 		<!-- 회원가입 완료 -->
 		<section id="step-title4">

@@ -27,6 +27,7 @@
 
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
     <section class="notice-sec">
         <div class="container">
             <div id="page-wrapper">

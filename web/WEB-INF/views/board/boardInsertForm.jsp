@@ -16,6 +16,7 @@
     <title>Document</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
     <section>
         <div class="container">
         <h1 align="center">글쓰기</h1>
