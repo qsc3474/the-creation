@@ -39,15 +39,15 @@
 			</p>
 		</div>
 		<div class="login-box">
-			<form>
+			<form id="loginForm" action="${ pageContext.servletContext.contextPath }/member/login"method="post">
 				<div class="form-group">
 					<label for="exampleInputName1">아이디</label>
-					<input type="text" class="form-control" id="exampleInputName1" placeholder="아이디입력">
+					<input type="text" class="form-control" id="memberId" name="memberId" placeholder="아이디입력">
 				</div>
 				<!-- /.form-group -->
 				<div class="form-group">
 					<label for="exampleInputEmail1">비밀번호</label>
-					<input type="password" class="form-control" id="exampleInputEmail1" placeholder="영문숫자특수문자포함">
+					<input type="password" class="form-control" id="memberPwd" name="memberPwd" placeholder="영문숫자특수문자포함">
 				</div>
 				<!-- /.form-group -->
 				<div class="form-group">
@@ -63,7 +63,7 @@
 
 				</div>
 				<!-- /.form-group -->
-				<a href="#" class="gp-btn btn-primary larg">로그인</a>
+				<input type="submit" class="gp-btn btn-primary larg">로그인
 				<a href="sing-up.html" class="gp-btn btn-border larg">회원가입</a>
 			</form>
 		</div>

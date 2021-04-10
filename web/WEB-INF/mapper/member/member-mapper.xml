@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="insertMember">
+		INSERT
+		  INTO TBL_MEMBER A
+		(
+		  A.MEMBER_NO
+		, A.MEMBER_ID
+		, A.MEMBER_PWD
+		, A.NICKNAME
+		, A.PHONE
+		, A.EMAIL
+		, A.ADDRESS
+		)
+		VALUES
+		(
+		  SEQ_MEMBER_NO.NEXTVAL
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		)
+	</entry>
+	<entry key="selectEncryptedPwd">
+		
+	</entry>
+	<entry key="selectLoginMember">
+	    
+	</entry>
+	<entry key="updateMember">
+		
+	</entry>
+	<entry key="deleteMember">
+		
+	</entry>
+	
+</properties>
