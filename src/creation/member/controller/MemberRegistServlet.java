@@ -19,23 +19,18 @@ public class MemberRegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String path = "";
 		
-		if(request.getHeader("referer").equals(
-		"http://localhost:8800/creation/member/regist")) {
-		
-		path = "/WEB-INF/views/member/memberRegistStep2.jsp";
-
-		
-		} else {
+		if(request.getParameter("step") == null || "".equals(request.getParameter("step"))) {
 			
 			path = "/WEB-INF/views/member/memberRegistStep1.jsp";
 			
-		}
-		
-		if(request.getHeader("referer").equals(
-				"http://localhost:8800/creation/member/regist") &&
-				"2".equals(request.getParameter("step"))){
+		} else if(request.getParameter("step").equals("1")) {
+			
+			path = "/WEB-INF/views/member/memberRegistStep2.jsp";
+			
+		} else if(request.getParameter("step").equals("2")) {
 			
 			path = "/WEB-INF/views/member/memberRegistStep3.jsp";
 			

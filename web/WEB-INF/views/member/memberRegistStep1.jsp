@@ -53,7 +53,7 @@
 				</div>
                 <div class="cf"></div>
                 <div class="text-center mt">
-                    <a href="${ pageContext.servletContext.contextPath }/member/regist" class="gp-btn btn-primary">다음</a>
+                    <a href="${ pageContext.servletContext.contextPath }/member/regist?step=1" class="gp-btn btn-primary">다음</a>
                 </div>
 			</div>
 			<!-- /.container -->
