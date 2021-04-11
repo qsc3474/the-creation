@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,7 +68,8 @@
 							</ul>
 						</li>
 					</ul>
-					<nav class="secondary-navigation pull-right">
+					<c:if test="${ empty sessionScope.loginMember }">
+					<div class="secondary-navigation pull-right">
 						<ul>
 							<li>
 								<a href="${ pageContext.servletContext.contextPath }/member/regist">회원가입</a>
@@ -75,7 +77,20 @@
 							<li><a href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
 							<li><a href="myPage.html">마이페이지</a></li>
 						</ul>
-					</nav>
+						</c:if>
+							<c:if test="${ !empty sessionScope.loginMember }">
+					<ul>
+							<li><c:out value="${ sessionScope.loginMember.name }"/>님의 방문을 환영합니다. </li>
+							<li><a href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
+							<li><a href="myPage.html">마이페이지</a></li>
+						</ul>
+					
+					
+							</c:if>
+					</div>
+					
+							
+					
 				</div>
 			</div>
 

@@ -19,6 +19,7 @@
 			</p>
 		</div>
 		<div class="login-box">
+		
 			<form id="loginForm" action="${ pageContext.servletContext.contextPath }/member/login"method="post">
 				<div class="form-group">
 					<label for="exampleInputName1">아이디</label>
@@ -43,7 +44,7 @@
 
 				</div>
 				<!-- /.form-group -->
-				<input type="submit" class="gp-btn btn-primary larg">로그인
+				<input type="submit" class="gp-btn btn-primary larg" value="로그인" id="login">
 				<a href="sing-up.html" class="gp-btn btn-border larg">회원가입</a>
 			</form>
 		</div>

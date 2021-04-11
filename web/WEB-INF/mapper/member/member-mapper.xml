@@ -27,10 +27,27 @@
 		)
 	</entry>
 	<entry key="selectEncryptedPwd">
-		
+		SELECT 
+	           A.MEM_PWD
+	      FROM MEM_INFO A
+	     WHERE A.MEM_STATUS = 'Y'
+	       AND A.MEM_ID = ?
 	</entry>
 	<entry key="selectLoginMember">
-	    
+	      SELECT 
+		       A.MEM_NO
+		     , A.MEM_NAME
+		     , A.MEM_PHONE
+		     , A.MEM_ADDRESS
+		     , A.MEM_EMAIL
+		     , A.MEM_ID
+		     , A.MEM_PWD
+		     , A.MEM_BIRTH
+		     , A.MEM_KIND
+		     , A.MEM_STATUS
+		  FROM MEM_INFO A
+		 WHERE A.MEM_STATUS = 'Y'
+		   AND A.MEM_ID = ?
 	</entry>
 	<entry key="updateMember">
 		

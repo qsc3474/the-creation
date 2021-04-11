@@ -32,9 +32,9 @@ public class MemberLoginServlet extends HttpServlet {
 		System.out.println("memberPwd : " + memberPwd);
 		
 		MemberDTO requestMember = new MemberDTO();
-		requestMember.setMemId("memId");
-		requestMember.setMemPwd("memPwd");
-		
+		requestMember.setId(memberId);
+		requestMember.setPwd(memberPwd);
+		System.out.println(requestMember);
 		MemberService memberService = new MemberService();
 		
 		MemberDTO loginMember = memberService.loginCheck(requestMember);
