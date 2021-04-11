@@ -201,19 +201,11 @@
                         </div>
                     </form>
                     <div class="text-center">
-                        <a href="step3.html" class="gp-btn btn-primary larg">다음</a>
+                        <a href="${ pageContext.servletContext.contextPath }/member/regist?step=2" class="gp-btn btn-primary larg">다음</a>
                     </div>
                 </div>
             </div>
         </section>
 	</div>
-	<!-- Dependency Scripts -->
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery/jquery.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery-ui/jquery-ui.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- Site Scripts -->
-	<script src="${ pageContext.servletContext.contextPath }/resources/assets/js/smooth_scroll.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/assets/js/app.js"></script>
 </body>
 </html>

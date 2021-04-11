@@ -5,23 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- Dependency Styles -->
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/font-awesome/css/gp-icons.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/gp-icons/style.css" type="text/css">
-	<!-- <link rel="stylesheet" href="dependencies/etlinefont-bower/style.css" type="text/css"> -->
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap-star-rating/css/star-rating.min.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/swiper/css/swiper.min.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/wow/animate.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/revslider/css/settings.css" type="text/css">
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/magnific-popup/magnific-popup.css" type="text/css">
-
-	<!-- Site Stylesheet -->
-	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/assets/css/app.css" type="text/css">
-
-
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
@@ -41,7 +24,7 @@
             <div class="container box-line">
                     <div class="col-md-8 col-md-offset-2" >
                         <div class="form-container">
-                            <form action="#" method="post" class="vanilla vanilla-form" novalidate=""
+                            <form action="${ pageContext.servletContext.contextPath }/member/regist" method="post" class="vanilla vanilla-form" novalidate=""
                                 data-vf-id="76ae1c44-b904-d78a-f1c8-d8d80edead50">
                                 <div class="row">
                                     <div class="col-sm-12 pr-10">
@@ -130,54 +113,72 @@
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group col-sm-3">
+                                            <label for="#">우편번호</label>
+                                        </div>
+                                        <div class="col-sm-7 pl-10">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="tel" id="zipCode" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 align-self-center">
+                                        	<input type="button" class="gp-btn btn-primary small" value="검색" id="searchZipCode" style="padding: 10px 15px;">
+                                        </div>
+                                        <div class="form-group col-sm-3">
                                             <label for="#">주소</label>
                                         </div>
                                         <div class="col-sm-7 pl-10">
                                             <div class="form-group">
-                                                <input type="adress" class="form-control" name="tel" placeholder="1111">
+                                            	<input type="text" class="form-control" name="address1" id="address1" readonly>
                                             </div>
                                         </div>
-                                        <div class="col-md-2 align-self-center">
-                                            <a href="#" class="gp-btn btn-primary small"
-                                                style="padding: 10px 15px;">중복확인</a>
+                                        <div class="form-group col-sm-3">
+                                            <label for="#">상세주소</label>
                                         </div>
-                                        <div class="col-md-7" style="float: right; margin-right: 130px;">
+                                        <div class="col-sm-7 pl-10">
                                             <div class="form-group">
-                                                <input type="tel" class="form-control" name="tel" placeholder="상세주소">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-7" style="float: right; margin-right: 130px;">
-                                            <div class="form-group">
-                                                <input type="tel" class="form-control" name="tel" placeholder="상세주소">
+                                            	<input type="text" class="form-control" name="address2" id="address2">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 text-center">
                                         <label>
-                                            <input type="radio" name="subject" value="General">
-                                            </span> 사실에 근거하여 허위로 작성 하지 않았습니다</label>
-                                        <label>
+                                            <input type="checkbox" name="subject" value="General">
+                                            <label> 사실에 근거하여 허위로 작성 하지 않았습니다</label>
+                                        </label>
                                     </div>
                                 </div>
+                                <div class="text-center mt">
+				                    <button type="submit" class="gp-btn btn-primary larg">회원가입</button>
+				                </div>
                             </form>
                         </div>
                     </div>
                 <!-- /.row -->
                 <div class="cf"></div>
-                <div class="text-center mt">
-                    <a href="step4.html" class="gp-btn btn-primary larg">회원가입</a>
-                </div>
             </div>
         </section>
         <!-- 회원가입 -->
 	</div>
-	<!-- Dependency Scripts -->
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery/jquery.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery-ui/jquery-ui.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- Site Scripts -->
-	<script src="${ pageContext.servletContext.contextPath }/resources/assets/js/smooth_scroll.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/assets/js/app.js"></script>
+	<!-- 다음 우편번호 api -->
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		const $searchZipCode = document.getElementById("searchZipCode");
+		const $goMain = document.getElementById("goMain");
+		
+		$searchZipCode.onclick = function(){
+			
+			new daum.Postcode({
+				oncomplete : function(data){
+					document.getElementById("zipCode").value = data.zonecode;
+					document.getElementById("address1").value = data.address;
+					document.getElementById("address2").focus();
+				}
+			}).open();
+		}
+		
+		$goMain.onclick=function(){
+			location.href = "${ pageContext.servletContext.contextPath}";
+		}
+	</script>
 </body>
 </html>
