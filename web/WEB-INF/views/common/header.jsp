@@ -6,11 +6,10 @@
 <head>
 <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>index</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="${ pageContext.servletContext.contextPath }/resources/assets/img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon-16x16.png">
-	<title>index</title>
-
 	<!-- Dependency Styles -->
 	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
@@ -23,9 +22,9 @@
 	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
 	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/revslider/css/settings.css" type="text/css">
 	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/dependencies/magnific-popup/magnific-popup.css" type="text/css">
-
 	<!-- Site Stylesheet -->
 	<link rel="stylesheet" href="${ pageContext.servletContext.contextPath }/resources/assets/css/app.css" type="text/css">
+	<script src="/creation/resources/js/event.js"></script>
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 
@@ -64,7 +63,7 @@
 								<li><a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
 								<li><a href="notice.html">병원소식</a></li>
 								<li><a href="notice.html">블로그</a></li>
-								<li><a href="notice.html">오시는길</a></li>
+								<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list"">오시는길</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -116,8 +115,9 @@
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery.parallax-scroll/jquery.parallax-scroll.js"></script>
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/wow/js/wow.min.js"></script>
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery.spinner/js/jquery.spinner.min.js"></script>
-	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/gmap3/gmap3.min.js"></script>
+	<!--<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/gmap3/gmap3.min.js"></script> -->
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap-star-rating/js/star-rating.min.js"></script>
+	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/isotope/isotope.pkgd.min.js"></script>
 
 	<!-- Revolution Slider Plugin -->
 
@@ -126,7 +126,6 @@
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/revslider/js/extensions/revolution.extension.layeranimation.min.js"></script>
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/revslider/js/extensions/revolution.extension.navigation.min.js"></script>
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/revslider/js/extensions/revolution.extension.parallax.min.js"></script>
-
 	<!-- Site Scripts -->
 	<script src="${ pageContext.servletContext.contextPath }/resources/assets/js/smooth_scroll.min.js"></script>
 	<script src="${ pageContext.servletContext.contextPath }/resources/assets/js/app.js"></script>
