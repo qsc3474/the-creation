@@ -47,13 +47,30 @@ public class MemberRegistServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// 아이디, 비밀번호, 이름, 생년월일, 이메일, 전화번호, 주소값이 넘어옴
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		String name = request.getParameter("name");
+		java.sql.Date birthday = java.sql.Date.valueOf(request.getParameter("birthdayYear") + "-" + request.getParameter("birthdayMonth") + "-" + request.getParameter("birthdayDay"));
+		String email = request.getParameter("email1") + "@" + request.getParameter("email2");
+		int phone = Integer.valueOf(request.getParameter("tel1") + request.getParameter("tel2") + request.getParameter("tel3"));
+		String address = request.getParameter("address1") + "$" + request.getParameter("address2")
+        					+ "$" + request.getParameter("address3");
+		
+		
 		MemberDTO requestMember = new MemberDTO();
 		
-//		System.out.println("memberController requestMember : " + requestMember);
+		requestMember.setId(id);
+		requestMember.setPwd(pwd);
+		requestMember.setName(name);
+		requestMember.setBirthday(birthday);
+		requestMember.setEmail(email);
+		requestMember.setPhone(phone);
+		requestMember.setAddress(address);
 		
-//		int result = new MemberService().registMember(requestMember);
+		System.out.println("memberController requestMember : " + requestMember);
 		
-		int result = 1;
+		int result = new MemberService().registMember(requestMember);
 		
 		String page = "";
 		

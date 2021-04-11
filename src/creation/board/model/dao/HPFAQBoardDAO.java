@@ -66,7 +66,7 @@ public class HPFAQBoardDAO {
 				boardDTO.setHpBdDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				boardDTO.setHpBdWatched(rset.getInt("HP_BD_WATCHED"));
 				
-				boardDTO.getWriter().setMemName(rset.getString("MEM_NAME"));
+				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
 				
 				boardDTO.setHpBdFile(rset.getString("HP_BD_FILE"));
 				boardDTO.setHpMemNo(rset.getInt("HP_MEM_NO"));
@@ -183,7 +183,7 @@ public class HPFAQBoardDAO {
 				board.setHpBdWatched(rset.getInt("HP_BD_WATCHED"));
 				board.setHpBdFile(rset.getString("HP_BD_FILE"));
 				board.setHpMemNo(rset.getInt("HP_MEM_NO"));
-				board.getWriter().setMemName(rset.getString("MEM_NAME"));
+				board.getWriter().setName(rset.getString("MEM_NAME"));
 				board.setHpBdCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				
 			}
@@ -215,7 +215,7 @@ public class HPFAQBoardDAO {
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, insertBoard.getHpBdTitle());
 			pstmt.setString(2, insertBoard.getHpBdContent());
-			pstmt.setInt(3, insertBoard.getWriter().getMemNo());
+			pstmt.setInt(3, insertBoard.getWriter().getNo());
 			pstmt.setString(4, insertBoard.getHpBdCategoryNo());
 			
 			result = pstmt.executeUpdate();

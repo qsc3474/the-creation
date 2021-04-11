@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<entry key="insertMember">
+<entry key="registMember">
 		INSERT
-		  INTO TBL_MEMBER A
+		  INTO MEM_INFO A
 		(
-		  A.MEMBER_NO
-		, A.MEMBER_ID
-		, A.MEMBER_PWD
-		, A.NICKNAME
-		, A.PHONE
-		, A.EMAIL
-		, A.ADDRESS
+		  A.MEM_NO
+		, A.MEM_NAME
+		, A.MEM_PHONE
+		, A.MEM_ADDRESS
+		, A.MEM_EMAIL
+		, A.MEM_ID
+		, A.MEM_PWD
+		, A.MEM_BIRTH
 		)
 		VALUES
 		(
-		  SEQ_MEMBER_NO.NEXTVAL
+		  SEQ_MEM_NO.NEXTVAL
+		, ?
 		, ?
 		, ?
 		, ?

@@ -46,7 +46,7 @@ public class MemberDAO {
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, requestMember.getMemId());
+			pstmt.setString(1, requestMember.getId());
 			
 			rset = pstmt.executeQuery();
 			
@@ -74,21 +74,21 @@ public class MemberDAO {
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, requestMember.getMemId());
+			pstmt.setString(1, requestMember.getId());
 			
 			rset = pstmt.executeQuery();
 			
 			if(rset.next()) {
 				loginMember = new MemberDTO();
-				loginMember.setMemNo(rset.getInt("MEM_NO"));
-				loginMember.setMemId(rset.getString("MEM_ID"));
-				loginMember.setMemName(rset.getString("MEM_NAME"));
-				loginMember.setPhone(rset.getString("MEM_PHONE"));
+				loginMember.setNo(rset.getInt("MEM_NO"));
+				loginMember.setId(rset.getString("MEM_ID"));
+				loginMember.setName(rset.getString("MEM_NAME"));
+				loginMember.setPhone(rset.getInt("MEM_PHONE"));
 				loginMember.setEmail(rset.getString("MEM_EMAIL"));
 				loginMember.setAddress(rset.getString("MEM_ADDRESS"));
-				loginMember.setMemBirth(rset.getDate("MEM_BIRTH"));
-				loginMember.setMemKind(rset.getString("MEM_KIND"));
+				loginMember.setBirthday(rset.getDate("MEM_BIRTH"));
 				loginMember.setStatus(rset.getString("MEMBER_STATUS"));
+				loginMember.setKind(rset.getString("MEM_KIND"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -98,5 +98,39 @@ public class MemberDAO {
 		}
 		
 		return loginMember;
+	}
+
+	public int registMember(Connection con, MemberDTO requestMember) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("registMember");
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, requestMember.getName());
+			pstmt.setInt(2, requestMember.getPhone());
+			pstmt.setString(3, requestMember.getAddress());
+			pstmt.setString(4, requestMember.getEmail());
+			pstmt.setString(5, requestMember.getId());
+			pstmt.setString(6, requestMember.getPwd());
+			pstmt.setDate(7, requestMember.getBirthday());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+		
 	}
 }

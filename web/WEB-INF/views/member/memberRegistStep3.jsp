@@ -32,7 +32,7 @@
                                             <label for="#">아이디</label>
                                         </div>
                                         <div class="form-group col-sm-7">
-                                            <input type="id" class="form-control" name="name" placeholder="이름"
+                                            <input type="id" class="form-control" name="id" placeholder="이름"
                                                 required="required">
                                         </div>
                                         <div class="col-md-2">
@@ -46,7 +46,7 @@
                                             <label for="#">비밀번호</label>
                                         </div>
                                         <div class="form-group col-sm-7">
-                                            <input type="password" class="form-control" placeholder="비밀번호">
+                                            <input type="password" class="form-control" name="pwd" placeholder="비밀번호">
                                         </div>
                                         <!--/.form-group -->
                                     </div>
@@ -69,11 +69,41 @@
 
                                     </div>
                                     <div class="col-sm-12 pl-10">
+                                    	<div class="form-row">
+                                            <div class="form-group col-sm-3">
+                                                <label for="#">생년월일</label>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" class="form-control" name="birthdayYear" id="yearInput" placeholder="년(4자)">
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                            	<select id="monthInput" name="birthdayMonth" class="form-control">
+                                                    <option selected>월</option>
+                                                    <option value="01">1</option>
+                                                    <option value="02">2</option>
+                                                    <option value="03">3</option>
+                                                    <option value="04">4</option>
+                                                    <option value="05">5</option>
+                                                    <option value="06">6</option>
+                                                    <option value="07">7</option>
+                                                    <option value="08">8</option>
+                                                    <option value="09">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <input type="text" class="form-control" id="dayInput" name="birthdayDay" placeholder="일">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 pl-10">
                                         <div class="form-group col-sm-3">
                                             <label for="#">이메일</label>
                                         </div>
                                         <div class="form-group col-sm-3" style="padding-right: 0;">
-                                            <input type="password" class="form-control" placeholder="이메일">
+                                            <input type="text" class="form-control" name="email1" placeholder="이메일">
                                         </div>
                                         <div class="form-group col-sm-1" style="padding-right: 0;">
                                             <div class="input-group-prepend">
@@ -82,8 +112,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <select id="inputState" class="form-control">
-                                                <option selected>naver.com</option>
+                                            <select id="inputState" name="email2" class="form-control">
+                                                <option selected value="naver.com">naver.com</option>
                                                 <option>gmail.com</option>
                                                 <option>gmail.com</option>
                                                 <option>gmail.com</option>
@@ -98,16 +128,16 @@
                                                 <label for="#">전화번호</label>
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>010</option>
-                                                    <option>011</option>
+                                                <select id="inputState" name="tel1" class="form-control">
+                                                    <option selected value="010">010</option>
+                                                    <option value="011">011</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-2">
-                                                <input type="text" class="form-control" id="inputCity">
+                                                <input type="text" class="form-control" name="tel2" id="inputCity">
                                             </div>
                                             <div class="form-group col-md-2">
-                                                <input type="text" class="form-control" id="inputZip">
+                                                <input type="text" class="form-control" name="tel3" id="inputZip">
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +147,7 @@
                                         </div>
                                         <div class="col-sm-7 pl-10">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="tel" id="zipCode" readonly>
+                                                <input type="text" class="form-control" name="address1" id="zipCode" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-2 align-self-center">
@@ -128,7 +158,7 @@
                                         </div>
                                         <div class="col-sm-7 pl-10">
                                             <div class="form-group">
-                                            	<input type="text" class="form-control" name="address1" id="address1" readonly>
+                                            	<input type="text" class="form-control" name="address2" id="address1" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group col-sm-3">
@@ -136,7 +166,7 @@
                                         </div>
                                         <div class="col-sm-7 pl-10">
                                             <div class="form-group">
-                                            	<input type="text" class="form-control" name="address2" id="address2">
+                                            	<input type="text" class="form-control" name="address3" id="address2">
                                             </div>
                                         </div>
                                     </div>

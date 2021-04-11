@@ -27,7 +27,7 @@
                             <div class="form-check">
                                 <label for="exampleFormControlTextarea1">홈페이지 이용약관<span
                                         style="color: red;">(필수)</span></label>
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="necessaryCheck1">
                                 <label class="form-check-label" for="defaultCheck1">
                                     동의합니다.
                                 </label>
@@ -128,8 +128,8 @@
                         <div class="form-group mb">
                             <div class="form-check form-check-inline">
                                 <label for="exampleFormControlTextarea1">개인정보수집 및 이용에 대한 동의<span
-                                        style="color: red;">필수</span></label>
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        style="color: red;">(필수)</span></label>
+                                <input class="form-check-input" type="checkbox" value="" id="necessaryCheck2">
                                 <label class="form-check-label" for="defaultCheck1">
                                     동의합니다.
                                 </label>
@@ -162,7 +162,7 @@
                         <div class="form-group mb">
                             <div class="form-check form-check-inline">
                                 <label for="exampleFormControlTextarea1">개인정보 마케팅활용에 관한 사항 동의<span">(선택)</span></label>
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="optionCheck1">
                                 <label class="form-check-label" for="defaultCheck1">
                                     동의합니다.
                                 </label>
@@ -182,7 +182,7 @@
                             <div class="form-check form-check-inline">
                                 <label for="exampleFormControlTextarea1">개인정보 제 3자 제공 및 이용에 관한 동의
                                     <span>(선택)</span></label>
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="optionCheck2">
                                 <label class="form-check-label" for="defaultCheck1">
                                     동의합니다.
                                 </label>
@@ -201,11 +201,42 @@
                         </div>
                     </form>
                     <div class="text-center">
-                        <a href="${ pageContext.servletContext.contextPath }/member/regist?step=2" class="gp-btn btn-primary larg">다음</a>
+                        <button class="gp-btn btn-primary larg" id="progressButton">다음</button>
                     </div>
                 </div>
             </div>
         </section>
 	</div>
+	<script>
+		const link = "${ pageContext.servletContext.contextPath }/member/regist"
+		var count = 0;
+	
+		if(document.getElementById("progressButton")){
+			const $progressButton = document.getElementById("progressButton");
+			$progressButton.onclick = function(){
+				if($("#necessaryCheck1").is(":checked")){
+											
+				} else {
+					
+					alert("필수약관에 동의해주세요!");
+					return false;
+					
+				}
+				
+				if($("#necessaryCheck2").is(":checked")){
+					
+					location.href = link + "?step=2";
+					
+				} else {
+					
+					alert("필수약관에 동의해주세요!");
+					return false;
+					
+				}
+				
+			}
+			
+		}
+	</script>
 </body>
 </html>

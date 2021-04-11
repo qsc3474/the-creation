@@ -7,152 +7,110 @@ import java.sql.Date;
  * @author joon
  *
  */
-public class MemberDTO implements Serializable{
-      
-      /**
-    * 
-    */
-   private static final long serialVersionUID = 1L;
-      private int memNo;
-      private String memName;
-      private String phone;
-      private String address;
-      private String email;
-      private String memId;
-      private String memPwd;
-      private java.sql.Date memBirth;
-      private String memKind;
-      private String status;
-      
-      
-      public MemberDTO() {
-         
-      }
-
-
-	public MemberDTO(int memNo, String memName, String phone, String address, String email, String memId, String memPwd,
-			Date memBirth, String memKind, String status) {
-		super();
-		this.memNo = memNo;
-		this.memName = memName;
+public class MemberDTO implements java.io.Serializable{
+	
+	private static final long serialVersionUID = -3774328171132786225L;
+	
+	private int no;
+	private String id;
+	private String pwd;
+	private String name;
+	private int phone;
+	private String email;
+	private String address;
+	private java.sql.Date birthday;
+	private java.sql.Date enrollDate;
+	private String status;
+	private String kind;
+	
+	public MemberDTO() {}
+	public MemberDTO(int no, String id, String pwd, String name, int phone, String email, String address,
+			Date birthday, Date enrollDate, String status, String kind) {
+		this.no = no;
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
 		this.phone = phone;
-		this.address = address;
 		this.email = email;
-		this.memId = memId;
-		this.memPwd = memPwd;
-		this.memBirth = memBirth;
-		this.memKind = memKind;
+		this.address = address;
+		this.birthday = birthday;
+		this.enrollDate = enrollDate;
 		this.status = status;
+		this.kind = kind;
 	}
-
-
-	public int getMemNo() {
-		return memNo;
+	
+	public int getNo() {
+		return no;
 	}
-
-
-	public void setMemNo(int memNo) {
-		this.memNo = memNo;
+	public void setNo(int no) {
+		this.no = no;
 	}
-
-
-	public String getMemName() {
-		return memName;
+	public String getId() {
+		return id;
 	}
-
-
-	public void setMemName(String memName) {
-		this.memName = memName;
+	public void setId(String id) {
+		this.id = id;
 	}
-
-
-	public String getPhone() {
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getPhone() {
 		return phone;
 	}
-
-
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-	public String getMemId() {
-		return memId;
+	public String getAddress() {
+		return address;
 	}
-
-
-	public void setMemId(String memId) {
-		this.memId = memId;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-
-
-	public String getMemPwd() {
-		return memPwd;
+	public java.sql.Date getBirthday() {
+		return birthday;
 	}
-
-
-	public void setMemPwd(String memPwd) {
-		this.memPwd = memPwd;
+	public void setBirthday(java.sql.Date birthday) {
+		this.birthday = birthday;
 	}
-
-
-	public java.sql.Date getMemBirth() {
-		return memBirth;
+	public java.sql.Date getEnrollDate() {
+		return enrollDate;
 	}
-
-
-	public void setMemBirth(java.sql.Date memBirth) {
-		this.memBirth = memBirth;
+	public void setEnrollDate(java.sql.Date enrollDate) {
+		this.enrollDate = enrollDate;
 	}
-
-
-	public String getMemKind() {
-		return memKind;
-	}
-
-
-	public void setMemKind(String memKind) {
-		this.memKind = memKind;
-	}
-
-
 	public String getStatus() {
 		return status;
 	}
-
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+	
 	@Override
 	public String toString() {
-		return "MemberDTO [memNo=" + memNo + ", memName=" + memName + ", phone=" + phone + ", address=" + address
-				+ ", email=" + email + ", memId=" + memId + ", memPwd=" + memPwd + ", memBirth=" + memBirth
-				+ ", memKind=" + memKind + ", status=" + status + "]";
-	}
+		return "MemberDTO [no=" + no + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", phone=" + phone
+				+ ", email=" + email + ", address=" + address + ", birthday=" + birthday + ", enrollDate=" + enrollDate
+				+ ", status=" + status + ", kind=" + kind + "]";
+	}	
 
-
-    
 }
