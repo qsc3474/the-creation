@@ -104,7 +104,7 @@
 												<tr class="gradeA odd">
 													<td class="sorting_1"><c:out value="${ ntc.hpBdNo }" /></td>
 													<td class=" "><c:out value="${ ntc.hpBdTitle }" /></td>
-													<td class=" "><c:out value="${ ntc.writer.memName }" /></td>
+													<td class=" "><c:out value="${ ntc.writer.name }" /></td>
 													<td class="center "><c:out value="${ ntc.hpBdDrawupDate }" /></td>
 													<td class="center "><c:out value="${ ntc.hpBdWatched }" /></td>
 												</tr>
