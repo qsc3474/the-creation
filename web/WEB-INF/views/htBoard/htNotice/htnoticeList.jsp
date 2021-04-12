@@ -190,8 +190,8 @@
 
             
 				<button id="writeNotice">작성하기</button>	
-			<c:if test="${ sessionScope.loginMember.role eq 'M'}">
-			</c:if>
+			<%-- <c:if test="${ sessionScope.loginMember.role eq 'M'}">
+			</c:if> --%>
                    
                 </div>
              </div>
