@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import creation.board.model.dto.CategoryDTO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
 import creation.common.config.ConfigLocation;
@@ -193,5 +194,104 @@ public class HPNoticeBoardDAO {
 		}
 		
 		return board;
+	}
+
+	public int searchBoardCount(Connection con, String condition, String value) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String query = null;
+		int boardCount = 0;
+		
+	
+		 if(condition.equals("writer")) {
+			
+			query = prop.getProperty("searchWriterBoardCount");
+		} else if(condition.equals("title")) {
+			
+			query = prop.getProperty("searchTitleBoardCount");
+		} else if(condition.equals("content")) {
+			
+			query = prop.getProperty("searchBodyBoardCount");
+		}
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, value);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				boardCount = rset.getInt("COUNT(*)");
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return boardCount;
+	}
+
+	public List<HPBoardDTO> searchBoardList(Connection con, PageInfoDTO pageInfo, String condition, String value) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String query = null;
+		List<HPBoardDTO> boardList = null;
+		
+		if(condition.equals("category")) {
+			
+			query = prop.getProperty("searchCategoryBoard");
+		} else if(condition.equals("writer")) {
+			
+			query = prop.getProperty("searchWriterBoard");
+		} else if(condition.equals("title")) {
+			
+			query = prop.getProperty("searchTitleBoard");
+		} else if(condition.equals("content")) {
+			
+			query = prop.getProperty("searchBodyBoard");
+		}
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, value);
+			pstmt.setInt(2, pageInfo.getStartRow());
+			pstmt.setInt(3, pageInfo.getEndRow());
+			
+			rset = pstmt.executeQuery();
+			
+			boardList = new ArrayList<>();
+			
+			while(rset.next()) {
+				HPBoardDTO board = new HPBoardDTO();
+				board.setCategory(new CategoryDTO());
+				board.setWriter(new MemberDTO());
+				
+				board.setNo(rset.getInt("BOARD_NO"));
+				board.setCategoryCode(rset.getInt("CATEGORY_CODE"));
+				board.getCategory().setName(rset.getString("CATEGORY_NAME"));
+				board.setTitle(rset.getString("BOARD_TITLE"));
+				board.setBody(rset.getString("BOARD_BODY"));
+				board.setWriterMemberNo(rset.getInt("BOARD_WRITER_MEMBER_NO"));
+				board.getWriter().setNickname(rset.getString("NICKNAME"));
+				board.setCount(rset.getInt("BOARD_COUNT"));
+				board.setCreateDate(rset.getDate("CREATED_DATE"));
+				board.setStatus(rset.getString("BOARD_STATUS"));
+				
+				boardList.add(board);				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return boardList;
 	}
 }

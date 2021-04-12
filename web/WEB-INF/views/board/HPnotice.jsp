@@ -162,17 +162,36 @@
 										</div>
 										<br><br>
 										<div id="dataTables-example_filter" class="dataTables_filter"
-											style="text-align: center;">
-											<label>검색:</label><input type="search"
-												class="form-control input-sm"
-												aria-controls="dataTables-example"
-												style="text-align: center;">
-												<input type="submit" value="검색">
-												
-												
-												<c:if test="${ !empty sessionScope.loginMember }">
-					<button type="button" id="writeBoard" style="text-aling= left" >작성하기</button>
+											>
+					
+				<form id="searchForm" action="${ pageContext.servletContext.contextPath }/board/search" method="get">
+			<div class="search-area" align="center">
+				<c:choose>
+					<c:when test="${ !empty requestScope.searchValue }">
+						<select id="searchCondition" name="searchCondition">
+							<option value="writer" <c:if test="${requestScope.searchCondition eq 'writer' }">selected</c:if>>작성자</option>
+							<option value="title" <c:if test="${requestScope.searchCondition eq 'title' }">selected</c:if>>제목</option>
+							<option value="content" <c:if test="${requestScope.searchCondition eq 'content' }">selected</c:if>>내용</option>
+						</select>
+						<input type="search" id="searchValue" name="searchValue" value="${requestScope.searchValue}" }>
+					</c:when>
+					<c:otherwise>
+						<select id="searchCondition" name="searchCondition">
+							<option value="writer">작성자</option>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select>
+						<input type="search" id="searchValue" name="searchValue">
+					</c:otherwise>
+				</c:choose>
+							<button type="submit">검색하기</button>
+							<c:if test="${ !empty sessionScope.loginMember }">
+					<button type="button" id="writeBoard" style="text-align: right " >작성하기</button>
 				</c:if>
+			</div>
+		</form>		
+												
+					
 										</div>
 									</div>
 								</div>
