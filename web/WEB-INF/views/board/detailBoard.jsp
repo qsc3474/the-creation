@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${ requestScope.board.hpBdNo }<br>
-	${ requestScope.board.hpBdTitle }<br>
-	${ requestScope.board.hpBdContent }<br>
-	${ requestScope.board.hpBdDrawupDate }<br>
-	${ requestScope.board.hpBdWatched }<br>
+	${ requestScope.board.no }<br>
+	${ requestScope.board.title }<br>
+	${ requestScope.board.content }<br>
+	${ requestScope.board.drawupDate }<br>
+	${ requestScope.board.watched }<br>
 	${ requestScope.board.writer.name }<br>
 </body>
 </html>

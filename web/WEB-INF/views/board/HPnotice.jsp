@@ -252,7 +252,7 @@
 			
 			$tds[i].onclick = function() {
 				const no = this.parentNode.children[0].innerText;
-				location.href = "${ pageContext.servletContext.contextPath }/hp/notice/detail?hpBdNo=" + no;   
+				location.href = "${ pageContext.servletContext.contextPath }/hp/notice/detail?no=" + no;   
 			}
 		}
 	}

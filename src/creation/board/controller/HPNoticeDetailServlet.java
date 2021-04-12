@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import creation.board.model.dto.HPBoardDTO;
-import creation.board.model.service.HPFAQBoardService;
 import creation.board.model.service.HPNoticeBoardService;
+
 
 /**
  * Servlet implementation class HPNoticeDetailServlet
@@ -21,8 +21,9 @@ public class HPNoticeDetailServlet extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String hpBdNo = request.getParameter("hpBdNo");
+		String hpBdNo = request.getParameter("no");
 		int no = Integer.valueOf(hpBdNo);
+		System.out.println(no);
 		HPBoardDTO board = new HPNoticeBoardService().selectDetail(no);
 		
 		String path = "";
