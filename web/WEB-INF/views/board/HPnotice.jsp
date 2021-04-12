@@ -160,12 +160,19 @@
 											<button id="searchMaxPage">>></button>
 
 										</div>
+										<br><br>
 										<div id="dataTables-example_filter" class="dataTables_filter"
 											style="text-align: center;">
-											<label>Search:<input type="search"
+											<label>검색:</label><input type="search"
 												class="form-control input-sm"
 												aria-controls="dataTables-example"
-												style="text-align: center;"></label>
+												style="text-align: center;">
+												<input type="submit" value="검색">
+												
+												
+												<c:if test="${ !empty sessionScope.loginMember }">
+					<button type="button" id="writeBoard" style="text-aling= left" >작성하기</button>
+				</c:if>
 										</div>
 									</div>
 								</div>

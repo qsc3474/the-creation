@@ -12,6 +12,6 @@
 	${ requestScope.board.hpBdContent }<br>
 	${ requestScope.board.hpBdDrawupDate }<br>
 	${ requestScope.board.hpBdWatched }<br>
-	${ requestScope.board.writer.memName }<br>
+	${ requestScope.board.writer.name }<br>
 </body>
 </html>
