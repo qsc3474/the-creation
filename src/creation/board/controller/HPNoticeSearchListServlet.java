@@ -17,7 +17,7 @@ import creation.common.paging.Pagenation;
 /**
  * Servlet implementation class HPNoticeSearchServlet
  */
-@WebServlet("/hp/notice/search/")
+@WebServlet("/hp/notice/search")
 public class HPNoticeSearchListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,8 +26,8 @@ public class HPNoticeSearchListServlet extends HttpServlet {
 		String condition = request.getParameter("searchCondition");
 		String value = request.getParameter("searchValue");
 		
-//		System.out.println("condition: " + condition);
-//		System.out.println("value: " + value);
+		System.out.println("condition: " + condition);
+		System.out.println("value: " + value);
 		
 		String currentPage = request.getParameter("currentPage");
 		
@@ -60,16 +60,14 @@ public class HPNoticeSearchListServlet extends HttpServlet {
 		System.out.println("pageInfo : " + pageInfo);
 		
 		/* 6. 검색한 게시글을 조회 해 온다. */
-		List<HPBoardDTO> boardList = boardService.searchBoardList(pageInfo, condition, value);
+		List<HPBoardDTO> HPNCTList = boardService.searchBoardList(pageInfo, condition, value);
 		
-		for(HPBoardDTO b : boardList) {
-			System.out.println("boardList : " + b);			
-		}
+		System.out.println(HPNCTList);
 		
 		String path = "";
-		if(!boardList.isEmpty()) {
-			path = "/WEB-INF/views/board/boardList.jsp";
-			request.setAttribute("boardList", boardList);
+		if(!HPNCTList.isEmpty()) {
+			path = "/WEB-INF/views/board/HPnotice.jsp";
+			request.setAttribute("HPNCTList", HPNCTList);
 			request.setAttribute("pageInfo", pageInfo);
 			request.setAttribute("searchCondition", condition);
 			request.setAttribute("searchValue", value);

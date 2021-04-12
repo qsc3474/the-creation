@@ -164,7 +164,7 @@
 										<div id="dataTables-example_filter" class="dataTables_filter"
 											>
 					
-				<form id="searchForm" action="${ pageContext.servletContext.contextPath }/board/search" method="get">
+				<form id="searchForm" action="${ pageContext.servletContext.contextPath }/hp/notice/search" method="get">
 			<div class="search-area" align="center">
 				<c:choose>
 					<c:when test="${ !empty requestScope.searchValue }">

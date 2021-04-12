@@ -86,10 +86,10 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 	public List<HPBoardDTO> searchBoardList(PageInfoDTO pageInfo, String condition, String value) {
 		Connection con = getConnection();
 		
-		List<HPBoardDTO> boardList = hpNctBoardDAO.searchBoardList(con, pageInfo, condition, value);
+		List<HPBoardDTO> HPNCTList = hpNctBoardDAO.searchBoardList(con, pageInfo, condition, value);
 		
 		close(con);
 		
-		return boardList;
+		return HPNCTList;
 	}
 }

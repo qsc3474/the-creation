@@ -240,20 +240,17 @@ public class HPNoticeBoardDAO {
 		ResultSet rset = null;
 		
 		String query = null;
-		List<HPBoardDTO> boardList = null;
+		List<HPBoardDTO> HPNCTList = null;
 		
-		if(condition.equals("category")) {
-			
-			query = prop.getProperty("searchCategoryBoard");
-		} else if(condition.equals("writer")) {
-			
+		 if(condition.equals("writer")) {	
 			query = prop.getProperty("searchWriterBoard");
-		} else if(condition.equals("title")) {
-			
+	
+		 } else if(condition.equals("title")) {
 			query = prop.getProperty("searchTitleBoard");
-		} else if(condition.equals("content")) {
 			
+		} else if(condition.equals("content")) {
 			query = prop.getProperty("searchBodyBoard");
+		
 		}
 		
 		try {
@@ -264,25 +261,25 @@ public class HPNoticeBoardDAO {
 			
 			rset = pstmt.executeQuery();
 			
-			boardList = new ArrayList<>();
+			HPNCTList = new ArrayList<>();
 			
 			while(rset.next()) {
 				HPBoardDTO board = new HPBoardDTO();
 				board.setCategory(new CategoryDTO());
 				board.setWriter(new MemberDTO());
 				
-				board.setNo(rset.getInt("BOARD_NO"));
-				board.setCategoryNo(rset.getString("CATEGORY_CODE"));
-				board.getCategory().setCategoryName(rset.getString("CATEGORY_NAME"));
-				board.setTitle(rset.getString("BOARD_TITLE"));
-				board.setContent(rset.getString("BOARD_BODY"));
-				board.setMemberNo(rset.getInt("BOARD_WRITER_MEMBER_NO"));
-				board.getWriter().setName(rset.getString("NICKNAME"));
-				board.setWatched(rset.getInt("BOARD_COUNT"));
-				board.setDrawupDate(rset.getDate("CREATED_DATE"));
-				board.setStatus(rset.getString("BOARD_STATUS"));
+				board.setNo(rset.getInt("HP_BD_NO"));
+				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				board.getCategory().setCategoryName(rset.getString("HP_BD_CATEGORY_NAME"));
+				board.setTitle(rset.getString("HP_BD_TITLE"));
+				board.setContent(rset.getString("HP_BD_CONTENT"));
+				board.setMemberNo(rset.getInt("HP_MEM_NO"));
+				board.getWriter().setName(rset.getString("MEM_NAME"));
+				board.setWatched(rset.getInt("HP_BD_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_BD_STATUS"));
 				
-				boardList.add(board);				
+				HPNCTList.add(board);				
 			}
 			
 		} catch (SQLException e) {
@@ -292,6 +289,6 @@ public class HPNoticeBoardDAO {
 			close(pstmt);
 		}
 		
-		return boardList;
+		return HPNCTList;
 	}
 }
