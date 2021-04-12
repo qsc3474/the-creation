@@ -39,7 +39,7 @@ public class HPBoardInsertServlet extends HttpServlet {
 		insertBoard.setHpBdTitle(title);
 		insertBoard.setHpBdContent(content);
 		insertBoard.setHpBdCategoryNo(category);
-		insertBoard.getWriter().setMemNo(no);
+		insertBoard.getWriter().setNo(no);
 		
 		System.out.println(insertBoard);
 		

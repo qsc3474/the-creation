@@ -20,7 +20,8 @@ private final MemberDAO memberDAO;
 	public MemberService() {
 		memberDAO = new MemberDAO();
 	}
-
+	
+	// 로그인 메소드
 	public MemberDTO loginCheck(MemberDTO requestMember) {
 		Connection con = getConnection();
 		MemberDTO loginMember = null;
@@ -40,7 +41,8 @@ private final MemberDAO memberDAO;
 		
 		return loginMember;
 	}
-
+	
+	// 회원가입 메소드
 	public int registMember(MemberDTO requestMember) {
 		
 		Connection con = getConnection();
@@ -59,6 +61,47 @@ private final MemberDAO memberDAO;
 		
 		return result;
 		
+	}
+
+	// 회원정보 수정 메소드
+	public int updateMember(MemberDTO updateData) {
+		
+		Connection con = getConnection();
+		
+		int result = memberDAO.updateMember(con, updateData);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		return result;
+		
+	}
+
+	// 회원탈퇴 메소드
+	public int withdrawMember(int no) {
+		
+		Connection con = getConnection();
+		
+		int result = memberDAO.withdrawMember(con, no);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		return result;
 	}
 
 

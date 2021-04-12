@@ -24,7 +24,7 @@
 				successMessage = "회원 정보 변경에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
 				break;
-			case "deleteMember" :
+			case "withdrawMember" :
 				successMessage = "회원 탈퇴에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
 				break;
