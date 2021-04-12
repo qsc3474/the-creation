@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import creation.htBoard.htmodel.dto.HTNoticeDTO;
 import creation.htBoard.htmodel.service.HTNoticeService;
+import creation.member.model.dto.MemberDTO;
 
 @WebServlet("/ht/NTC/notice/insert")
 public class HTNoticeInsertServlet extends HttpServlet {
@@ -25,18 +26,22 @@ public class HTNoticeInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String title = request.getParameter("title");
-		String content = request.getParameter("content");
 		int no = 1; /*Integer.valueOf(request.getParameter("memberNo"));*/
-		int memNo = ((HTNoticeDTO) request.getSession().getAttribute("loginMember")).getNo();
+		String content = request.getParameter("content");
+		String category = request.getParameter("category");
 		
 		HTNoticeDTO newhtNotice = new HTNoticeDTO();
+		newhtNotice.setWriter(new MemberDTO());
+	
 		newhtNotice.setTitle(title);
 		newhtNotice.setContent(content);
-		newhtNotice.setMemNo(memNo);
+		newhtNotice.setCategoryNo(category);
 		newhtNotice.getWriter().setNo(no);
 		
 		HTNoticeService noticeService = new HTNoticeService();
 		int result = noticeService.insertNotice(newhtNotice);
+		
+		System.out.println(newhtNotice);
 		
 		String path = "";
 		if(result > 0) {
