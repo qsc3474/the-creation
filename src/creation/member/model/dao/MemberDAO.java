@@ -87,7 +87,7 @@ public class MemberDAO {
 				loginMember.setEmail(rset.getString("MEM_EMAIL"));
 				loginMember.setAddress(rset.getString("MEM_ADDRESS"));
 				loginMember.setBirthday(rset.getDate("MEM_BIRTH"));
-				loginMember.setStatus(rset.getString("MEMBER_STATUS"));
+				loginMember.setStatus(rset.getString("MEM_STATUS"));
 				loginMember.setKind(rset.getString("MEM_KIND"));
 			}
 		} catch (SQLException e) {
