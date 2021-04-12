@@ -189,7 +189,9 @@ public class HTNoticeDAO {
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, newNotice.getTitle());
 			pstmt.setString(2, newNotice.getContent());
-			pstmt.setInt(3, newNotice.getMemNo());
+			pstmt.setInt(3, newNotice.getWriter().getNo());
+			pstmt.setString(4, newNotice.getCategoryNo());
+
 
 			
 			result = pstmt.executeUpdate();
