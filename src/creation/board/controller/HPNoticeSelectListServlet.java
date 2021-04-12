@@ -50,7 +50,6 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 		
 		
 		int buttonAmount = 10;
-		System.out.println(2222222);
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
 		List<HPBoardDTO> HPNCTList = boardService.selectList(pageInfo);

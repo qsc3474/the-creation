@@ -102,11 +102,11 @@
 										<tbody>
 											<c:forEach var="ntc" items="${HPNCTList }">
 												<tr class="gradeA odd">
-													<td class="sorting_1"><c:out value="${ ntc.hpBdNo }" /></td>
-													<td class=" "><c:out value="${ ntc.hpBdTitle }" /></td>
+													<td class="sorting_1"><c:out value="${ ntc.no }" /></td>
+													<td class=" "><c:out value="${ ntc.title }" /></td>
 													<td class=" "><c:out value="${ ntc.writer.name }" /></td>
-													<td class="center "><c:out value="${ ntc.hpBdDrawupDate }" /></td>
-													<td class="center "><c:out value="${ ntc.hpBdWatched }" /></td>
+													<td class="center "><c:out value="${ ntc.drawupDate }" /></td>
+													<td class="center "><c:out value="${ ntc.watched }" /></td>
 												</tr>
 											</c:forEach>
 										</tbody>

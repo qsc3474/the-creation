@@ -5,7 +5,7 @@
 		SELECT
 			   COUNT(*)
 		  FROM HOSPITAL_BD A
-		 WHERE A.HP_BD_CATEGORY_NO = 'NTC'
+		 WHERE A.HP_BD_CATEGORY_NO = 'HP_NTC'
 	</entry>
 	<entry key="selectList">
 		SELECT
@@ -39,7 +39,7 @@
 		  		  			 , C.HP_BD_CATEGORY_NO
 		  		  		  FROM HOSPITAL_BD C
 		  		  		  JOIN MEM_INFO D ON(C.HP_MEM_NO = D.MEM_NO)
-		  		  		 WHERE C.HP_BD_CATEGORY_NO = 'NTC'
+		  		  		 WHERE C.HP_BD_CATEGORY_NO = 'HP_NTC'
 		  		  		 ORDER BY C.HP_BD_NO DESC
 		  		       ) B
 		       ) A
