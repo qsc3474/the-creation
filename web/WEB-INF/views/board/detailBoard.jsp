@@ -13,5 +13,8 @@
 	${ requestScope.board.drawupDate }<br>
 	${ requestScope.board.watched }<br>
 	${ requestScope.board.writer.name }<br>
+	
+	
+	
 </body>
 </html>

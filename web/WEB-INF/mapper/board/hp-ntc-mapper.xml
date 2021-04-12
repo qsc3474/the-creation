@@ -229,4 +229,16 @@
                ) A
          WHERE A.RNUM BETWEEN ? AND ?
          </entry>
+         
+         
+    <entry key="deleteboard">
+	 UPDATE
+             HOSPITAL_BD A
+         SET HP_BD_STATUS = 'N'
+       WHERE HP_BD_STATUS = 'Y'
+         AND HP_BD_NO = ?
+	
+		</entry>
+	
+         
 </properties>
