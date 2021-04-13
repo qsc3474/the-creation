@@ -31,7 +31,7 @@
 		<!-- header -->
 		<header id="discohead" class="dt-header fixed">
 			<div class="menu-wrap">
-				<a id="logo" href="index.html">
+				<a id="logo" href="${ pageContext.servletContext.contextPath }">
 					<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png" alt="discovery" class="logo-contrast">
 					<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png" alt="discovery" class="logo-normal">
 				</a>
