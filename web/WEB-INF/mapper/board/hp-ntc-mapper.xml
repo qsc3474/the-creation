@@ -230,8 +230,8 @@
     <entry key="deleteboard">
 	 UPDATE
              HOSPITAL_BD A
-         SET HP_BD_STATUS = 'N'
-       WHERE HP_BD_STATUS = 'Y'
+         SET HP_BD_STATUS = 'DELETE'
+       WHERE HP_BD_STATUS = 'PUBLIC'
          AND HP_BD_NO = ?
 	
 		</entry>

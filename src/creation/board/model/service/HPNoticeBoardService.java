@@ -92,4 +92,27 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 		
 		return HPNCTList;
 	}
+
+	public int deleteBoard(HPBoardDTO deleteBoard) {
+		Connection con =getConnection();
+		
+		int result = hpNctBoardDAO.deleteBoard(con, deleteBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+		
+	
+	}
 }
