@@ -9,10 +9,7 @@
 <body>
 
 	<jsp:forward page="/WEB-INF/views/main/main.jsp"></jsp:forward>
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/master
 	
 	<!-- <script>
 	location.replace("${ pageContext.servletContext.contextPath }/hp/notice/select/list");
