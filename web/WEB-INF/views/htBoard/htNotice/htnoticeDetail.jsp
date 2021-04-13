@@ -23,7 +23,8 @@
         <div class="container">
         <h1 align="center">글쓰기</h1>
         <div class="container"  role="main">
-                <form name="form" id="form" role="form" >
+                <form name="form" id="form" role="form" action="${ pageContext.servletContext.contextPath }/ht/NTC/notice/delete" method="post">
+                <input type="hidden" name="noticeNo" value="${requestScope.htnotice.no }">
                     <div class="mb-12">
                             <label for="title">공지사항</label>
                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -57,24 +58,23 @@
                     <button  class="btn btn-primary btn-lg" onclick="location.href='${ pageContext.servletContext.contextPath}/ht/NTC/notice/update?no=${ requestScope.htnotice.no }'">
 					수정하기</button>
                     <button type="button" class="btn btn-secondary btn-lg" id="btnList">목록</button>
-                    <button class="btn btn-primary btn-lg" onclick="location.href='${ pageContext.servletContext.contextPath}/ht/NTCnotice/delete?no=${ requestScope.notice.no }'">
+                    <button  class="btn btn-primary btn-lg" id=delete name="delete" onclick="location.href='${ pageContext.servletContext.contextPath}/ht/NTC/notice/delete?no=${ requestScope.htnotice.no }'">
 					삭제하기</button>
                 </div>
        		 </div>
         <script>
-            $(document).on('click', '#btnSave', function (e) {
-                e.preventDefault();
-               /*  location.href = "${ pageContext.servletContext.contextPath}/NTC/notice/update?no=${ requestScope.htnotice.no }"; */
-            });
+        	$(document).on('click', '#delete', function (e) {
+            e.preventDefault();
+            $("#form").submit();
+      		  });
             $(document).on('click', '#btnList', function (e) {
                 e.preventDefault();
                 location.href = "${ pageContext.request.contextPath}/ht/NTC/notice/list";
             });
         </script>
+       
         </div>
     </section> 
-
-	
 </body>
 </html>
 

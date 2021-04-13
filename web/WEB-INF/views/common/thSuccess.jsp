@@ -24,6 +24,10 @@
 				successMessage = "공지사항 수정에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/list";
 				break;
+			case "thDeleteNotice" :
+				successMessage = "공지사항 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/list";
+				break;
 			}
 			
 			alert(successMessage);

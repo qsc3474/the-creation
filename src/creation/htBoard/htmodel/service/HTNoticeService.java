@@ -130,6 +130,24 @@ public class HTNoticeService {
 		return result;
 	}
 
+	/* 공지사항 삭제 메소드 */
+	public int thDeleteNotice(HTNoticeDTO requestNotice) {
+		
+		Connection con = getConnection();
+		
+		int result = htnoticeDAO.thDeleteNotice(con, requestNotice);
+		
+		if(result > 0) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+		
+		close(con);
+
+		return result;
+	}
+
 	
 	
 	

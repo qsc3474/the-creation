@@ -335,6 +335,29 @@ public class HTNoticeDAO {
 		
 		return result;
 	}
+
+	public int thDeleteNotice(Connection con, HTNoticeDTO requestNotice) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		System.out.println("no 넘어오니 : " + requestNotice);
+		String query = prop.getProperty("htdeleteNotice");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, requestNotice.getNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 	
 	
 
