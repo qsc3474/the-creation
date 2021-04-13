@@ -16,7 +16,6 @@ public class HPBoardDTO implements Serializable {
 	private String content;
 	private java.util.Date drawupDate ;
 	private int watched;
-	private String file;
 	private int memberNo ;
 	private MemberDTO writer ;	
 	private String status;
@@ -27,8 +26,7 @@ public class HPBoardDTO implements Serializable {
 	}
 
 	public HPBoardDTO(int no, String categoryNo, CategoryDTO category, String title, String content,
-			java.util.Date drawupDate, int watched, String file, int memberNo, MemberDTO writer, String status,
-			int cmtCount) {
+			java.util.Date drawupDate, int watched, int memberNo, MemberDTO writer, String status, int cmtCount) {
 		super();
 		this.no = no;
 		this.categoryNo = categoryNo;
@@ -37,13 +35,14 @@ public class HPBoardDTO implements Serializable {
 		this.content = content;
 		this.drawupDate = drawupDate;
 		this.watched = watched;
-		this.file = file;
 		this.memberNo = memberNo;
 		this.writer = writer;
 		this.status = status;
 		this.cmtCount = cmtCount;
 	}
 
+	
+	
 	public int getNo() {
 		return no;
 	}
@@ -100,14 +99,6 @@ public class HPBoardDTO implements Serializable {
 		this.watched = watched;
 	}
 
-	public String getFile() {
-		return file;
-	}
-
-	public void setFile(String file) {
-		this.file = file;
-	}
-
 	public int getMemberNo() {
 		return memberNo;
 	}
@@ -143,9 +134,8 @@ public class HPBoardDTO implements Serializable {
 	@Override
 	public String toString() {
 		return "HPBoardDTO [no=" + no + ", categoryNo=" + categoryNo + ", category=" + category + ", title=" + title
-				+ ", content=" + content + ", drawupDate=" + drawupDate + ", watched=" + watched + ", file=" + file
-				+ ", memberNo=" + memberNo + ", writer=" + writer + ", status=" + status + ", cmtCount=" + cmtCount
-				+ "]";
+				+ ", content=" + content + ", drawupDate=" + drawupDate + ", watched=" + watched + ", memberNo="
+				+ memberNo + ", writer=" + writer + ", status=" + status + ", cmtCount=" + cmtCount + "]";
 	}
 
 	
