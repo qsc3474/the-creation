@@ -284,7 +284,9 @@ section {
 #quickmenu {padding: 0;}
 
 @media (min-width: 1200px) {
-  width: 1200px;
+  .container {
+    width: 1220px;
+  }
 }
 
 /* Header */
@@ -1260,9 +1262,6 @@ section#about-two {
 .feature-box-one:hover .fea-icon {
   background:#36b2b0;
   color: #FFF;
-}
-
-.feature-#36b2b0;
 }
 
 /* Feature One Colorfull */
@@ -3732,3 +3731,85 @@ h2.heading {
 .member-thumb img{width: 100%;}
 
 /*공지사항*/
+
+/*공지사항 1:1 문의*/
+/* 1:1문의 */
+
+.page_aticle.aticle_type2 .page_section {
+  width: 600px;
+}
+.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
+  font-family: noto sans;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+
+.xans-board-write table select {
+  padding: 6px 5px;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 5px;
+  color: #202020;
+}
+
+.xans-board-write .boardWrite2 {
+  table-layout: fixed;
+  border-top: 2px solid #333;
+  line-height: 180%;
+}
+
+.xans-board-write table th {
+  width: 110px;
+  padding: 15px 0 15px 20px;
+  background-color: #f7f5f8;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: left;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.xans-board-write table td {
+  width: auto;
+  padding: 15px 0 15px 10px;
+  height: 23px;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
+  font-family: noto sans;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.xans-board-write table td {
+  width: auto;
+  padding: 15px 0 15px 10px;
+  height: 23px;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  vertical-align: middle;
+  line-height: 20px;
+}
+.linebg {float: left;}
+.tr_0 a {float: right;}
+.tr_0 a img {margin: 0 auto;}
+
+.boardWrite2 .smalle {
+  position: relative;
+}
+
+.boardWrite2 .smalle input[type=checkbox] {
+  position: relative;
+  right: 2px;
+  vertical-align: middle;
+}
+
+
+.bhoechie-tab {height: auto;}
+.bhoechie-tab .bhoechie-tab-content:nth-of-type(4){height: 1800px;}
+
+.member-thumb img{width: 100%;}
+/*공지사항 1:1 문의*/
