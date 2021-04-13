@@ -98,13 +98,9 @@ public class HPNoticeBoardDAO {
 				boardDTO.setContent(rset.getString("HP_BD_CONTENT"));
 				boardDTO.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				boardDTO.setWatched(rset.getInt("HP_BD_WATCHED"));
-				
 				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
-				
-				boardDTO.setFile(rset.getString("HP_BD_FILE"));
 				boardDTO.setMemberNo(rset.getInt("HP_MEM_NO"));
 				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
-				
 				HPNctList.add(boardDTO);
 				
 			}
@@ -175,7 +171,6 @@ public class HPNoticeBoardDAO {
 				board.setContent(rset.getString("HP_BD_CONTENT"));
 				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				board.setWatched(rset.getInt("HP_BD_WATCHED"));
-				board.setFile(rset.getString("HP_BD_FILE"));
 				board.setMemberNo(rset.getInt("HP_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
 				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));

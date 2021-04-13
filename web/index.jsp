@@ -11,10 +11,5 @@
 	<jsp:forward page="/WEB-INF/views/main/main.jsp"></jsp:forward>
 
 	
-	<!-- <script>
-	location.replace("${ pageContext.servletContext.contextPath }/hp/notice/select/list");
-	</script> -->
-
-	
 </body>
 </html>
