@@ -45,15 +45,25 @@
 		     , A.MEM_BIRTH
 		     , A.MEM_KIND
 		     , A.MEM_STATUS
+		     , A.MEM_ENROLL_DATE
 		  FROM MEM_INFO A
 		 WHERE A.MEM_STATUS = 'Y'
 		   AND A.MEM_ID = ?
 	</entry>
 	<entry key="updateMember">
-		
+	    UPDATE
+	           MEM_INFO A
+	       SET A.MEM_PHONE = ?
+	         , A.MEM_ADDRESS = ?
+	         , A.MEM_EMAIL = ?
+	     WHERE A.MEM_NO = ?
+	       AND A.MEM_STATUS = 'Y'
 	</entry>
-	<entry key="deleteMember">
-		
+	<entry key="withdrawMember">
+	    UPDATE
+	           MEM_INFO A
+	       SET A.MEM_STATUS = 'N'
+	     WHERE A.MEM_NO = ?
+	       AND A.MEM_STATUS = 'Y'
 	</entry>
-	
 </properties>

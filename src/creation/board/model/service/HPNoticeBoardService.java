@@ -1,13 +1,13 @@
 package creation.board.model.service;
 
+
+
 import static creation.common.jdbc.JDBCTemplate.close;
 import static creation.common.jdbc.JDBCTemplate.commit;
 import static creation.common.jdbc.JDBCTemplate.getConnection;
 import static creation.common.jdbc.JDBCTemplate.rollback;
-
 import java.sql.Connection;
 import java.util.List;
-
 import creation.board.model.dao.HPNoticeBoardDAO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
@@ -70,5 +70,26 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 		
 		return board;
 		
+	}
+
+	public int searchBoardCount(String condition, String value) {
+
+		Connection con = getConnection();
+		
+		int totalCount = hpNctBoardDAO.searchBoardCount(con, condition, value);
+		
+		close(con);
+		
+		return totalCount;
+	}
+
+	public List<HPBoardDTO> searchBoardList(PageInfoDTO pageInfo, String condition, String value) {
+		Connection con = getConnection();
+		
+		List<HPBoardDTO> HPNCTList = hpNctBoardDAO.searchBoardList(con, pageInfo, condition, value);
+		
+		close(con);
+		
+		return HPNCTList;
 	}
 }

@@ -66,33 +66,31 @@
 	</entry>
 	
 	<entry key="thInsertNotice">
-	    INSERT 	/* creation.notice.model.dao.HTNoticeDAO#insertNotice() */ /* 공지사항 작성 */
-	      INTO HOTEL_BD A
-	    (
-	      A.HT_BD_NO
-        , A.HT_BD_CATEGORY_NO
-	    , A.HT_BD_TITLE
-	    , A.HT_BD_CONTENT
-		, A.HT_BD_DRAWUP_DATE
-		, A.HT_BD_WATCHED
-		, A.HT_BD_FILE
-		, A.HT_MEM_NO
-	    , A.HT_BD_STATUS
-        , A.HT_BD_CMT_COUNT
-	    )
-	    VALUES
-	    (
-	      SEQ_HT_BD_NO.NEXTVAL
-        , ?
-        , ?
-        , ?
-        , ?
-        , ?
-        , ?
-        , ?
-        , ?
-        , ?
-        )
+	  INSERT
+		  INTO HOTEL_BD
+		(
+		  HT_BD_NO
+		, HT_BD_TITLE
+		, HT_BD_CONTENT
+		, HT_BD_DRAWUP_DATE
+		, HT_BD_WATCHED
+		, HT_BD_FILE
+		, HT_MEM_NO
+		, HT_BD_CATEGORY_NO
+		, HT_BD_STATUS
+		)
+		VALUES
+		(
+		  SEQ_HT_BD_NO.NEXTVAL
+		, ?
+		, ?
+		, DEFAULT
+		, DEFAULT
+		, NULL
+		, ?
+		, ?
+		,'PUBLIC'
+		)
 	</entry>
 	
 	<entry key="selectNoticeDetail"><!-- 수정해야함 -->

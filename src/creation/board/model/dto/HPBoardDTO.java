@@ -8,92 +8,145 @@ import creation.member.model.dto.MemberDTO;
 public class HPBoardDTO implements Serializable {
 	
 	private static final long serialVersionUID = -1073479308684379783L;
+
+	private int no;
+	private String categoryNo;
+	private CategoryDTO category;
+	private String title;
+	private String content;
+	private java.util.Date drawupDate ;
+	private int watched;
+	private String file;
+	private int memberNo ;
+	private MemberDTO writer ;	
+	private String status;
+	private int cmtCount;
 	
-	private int hpBdNo; 
-	private String hpBdTitle;
-	private String hpBdContent;
-	private java.sql.Date hpBdDrawupDate;
-	private int hpBdWatched;
-	private String hpBdFile;
-	private int hpMemNo;
-	private MemberDTO writer;
-	private String hpBdCategoryNo;
-	
-	public HPBoardDTO() {}
-	public HPBoardDTO(int hpBdNo, String hpBdTitle, String hpBdContent, Date hpBdDrawupDate, int hpBdWatched,
-			String hpBdFile, int hpMemNo, MemberDTO writer, String hpBdCategoryNo) {
-		this.hpBdNo = hpBdNo;
-		this.hpBdTitle = hpBdTitle;
-		this.hpBdContent = hpBdContent;
-		this.hpBdDrawupDate = hpBdDrawupDate;
-		this.hpBdWatched = hpBdWatched;
-		this.hpBdFile = hpBdFile;
-		this.hpMemNo = hpMemNo;
+	public HPBoardDTO() {
+		
+	}
+
+	public HPBoardDTO(int no, String categoryNo, CategoryDTO category, String title, String content,
+			java.util.Date drawupDate, int watched, String file, int memberNo, MemberDTO writer, String status,
+			int cmtCount) {
+		super();
+		this.no = no;
+		this.categoryNo = categoryNo;
+		this.category = category;
+		this.title = title;
+		this.content = content;
+		this.drawupDate = drawupDate;
+		this.watched = watched;
+		this.file = file;
+		this.memberNo = memberNo;
 		this.writer = writer;
-		this.hpBdCategoryNo = hpBdCategoryNo;
+		this.status = status;
+		this.cmtCount = cmtCount;
 	}
-	
-	public int getHpBdNo() {
-		return hpBdNo;
+
+	public int getNo() {
+		return no;
 	}
-	public void setHpBdNo(int hpBdNo) {
-		this.hpBdNo = hpBdNo;
+
+	public void setNo(int no) {
+		this.no = no;
 	}
-	public String getHpBdTitle() {
-		return hpBdTitle;
+
+	public String getCategoryNo() {
+		return categoryNo;
 	}
-	public void setHpBdTitle(String hpBdTitle) {
-		this.hpBdTitle = hpBdTitle;
+
+	public void setCategoryNo(String categoryNo) {
+		this.categoryNo = categoryNo;
 	}
-	public String getHpBdContent() {
-		return hpBdContent;
+
+	public CategoryDTO getCategory() {
+		return category;
 	}
-	public void setHpBdContent(String hpBdContent) {
-		this.hpBdContent = hpBdContent;
+
+	public void setCategory(CategoryDTO category) {
+		this.category = category;
 	}
-	public java.sql.Date getHpBdDrawupDate() {
-		return hpBdDrawupDate;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setHpBdDrawupDate(java.sql.Date hpBdDrawupDate) {
-		this.hpBdDrawupDate = hpBdDrawupDate;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public int getHpBdWatched() {
-		return hpBdWatched;
+
+	public String getContent() {
+		return content;
 	}
-	public void setHpBdWatched(int hpBdWatched) {
-		this.hpBdWatched = hpBdWatched;
+
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public String getHpBdFile() {
-		return hpBdFile;
+
+	public java.util.Date getDrawupDate() {
+		return drawupDate;
 	}
-	public void setHpBdFile(String hpBdFile) {
-		this.hpBdFile = hpBdFile;
+
+	public void setDrawupDate(java.util.Date drawupDate) {
+		this.drawupDate = drawupDate;
 	}
-	public int getHpMemNo() {
-		return hpMemNo;
+
+	public int getWatched() {
+		return watched;
 	}
-	public void setHpMemNo(int hpMemNo) {
-		this.hpMemNo = hpMemNo;
+
+	public void setWatched(int watched) {
+		this.watched = watched;
 	}
+
+	public String getFile() {
+		return file;
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+	}
+
+	public int getMemberNo() {
+		return memberNo;
+	}
+
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
+
 	public MemberDTO getWriter() {
 		return writer;
 	}
+
 	public void setWriter(MemberDTO writer) {
 		this.writer = writer;
 	}
-	public String getHpBdCategoryNo() {
-		return hpBdCategoryNo;
+
+	public String getStatus() {
+		return status;
 	}
-	public void setHpBdCategoryNo(String hpBdCategoryNo) {
-		this.hpBdCategoryNo = hpBdCategoryNo;
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	
+
+	public int getCmtCount() {
+		return cmtCount;
+	}
+
+	public void setCmtCount(int cmtCount) {
+		this.cmtCount = cmtCount;
+	}
+
 	@Override
 	public String toString() {
-		return "HPFAQBoardDTO [hpBdNo=" + hpBdNo + ", hpBdTitle=" + hpBdTitle + ", hpBdContent=" + hpBdContent
-				+ ", hpBdDrawupDate=" + hpBdDrawupDate + ", hpBdWatched=" + hpBdWatched + ", hpBdFile=" + hpBdFile
-				+ ", hpMemNo=" + hpMemNo + ", writer=" + writer + ", hpBdCategoryNo=" + hpBdCategoryNo + "]";
+		return "HPBoardDTO [no=" + no + ", categoryNo=" + categoryNo + ", category=" + category + ", title=" + title
+				+ ", content=" + content + ", drawupDate=" + drawupDate + ", watched=" + watched + ", file=" + file
+				+ ", memberNo=" + memberNo + ", writer=" + writer + ", status=" + status + ", cmtCount=" + cmtCount
+				+ "]";
 	}
-	
 
+	
 }

@@ -102,11 +102,11 @@
 										<tbody>
 											<c:forEach var="ntc" items="${HPNCTList }">
 												<tr class="gradeA odd">
-													<td class="sorting_1"><c:out value="${ ntc.hpBdNo }" /></td>
-													<td class=" "><c:out value="${ ntc.hpBdTitle }" /></td>
-													<td class=" "><c:out value="${ ntc.writer.memName }" /></td>
-													<td class="center "><c:out value="${ ntc.hpBdDrawupDate }" /></td>
-													<td class="center "><c:out value="${ ntc.hpBdWatched }" /></td>
+													<td class="sorting_1"><c:out value="${ ntc.no }" /></td>
+													<td class=" "><c:out value="${ ntc.title }" /></td>
+													<td class=" "><c:out value="${ ntc.writer.name }" /></td>
+													<td class="center "><c:out value="${ ntc.drawupDate }" /></td>
+													<td class="center "><c:out value="${ ntc.watched }" /></td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -160,12 +160,38 @@
 											<button id="searchMaxPage">>></button>
 
 										</div>
+										<br><br>
 										<div id="dataTables-example_filter" class="dataTables_filter"
-											style="text-align: center;">
-											<label>Search:<input type="search"
-												class="form-control input-sm"
-												aria-controls="dataTables-example"
-												style="text-align: center;"></label>
+											>
+					
+				<form id="searchForm" action="${ pageContext.servletContext.contextPath }/hp/notice/search" method="get">
+			<div class="search-area" align="center">
+				<c:choose>
+					<c:when test="${ !empty requestScope.searchValue }">
+						<select id="searchCondition" name="searchCondition">
+							<option value="writer" <c:if test="${requestScope.searchCondition eq 'writer' }">selected</c:if>>작성자</option>
+							<option value="title" <c:if test="${requestScope.searchCondition eq 'title' }">selected</c:if>>제목</option>
+							<option value="content" <c:if test="${requestScope.searchCondition eq 'content' }">selected</c:if>>내용</option>
+						</select>
+						<input type="search" id="searchValue" name="searchValue" value="${requestScope.searchValue}" }>
+					</c:when>
+					<c:otherwise>
+						<select id="searchCondition" name="searchCondition">
+							<option value="writer">작성자</option>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select>
+						<input type="search" id="searchValue" name="searchValue">
+					</c:otherwise>
+				</c:choose>
+							<button type="submit">검색하기</button>
+							<c:if test="${ !empty sessionScope.loginMember }">
+					<button type="button" id="writeBoard" style="text-align: right " >작성하기</button>
+				</c:if>
+			</div>
+		</form>		
+												
+					
 										</div>
 									</div>
 								</div>
@@ -226,7 +252,7 @@
 			
 			$tds[i].onclick = function() {
 				const no = this.parentNode.children[0].innerText;
-				location.href = "${ pageContext.servletContext.contextPath }/hp/notice/detail?hpBdNo=" + no;   
+				location.href = "${ pageContext.servletContext.contextPath }/hp/notice/detail?no=" + no;   
 			}
 		}
 	}

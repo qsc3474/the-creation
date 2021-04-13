@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import creation.board.model.dto.CategoryDTO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
 import creation.common.config.ConfigLocation;
@@ -92,17 +93,17 @@ public class HPNoticeBoardDAO {
 				
 				HPBoardDTO boardDTO = new HPBoardDTO();
 				boardDTO.setWriter(new MemberDTO());
-				boardDTO.setHpBdNo(rset.getInt("HP_BD_NO"));
-				boardDTO.setHpBdTitle(rset.getString("HP_BD_TITLE"));
-				boardDTO.setHpBdContent(rset.getString("HP_BD_CONTENT"));
-				boardDTO.setHpBdDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
-				boardDTO.setHpBdWatched(rset.getInt("HP_BD_WATCHED"));
+				boardDTO.setNo(rset.getInt("HP_BD_NO"));
+				boardDTO.setTitle(rset.getString("HP_BD_TITLE"));
+				boardDTO.setContent(rset.getString("HP_BD_CONTENT"));
+				boardDTO.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
+				boardDTO.setWatched(rset.getInt("HP_BD_WATCHED"));
 				
 				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
 				
-				boardDTO.setHpBdFile(rset.getString("HP_BD_FILE"));
-				boardDTO.setHpMemNo(rset.getInt("HP_MEM_NO"));
-				boardDTO.setHpBdCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				boardDTO.setFile(rset.getString("HP_BD_FILE"));
+				boardDTO.setMemberNo(rset.getInt("HP_MEM_NO"));
+				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				
 				HPNctList.add(boardDTO);
 				
@@ -169,15 +170,15 @@ public class HPNoticeBoardDAO {
 				
 				board.setWriter(new MemberDTO());
 				
-				board.setHpBdNo(rset.getInt("HP_BD_NO"));
-				board.setHpBdTitle(rset.getString("HP_BD_TITLE"));
-				board.setHpBdContent(rset.getString("HP_BD_CONTENT"));
-				board.setHpBdDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
-				board.setHpBdWatched(rset.getInt("HP_BD_WATCHED"));
-				board.setHpBdFile(rset.getString("HP_BD_FILE"));
-				board.setHpMemNo(rset.getInt("HP_MEM_NO"));
+				board.setNo(rset.getInt("HP_BD_NO"));
+				board.setTitle(rset.getString("HP_BD_TITLE"));
+				board.setContent(rset.getString("HP_BD_CONTENT"));
+				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
+				board.setWatched(rset.getInt("HP_BD_WATCHED"));
+				board.setFile(rset.getString("HP_BD_FILE"));
+				board.setMemberNo(rset.getInt("HP_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
-				board.setHpBdCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				
 			}
 			
@@ -193,5 +194,101 @@ public class HPNoticeBoardDAO {
 		}
 		
 		return board;
+	}
+
+	public int searchBoardCount(Connection con, String condition, String value) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String query = null;
+		int boardCount = 0;
+		
+	
+		 if(condition.equals("writer")) {
+			
+			query = prop.getProperty("searchWriterBoardCount");
+		} else if(condition.equals("title")) {
+			
+			query = prop.getProperty("searchTitleBoardCount");
+		} else if(condition.equals("content")) {
+			
+			query = prop.getProperty("searchBodyBoardCount");
+		}
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, value);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				boardCount = rset.getInt("COUNT(*)");
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return boardCount;
+	}
+
+	public List<HPBoardDTO> searchBoardList(Connection con, PageInfoDTO pageInfo, String condition, String value) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String query = null;
+		List<HPBoardDTO> HPNCTList = null;
+		
+		 if(condition.equals("writer")) {	
+			query = prop.getProperty("searchWriterBoard");
+	
+		 } else if(condition.equals("title")) {
+			query = prop.getProperty("searchTitleBoard");
+			
+		} else if(condition.equals("content")) {
+			query = prop.getProperty("searchBodyBoard");
+		
+		}
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, value);
+			pstmt.setInt(2, pageInfo.getStartRow());
+			pstmt.setInt(3, pageInfo.getEndRow());
+			
+			rset = pstmt.executeQuery();
+			
+			HPNCTList = new ArrayList<>();
+			
+			while(rset.next()) {
+				HPBoardDTO board = new HPBoardDTO();
+				board.setCategory(new CategoryDTO());
+				board.setWriter(new MemberDTO());
+				
+				board.setNo(rset.getInt("HP_BD_NO"));
+				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				board.getCategory().setCategoryName(rset.getString("HP_BD_CATEGORY_NAME"));
+				board.setTitle(rset.getString("HP_BD_TITLE"));
+				board.setContent(rset.getString("HP_BD_CONTENT"));
+				board.setMemberNo(rset.getInt("HP_MEM_NO"));
+				board.getWriter().setName(rset.getString("MEM_NAME"));
+				board.setWatched(rset.getInt("HP_BD_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_BD_STATUS"));
+				
+				HPNCTList.add(board);				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return HPNCTList;
 	}
 }
