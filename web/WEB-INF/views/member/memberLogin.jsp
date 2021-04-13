@@ -10,7 +10,6 @@
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	
-	<div id="main_content">
 	<section class="login-sec">
 		<div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
 			<h2>로그인</h2>
@@ -49,6 +48,8 @@
 			</form>
 		</div>
 	</section>
-	</div>
+
+
+<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 </body>
 </html>

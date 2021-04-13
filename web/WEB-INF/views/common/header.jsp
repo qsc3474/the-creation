@@ -28,7 +28,6 @@
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 
-	<div id="main_content">
 		<!-- header -->
 		<header id="discohead" class="dt-header fixed">
 			<div class="menu-wrap">
@@ -96,10 +95,6 @@
 		</header>
 		<!-- header -->
 		
-		
-
-	</div>
-	<!-- /.main_content -->
 
 	<!-- Dependency Scripts -->
 	<script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery/jquery.min.js"></script>
