@@ -48,7 +48,7 @@
                              , C.HT_BD_CMT_COUNT
 		  		  		  FROM HOTEL_BD C
 		  		  		  JOIN MEM_INFO D ON(C.HT_MEM_NO = D.MEM_NO)
-		  		  		 WHERE C.HT_BD_CATEGORY_NO = 'NTC'
+		  		  		 WHERE C.HT_BD_STATUS = 'PUBLIC'
 		  		  		 ORDER BY C.HT_BD_NO DESC
 		  		       ) B
 		       ) A

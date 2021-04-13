@@ -120,6 +120,15 @@
 											<td><c:out value="${ NTC.watched }"/></td>
 										</tr>
 									</c:forEach>
+									<c:forEach items="${ requestScope.htnoticedList }" var="NTC">
+										<tr>
+											<td><c:out value="${ NTC.no }"/></td>
+											<td><c:out value="${ NTC.title }"/></td>
+											<td><c:out value="${ NTC.writer.name }"/></td>
+											<td><c:out value="${ NTC.drawupDate }"/></td>						
+											<td><c:out value="${ NTC.watched }"/></td>
+										</tr>
+									</c:forEach>
                                 </tbody>
                             </table>                            
                         </div>  <!-- table-area end -->
