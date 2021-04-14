@@ -14,7 +14,7 @@ import creation.member.model.dto.MemberDTO;
 /**
  * Servlet implementation class HPBoardDeleteServlet
  */
-@WebServlet("//hp/board/delete")
+@WebServlet("/hp/board/delete")
 public class HPBoardDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

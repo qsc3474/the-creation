@@ -2,6 +2,8 @@ package creation.board.model.dto;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
+
 
 import creation.member.model.dto.MemberDTO;
 
@@ -21,12 +23,16 @@ public class HPBoardDTO implements Serializable {
 	private String status;
 	private int cmtCount;
 	
+	
+	private List<FileDTO> fileList;
+	
 	public HPBoardDTO() {
 		
 	}
 
 	public HPBoardDTO(int no, String categoryNo, CategoryDTO category, String title, String content,
-			java.util.Date drawupDate, int watched, int memberNo, MemberDTO writer, String status, int cmtCount) {
+			java.util.Date drawupDate, int watched, int memberNo, MemberDTO writer, String status, int cmtCount,
+			List<FileDTO> fileList) {
 		super();
 		this.no = no;
 		this.categoryNo = categoryNo;
@@ -39,10 +45,9 @@ public class HPBoardDTO implements Serializable {
 		this.writer = writer;
 		this.status = status;
 		this.cmtCount = cmtCount;
+		this.fileList = fileList;
 	}
 
-	
-	
 	public int getNo() {
 		return no;
 	}
@@ -131,12 +136,23 @@ public class HPBoardDTO implements Serializable {
 		this.cmtCount = cmtCount;
 	}
 
+	public List<FileDTO> getFileList() {
+		return fileList;
+	}
+
+	public void setFileList(List<FileDTO> fileList) {
+		this.fileList = fileList;
+	}
+
 	@Override
 	public String toString() {
 		return "HPBoardDTO [no=" + no + ", categoryNo=" + categoryNo + ", category=" + category + ", title=" + title
 				+ ", content=" + content + ", drawupDate=" + drawupDate + ", watched=" + watched + ", memberNo="
-				+ memberNo + ", writer=" + writer + ", status=" + status + ", cmtCount=" + cmtCount + "]";
+				+ memberNo + ", writer=" + writer + ", status=" + status + ", cmtCount=" + cmtCount + ", fileList="
+				+ fileList + "]";
 	}
+
+	
 
 	
 }
