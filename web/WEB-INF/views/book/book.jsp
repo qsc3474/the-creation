@@ -37,6 +37,9 @@
 
 </head>
 <body>
+
+<jsp:include page="../common/header.jsp"></jsp:include>
+
       <section class="step-title">
             <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
                 <h2>호텔예약</h2>
@@ -96,39 +99,22 @@
                                         </div> 
                                         <label class="fieldlabels">이름<span class="text-danger">*</span></label>
                                         <input type="text" name="uname" placeholder="이름" />
-                                            <label class="fieldlabels">강아지 품종<span class="text-danger">*</span></label>
+                                            <label class="fieldlabels">분류<span class="text-danger">*</span></label>
                                             <select name="pets">
-                                                <optgroup label="소형견">
                                                   <option value="dog">Dog</option>
                                                   <option value="cat">Cat</option>
-                                                  <option value="hamster" disabled>Hamster</option>
-                                                </optgroup>
-                                                <optgroup label="중형견">
-                                                  <option value="parrot">Parrot</option>
-                                                  <option value="macaw">Macaw</option>
-                                                  <option value="albatross">Albatross</option>
-                                                </optgroup>
                                               </select> 
-                                              <label class="fieldlabels">고양이 품종<span class="text-danger">*</span></label>
-                                            <select>
-                                                <option>나비</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                              </select>
-                                              <label class="fieldlabels">투숙 pet<span class="text-danger">*</span></label>
-                                              <select name="pets">
-                                                <optgroup label=" 강아지">
-                                                  <option value="dog">1마리</option>
-                                                  <option value="cat">2두리</option>
-                                                  <option value="hamster">3마리</option>
-                                                </optgroup>
-                                                <optgroup label="고양이">
-                                                  <option value="parrot">1마리</option>
-                                                  <option value="macaw">2두리</option>
-                                                  <option value="albatross">3마리</option>
-                                                </optgroup>
+                                              <label class="fieldlabels">진료과 선택<span class="text-danger">*</span></label>
+                                              <select onchange="categoryChange(this)">
+                                                <option>진료과목을 선택해주세요</option>
+                                                <option value="im">내과</option>
+                                                <option value="gs">외과</option>
+                                                <option value="dt">치과</option>
+                                                <option value="oph">안과</option>
+                                              </select> 
+                                              <label class="fieldlabels">세부 진료 선택<span class="text-danger">*</span></label>
+                                              <select id="sub">
+                                               <option>세부진료를 선택해주세요</option>
                                               </select> 
                                               <label for="exampleFormControlTextarea1">특이사항</label>
                                               <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
@@ -164,28 +150,14 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            </div>
                                             <!-- /.col-md-4 -->
                                         </div>    
                                     </div> 
                                     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                                     <input type="button" name="next" class="next action-button" value="next" />
                                 </fieldset>
-                                <!-- <fieldset>
-                                    <div class="form-card">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h2 class="fs-title">Image Upload:</h2>
-                                            </div>
-                                            <div class="col-5">
-                                                <h2 class="steps">Step 3 - 4</h2>
-                                            </div>
-                                        </div> <label class="fieldlabels">Upload Your Photo:</label> <input type="file"
-                                            name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature
-                                            Photo:</label> <input type="file" name="pic" accept="image/*">
-                                    </div> <input type="button" name="next" class="next action-button" value="Submit" />
-                                    <input type="button" name="previous" class="previous action-button-previous"
-                                        value="Previous" />
-                                </fieldset> -->
+                                
                                 <fieldset>
                                     <div class="form-card">
                                         <div class="row">
@@ -213,11 +185,15 @@
                     </div>
                 </div>
             </div>
+           
+           
+           
             <script
                 src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
             </script>
 
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+            
             <script id="rendered-js">
                 $(document).ready(function () {
 
@@ -309,8 +285,36 @@
                 });
                 //# sourceURL=pen.js
             </script>
+		
+		<script type="text/javascript">
+		
+		function categoryChange(e) {
+			var sub_im = ["방광결석", "요도결석", "신장제거 수술", "쿠싱검사", "갑상선기능 저하", "심장사상충 키트 검사", "심장PDA 수술", "흉부방사선 검사", "영상 촬영 검진(MRI, CT)", "초음파 검사", "분변검사", "CRP염증 검사","만성 구토 설사 검사","혈청 혈액 검사","곰팡이 검사"];
+			var sub_gs = ["골절", "슬개골 탈구(양쪽)", "슬개골 탈구(한쪽)", "전십자인대 재건술", "종양/암 검진 수술", "이개혈종", "하마종 제거", "위 내시경", "담낭 수술", "유선종양 제거수술", "유선종양 제거수술(대형종)", "경계성 종양수술","항문 탈장수술","항문낭 제거 수술"];
+			var sub_oph = ["녹내장", "결막염", "체리아이", "유루증", "각막궤양","안구적출"];
+		    var sub_dt =["발치", "스케일링"];
+			var target = document.getElementById("sub");
 
-        </section>
+			if(e.value == "im") var d = sub_im;
+			else if(e.value == "gs") var d = sub_gs;
+			else if(e.value == "oph") var d = sub_oph;
+			else if(e.value == "dt") var d = sub_dt;
+
+			target.options.length = 0;
+
+			for (x in d) {
+				var opt = document.createElement("option");
+				opt.value = d[x];
+				opt.innerHTML = d[x];
+				target.appendChild(opt);
+			}	
+		}
+	
+	</script>
+		
+		
+		
+		
    <!-- Dependency Scripts -->
     <script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery/jquery.min.js"></script>
     <script src="${ pageContext.servletContext.contextPath }/resources/dependencies/jquery-ui/jquery-ui.min.js"></script>
