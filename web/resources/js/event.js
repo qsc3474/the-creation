@@ -27,7 +27,7 @@ if(document.getElementById("regist")){
 	if(document.getElementById("delete")){
 	const $delete = document.getElementById("delete");
 	$delete.onclick = function() {
-		location.href= "/creation/ht/NTC/notice/detail";
+		location.href= "/creation/ht/NTC/notice/delete";
 	 }
 	}
 	
@@ -56,6 +56,14 @@ if(document.getElementById("regist")){
 			location.href = "/jsp/board/insert";
 		}
 	}
+	if(document.getElementById("writeBoard")){
+		const $writeBoard = document.getElementById("writeBoard");
+		$writeBoard.onclick = function(){
+			location.href = "/jsp/board/insert";
+		}
+	}
+	
+	
 	
 
 }
