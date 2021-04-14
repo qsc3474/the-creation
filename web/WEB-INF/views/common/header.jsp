@@ -55,14 +55,14 @@
 							</ul>
 						</li>
 						<li><a href="service.html">진료서비스</a></li>
-						<li><a href="reservation.html">예약하기</a></li>
+						<li><a href="${ pageContext.servletContext.contextPath }/hp/book">예약하기</a></li>
 						<li class="menu-item-has-children">
 							<a href="notice.html">커뮤니티</a>
 							<ul class="sub-menu">
 								<li><a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
 								<li><a href="notice.html">병원소식</a></li>
 								<li><a href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">블로그</a></li>
-								<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list"">오시는길</a></li>
+								<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">오시는길</a></li>
 							</ul>
 						</li>
 					</ul>

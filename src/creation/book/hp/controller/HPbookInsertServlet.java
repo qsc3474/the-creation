@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HPbookInsertServlet
  */
-@WebServlet("/HPbookInsertServlet")
+@WebServlet("/hp/book")
 public class HPbookInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String path = "/WEB-INF/views/book/book.jsp";
 		
+		request.getRequestDispatcher(path).forward(request, response);
 	}
 
 	
