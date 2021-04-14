@@ -36,86 +36,85 @@
 	data-style="default">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 
-	
+
+	<!-- 섹션타이틀 -->
 	<section class="step-title">
 		<div class="section-title text-center" data-wow-duration="1000ms"
 			data-wow-delay="0.3s">
-			<h2>게시글 조회</h2>
-			<p>개시글 조회</p>
+			<h2>후기detail</h2>
 		</div>
 	</section>
-	
-	<section class="bg-light">
+	<!-- 섹션타이틀 -->
+
+	<!-- 이용 후기 -->
+	<section class="blog-single bg-white">
 		<div class="container">
-			<!-- 게시글상세조회 -->
-			<div class="row coments-row">
-				<table class="table table-bordered">
-					<colgroup>게시글 상세조회
-					</colgroup>
-					<tbody>
-						<tr>
-							<th scope="row">제목</th>
-							<td colspan="5">${ requestScope.board.title }</td>
-						</tr>
-						<tr>
-							<th scope="row">등록자</th>
-							<td>${ requestScope.board.writer.name }</td>
-							<td>등록일</td>
-							<td>${ requestScope.board.drawupDate }</td>
-							<td>조회수</td>
-							<td>${ requestScope.board.watched }</td>
-						</tr>
-						<tr>
-							<th scope="row">내용</th>
-							<td colspan="5">${ requestScope.board.content }</td>
-						</tr>
-						<tr>
-							<th scope="row">게시기간</th>
-							<td colspan="5">2021-04-12 ~ 2021-04-12</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="button-group" style="float: right;">
-					<button type="button" class="btn btn-primary">수정</button>
-					<button type="button" class="btn btn-primary">삭제</button>
-					<button type="button" class="btn btn-primary">답글</button>
-					<button type="button" class="btn btn-primary">목록</button>
-					<button type="button" class="btn btn-primary">스크랩</button>
-				</div>
-			</div>
-			<!-- 게시글상세조회 -->
-			<!-- 댓글등록 -->
-			<div class="row coments-row ">
-				<table class="table table-bordered">
-					<div id="comments">
-						<div class="gp-form-heading text-center">There are ${ requestScope.board.cmtCount }
-							comments</div>
-						<ol class="commentlist">
-						</ol>
+			<div class="row">
+				<h2 class="hide">후기 디테일</h2>
+				<p>
+					${ requestScope.board.title }
+				</p>
+				<p>
+					<span><i class="glyphicon glyphicon-user"><strong>&nbsp;${ requestScope.board.writer.name }</strong></i></span>
+					<span><i class="glyphicon glyphicon glyphicon-time"></i><strong>&nbsp;날짜</strong>
+						: ${ requestScope.board.drawupDate }</span> <span><strong>조회</strong> : ${ requestScope.board.watched }</span>
+				</p>
+				<div class="col-md-12" style="margin-bottom: 5px;">
+					<div class="col-md-6">
+						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
 					</div>
-					<tbody>
-						<tr>
-							<th rowpan="2">댓글내용</th>
-							<td><textarea class="form-control" rows="5" name="content"
-									id="content" placeholder="내용을 입력해 주세요"></textarea></td>
-							<td style="width: 20%;">
-								<div class="text-center" style="margin-top: 100px;">
-									<a href="step2.html" class="gp-btn btn-primary">댓글등록</a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="mb-12"></div>
-				<div class="button-group" style="float: right;">
-					<button type="button" class="btn btn-primary">수정</button>
-					<button type="button" class="btn btn-primary">삭제</button>
-					<button type="button" class="btn btn-primary">목록</button>
-					<button type="button" class="btn btn-primary">스크랩</button>
+					<div class="col-md-6">
+						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
+					</div>
 				</div>
 			</div>
-			<!-- 댓글등록 -->
+			<!-- /.row -->
+
+			<div class="row">
+				<div id="comments">
+					<div class="releted-post">
+						<h3 class="related-post-title">댓글</h3>
+						<div class="row coments-row ">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<th rowspan="2">댓글내용</th>
+										<td><textarea class="form-control" rows="5"
+												name="content" id="content" placeholder="내용을 입력해 주세요"></textarea></td>
+										<td style="width: 20%;">
+											<div class="text-center" style="margin-top: 100px;">
+												<button type="button" id="commentSubmitButton" class="gp-btn btn-primary">댓글등록</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<h5 class="gp-form-heading text-center">There are ${ requestScope.board.cmtCount }
+						comments</h5>
+					<ul class="commentlist">
+					</ul>
+				</div>
+			</div>
+			<div class="Page navigation example text-center">
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="#"
+						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">Previous</span>
+					</a></li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#"
+						aria-label="Next"> <span aria-hidden="true">&raquo;</span> 
+						<span class="sr-only">Next</span>
+					</a></li>
+				</ul>
+			</div>
+
 		</div>
+		<!-- /.container -->
 	</section>
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
@@ -124,6 +123,16 @@
 $(function(){  //페이지가 로드되면 댓글 데이터를 가져온다.
 	getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
 });
+
+if(document.getElementById("commentSubmitButton")){
+	const $commentSubmitButton = document.getElementById("commentSubmitButton");
+	$commentSubmitButton.onclick = function(){
+		var content = document.getElementById("content");
+		console.log(content);
+		console.log(content.value);
+		insertComment(content.value,${ requestScope.board.no },"${ requestScope.board.categoryNo }");
+	}
+}
 
 function getCommentList(currentBoardNo, currentBoardCategoryNo){
 	
@@ -138,14 +147,15 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 	       $commentlist.html('');
 	       
 	       for(var key in data){
-	          console.log(data[key].replyNo);
+	          console.log(data[key].no);
 	       
 	          var $li = $("<li>").addClass("comment");
 	          var $divClearfix = $("<div>").addClass("clearfix");
 	          var $profilePicture = $("<figure>").addClass("avatar-box");
+	          var $picture = "<img src='${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png' class='avatar' style='padding-right: 10px'>";
 	          var $commentContent = $("<div>").addClass("comment-content");
 	          var $replyAuthorInfo = $("<header>").addClass("comment-author");
-	          var $hiddenReplyNo = "<div class='commentNo' style='hidden;'>" + data[key].no + "</div>"
+	          var $hiddenReplyNo = "<div id='commentNo'" + data[key].no + " style='display:none;'>" + data[key].no + "</div>"
 	          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
 	          var $replyOfReply = $("<div>").addClass("reply");
 	          var $replyButton = "<a class='comment-reply-link' href='#'><i class='fa fa-reply-all'></i> <span>Leave reply</span></a>"
@@ -157,6 +167,7 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 	          
 	          $li.append($divClearfix);
 	          $divClearfix.append($profilePicture);
+	          $profilePicture.append($picture);
 	          $divClearfix.append($commentContent);
 	          $commentContent.append($replyAuthorInfo);
 	          $replyAuthorInfo.append($hiddenReplyNo);
@@ -184,50 +195,48 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 	
 }
 
-function insertComment(currentBoardNo, currentBoardCategoryNo){
+function insertComment(content, currentBoardNo, currentBoardCategoryNo){
 	
 	$.ajax({
 	    url:"${ pageContext.servletContext.contextPath }/insert/comment",
-	    data:{writer:${ sessionScope.loginMember.no }, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
+	    data:{writerNo:${ sessionScope.loginMember.no }, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
 	    type:'POST',
 	    success:function(data){
-	       console.log(data);
-	       var $commentlist = $(".commentlist");
+	      console.log(data);
+	      var $commentlist = $(".commentlist");
 	       
-	       for(var key in data){
-	          console.log(key);
-	       
-	          var $li = $("<li>").addClass("comment");
-	          var $divClearfix = $("<div>").addClass("clearfix");
-	          var $profilePicture = $("<figure>").addClass("avatar-box");
-	          var $commentContent = $("<div>").addClass("comment-content");
-	          var $replyAuthorInfo = $("<header>").addClass("comment-author");
-	          var $hiddenAuthorNo = "<div class='commentAutherNo' style='hidden;'>" + data[key].replyAuthorNo + "</div>";
-	          var $hiddenReplyNo = "<div class='commentNo' style='hidden;'>" + data[key].replyNo + "</div>"
-	          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].replyAuthorName);
-	          var $replyOfReply = $("<div>").addClass("reply");
-	          var $replyButton = "<a class='comment-reply-link' href='#'><i class='fa fa-reply-all'></i> <span>Leave reply</span></a>"
-	          var $replyWriteTime = $("<div>").addClass("entry-meta");
-	          var $writeTime = "<i class='fa fa-clock-o'></i>" + data[key].replyTime;
-	          var $contentDiv = $("<div>").addClass("ovh");
-	          var $contentText = $("<p>").text(data[key].replyContent);
-	          var $end = $("<div>").addClass("clear");
-	          
-	          $li.append($divClearfix);
-	          $divClearfix.append($profilePicture);
-	          $divClearfix.append($commentContent);
-	          $commentContent.append($replyAuthorInfo);
-	          $replyAuthorInfo.append($hiddenReplyNo);
-	          $replyAuthorInfo.append($replyAuthorName);
-	          $replyAuthorInfo.append($replyOfReply);
-	          $replyOfReply.append($replyButton);
-	          $replyAuthorInfo.append($replyWriteTime);
-	          $replyWriteTime.append($writeTime);
-	          $commentContent.append($contentDiv);
-	          $contentDiv.append($contentText);
-	          $commentContent.append($end);
-	          
-	       }
+	      var $li = $("<li>").addClass("comment");
+          var $divClearfix = $("<div>").addClass("clearfix");
+          var $profilePicture = $("<figure>").addClass("avatar-box");
+          var $picture = "<img src='${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png' class='avatar' style='padding-right: 10px'>";
+          var $commentContent = $("<div>").addClass("comment-content");
+          var $replyAuthorInfo = $("<header>").addClass("comment-author");
+          var $hiddenReplyNo = "<div id='commentNo'" + data.no + " style='display:none;'>" + data.no + "</div>"
+          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data.writer.name);
+          var $replyOfReply = $("<div>").addClass("reply");
+          var $replyButton = "<a class='comment-reply-link' href='#'><i class='fa fa-reply-all'></i> <span>Leave reply</span></a>"
+          var $replyWriteTime = $("<div>").addClass("entry-meta");
+          var $writeTime = "<i class='fa fa-clock-o'></i>" + data.writeTime;
+          var $contentDiv = $("<div>").addClass("ovh");
+          var $contentText = $("<p>").text(data.content);
+          var $end = $("<div>").addClass("clear");
+          
+          $li.append($divClearfix);
+          $divClearfix.append($profilePicture);
+          $profilePicture.append($picture);
+          $divClearfix.append($commentContent);
+          $commentContent.append($replyAuthorInfo);
+          $replyAuthorInfo.append($hiddenReplyNo);
+          $replyAuthorInfo.append($replyAuthorName);
+          $replyAuthorInfo.append($replyOfReply);
+          $replyOfReply.append($replyButton);
+          $replyAuthorInfo.append($replyWriteTime);
+          $replyWriteTime.append($writeTime);
+          $commentContent.append($contentDiv);
+          $contentDiv.append($contentText);
+          $commentContent.append($end);
+          
+          $commentlist.prepend($li);
 	       
 	    },
 	    error:function(request, status, error){
