@@ -27,7 +27,7 @@ import net.coobird.thumbnailator.Thumbnails;
 /**
  * Servlet implementation class HPNoticethumbnailInsertServlet
  */
-@WebServlet("/hp/notice/thumbnail/insert")
+@WebServlet("/hp/notice/file/insert")
 public class HPNoticeFileInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
