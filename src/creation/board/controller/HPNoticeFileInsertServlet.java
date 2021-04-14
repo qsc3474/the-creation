@@ -28,7 +28,7 @@ import net.coobird.thumbnailator.Thumbnails;
  * Servlet implementation class HPNoticethumbnailInsertServlet
  */
 @WebServlet("/hp/notice/thumbnail/insert")
-public class HPNoticethumbnailInsertServlet extends HttpServlet {
+public class HPNoticeFileInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
@@ -98,7 +98,31 @@ public class HPNoticethumbnailInsertServlet extends HttpServlet {
 							int dot = originFileName.lastIndexOf(".");
 							String ext = originFileName.substring(dot);
 							
+							if(ext.equals("PNG") || ext.equals("JPG")) {
+								
+								
+								int width = 0;
+								int height = 0;
+								if("thumbnailImg1".equals(fieldName)) {
+									fileMap.put("fileType", "TITLE");
+									
+									width = 350;
+									height = 200;
+									
+								} else {
+									fileMap.put("fileType", "BODY");
+									
+									width = 120;
+									height = 100;
+								}
+								
+							}else {
+								
+							}
+							
 							String randomFileName = UUID.randomUUID().toString().replace("-","") + ext;
+							
+							
 							
 							File storeFile = new File(fileUploadDirectory + randomFileName);
 							
@@ -113,27 +137,10 @@ public class HPNoticethumbnailInsertServlet extends HttpServlet {
 							fileMap.put("savePath", fileUploadDirectory);
 							
 							/* 대표 사진과 나머지 사진을 구분하고 썸네일(이미지 리사이징)도 생성하자. */
-							int width = 0;
-							int height = 0;
-							if("thumbnailImg1".equals(fieldName)) {
-								fileMap.put("fileType", "TITLE");
-								
-								width = 350;
-								height = 200;
-								
-							} else {
-								fileMap.put("fileType", "BODY");
-								
-								width = 120;
-								height = 100;
-							}
 							
-							/* 썸네일로 변환 후 저장한다. */
-							Thumbnails.of(fileUploadDirectory + randomFileName)
-							          .size(width,height)
-							          .toFile(thumbnailDirectory + "thumbnail_" + randomFileName);
 							
-							fileMap.put("thumbnailPath", "/resources/upload/thumbnail/thumbnail_" + randomFileName);
+							
+							fileMap.put("filePath", "/resources/upload/file/thumbnail_" + randomFileName);
 							
 							fileList.add(fileMap);
 							

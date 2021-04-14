@@ -68,7 +68,6 @@ public class HPFAQBoardDAO {
 				
 				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
 				
-				boardDTO.setFile(rset.getString("HP_BD_FILE"));
 				boardDTO.setMemberNo(rset.getInt("HP_MEM_NO"));
 				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				
@@ -181,7 +180,6 @@ public class HPFAQBoardDAO {
 				board.setContent(rset.getString("HP_BD_CONTENT"));
 				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				board.setWatched(rset.getInt("HP_BD_WATCHED"));
-				board.setFile(rset.getString("HP_BD_FILE"));
 				board.setMemberNo(rset.getInt("HP_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
 				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));

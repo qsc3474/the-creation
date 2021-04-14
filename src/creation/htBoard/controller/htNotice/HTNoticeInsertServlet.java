@@ -18,7 +18,7 @@ public class HTNoticeInsertServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String path = "/WEB-INF/views/htBoard/htNotice/htInsertNoticeForm.jsp";
+		String path = "/WEB-INF/views/board/bordInsertForm.jsp";
 		
 		request.getRequestDispatcher(path).forward(request, response);
 	}

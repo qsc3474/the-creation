@@ -56,10 +56,10 @@ if(document.getElementById("regist")){
 			location.href = "/jsp/board/insert";
 		}
 	}
-	if(document.getElementById("writeBoard")){
-		const $writeBoard = document.getElementById("writeBoard");
+	if(document.getElementById("insertHPBoard")){
+		const $writeBoard = document.getElementById("insertHPBoard");
 		$writeBoard.onclick = function(){
-			location.href = "/jsp/board/insert";
+			location.href = "/creation/hp/board/insert";
 		}
 	}
 	

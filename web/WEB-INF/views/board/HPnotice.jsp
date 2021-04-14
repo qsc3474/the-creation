@@ -70,7 +70,7 @@
                      <!-- flight section -->
                      <div class="bhoechie-tab-content active col-md-12">
                         <div>
-                           <h2 style="margin-top: 0;color:#F2B138" class="pt pb hide">공지사항</h2>
+                           <h2 style="margin-top: 0; color:#F2B138" class="pt pb hide">공지사항</h2>
                            <table class="table">
                               <thead class="thead-light">
                                  <tr>
@@ -164,7 +164,7 @@
             </c:choose>
                         <button type="submit">검색하기</button>
                         <c:if test="${ !empty sessionScope.loginMember }">
-                <button type="button" id="writeBoard" style="text-align: right " >작성하기</button>
+                <button type="button" id="insertHPBoard" style="text-align: right " >작성하기</button>
             </c:if>
             </form>	
             </div>

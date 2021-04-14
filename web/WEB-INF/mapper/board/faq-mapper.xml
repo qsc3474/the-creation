@@ -79,9 +79,9 @@
 		, HP_BD_CONTENT
 		, HP_BD_DRAWUP_DATE
 		, HP_BD_WATCHED
-		, HP_BD_FILE
 		, HP_MEM_NO
 		, HP_BD_CATEGORY_NO
+		, HP_BD_STATUS
 		)
 		VALUES
 		(
@@ -90,9 +90,9 @@
 		, ?
 		, DEFAULT
 		, DEFAULT
-		, NULL
 		, ?
 		, ?
+		, 'PUBLIC'
 		)
 	</entry>
 </properties>
