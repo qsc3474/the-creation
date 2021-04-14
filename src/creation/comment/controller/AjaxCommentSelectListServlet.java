@@ -17,7 +17,7 @@ import creation.comment.model.dto.CommentDTO;
 import creation.comment.model.service.CommentService;
 
 @WebServlet("/select/comment")
-public class CommentSelectListServlet extends HttpServlet {
+public class AjaxCommentSelectListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,10 +59,10 @@ public class CommentSelectListServlet extends HttpServlet {
 				for(int j = 0 ; i < commentList.size() ; i++) {
 					
 					// 다시한번 반복문을 돌면서 부모댓글의 번호와 일치할시 진입
-					if(commentList.get(i).getNo() == parentNo) {
+					if(commentList.get(j).getNo() == parentNo) {
 						
 						// 부모댓글 인스턴스를 추출
-						parent = commentList.get(i);
+						parent = commentList.get(j);
 						// 부모댓글의 자식댓글리스트 인스턴스를 생성
 						parent.setChildComments(new ArrayList<>());
 						// 부모댓글의 자식댓글리스트에 해당 부모댓글의 번호를 가지는 자식댓글을 add한다.

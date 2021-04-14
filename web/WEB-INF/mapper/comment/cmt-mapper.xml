@@ -24,4 +24,39 @@
 		       ) A
 		 WHERE A.HP_REF_BOARD_NO = ?
 	</entry>
+	<entry key="insertComment">
+	    INSERT
+	      INTO HOSPITAL_CMT
+	    (
+	      HP_CMT_NO
+        , HP_CMT_CONTENT
+        , HP_CMT_MEM_NO
+        , HP_REF_BOARD_NO
+	    )
+	    VALUES
+	    (
+	      SEQ_HT_CMT_CODE.NEXTVAL
+	    , ?
+	    , ?
+	    , ?
+	    )
+	</entry>
+	<entry key="selectOneComment">
+	    SELECT
+               A.HP_CMT_NO
+             , A.HP_CMT_CONTENT
+             , A.HP_CMT_MEM_NO
+             , B.MEM_NAME
+             , A.HP_REF_BOARD_NO
+             , A.HP_PARENT_CMT_NO
+             , A.HP_WRITE_TIME
+          FROM HOSPITAL_CMT A
+          JOIN MEM_INFO B ON(A.HP_CMT_MEM_NO = B.MEM_NO)
+         WHERE A.HP_CMT_NO = ?         
+	</entry>
+	<entry key="selectCurrSeqNo">
+		SELECT 
+		       SEQ_HT_CMT_CODE.CURRVAL
+		  FROM DUAL
+	</entry>
 </properties>
