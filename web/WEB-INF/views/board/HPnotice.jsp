@@ -81,17 +81,17 @@
                                     <th scope="col">조회</th>
                                  </tr>
                               </thead>
-                                      <c:forEach var="ntc" items="${HPNCTList }">
                               
                               <tbody>
+                                 <c:forEach var="ntc" items="${HPNCTList }">
                                  <tr>
              						<td><c:out value="${ ntc.no }" /></td>
             						<td><c:out value="${ ntc.title }" /></td>
-           							 <td><c:out value="${ ntc.writer.name }" /></td>
-           							  <td><c:out value="${ ntc.drawupDate }" /></td>
+           							<td><c:out value="${ ntc.writer.name }" /></td>
+           							<td><c:out value="${ ntc.drawupDate }" /></td>
          						    <td><c:out value="${ ntc.watched }" /></td>
                                  </tr>
-                                        </c:forEach>
+                                 </c:forEach>
                                 
                               </tbody>
                            </table>
@@ -159,7 +159,7 @@
                         <option value="title">제목</option>
                         <option value="content">내용</option>
                     </select>
-                    <input type="search" id="searchValue" name="searchValue" >
+                    <input type="search" id="searchValue" name="searchValue">
                 </c:otherwise>
             </c:choose>
                         <button type="submit">검색하기</button>
@@ -222,9 +222,9 @@
                 }
             }
         }
-            </script>
+        </script>
                     
-         <script>
+        <script>
             $(document).ready(function () {
                $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
                   e.preventDefault();

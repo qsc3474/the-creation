@@ -55,13 +55,14 @@
 	<entry key="selectOneBoard">
 		SELECT
 		       A.HP_BD_NO
+		     , A.HP_BD_CATEGORY_NO
 		     , A.HP_BD_TITLE
 		     , A.HP_BD_CONTENT
 		     , A.HP_BD_DRAWUP_DATE
 		     , A.HP_BD_WATCHED
 		     , B.MEM_NAME
 		     , A.HP_MEM_NO
-		     , A.HP_BD_CATEGORY_NO
+		     , A.HP_BD_CMT_COUNT
 		  FROM HOSPITAL_BD A
 		  JOIN MEM_INFO B ON(A.HP_MEM_NO = B.MEM_NO)
 		 WHERE A.HP_BD_NO = ?
@@ -224,17 +225,16 @@
                   WHERE B.HP_BD_CONTENT LIKE '%' || ? || '%'
                ) A
          WHERE A.RNUM BETWEEN ? AND ?
-         </entry>
+    </entry>
          
          
-    <entry key="deleteboard">
-	 UPDATE
+    <entry key="deleteBoard">
+	  UPDATE
              HOSPITAL_BD A
-         SET HP_BD_STATUS = 'DELETE'
-       WHERE HP_BD_STATUS = 'PUBLIC'
-         AND HP_BD_NO = ?
-	
-		</entry>
+         SET A.HP_BD_STATUS = 'DELETE'
+       WHERE A.HP_BD_STATUS IN ('PUBLIC','PRIVATE')
+         AND A.HP_BD_NO = ?
+	</entry>
 	
          
 </properties>

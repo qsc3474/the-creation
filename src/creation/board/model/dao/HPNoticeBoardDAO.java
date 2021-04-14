@@ -167,13 +167,16 @@ public class HPNoticeBoardDAO {
 				board.setWriter(new MemberDTO());
 				
 				board.setNo(rset.getInt("HP_BD_NO"));
+				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				board.setTitle(rset.getString("HP_BD_TITLE"));
 				board.setContent(rset.getString("HP_BD_CONTENT"));
 				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				board.setWatched(rset.getInt("HP_BD_WATCHED"));
 				board.setMemberNo(rset.getInt("HP_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
-				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				board.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
+				
+				System.out.println(board);
 				
 			}
 			
@@ -288,10 +291,11 @@ public class HPNoticeBoardDAO {
 	}
 
 	public int deleteBoard(Connection con, HPBoardDTO deleteBoard) {
+		
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String query = prop.getProperty("deleteboard");
+		String query = prop.getProperty("deleteBoard");
 		
 		try {
 			

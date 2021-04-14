@@ -61,16 +61,16 @@ public class HPFAQBoardDAO {
 				HPBoardDTO boardDTO = new HPBoardDTO();
 				boardDTO.setWriter(new MemberDTO());
 				boardDTO.setNo(rset.getInt("HP_BD_NO"));
+				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				boardDTO.setTitle(rset.getString("HP_BD_TITLE"));
 				boardDTO.setContent(rset.getString("HP_BD_CONTENT"));
 				boardDTO.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				boardDTO.setWatched(rset.getInt("HP_BD_WATCHED"));
+				boardDTO.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
 				
 				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
 				
-				boardDTO.setFile(rset.getString("HP_BD_FILE"));
 				boardDTO.setMemberNo(rset.getInt("HP_MEM_NO"));
-				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				
 				HPFAQList.add(boardDTO);
 				
@@ -181,7 +181,6 @@ public class HPFAQBoardDAO {
 				board.setContent(rset.getString("HP_BD_CONTENT"));
 				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				board.setWatched(rset.getInt("HP_BD_WATCHED"));
-				board.setFile(rset.getString("HP_BD_FILE"));
 				board.setMemberNo(rset.getInt("HP_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
 				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
@@ -213,10 +212,10 @@ public class HPFAQBoardDAO {
 		try {
 			
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, insertBoard.getTitle());
-			pstmt.setString(2, insertBoard.getContent());
-			pstmt.setInt(3, insertBoard.getWriter().getNo());
-			pstmt.setString(4, insertBoard.getCategoryNo());
+			pstmt.setString(1, insertBoard.getCategoryNo());
+			pstmt.setString(2, insertBoard.getTitle());
+			pstmt.setString(3, insertBoard.getContent());
+			pstmt.setInt(4, insertBoard.getWriter().getNo());
 			
 			result = pstmt.executeUpdate();
 			

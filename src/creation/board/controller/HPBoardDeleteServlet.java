@@ -14,7 +14,7 @@ import creation.member.model.dto.MemberDTO;
 /**
  * Servlet implementation class HPBoardDeleteServlet
  */
-@WebServlet("//hp/board/delete")
+@WebServlet("/hp/board/delete")
 public class HPBoardDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,21 +25,12 @@ public class HPBoardDeleteServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String title = request.getParameter("title");
-		int no = 1; /*Integer.valueOf(request.getParameter("memberNo"));*/
-		String content = request.getParameter("content");
-		String category = request.getParameter("boardCategory");
+		
+		int boardNo = Integer.valueOf(request.getParameter("no"));
 		
 		HPBoardDTO deleteBoard = new HPBoardDTO();
 		
-		deleteBoard.setWriter(new MemberDTO());
-		
-		deleteBoard.setTitle(title);
-		deleteBoard.setContent(content);
-		deleteBoard.setCategoryNo(category);
-		deleteBoard.getWriter().setNo(no);
-		
-		System.out.println(deleteBoard);
+		deleteBoard.setNo(boardNo);
 		
 		HPNoticeBoardService boardService = new HPNoticeBoardService();
 		int result = boardService.deleteBoard(deleteBoard);
@@ -59,7 +50,6 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
-		
 	
 	}
 

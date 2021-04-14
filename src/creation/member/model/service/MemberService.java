@@ -36,6 +36,7 @@ private final MemberDAO memberDAO;
 			/* 비밀번호가 일치하는 경우에만 회원 정보를 조회해 온다. */
 			loginMember = memberDAO.selectLoginMember(con, requestMember);
 		}
+		System.out.println(passwordEncoder.matches(requestMember.getPwd(), encPwd));
 		
 		close(con);
 		

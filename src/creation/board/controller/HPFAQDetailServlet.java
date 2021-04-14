@@ -17,8 +17,8 @@ public class HPFAQDetailServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String hpBdNo = request.getParameter("hpBdNo");
-		int no = Integer.valueOf(hpBdNo);
+		String boardNo = request.getParameter("no");
+		int no = Integer.valueOf(boardNo);
 		HPBoardDTO board = new HPFAQBoardService().selectDetail(no);
 		
 		String path = "";

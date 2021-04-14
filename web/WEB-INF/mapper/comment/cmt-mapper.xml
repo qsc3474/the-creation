@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectList">
+		SELECT
+		       A.HP_CMT_NO
+		     , A.HP_CMT_CONTENT
+		     , A.HP_CMT_MEM_NO
+		     , A.MEM_NAME
+		     , A.HP_REF_BOARD_NO
+		     , A.HP_PARENT_CMT_NO
+		     , A.HP_WRITE_TIME
+		  FROM (SELECT
+		               B.HP_CMT_NO
+		             , B.HP_CMT_CONTENT
+		             , B.HP_CMT_MEM_NO
+		             , C.MEM_NAME
+		             , B.HP_REF_BOARD_NO
+		             , B.HP_PARENT_CMT_NO
+		             , B.HP_WRITE_TIME
+		          FROM HOSPITAL_CMT B
+		          JOIN MEM_INFO C ON(B.HP_CMT_MEM_NO = C.MEM_NO)
+		         ORDER BY B.HP_CMT_NO DESC
+		       ) A
+		 WHERE A.HP_REF_BOARD_NO = ?
+	</entry>
+</properties>
