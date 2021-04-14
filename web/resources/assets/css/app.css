@@ -3416,4 +3416,1130 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
 #comments .commentlist li {
   padding: 30px 0 0 0;
   background: none;
-  border-top:
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+  list-style: none;
+}
+
+#comments .user {
+  float: left;
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+#comments .user img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+
+#comments .message-inner {
+  margin-left: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+#comments .info {
+  margin-bottom: 12px;
+}
+
+#comments .message p {
+  margin: 0;
+}
+
+/* ============= booking =========== */
+
+.controls {
+  text-align: left;
+  position: relative;
+}
+
+.controls input[type="text"],
+.controls input[type="email"],
+.controls input[type="number"],
+.controls input[type="date"],
+.controls input[type="tel"],
+.controls textarea,
+.controls button,
+.controls select {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #c6c6c6;
+  width: 100%;
+  margin-bottom: 18px;
+  color: #888;
+  font-family: 'Lato', 'sans-serif';
+  font-size: 16px;
+  font-weight: 300;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.controls input[type="text"]:focus,
+.controls input[type="text"]:hover,
+.controls input[type="email"]:focus,
+.controls input[type="email"]:hover,
+.controls input[type="number"]:focus,
+.controls input[type="number"]:hover,
+.controls input[type="date"]:focus,
+.controls input[type="date"]:hover,
+.controls input[type="tel"]:focus,
+.controls input[type="tel"]:hover,
+.controls textarea:focus,
+.controls textarea:hover,
+.controls button:focus,
+.controls button:hover,
+.controls select:focus,
+.controls select:hover {
+  outline: none;
+  border-color: #9FB1C1;
+}
+
+.controls input[type="text"]:focus+label,
+.controls input[type="text"]:hover+label,
+.controls input[type="email"]:focus+label,
+.controls input[type="email"]:hover+label,
+.controls input[type="number"]:focus+label,
+.controls input[type="number"]:hover+label,
+.controls input[type="date"]:focus+label,
+.controls input[type="date"]:hover+label,
+.controls input[type="tel"]:focus+label,
+.controls input[type="tel"]:hover+label,
+.controls textarea:focus+label,
+.controls textarea:hover+label,
+.controls button:focus+label,
+.controls button:hover+label,
+.controls select:focus+label,
+.controls select:hover+label {
+  color: #bdcc00;
+  cursor: text;
+}
+
+.controls .fa-sort {
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  color: #999;
+}
+
+.controls select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.controls label {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  width: 60%;
+  color: #999;
+  font-size: 16px;
+  display: inline-block;
+  padding: 4px 10px;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0);
+  -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
+  -o-transition: color 0.3s, top 0.3s, background-color 0.8s;
+  -webkit-transition: color 0.3s, top 0.3s, background-color 0.8s;
+  transition: color 0.3s, top 0.3s, background-color 0.8s;
+  background-color: white;
+}
+
+.controls label.active {
+  top: -11px;
+  color: #555;
+  background-color: white;
+  width: auto;
+}
+
+.controls textarea {
+  resize: none;
+  height: 200px;
+}
+
+.bk-form button {
+  cursor: pointer;
+  background-color: #1b3d4d;
+  border: none;
+  color: #fff;
+  padding: 12px 0;
+  float: right;
+}
+
+.bk-form button:hover {
+  background-color: #224c60;
+}
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bk-form .grid {
+  background: white;
+}
+
+.bk-form .grid:after {
+  /* Or @extend clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='col-'] {
+  float: left;
+  padding-right: 10px;
+}
+
+.bk-form .grid [class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-1-2 {
+  width: 50%;
+}
+
+.col-1-4 {
+  width: 25%;
+}
+
+@media (max-width: 760px) {
+
+  .col-1-4-sm,
+  .col-1-3,
+  .col-2-3 {
+    width: 100%;
+  }
+
+  [class*='col-'] {
+    padding-right: 0px;
+  }
+}
+
+.col-1-8 {
+  width: 12.5%;
+}
+
+h2.heading {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: left;
+  color: #506982;
+  border-bottom: 1px solid #506982;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+}
+/* ============= /booking =========== */
+
+/* hotel booking */
+#msform p {
+  color: #f2f2f2;
+}
+
+#heading {
+  text-transform: uppercase;
+  color: #673AB7;
+  font-weight: normal
+}
+
+#msform {
+  text-align: center;
+  position: relative;
+  margin-top: 20px
+}
+
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative
+}
+
+#msform .form-card {
+  text-align: left;
+  padding: 40px;
+}
+
+#msform .form-card label{font-size: 15px;}
+
+#msform fieldset:not(:first-of-type) {
+  display: none
+}
+
+#msform input,
+#msform select,
+#msform textarea {
+  padding: 8px 15px 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  background-color: #fafafa;
+  font-size: 16px;
+  letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #673AB7;
+  outline-width: 0
+}
+
+#msform .action-button {
+  width: 100px;
+  background: #673AB7;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 0 auto;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+  background-color: #311B92
+}
+
+#msform .action-button-previous {
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 0 auto;
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+  background-color: #000000
+}
+
+#msform .card {
+  z-index: 0;
+  border: none;
+  position: relative
+}
+
+#msform .fs-title {
+  font-size: 25px;
+  color: #673AB7;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: left
+}
+
+#msform .purple-text {
+  color: #673AB7;
+  font-weight: normal
+}
+
+#msform .steps {
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right
+}
+
+#msform .fieldlabels {
+  color: gray;
+  text-align: left
+}
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey
+}
+
+#progressbar .active {
+  color: #673AB7
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 25%;
+  float: left;
+  position: relative;
+  font-weight: 400
+}
+
+#progressbar #account:before {
+  font-family: FontAwesome;
+  content: "\f13e"
+}
+
+#progressbar #personal:before {
+  font-family: FontAwesome;
+  content: "\f007"
+}
+
+#progressbar #payment:before {
+  font-family: FontAwesome;
+  content: "\f030"
+}
+
+#progressbar #confirm:before {
+  font-family: FontAwesome;
+  content: "\f00c"
+}
+
+#progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #673AB7
+}
+
+#msform .progress {
+  height: 20px
+}
+
+#msform .progress-bar {
+  background-color: #673AB7
+}
+
+#msform .fit-image {
+  width: 100%;
+  object-fit: cover
+}
+/* ============== /hotel booking ===========*/
+
+/* =========== / hotel-index-main-section ========== */
+.dog {
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  top: 250px;
+  left: 20%;
+}
+
+.dog:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.03);
+  transform: translateY(-30%) scale(1.5);
+}
+
+.dog * {
+  position: absolute;
+}
+
+.dog-body {
+  top: -50%;
+  -webkit-animation: dog-body 250ms ease-in-out infinite alternate;
+  animation: dog-body 250ms ease-in-out infinite alternate;
+}
+
+.dog-body:before {
+  content: "";
+  position: absolute;
+  bottom: 90%;
+  right: 50%;
+  width: 90%;
+  height: 50%;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 10%;
+  border-top-right-radius: 10%;
+  background: rgba(0, 0, 0, 0.4);
+  transform-origin: right bottom;
+  -webkit-animation: dog-tail-blur 250ms 31.25ms ease-in-out infinite alternate both;
+  animation: dog-tail-blur 250ms 31.25ms ease-in-out infinite alternate both;
+}
+
+@-webkit-keyframes dog-tail-blur {
+  from {
+    transform: rotate(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes dog-tail-blur {
+  from {
+    transform: rotate(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes dog-body {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(10%);
+  }
+}
+
+@keyframes dog-body {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(10%);
+  }
+}
+
+.dog-head {
+  -webkit-animation: dog-head 2250ms cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
+  animation: dog-head 2250ms cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
+}
+
+@-webkit-keyframes dog-head {
+
+  from,
+  to {
+    transform: rotate(45deg);
+  }
+
+  33.3% {
+    transform: rotate(-45deg);
+  }
+
+  66.6% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes dog-head {
+
+  from,
+  to {
+    transform: rotate(45deg);
+  }
+
+  33.3% {
+    transform: rotate(-45deg);
+  }
+
+  66.6% {
+    transform: rotate(0);
+  }
+}
+
+.dog-eyes {
+  width: 60%;
+  top: 55%;
+  left: 20%;
+  z-index: 1;
+}
+
+.dog-eye {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #734426;
+  z-index: 1;
+  -webkit-animation: dog-eye 2250ms infinite;
+  animation: dog-eye 2250ms infinite;
+}
+
+@-webkit-keyframes dog-eye {
+
+  from,
+  to {
+    -webkit-animation-timing-function: step-end;
+    animation-timing-function: step-end;
+    opacity: 1;
+  }
+
+  50%,
+  55% {
+    -webkit-animation-timing-function: step-start;
+    animation-timing-function: step-start;
+    opacity: 0;
+  }
+}
+
+@keyframes dog-eye {
+
+  from,
+  to {
+    -webkit-animation-timing-function: step-end;
+    animation-timing-function: step-end;
+    opacity: 1;
+  }
+
+  50%,
+  55% {
+    -webkit-animation-timing-function: step-start;
+    animation-timing-function: step-start;
+    opacity: 0;
+  }
+}
+
+.dog-eye:first-child {
+  left: 0;
+}
+
+.dog-eye:last-child {
+  right: 0;
+}
+
+.dog-muzzle {
+  width: 60%;
+  left: 20%;
+  height: 80%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background: black;
+  bottom: -30%;
+}
+
+.dog-muzzle:before,
+.dog-muzzle:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.dog-muzzle:before {
+  width: 6px;
+  height: 20px;
+  bottom: 0;
+  left: calc(50% - 3px);
+  background: #333;
+}
+
+.dog-muzzle:after {
+  background: #613519;
+  width: 20px;
+  height: 15px;
+  bottom: 12px;
+  left: calc(50% - 10px);
+  border-bottom-left-radius: 60% 60%;
+  border-bottom-right-radius: 60% 60%;
+  border-top-left-radius: 50% 40%;
+  border-top-right-radius: 50% 40%;
+}
+
+.dog-ears {
+  width: 40%;
+  top: 25%;
+  left: 30%;
+  -webkit-animation: dog-ears 2250ms 125ms ease infinite;
+  animation: dog-ears 2250ms 125ms ease infinite;
+}
+
+@-webkit-keyframes dog-ears {
+
+  42.3%,
+  71.6% {
+    transform: rotate(-5deg);
+  }
+
+  50.3%,
+  79.6% {
+    transform: rotate(5deg);
+  }
+
+  5% {
+    transform: rotate(5deg);
+  }
+
+  12% {
+    transform: rotate(-5%);
+  }
+
+  from,
+  33.3%,
+  66%,
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes dog-ears {
+
+  42.3%,
+  71.6% {
+    transform: rotate(-5deg);
+  }
+
+  50.3%,
+  79.6% {
+    transform: rotate(5deg);
+  }
+
+  5% {
+    transform: rotate(5deg);
+  }
+
+  12% {
+    transform: rotate(-5%);
+  }
+
+  from,
+  33.3%,
+  66%,
+  to {
+    transform: rotate(0);
+  }
+}
+
+.dog-ear {
+  bottom: -10px;
+  height: 50px;
+  width: 50px;
+  background: #333;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.dog-ear:first-child {
+  border-bottom-left-radius: 80%;
+  border-top-right-radius: 80%;
+  right: 100%;
+  box-shadow: inset -15px 15px 0 1px black;
+  transform-origin: right bottom;
+  transform: rotate(10deg);
+}
+
+.dog-ear:last-child {
+  border-top-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  left: 100%;
+  box-shadow: inset 15px 15px 0 0 black;
+  transform-origin: left bottom;
+  transform: rotate(-10deg);
+}
+
+.dog-tail {
+  width: 22px;
+  height: 24.2px;
+  background: black;
+  bottom: 40%;
+  border-radius: 11px;
+  left: calc(50% - 11px);
+  transform-origin: center bottom;
+}
+
+.dog-tail .dog-tail {
+  -webkit-animation: dog-tail-segment 250ms ease-in-out infinite alternate;
+  animation: dog-tail-segment 250ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes dog-tail-segment {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes dog-tail-segment {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+.dog-body>.dog-tail {
+  bottom: 90%;
+  -webkit-animation: dog-tail 250ms ease-in-out infinite alternate;
+  animation: dog-tail 250ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes dog-tail {
+  from {
+    transform: rotate(-45deg);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes dog-tail {
+  from {
+    transform: rotate(-45deg);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+.dog-body,
+.dog-head {
+  background: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.dog-body {
+  border-radius: 40%;
+  height: 170%;
+}
+
+.dog-head {
+  border-radius: 50%;
+  top: 70%;
+}
+
+.dog-body {
+  box-shadow: inset 0 -15px 0 0 #333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+#htmain-sec {
+  height: 800px;
+  background: #FDC647;
+}
+
+#con {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.ball {
+  color: #000;
+  border-radius: 100%;
+  position: absolute;
+  text-align: center;
+  font-family: Noto Sans Korean;
+  font-weight: bold;
+}
+
+.cover {
+  position: absolute;
+  background-color: #000;
+  border-radius: 100%;
+}
+
+/* service sec */
+
+
+/* =========== /hotel-index-main-section ========== */
+
+/* ============ hotel package =============*/
+.comparison {
+  max-width:1100px;
+  margin:0 auto;
+  font:13px;
+  text-align:center;
+  padding:10px;
+}
+
+.comparison table {
+  width:100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  border-bottom:1px solid #CCC;
+}
+
+.comparison td, .comparison th {
+  border-right:1px solid #CCC;
+  empty-cells: show;
+  padding:15px;
+  text-align: center;
+}
+
+.compare-heading {
+  font-size:18px;
+  font-weight:bold !important;
+  border-bottom:0 !important;
+  padding-top:10px !important;
+}
+
+.comparison tbody tr:nth-child(odd) {
+  display:none;
+}
+
+.comparison .compare-row {
+  background:#F5F5F5;
+}
+
+.comparison .tickblue {
+  color:#0078C1;
+}
+
+.comparison .tickgreen {
+  color:#009E2C;
+}
+
+.comparison th {
+  font-weight:normal;
+  padding:0;
+  border-bottom:1px solid #CCC;
+}
+
+.comparison tr td:first-child {
+  text-align:left;
+}
+  
+.comparison .qbse, .comparison .qbo, .comparison .tl {
+  color:#FFF;
+  padding:10px;
+  font-size:13px;
+  border-right:1px solid #CCC;
+  border-bottom:0;
+}
+
+.comparison .tl2 {
+  border-right:0;
+}
+
+.comparison .qbse {
+  background:#0078C1;
+  border-top-left-radius: 3px;
+  border-left:0px;
+}
+
+.comparison .qbo {
+  background:#009E2C;
+  border-top-right-radius: 3px;
+  border-right:0px;
+}
+
+.comparison .price-info {
+  padding:5px 15px 15px 15px;
+}
+
+.comparison .price-was {
+  color:#999;
+  text-decoration: line-through;
+}
+
+.comparison .price-now, .comparison .price-now span {
+  color:#ff5406;
+}
+
+.comparison .price-now span {
+  font-size:32px;
+}
+
+.comparison .price-small {
+    font-size: 18px !important;
+    position: relative;
+    top: -11px;
+    left: 2px;
+}
+
+.comparison .price-buy {
+  background:#ff5406;
+  padding:10px 20px;
+  font-size:12px;
+  display:inline-block;
+  color:#FFF;
+  text-decoration:none;
+  border-radius:3px;
+  text-transform:uppercase;
+  margin:5px 0 10px 0;
+}
+
+.comparison .price-try {
+  font-size:12px;
+}
+
+.comparison .price-try a {
+  color:#202020;
+}
+
+@media (max-width: 767px) {
+  .comparison td:first-child, .comparison th:first-child {
+    display: none;
+  }
+  .comparison tbody tr:nth-child(odd) {
+    display:table-row;
+    background:#F7F7F7;
+  }
+  .comparison .row {
+    background:#FFF;
+  }
+  .comparison td, .comparison th {
+    border:1px solid #CCC;
+  }
+  .price-info {
+  border-top:0 !important;
+  
+}
+  
+}
+
+@media (max-width: 639px) {
+  .comparison .price-buy {
+    padding:5px 10px;
+  }
+  .comparison td, .comparison th {
+    padding:10px 5px;
+  }
+  .comparison .hide-mobile {
+    display:none;
+  }
+  .comparison .price-now span {
+  font-size:16px;
+}
+
+.comparison .price-small {
+    font-size: 16px !important;
+    top: 0;
+    left: 0;
+}
+  .comparison .qbse, .comparison .qbo {
+    font-size:12px;
+    padding:10px 5px;
+  }
+  .comparison .price-buy {
+    margin-top:10px;
+  }
+  .compare-heading {
+  font-size:13px;
+}
+}
+/* ============ /hotel package =============*/
+
+
+
+
+.uploadcare--menu__items div:nth-of-type(4), .uploadcare--menu__items div:nth-of-type(5){display: none;}
+
+
+/* 호텔 전체 버튼 */
+.gp-price-table-one .price-table-container .hotel-btn:hover{
+  background: #fff;
+  color: #202020;
+}
+
+.hotel-btn.btn-dark {
+  background: #121212;
+  color: #fff;
+}
+
+.gp-price-table-one .hotel-btn {
+  border-radius: 30px;
+  padding: 15px 40px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  margin: 15px auto 0;
+  text-align: center;
+  margin-right: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.hotel-btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 12px 35px;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.gp-btn.btn-primary:hover, .gp-btn.btn-warning:hover {
+  background: #121212;
+  color: #FFF;
+}
+
+/* ========= /호텔버튼 ======== */
+
+/* ======== hotel review page ===== */
+.review-sec .feature-box-two:hover {
+  background: #FDC647;
+}
+/* ======== hotel review page ===== */
+
