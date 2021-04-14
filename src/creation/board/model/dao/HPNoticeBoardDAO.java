@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Properties;
 
 import creation.board.model.dto.CategoryDTO;
+import creation.board.model.dto.FileDTO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
 import creation.common.config.ConfigLocation;
@@ -313,6 +314,82 @@ public class HPNoticeBoardDAO {
 			
 			close(pstmt);
 			
+		}
+		
+		return result;
+	}
+
+	public int insertThumbnailContent(Connection con, HPBoardDTO thumbnail) {
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("insertThumbnailContent");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, thumbnail.getTitle());
+			pstmt.setString(2, thumbnail.getContent());
+			pstmt.setInt(3, thumbnail.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int selectThumbnailSequence(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		int lastBoardNo = 0;
+		
+		String query = prop.getProperty("selectThumbnailSequence");
+		
+		try {
+			stmt = con.createStatement();
+			
+			rset = stmt.executeQuery(query);
+			
+			if(rset.next()) {
+				lastBoardNo = rset.getInt("CURRVAL");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(stmt);
+		}
+		
+		return lastBoardNo;
+	}
+
+	public int insertFile(Connection con, FileDTO fileDTO) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertAttachment");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, fileDTO.getBdNo());
+			pstmt.setString(2, fileDTO.getOriginName());
+			pstmt.setString(3, fileDTO.getName());
+			pstmt.setString(4, fileDTO.getPath());
+			pstmt.setString(5, fileDTO.getExtension());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
 		}
 		
 		return result;

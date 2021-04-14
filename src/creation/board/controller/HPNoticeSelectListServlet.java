@@ -39,7 +39,6 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 			
 		}
 	}
-		System.out.println(1111);
 		HPNoticeBoardService boardService = new HPNoticeBoardService();
 
 		int totalCount = boardService.selectTotalCount();

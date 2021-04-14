@@ -340,7 +340,6 @@ public class HTNoticeDAO {
 		
 		PreparedStatement pstmt = null;
 		int result = 0;
-		System.out.println("no 넘어오니 : " + requestNotice);
 		String query = prop.getProperty("htdeleteNotice");
 		
 		try {

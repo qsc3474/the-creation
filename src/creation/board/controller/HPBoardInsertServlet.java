@@ -28,7 +28,7 @@ public class HPBoardInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String title = request.getParameter("title");
-		int no = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
+		int no = Integer.valueOf(request.getParameter("memberNo"));
 		String content = request.getParameter("content");
 		String category = request.getParameter("boardCategory");
 		

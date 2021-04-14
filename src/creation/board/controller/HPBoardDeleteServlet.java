@@ -29,7 +29,6 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		int boardNo = Integer.valueOf(request.getParameter("no"));
 		
 		HPBoardDTO deleteBoard = new HPBoardDTO();
-		
 		deleteBoard.setNo(boardNo);
 		
 		HPNoticeBoardService boardService = new HPNoticeBoardService();
@@ -40,7 +39,7 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		if(result > 0) {
 			
 			path = "/WEB-INF/views/common/success.jsp";
-			request.setAttribute("successCode", "insertboard");
+			request.setAttribute("successCode", "deleteboard");
 			
 		} else {
 			
