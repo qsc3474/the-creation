@@ -43,10 +43,10 @@ if(document.getElementById("regist")){
 			location.href = "/creation/ht/NTC/notice/insert";
 		}
 	}
-	if(document.getElementById("cancleNotice")){
-		const $cancleNotice = document.getElementById("cancleNotice");
+	if(document.getElementById("HpwriteBoard")){
+		const $cancleNotice = document.getElementById("HpwriteBoard");
 		$cancleNotice.onclick = function(){
-			location.href = "/jsp/notice/list";
+			location.href = "/creation/hp/board/insert";
 		}
 	}
 	
