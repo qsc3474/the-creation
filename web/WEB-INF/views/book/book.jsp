@@ -42,7 +42,7 @@
 
       <section class="step-title">
             <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
-                <h2>호텔예약</h2>
+                <h2>병원예약</h2>
             </div>
         </section>
         <!-- title -->
@@ -98,14 +98,14 @@
                                             </div>
                                         </div> 
                                         <label class="fieldlabels">이름<span class="text-danger">*</span></label>
-                                        <input type="text" name="uname" placeholder="이름" />
+                                        <input type="text" name="petName" placeholder="이름" />
                                             <label class="fieldlabels">분류<span class="text-danger">*</span></label>
-                                            <select name="pets">
+                                            <select name="kind">
                                                   <option value="dog">Dog</option>
                                                   <option value="cat">Cat</option>
                                               </select> 
                                               <label class="fieldlabels">진료과 선택<span class="text-danger">*</span></label>
-                                              <select onchange="categoryChange(this)">
+                                              <select onchange="categoryChange(this)" name="subject">
                                                 <option>진료과목을 선택해주세요</option>
                                                 <option value="im">내과</option>
                                                 <option value="gs">외과</option>
@@ -113,11 +113,11 @@
                                                 <option value="oph">안과</option>
                                               </select> 
                                               <label class="fieldlabels">세부 진료 선택<span class="text-danger">*</span></label>
-                                              <select id="sub">
+                                              <select id="sub" name="subName">
                                                <option>세부진료를 선택해주세요</option>
                                               </select> 
                                               <label for="exampleFormControlTextarea1">특이사항</label>
-                                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="specaility" rows="5"></textarea>
                                     </div> 
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Previous" />
@@ -138,15 +138,15 @@
                                                     <div class="price-table-container">
                                                         <div class="price-inner">
                                                             <span class="currency">￦</span>
-                                                            <span class="price">200,000</span>
+                                                            <span class="price" name="price">예약 내역</span>
                                                         </div>
-                                                        <h5 class="title">실속패키지</h5>
+                                                        <h5 class="title">예약내용</h5>
                                                         <ul class="description">
+                                                        
                                                             <li></li>
-                                                            <li>스파</li>
-                                                            <li>호텔1박</li>
-                                                            <li>Annual Purchase</li>
+                                                          
                                                         </ul>
+                                                        <input type="text" readonly name="TotalPrice">
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,7 +155,8 @@
                                         </div>    
                                     </div> 
                                     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                                    <input type="button" name="next" class="next action-button" value="next" />
+                                    <input type="submit" name="complete" class="next action-button" value="예약하기" />
+                               
                                 </fieldset>
                                 
                                 <fieldset>
@@ -175,12 +176,12 @@
                                         </div> <br><br>
                                         <div class="row justify-content-center">
                                             <div class="col-7 text-center">
-                                                <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                                                <h5 class="purple-text text-center">You Have Successfully Booked!</h5>
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
+                                
                         </div>
                     </div>
                 </div>
