@@ -196,6 +196,42 @@ public class CommentDAO {
 		return result;
 		
 	}
+
+	public int incrementCommentCount(Connection con, CommentDTO insertComment) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String refBoardNo = insertComment.getRefBoardNo();
+		int index = refBoardNo.indexOf("-");
+		int boardNo = Integer.valueOf(refBoardNo.substring(index + 1));
+		String categoryNo = refBoardNo.substring(0, index);
+		
+		String query = prop.getProperty("incrementCommentCount");
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, boardNo);
+			pstmt.setString(2, categoryNo);
+			pstmt.setInt(3, boardNo);
+			pstmt.setString(4, categoryNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+		
+	}
 	
 	
 	

@@ -59,4 +59,15 @@
 		       SEQ_HT_CMT_CODE.CURRVAL
 		  FROM DUAL
 	</entry>
+	<entry key="incrementCommentCount">
+	    UPDATE HOSPITAL_BD A
+	       SET A.HP_BD_CMT_COUNT = (SELECT
+	       								   B.HP_BD_CMT_COUNT + 1
+	       							  FROM HOSPITAL_BD B
+	       							 WHERE HP_BD_NO = ?
+	       							   AND HP_BD_CATEGORY_NO = ?
+	       						   )
+	     WHERE HP_BD_NO = ?
+	       AND HP_BD_CATEGORY_NO = ?
+	</entry>
 </properties>

@@ -48,10 +48,12 @@ public class CommentService {
 			
 			int seqNo = commentDAO.selectCurrSeqNo(con);
 			
+			int incrementCommentCount = commentDAO.incrementCommentCount(con, insertComment);
+			System.out.println(incrementCommentCount);
+			
 			comment = commentDAO.selectOneComment(con, seqNo);
 			
-			
-			if(comment != null) {
+			if(comment != null && incrementCommentCount > 0) {
 				
 				commit(con);
 				

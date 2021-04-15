@@ -18,11 +18,10 @@ public class CommentDTO implements Serializable{
 	private String status;
 	private java.sql.Date writeTime;
 	private int parentCmtNo;
-	private List<CommentDTO> childComments;
 	
 	public CommentDTO() {}
 	public CommentDTO(int no, String content, int memNo, MemberDTO writer, String refBoardNo, String status,
-			Date writeTime, int parentCmtNo, List<CommentDTO> childComments) {
+			Date writeTime, int parentCmtNo) {
 		this.no = no;
 		this.content = content;
 		this.memNo = memNo;
@@ -31,7 +30,6 @@ public class CommentDTO implements Serializable{
 		this.status = status;
 		this.writeTime = writeTime;
 		this.parentCmtNo = parentCmtNo;
-		this.childComments = childComments;
 	}
 	
 	public int getNo() {
@@ -82,12 +80,6 @@ public class CommentDTO implements Serializable{
 	public void setParentCmtNo(int parentCmtNo) {
 		this.parentCmtNo = parentCmtNo;
 	}
-	public List<CommentDTO> getChildComments() {
-		return childComments;
-	}
-	public void setChildComments(List<CommentDTO> childComments) {
-		this.childComments = childComments;
-	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -96,7 +88,7 @@ public class CommentDTO implements Serializable{
 	public String toString() {
 		return "CommentDTO [no=" + no + ", content=" + content + ", memNo=" + memNo + ", writer=" + writer
 				+ ", refBoardNo=" + refBoardNo + ", status=" + status + ", writeTime=" + writeTime + ", parentCmtNo="
-				+ parentCmtNo + ", childComments=" + childComments + "]";
+				+ parentCmtNo + "]";
 	}
 	
 }
