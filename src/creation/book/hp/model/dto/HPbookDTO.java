@@ -8,31 +8,40 @@ import creation.pet.model.dto.PetDTO;
 
 public class HPbookDTO implements Serializable {
 
-	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 243283460826953321L;
-	private int no;
-	private String subjectCode;
-	private String clinicCode;
-	private PetDTO petCode;
-	private java.sql.Date time;
-	private MemberDTO memberNo;
-	private String status;
-	
-	public HPbookDTO() {}
+	private static final long serialVersionUID = -2654453556639355122L;
 
-	public HPbookDTO(int no, String subjectCode, String clinicCode, PetDTO petCode, Date time, MemberDTO memberNo,
-			String status) {
+	
+	private int no;
+	private String time;
+	private int memberNo;
+	private String status;
+	private String petName;
+	private String petKind;
+	private String petGender;
+	private String petAge;
+	private String petNeut;
+	private String message;
+
+	public HPbookDTO() {
+		
+	}
+
+	public HPbookDTO(int no, String time, int memberNo, String status, String petName, String petKind, String petGender,
+			String petAge, String petNeut, String message) {
 		super();
 		this.no = no;
-		this.subjectCode = subjectCode;
-		this.clinicCode = clinicCode;
-		this.petCode = petCode;
 		this.time = time;
 		this.memberNo = memberNo;
 		this.status = status;
+		this.petName = petName;
+		this.petKind = petKind;
+		this.petGender = petGender;
+		this.petAge = petAge;
+		this.petNeut = petNeut;
+		this.message = message;
 	}
 
 	public int getNo() {
@@ -43,43 +52,19 @@ public class HPbookDTO implements Serializable {
 		this.no = no;
 	}
 
-	public String getSubjectCode() {
-		return subjectCode;
-	}
-
-	public void setSubjectCode(String subjectCode) {
-		this.subjectCode = subjectCode;
-	}
-
-	public String getClinicCode() {
-		return clinicCode;
-	}
-
-	public void setClinicCode(String clinicCode) {
-		this.clinicCode = clinicCode;
-	}
-
-	public PetDTO getPetCode() {
-		return petCode;
-	}
-
-	public void setPetCode(PetDTO petCode) {
-		this.petCode = petCode;
-	}
-
-	public java.sql.Date getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(java.sql.Date time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
-	public MemberDTO getMemberNo() {
+	public int getMemberNo() {
 		return memberNo;
 	}
 
-	public void setMemberNo(MemberDTO memberNo) {
+	public void setMemberNo(int memberNo) {
 		this.memberNo = memberNo;
 	}
 
@@ -91,12 +76,66 @@ public class HPbookDTO implements Serializable {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "HPbookDTO [no=" + no + ", subjectCode=" + subjectCode + ", clinicCode=" + clinicCode + ", petCode="
-				+ petCode + ", time=" + time + ", memberNo=" + memberNo + ", status=" + status + "]";
+	public String getPetName() {
+		return petName;
 	}
 
+	public void setPetName(String petName) {
+		this.petName = petName;
+	}
+
+	public String getPetKind() {
+		return petKind;
+	}
+
+	public void setPetKind(String petKind) {
+		this.petKind = petKind;
+	}
+
+	public String getPetGender() {
+		return petGender;
+	}
+
+	public void setPetGender(String petGender) {
+		this.petGender = petGender;
+	}
+
+	public String getPetAge() {
+		return petAge;
+	}
+
+	public void setPetAge(String petAge) {
+		this.petAge = petAge;
+	}
+
+	public String getPetNeut() {
+		return petNeut;
+	}
+
+	public void setPetNeut(String petNeut) {
+		this.petNeut = petNeut;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	@Override
+	public String toString() {
+		return "HPbookDTO [no=" + no + ", time=" + time + ", memberNo=" + memberNo + ", status=" + status + ", petName="
+				+ petName + ", petKind=" + petKind + ", petGender=" + petGender + ", petAge=" + petAge + ", petNeut="
+				+ petNeut + ", message=" + message + "]";
+	}
+
+	
+	
+	
+
+	
 	
 	
 }

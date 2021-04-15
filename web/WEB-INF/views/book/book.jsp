@@ -88,17 +88,19 @@
                                               </select> 
                                                <label class="fieldlabels">나이<span class="text-danger">*</span></label>
 												 <select name="age">
-                                                  <option value="1">1세 이하</option>
-                                                  <option value="2">성견/성묘</option>
-                                                   <option value="3">노견/노묘</option>
+                                                  <option value="baby">1년 이하</option>
+                                                  <option value="adult">성견/성묘</option>
+                                                   <option value="old">노견/노묘</option>
                                               </select>  
                                             <label class="fieldlabels">중성화여부<span class="text-danger">*</span></label>
 												 <select name="neut">
                                                   <option value="Y">O</option>
                                                   <option value="N">X</option>
+                                                 <option value=" ">모름</option>
+                                                  
                                               </select> 
                                             <label for="exampleFormControlTextarea1">특이사항</label>
-                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="specaility" rows="5"></textarea>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5"></textarea>
                                     </div> 
                                     <input type="button" name="next" class="next action-button" value="Next" />
                                 </fieldset>
@@ -106,7 +108,7 @@
                                     <div class="form-card">
                                         <div class="row">
                                             <div class="col-7">
-                                                <h2 class="fs-title">진료 및 시간 선택</h2>
+                                                <h2 class="fs-title">진료 시간 선택</h2>
                                             </div>
                                             <div class="col-5">
                                                 <h2 class="steps">Step 2 - 4</h2>
@@ -114,21 +116,9 @@
                                         </div> 
                                        			
                                         <label class="fieldlabels">예약 시간<span class="text-danger">*</span></label>
-                                       <input type="date" name="date">
-                                       <input type="time" step='3600' value="12:00" name="time">
-                                       
-                                              <label class="fieldlabels">진료과 선택<span class="text-danger">*</span></label>
-                                              <select onchange="categoryChange(this)" name="subject">
-                                                <option>진료과목을 선택해주세요</option>
-                                                <option value="im">내과</option>
-                                                <option value="gs">외과</option>
-                                                <option value="dt">치과</option>
-                                                <option value="oph">안과</option>
-                                              </select> 
-                                              <label class="fieldlabels">세부 진료 선택<span class="text-danger">*</span></label>
-                                              <select id="sub" name="subName">
-                                               <option>세부진료를 선택해주세요</option>
-                                              </select> 
+                                      	<input type="date" name ="date">
+                                  		<input type="time" name ="time">
+                                        <input type="datetime-local" name="datetime">
                                               
                                     </div> 
                                     <input type="button" name="previous" class="previous action-button-previous"
@@ -149,8 +139,8 @@
                                                 <div class="gp-price-table-one clearfix wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="0.3s">
                                                     <div class="price-table-container">
                                                         <div class="price-inner">
-                                                            <span class="currency">￦</span>
-                                                            <span class="price">예약 내역</span>
+                                                            <span class="currency"></span>
+                                                            <span class="price">예약 확인</span>
                                                         </div>
                                                         <h5 class="title">예약내용</h5>
                                                         <ul class="description">
@@ -299,33 +289,7 @@
                 //# sourceURL=pen.js
             </script>
 		
-		<script type="text/javascript">
-		
-		function categoryChange(e) {
-			var sub_im = ["방광결석", "요도결석", "신장제거 수술", "쿠싱검사", "갑상선기능 저하", "심장사상충 키트 검사", "심장PDA 수술", "흉부방사선 검사", "영상 촬영 검진(MRI, CT)", "초음파 검사", "분변검사", "CRP염증 검사","만성 구토 설사 검사","혈청 혈액 검사","곰팡이 검사"];
-			var sub_gs = ["골절", "슬개골 탈구(양쪽)", "슬개골 탈구(한쪽)", "전십자인대 재건술", "종양/암 검진 수술", "이개혈종", "하마종 제거", "위 내시경", "담낭 수술", "유선종양 제거수술", "유선종양 제거수술(대형종)", "경계성 종양수술","항문 탈장수술","항문낭 제거 수술"];
-			var sub_oph = ["녹내장", "결막염", "체리아이", "유루증", "각막궤양","안구적출"];
-		    var sub_dt =["발치", "스케일링"];
-			var target = document.getElementById("sub");
-
-			if(e.value == "im") var d = sub_im;
-			else if(e.value == "gs") var d = sub_gs;
-			else if(e.value == "oph") var d = sub_oph;
-			else if(e.value == "dt") var d = sub_dt;
-
-			target.options.length = 0;
-
-			for (x in d) {
-				var opt = document.createElement("option");
-				opt.value = d[x];
-				opt.innerHTML = d[x];
-				target.appendChild(opt);
-			}	
-		}
 	
-	</script>
-		
-		
 		
 		
    <!-- Dependency Scripts -->

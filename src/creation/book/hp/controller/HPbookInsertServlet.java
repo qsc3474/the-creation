@@ -1,7 +1,8 @@
 package creation.book.hp.controller;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import creation.book.hp.model.dto.HPbookDTO;
 import creation.book.hp.model.service.HPbookService;
 import creation.member.model.dto.MemberDTO;
-import creation.pet.model.dto.PetDTO;
 
 
 /**
@@ -35,39 +35,34 @@ public class HPbookInsertServlet extends HttpServlet {
 		String petName =request.getParameter("petName");
 		String kind =request.getParameter("kind");
 		String gender = request.getParameter("gender");
-		int age = Integer.valueOf(request.getParameter("age"));
+		String age = request.getParameter("age");
 		String neut =request.getParameter("neut");
-		java.sql.Date bookDate= java.sql.Date.valueOf(request.getParameter("date"))  ;
+		String date= request.getParameter("date");
+		String time= request.getParameter("time");
+		String message = request.getParameter("message");
+	
 		
-		String subject = request.getParameter("subject");
-		String subName = request.getParameter("subName");
+		String dateTime= (date+" "+time);
+		
 		
 		System.out.println(bookMember);
 		System.out.println(petName);
 		System.out.println(kind);
 		System.out.println(gender);
 		System.out.println(neut);
-//		System.out.println(specaility);
-		System.out.println(bookDate);
-		
-		
-		System.out.println(subject);
-		System.out.println(subName);
+		System.out.println(dateTime);
+
 		
 		HPbookDTO newBook =new HPbookDTO();
-		newBook.setPetCode(new PetDTO());
-		newBook.setMemberNo(new MemberDTO());
 		
-		newBook.getMemberNo().setNo(bookMember);
-		
-		newBook.getPetCode().setName(petName);
-		newBook.getPetCode().setPetKind(kind);
-		newBook.getPetCode().setGender(gender);
-		newBook.getPetCode().setAge(age);
-		newBook.getPetCode().setPetNeutralization(neut);
-		newBook.setTime(bookDate);
-		newBook.setSubjectCode(subject);
-		newBook.setClinicCode(subName);
+		newBook.setMemberNo(bookMember);
+		newBook.setTime(dateTime);
+		newBook.setPetName(petName);
+		newBook.setPetKind(kind);
+		newBook.setPetGender(gender);
+		newBook.setPetAge(age);
+		newBook.setPetNeut(neut);
+		newBook.setMessage(message);
 		
 		
 		System.out.println(newBook);
