@@ -2,6 +2,7 @@ package creation.htBoard.htmodel.dto;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import creation.member.model.dto.MemberDTO;
 
@@ -14,28 +15,51 @@ public class HTNoticeDTO implements Serializable{
 	private String content;
 	private java.sql.Date drawupDate;
 	private int watched;
-	private String file;
 	private int memNo;
+	private String answer;
 	private MemberDTO writer;
 	private String categoryNo;
 	private String status;
 	private int cmtCount;
-
+	private List<HTFileinfoDTO> fileinfoList;
 	
 	public HTNoticeDTO() {
 		
 	}
 
+	public HTNoticeDTO(int no, String title, String content, Date drawupDate, int watched, int memNo, String answer,
+			MemberDTO writer, String categoryNo, String status, int cmtCount, List<HTFileinfoDTO> fileinfoList) {
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.drawupDate = drawupDate;
+		this.watched = watched;
+		this.memNo = memNo;
+		this.answer = answer;
+		this.writer = writer;
+		this.categoryNo = categoryNo;
+		this.status = status;
+		this.cmtCount = cmtCount;
+		this.fileinfoList = fileinfoList;
+	}
 
-	public HTNoticeDTO(int no, String title, String content, Date drawupDate, int watched, String file, int memNo,
+	public List<HTFileinfoDTO> getFileinfoList() {
+		return fileinfoList;
+	}
+
+	public void setFileinfoList(List<HTFileinfoDTO> fileinfoList) {
+		this.fileinfoList = fileinfoList;
+	}
+
+	public HTNoticeDTO(int no, String title, String content, Date drawupDate, int watched, int memNo, String answer,
 			MemberDTO writer, String categoryNo, String status, int cmtCount) {
 		this.no = no;
 		this.title = title;
 		this.content = content;
 		this.drawupDate = drawupDate;
 		this.watched = watched;
-		this.file = file;
 		this.memNo = memNo;
+		this.answer = answer;
 		this.writer = writer;
 		this.categoryNo = categoryNo;
 		this.status = status;
@@ -93,16 +117,6 @@ public class HTNoticeDTO implements Serializable{
 	}
 
 
-	public String getFile() {
-		return file;
-	}
-
-
-	public void setFile(String file) {
-		this.file = file;
-	}
-
-
 	public int getMemNo() {
 		return memNo;
 	}
@@ -110,6 +124,16 @@ public class HTNoticeDTO implements Serializable{
 
 	public void setMemNo(int memNo) {
 		this.memNo = memNo;
+	}
+
+
+	public String getAnswer() {
+		return answer;
+	}
+
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
 	}
 
 
@@ -157,13 +181,19 @@ public class HTNoticeDTO implements Serializable{
 		return serialVersionUID;
 	}
 
-
 	@Override
 	public String toString() {
 		return "HTNoticeDTO [no=" + no + ", title=" + title + ", content=" + content + ", drawupDate=" + drawupDate
-				+ ", watched=" + watched + ", file=" + file + ", memNo=" + memNo + ", writer=" + writer
-				+ ", categoryNo=" + categoryNo + ", status=" + status + ", cmtCount=" + cmtCount + "]";
+				+ ", watched=" + watched + ", memNo=" + memNo + ", answer=" + answer + ", writer=" + writer
+				+ ", categoryNo=" + categoryNo + ", status=" + status + ", cmtCount=" + cmtCount + ", fileinfoList="
+				+ fileinfoList + "]";
 	}
+
+
+	
+
+
+	
 	
 	
 	

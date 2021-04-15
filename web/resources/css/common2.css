@@ -56,7 +56,9 @@ ul, li {
 .page-submenu ul {
     margin: 0;
     padding: 0;
-    border: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     border-radius: 3px;
 }
 .page-submenu ul li  + li {
@@ -102,5 +104,41 @@ ul, li {
     opacity: 1;
 }
 .input-text, select {
-  width: 10% !important;
+	width: 10% !important;
+}
+.faq-list-box {
+	width: 100%;
+	padding: 0; 
+	margin-bottom: 70px;
+	border-top: 2px solid #0f0f0f;
+}
+.faq-list-box li{
+	border-top: 1px solid #4ebfbd; 
+}
+.faq-list-box li:first-child{
+	border:0 none;
+}
+.faq-list-box li a {
+	position: relative;
+    padding: 16px 26px;
+    background-color: #36b2b0;
+	display:block; 
+	text-decoration:none; 
+}
+.faq-list-box li a span {
+	font-size: 15px;
+	color: #fff;
+}
+.faq-list-box li a .fa-chevron-down {
+	position: absolute;
+    top: 20px;
+    right: 18px;
+    color: #fff;
+}
+.faq-list-box li p {
+	padding: 26px;
+	color:#0f0f0f;
+	font-size: 15px;
+    margin-bottom: 0;
+    background: #d0f5f4;
 }

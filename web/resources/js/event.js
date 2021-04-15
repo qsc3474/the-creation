@@ -43,10 +43,10 @@ if(document.getElementById("regist")){
 			location.href = "/creation/ht/NTC/notice/insert";
 		}
 	}
-	if(document.getElementById("HpwriteBoard")){
-		const $cancleNotice = document.getElementById("HpwriteBoard");
+	if(document.getElementById("cancleNotice")){
+		const $cancleNotice = document.getElementById("cancleNotice");
 		$cancleNotice.onclick = function(){
-			location.href = "/creation/hp/board/insert";
+			location.href = "/jsp/notice/list";
 		}
 	}
 	
@@ -56,12 +56,36 @@ if(document.getElementById("regist")){
 			location.href = "/jsp/board/insert";
 		}
 	}
-	if(document.getElementById("insertHPBoard")){
-		const $writeBoard = document.getElementById("insertHPBoard");
-		$writeBoard.onclick = function(){
-			location.href = "/creation/hp/board/insert";
+	
+	
+	
+	if(document.getElementById("delete")){
+	const $delete = document.getElementById("delete");
+	$delete.onclick = function() {
+		location.href= "/creation/ht/FAQ/delete";
+	 }
+	}
+	
+	if(document.getElementById("update")){
+	const $update = document.getElementById("update");
+	$update.onclick = function() {
+		location.href= "/creation/ht/FAQ/update";
+	 }
+	}
+	if(document.getElementById("writeFAQ")){
+		const $writeFAQ = document.getElementById("writeFAQ");
+		$writeFAQ.onclick = function(){
+			location.href = "/creation/ht/FAQ/insert";
 		}
 	}
+	if(document.getElementById("FAQsearch")){
+		const $FAQsearch = document.getElementById("FAQsearch");
+		$FAQsearch.onclick = function(){
+			location.href = "/creation//ht/FAQ/search";
+		}
+	}
+	
+	
 	
 	
 	

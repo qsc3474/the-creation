@@ -14,7 +14,7 @@
 			
 			var successMessage = "";
 			var movePath = "";
-			
+			/* 공지사항 */
 			switch(successCode){
 			case "thInsertNotice" :
 				successMessage = "공지사항 등록에 성공하셨습니다!";
@@ -27,6 +27,20 @@
 			case "thDeleteNotice" :
 				successMessage = "공지사항 삭제에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/list";
+				break;
+				
+		    /* FAQ */	
+			case "thInsertFAQ" :
+				successMessage = "공지사항 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/FAQ/list";
+				break;
+			case "htUpdateFAQ" :
+				successMessage = "공지사항 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/FAQ/list";
+				break;
+			case "thDeleteFAQ" :
+				successMessage = "공지사항 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/FAQ/list";
 				break;
 			}
 			
