@@ -121,22 +121,27 @@
                                         <div class="form-group col-sm-2">
                                             <label for="#">주소</label>
                                         </div>
+                                        
+                                        
+                                        <c:forTokens var="address" items="${sessionScope.loginMember.address }" delims="$">
+                                        <div class="col-md-7" style="float: right; margin-right: 220px;">
+                                            <div class="form-group">
+                                                <input type="tel" class="form-control" name="address2" placeholder="상세주소" value="${address }" readonly>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        </c:forTokens>
                                         <div class="col-sm-7 pl-10">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="tel" value="${sessionScope.loginMember.address }">
                                             </div>
                                         </div>
                                         <div class="col-md-2 align-self-center">
                                             <a href="info.html#BeautyPrice" class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff;">변경하기</a>
                                         </div>
-                                        <div class="col-md-7" style="float: right; margin-right: 220px;">
-                                            <div class="form-group">
-                                                <input type="tel" class="form-control" name="tel" placeholder="상세주소">
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-sm-7" style="float: right; margin-right: 220px;">
                                             <div class="form-group">
-                                                <input type="tel" class="form-control" name="tel" placeholder="상세주소">
+                                               
                                             </div>
                                         </div>
                                     </div>
