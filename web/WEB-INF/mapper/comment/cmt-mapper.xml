@@ -41,6 +41,25 @@
 	    , ?
 	    )
 	</entry>
+	<entry key="insertReply">
+	    INSERT
+	      INTO HOSPITAL_CMT
+	    (
+	      HP_CMT_NO
+        , HP_CMT_CONTENT
+        , HP_CMT_MEM_NO
+        , HP_REF_BOARD_NO
+        , HP_PARENT_CMT_NO
+	    )
+	    VALUES
+	    (
+	      SEQ_HT_CMT_CODE.NEXTVAL
+	    , ?
+	    , ?
+	    , ?
+	    , ?
+	    )
+	</entry>
 	<entry key="selectOneComment">
 	    SELECT
                A.HP_CMT_NO

@@ -41,9 +41,9 @@ public class AjaxCommentInsertServlet extends HttpServlet {
 		
 		System.out.println(insertComment);
 		
-		CommentDTO resultComment = new CommentService().insertComment(insertComment);
+		int result = new CommentService().insertComment(insertComment);
 		
-		String jsonString = new Gson().toJson(resultComment);
+		String jsonString = new Gson().toJson(result);
 		
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter out = response.getWriter();

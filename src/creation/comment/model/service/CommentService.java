@@ -36,7 +36,7 @@ public class CommentService {
 		
 	}
 
-	public CommentDTO insertComment(CommentDTO insertComment) {
+	public int insertComment(CommentDTO insertComment) {
 		
 		Connection con = getConnection();
 		
@@ -44,16 +44,13 @@ public class CommentService {
 		
 		int result = commentDAO.insertComment(con, insertComment);
 		
+		int incrementCommentCount = 0;
+		
 		if(result > 0) {
 			
-			int seqNo = commentDAO.selectCurrSeqNo(con);
+			incrementCommentCount = commentDAO.incrementCommentCount(con, insertComment);
 			
-			int incrementCommentCount = commentDAO.incrementCommentCount(con, insertComment);
-			System.out.println(incrementCommentCount);
-			
-			comment = commentDAO.selectOneComment(con, seqNo);
-			
-			if(comment != null && incrementCommentCount > 0) {
+			if(incrementCommentCount > 0) {
 				
 				commit(con);
 				
@@ -71,7 +68,7 @@ public class CommentService {
 		
 		close(con);
 		
-		return comment;
+		return result + incrementCommentCount;
 		
 	}
 	

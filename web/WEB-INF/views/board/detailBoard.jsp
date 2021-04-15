@@ -145,8 +145,6 @@
 							</table>
 						</div>
 					</div>
-					<h5 class="gp-form-heading text-center">There are ${ requestScope.board.cmtCount }
-						comments</h5>
 					<ul class="commentlist">
 					</ul>
 				</div>
@@ -198,6 +196,8 @@
 
 <script>
 
+var insertCount = 0;
+
 $(function(){  //페이지가 로드되면 댓글 데이터를 가져온다.
 	getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
 });
@@ -232,12 +232,14 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 	       
 	       var $commentlist = $(".commentlist");
 	       $commentlist.html('');
+	       var $currentCommentCount = $("<h5 class='gp-form-heading text-center'>There are " + (${ requestScope.board.cmtCount } + insertCount) + "comments</h5>");
+	       $commentlist.append($currentCommentCount);
 	  	   var commentCount = 0;
-	       while(commentCount != ${requestScope.board.cmtCount}){
+	       while(commentCount != (${requestScope.board.cmtCount} + insertCount)){
 	       	   
 	    	   commentCount = 0;
 	    	   
-	    	   for(var i = 0 ; i < ${requestScope.board.cmtCount} ; i++){
+	    	   for(var i = 0 ; i < (${requestScope.board.cmtCount} + insertCount) ; i++){
 	    		   
 	    		   commentCount += $("#commentNo" + data[i].no).length;
 	    		   
@@ -256,7 +258,7 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 			          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data[key].no + "' style='display:none;'>" + data[key].no + "</div>");
 			          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
 			          var $replyOfReply = $("<div>").addClass("modal-button");
-			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' onclick='replyCommentButtonAction();' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
+			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
 			          var $replyWriteTime = $("<div class='entry-meta'><i class='fa fa-clock-o'></i>" + data[key].writeTime + "</div>");
 			          var $contentDiv = $("<div>").addClass("ovh");
 			          var $contentText = $("<p>").text(data[key].content);
@@ -293,7 +295,7 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 			          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data[key].no + "' style='display:none;'>" + data[key].no + "</div>");
 			          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
 			          var $replyOfReply = $("<div>").addClass("modal-button");
-			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' onclick='replyCommentButtonAction();' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
+			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
 			          var $replyWriteTime = $("<div class='entry-meta'><i class='fa fa-clock-o'></i>" + data[key].writeTime + "</div>");
 			          var $contentDiv = $("<div>").addClass("ovh");
 			          var $contentText = $("<p>").text(data[key].content);
@@ -320,6 +322,11 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 		       }
 		       
 	       }
+	       $(".button").off('click');
+	       $("#replySubmitButton").off('click');
+	       $(".close-button").off('click');
+
+	       replyCommentButtonAction();
 	       
 	    },
 	    error:function(request, status, error){
@@ -340,40 +347,16 @@ function insertComment(content, currentBoardNo, currentBoardCategoryNo){
 	    type:'POST',
 	    success:function(data){
 	      console.log(data);
-	      var $commentlist = $(".commentlist");
-	       
-	      var $li = $("<li>").addClass("comment");
-          var $divClearfix = $("<div>").addClass("clearfix");
-          var $profilePicture = $("<figure>").addClass("avatar-box");
-          var $picture = $("<img src='${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png' class='avatar' style='padding-right: 10px'>");
-          var $commentContent = $("<div>").addClass("comment-content");
-          var $replyAuthorInfo = $("<header>").addClass("comment-author");
-          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data.no + "' style='display:none;'>" + data.no + "</div>");
-          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data.writer.name);
-          var $replyOfReply = $("<div>").addClass("reply");
-          var $replyButton = $("<button type='button' class='comment-reply-link'><i class='fa fa-reply-all'></i> <span>Leave reply</span></button>");
-          var $replyWriteTime = $("<div>").addClass("entry-meta");
-          var $writeTime = $("<i class='fa fa-clock-o'></i>" + data.writeTime);
-          var $contentDiv = $("<div>").addClass("ovh");
-          var $contentText = $("<p>").text(data.content);
-          var $end = $("<div>").addClass("clear");
-          
-          $li.append($divClearfix);
-          $divClearfix.append($profilePicture);
-          $profilePicture.append($picture);
-          $divClearfix.append($commentContent);
-          $commentContent.append($replyAuthorInfo);
-          $replyAuthorInfo.append($hiddenReplyNo);
-          $replyAuthorInfo.append($replyAuthorName);
-          $replyAuthorInfo.append($replyOfReply);
-          $replyOfReply.append($replyButton);
-          $replyAuthorInfo.append($replyWriteTime);
-          $replyWriteTime.append($writeTime);
-          $commentContent.append($contentDiv);
-          $contentDiv.append($contentText);
-          $commentContent.append($end);
-          
-          $commentlist.prepend($li);
+	      if(data == 2){
+	    	  
+	    	  insertCount++;
+	    	  getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
+	    	  
+	      } else {
+	    	  
+	    	  alert("댓글 작성에 실패하셨습니다.");
+	    	  
+	      }
           
           document.getElementById("content").value='';
 	       
@@ -392,47 +375,20 @@ function insertReplyOfReply(parentCommentNo, content, currentBoardNo, currentBoa
 	
 	$.ajax({
 	    url:"${ pageContext.servletContext.contextPath }/insert/reply",
-	    data:{writer:${ sessionScope.loginMember.no }, parentCommentNo:parentCommentNo, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
+	    data:{writerNo:${ sessionScope.loginMember.no }, parentCommentNo:parentCommentNo, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
 	    type:'POST',
 	    success:function(data){
 	      console.log(data);
-	       
-	      var $parentComment = $("#commentNo" + data[key].parentCmtNo);
-
-       	  var $ul = $("<ul class='children' id='commentNo" + data.no + "'>");
-       	  var $li = $("<li>").addClass("comment byuser comment-author-melissa-fox odd alt depth-2");
-          var $divClearfix = $("<div>").addClass("clearfix");
-          var $profilePicture = $("<figure>").addClass("avatar-box");
-          var $picture = $("<img src='${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png' class='avatar' style='padding-right: 10px'>");
-          var $commentContent = $("<div>").addClass("comment-content");
-          var $replyAuthorInfo = $("<header>").addClass("comment-author");
-          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data.no + "' style='display:none;'>" + data.no + "</div>");
-          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data.writer.name);
-          var $replyOfReply = $("<div>").addClass("reply");
-          var $replyButton = $("<button type='button' class='comment-reply-link'><i class='fa fa-reply-all'></i> <span>Leave reply</span></button>");
-          var $replyWriteTime = $("<div>").addClass("entry-meta");
-          var $writeTime = $("<i class='fa fa-clock-o'></i>" + data.writeTime);
-          var $contentDiv = $("<div>").addClass("ovh");
-          var $contentText = $("<p>").text(data.content);
-          var $end = $("<div>").addClass("clear");
-          
-          $ul.append($li);
-          $li.append($divClearfix);
-          $divClearfix.append($profilePicture);
-          $profilePicture.append($picture);
-          $divClearfix.append($commentContent);
-          $commentContent.append($replyAuthorInfo);
-          $replyAuthorInfo.append($hiddenReplyNo);
-          $replyAuthorInfo.append($replyAuthorName);
-          $replyAuthorInfo.append($replyOfReply);
-          $replyOfReply.append($replyButton);
-          $replyAuthorInfo.append($replyWriteTime);
-          $replyWriteTime.append($writeTime);
-          $commentContent.append($contentDiv);
-          $contentDiv.append($contentText);
-          $commentContent.append($end);
-          
-          $parentComment.append($ul);
+		  if(data == 2){
+	    	  
+			  insertCount++;
+	    	  getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
+	    	  
+	      } else {
+	    	  
+	    	  alert("댓글 작성에 실패하셨습니다.");
+	    	  
+	      }
 	       
 	    },
 	    error:function(request, status, error){
@@ -449,23 +405,16 @@ function insertReplyOfReply(parentCommentNo, content, currentBoardNo, currentBoa
 
 
 <script id="rendered-js">
+function replyCommentButtonAction() {
 
 	var no = 0;
-	var flag = true;
 	
-    function replyCommentButtonAction() {
-    	
-    	if(flag){
-    		
+	$(".button").click(function() {
 		    var $parent = this.parentNode;
 		    var getNo = $parent.parentNode.children[0];
 		    no = getNo.innerText;
 	        $(".pop").fadeIn(300);
-	        flag = false;
-	        
-    	}
-    	
-    }
+    });
 
     $("#replySubmitButton").click(function () {
         $(".pop").fadeOut(300);
@@ -477,7 +426,7 @@ function insertReplyOfReply(parentCommentNo, content, currentBoardNo, currentBoa
         $(".pop").fadeOut(300);
         document.getElementById("replyContent").value='';
     });
-
+}
 //# sourceURL=pen.js
 </script>
 <!-- modal -->
