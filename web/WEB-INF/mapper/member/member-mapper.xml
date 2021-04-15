@@ -59,7 +59,7 @@
 	     WHERE A.MEM_NO = ?
 	       AND A.MEM_STATUS = 'Y'
 	</entry>
-	<entry key="withdrawMember">
+	<entry key="deleteMember">
 	    UPDATE
 	           MEM_INFO A
 	       SET A.MEM_STATUS = 'N'

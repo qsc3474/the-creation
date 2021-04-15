@@ -171,17 +171,17 @@ public class MemberDAO {
 	}
 	
 	// 회원 탈퇴용 메소드
-	public int withdrawMember(Connection con, int no) {
-		
+
+	public int deleteMember(Connection con, MemberDTO deleteMember) {
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String query = prop.getProperty("withdrawMember");
+		String query = prop.getProperty("deleteMember");
 		
 		try {
 			
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, no);
+			pstmt.setInt(1, deleteMember.getNo());
 			
 			result = pstmt.executeUpdate();
 			
@@ -196,6 +196,5 @@ public class MemberDAO {
 		}
 		
 		return result;
-		
 	}
 }

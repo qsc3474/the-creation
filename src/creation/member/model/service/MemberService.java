@@ -86,11 +86,12 @@ private final MemberDAO memberDAO;
 	}
 
 	// 회원탈퇴 메소드
-	public int withdrawMember(int no) {
-		
+	
+
+	public int deleteMember(MemberDTO deleteMember) {
 		Connection con = getConnection();
 		
-		int result = memberDAO.withdrawMember(con, no);
+		int result = memberDAO.deleteMember(con, deleteMember);
 		
 		if(result > 0) {
 			
@@ -102,7 +103,7 @@ private final MemberDAO memberDAO;
 			
 		}
 		
-		return result;
+		return result;	
 	}
 
 

@@ -27,7 +27,6 @@
 
 <jsp:include page="../common/header.jsp"/>
 
-
          <form id="form" action="" method="post" class="vanilla vanilla-form" 
                                 data-vf-id="76ae1c44-b904-d78a-f1c8-d8d80edead50">
         <section class="singUp-sec">
