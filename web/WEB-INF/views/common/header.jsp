@@ -50,8 +50,8 @@
 							<ul class="sub-menu">
 								<li><a href="mg.html">내과</a></li>
 								<li><a href="gs.html">외과</a></li>
-								<li><a href="ey.html">안과</a></li>
-								<li><a href="dental.html">치과</a></li>
+								<li><a href="${ pageContext.servletContext.contextPath }/hp/info/price">안과</a></li>
+								<li><a href="${ pageContext.servletContext.contextPath }/hp/info/dental">치과</a></li>
 							</ul>
 						</li>
 						<li><a href="service.html">진료서비스</a></li>
