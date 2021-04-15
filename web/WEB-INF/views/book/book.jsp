@@ -52,11 +52,11 @@
                 <div class="row justify-content-center">
                     <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                         <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                            <form id="msform">
+                            <form id="msform" action="${pageContext.request.contextPath}/hp/book/insert" method="post">
                                 <!-- progressbar -->
                                 <ul id="progressbar">
-                                    <li class="active" id="account"><strong>개인정보입력</strong></li>
-                                    <li id="personal"><strong>Pet 정보입력</strong></li>
+                                    <li class="active" id="account"><strong>동물정보입력</strong></li>
+                                    <li id="personal"><strong>진료 선택</strong></li>
                                     <li id="payment"><strong>예약정보</strong></li>
                                     <li id="confirm"><strong>완료</strong></li>
                                 </ul>
@@ -68,22 +68,37 @@
                                     <div class="form-card">
                                         <div class="row">
                                             <div class="col-7">
-                                                <h2 class="fs-title">개인정보입력</h2>
+                                                <h2 class="fs-title">동물정보입력</h2>
                                             </div>
                                             <div class="col-5">
                                                 <h2 class="steps">Step 1 - 4</h2>
                                             </div>
                                         </div> 
-                                            <label class="fieldlabels">아이디 <span class="text-danger">*</span></label>
-                                            <input type="text" name="userId" placeholder="아이디" /> 
-                                            <label class="fieldlabels">비밀번호 <span class="text-danger">*</span></label> 
-                                            <input type="password" name="pwd" placeholder="비밀번호" />
-                                            <label class="fieldlabels">비밀번호 확인 <span class="text-danger">*</span></label> 
-                                            <input type="password" name="pwd" placeholder="비밀번호확인" />  
-                                            <label class="fieldlabels">이름<span class="text-danger">*</span></label>
-                                            <input type="text" name="uname" placeholder="이름" /> 
-                                            <label class="fieldlabels">이메일 <span class="text-danger">*</span></label> 
-                                            <input type="email" name="email" placeholder="Email" /> 
+                                        	 <label class="fieldlabels">이름<span class="text-danger">*</span></label>
+                                        	<input type="text" name="petName" placeholder="이름" />
+                                            <label class="fieldlabels">분류 (종)<span class="text-danger">*</span></label>
+                                            <select name="kind">
+                                                  <option value="D">Dog</option>
+                                                  <option value="C">Cat</option>
+                                              </select> 
+                                            <label class="fieldlabels">성별 <span class="text-danger">*</span></label> 
+                                              <select name="gender">
+                                                  <option value="male">남</option>
+                                                  <option value="female">여</option>
+                                              </select> 
+                                               <label class="fieldlabels">나이<span class="text-danger">*</span></label>
+												 <select name="age">
+                                                  <option value="1">1세 이하</option>
+                                                  <option value="2">성견/성묘</option>
+                                                   <option value="3">노견/노묘</option>
+                                              </select>  
+                                            <label class="fieldlabels">중성화여부<span class="text-danger">*</span></label>
+												 <select name="neut">
+                                                  <option value="Y">O</option>
+                                                  <option value="N">X</option>
+                                              </select> 
+                                            <label for="exampleFormControlTextarea1">특이사항</label>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="specaility" rows="5"></textarea>
                                     </div> 
                                     <input type="button" name="next" class="next action-button" value="Next" />
                                 </fieldset>
@@ -91,19 +106,17 @@
                                     <div class="form-card">
                                         <div class="row">
                                             <div class="col-7">
-                                                <h2 class="fs-title">Pet 정보</h2>
+                                                <h2 class="fs-title">진료 및 시간 선택</h2>
                                             </div>
                                             <div class="col-5">
                                                 <h2 class="steps">Step 2 - 4</h2>
                                             </div>
                                         </div> 
-                                        <label class="fieldlabels">이름<span class="text-danger">*</span></label>
-                                        <input type="text" name="petName" placeholder="이름" />
-                                            <label class="fieldlabels">분류<span class="text-danger">*</span></label>
-                                            <select name="kind">
-                                                  <option value="dog">Dog</option>
-                                                  <option value="cat">Cat</option>
-                                              </select> 
+                                       			
+                                        <label class="fieldlabels">예약 시간<span class="text-danger">*</span></label>
+                                       <input type="date" name="date">
+                                       <input type="time" step='3600' value="12:00" name="time">
+                                       
                                               <label class="fieldlabels">진료과 선택<span class="text-danger">*</span></label>
                                               <select onchange="categoryChange(this)" name="subject">
                                                 <option>진료과목을 선택해주세요</option>
@@ -116,8 +129,7 @@
                                               <select id="sub" name="subName">
                                                <option>세부진료를 선택해주세요</option>
                                               </select> 
-                                              <label for="exampleFormControlTextarea1">특이사항</label>
-                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="specaility" rows="5"></textarea>
+                                              
                                     </div> 
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Previous" />
@@ -138,7 +150,7 @@
                                                     <div class="price-table-container">
                                                         <div class="price-inner">
                                                             <span class="currency">￦</span>
-                                                            <span class="price" name="price">예약 내역</span>
+                                                            <span class="price">예약 내역</span>
                                                         </div>
                                                         <h5 class="title">예약내용</h5>
                                                         <ul class="description">
@@ -181,7 +193,7 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                                
+                                </form>
                         </div>
                     </div>
                 </div>

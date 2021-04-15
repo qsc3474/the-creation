@@ -55,7 +55,7 @@
 							</ul>
 						</li>
 						<li><a href="service.html">진료서비스</a></li>
-						<li><a href="${ pageContext.servletContext.contextPath }/hp/book">예약하기</a></li>
+						<li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
 						<li class="menu-item-has-children">
 							<a href="notice.html">커뮤니티</a>
 							<ul class="sub-menu">
