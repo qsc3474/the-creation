@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="${ pageContext.servletContext.contextPath }/ht/FAQ/list">
                             <span>자주 묻는 질문</span>
                             <i class="fas fa-chevron-right"></i>
                         </a>
@@ -111,22 +111,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>	
-					                 <c:forEach items="${ requestScope.htnoticeList }" var="NTC">
+					                 <c:forEach items="${ requestScope.htnoticeList }" var="HT_NTC">
 										<tr>
-											<td><c:out value="${ NTC.no }"/></td>
-											<td><c:out value="${ NTC.title }"/></td>
-											<td><c:out value="${ NTC.writer.name }"/></td>
-											<td><c:out value="${ NTC.drawupDate }"/></td>						
-											<td><c:out value="${ NTC.watched }"/></td>
+											<td><c:out value="${ HT_NTC.no }"/></td>
+											<td><c:out value="${ HT_NTC.title }"/></td>
+											<td><c:out value="${ HT_NTC.writer.name }"/></td>
+											<td><c:out value="${ HT_NTC.drawupDate }"/></td>						
+											<td><c:out value="${ HT_NTC.watched }"/></td>
 										</tr>
 									</c:forEach>
-									<c:forEach items="${ requestScope.htnoticedList }" var="NTC">
+									<c:forEach items="${ requestScope.htnoticedList }" var="HT_NTC">
 										<tr>
-											<td><c:out value="${ NTC.no }"/></td>
-											<td><c:out value="${ NTC.title }"/></td>
-											<td><c:out value="${ NTC.writer.name }"/></td>
-											<td><c:out value="${ NTC.drawupDate }"/></td>						
-											<td><c:out value="${ NTC.watched }"/></td>
+											<td><c:out value="${ HT_NTC.no }"/></td>
+											<td><c:out value="${ HT_NTC.title }"/></td>
+											<td><c:out value="${ HT_NTC.writer.name }"/></td>
+											<td><c:out value="${ HT_NTC.drawupDate }"/></td>						
+											<td><c:out value="${ HT_NTC.watched }"/></td>
 										</tr>
 									</c:forEach>
                                 </tbody>
@@ -166,7 +166,6 @@
 				</c:when>
 				<c:otherwise>
 				
-				
 					<button id="startPage"><<</button>
 			
 					<c:if test="${ requestScope.pageInfo.pageNo == 1 }">
@@ -198,8 +197,8 @@
 		</div> <!-- pagingArea end --> 
 
             
-				<button id="writeNotice">작성하기</button>	
-			<%-- <c:if test="${ sessionScope.loginMember.role eq 'M'}">
+				 <button id="writeNotice">작성하기</button>	 
+			<%-- <c:if test="${ sessionScope.loginMember.role eq "관리자"}">
 			</c:if> --%>
                    
                 </div>
@@ -235,6 +234,7 @@
 			</div>
 		</form>
     </div>  
+    
 </section>
 
 <script>

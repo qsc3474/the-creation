@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Properties;
 
 import creation.common.config.ConfigLocation;
+import creation.htBoard.htmodel.dto.HTFileinfoDTO;
 import creation.htBoard.htmodel.dto.HTNoticeDTO;
 import creation.htBoard.htmodel.dto.HTPageInfoDTO;
 import creation.member.model.dto.MemberDTO;
@@ -92,8 +93,8 @@ public class HTNoticeDAO {
 				
 				htnotice.getWriter().setName(rset.getString("MEM_NAME"));
 				
-				htnotice.setFile(rset.getString("HT_BD_FILE"));
 				htnotice.setMemNo(rset.getInt("HT_MEM_NO"));
+				htnotice.setAnswer(rset.getString("HT_BD_ANSWER"));
 				htnotice.setStatus(rset.getString("HT_BD_STATUS"));
 				htnotice.setCmtCount(rset.getInt("HT_BD_CMT_COUNT"));
 				
@@ -158,7 +159,7 @@ public class HTNoticeDAO {
 				htNoticeDetail.setDrawupDate(rset.getDate("HT_BD_DRAWUP_DATE"));
 				htNoticeDetail.setWatched(rset.getInt("HT_BD_WATCHED"));
 				htNoticeDetail.getWriter().setName(rset.getString("MEM_NAME"));
-				htNoticeDetail.setFile(rset.getString("HT_BD_FILE"));
+				
 				htNoticeDetail.setMemNo(rset.getInt("HT_MEM_NO"));
 				htNoticeDetail.setStatus(rset.getString("HT_BD_STATUS"));
 				htNoticeDetail.setCmtCount(rset.getInt("HT_BD_CMT_COUNT"));
@@ -290,7 +291,6 @@ public class HTNoticeDAO {
 			
 			htNotice.getWriter().setName(rset.getString("MEM_NAME"));
 			
-			htNotice.setFile(rset.getString("HT_BD_FILE"));
 			htNotice.setMemNo(rset.getInt("HT_MEM_NO"));
 			htNotice.setStatus(rset.getString("HT_BD_STATUS"));
 			htNotice.setCmtCount(rset.getInt("HT_BD_CMT_COUNT"));
@@ -340,6 +340,7 @@ public class HTNoticeDAO {
 		
 		PreparedStatement pstmt = null;
 		int result = 0;
+		System.out.println("no 넘어오니 : " + requestNotice);
 		String query = prop.getProperty("htdeleteNotice");
 		
 		try {
@@ -357,6 +358,11 @@ public class HTNoticeDAO {
 		
 		return result;
 	}
+
+	
+
+	
+
 	
 	
 
