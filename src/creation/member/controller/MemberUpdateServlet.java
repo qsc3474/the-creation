@@ -18,8 +18,7 @@ public class MemberUpdateServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		String path = "/WEB-INF/views/member/memberUpdate.jsp";
-		String path = "/WEB-INF/views/member/test.jsp";
+		String path = "/WEB-INF/views/member/memberUpdate.jsp";
 		
 		request.getRequestDispatcher(path).forward(request, response);
 		
