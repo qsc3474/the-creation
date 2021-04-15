@@ -28,7 +28,8 @@
 <jsp:include page="../common/header.jsp"/>
 
 
-
+         <form id="form" action="" method="post" class="vanilla vanilla-form" 
+                                data-vf-id="76ae1c44-b904-d78a-f1c8-d8d80edead50">
         <section class="singUp-sec">
             <div class="container box-line">
                 <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
@@ -37,8 +38,7 @@
                 <div class="row ">
                     <div class="col-md-9 col-md-offset-2">
                         <div class="form-container">
-                            <form action="#" method="post" class="vanilla vanilla-form" novalidate=""
-                                data-vf-id="76ae1c44-b904-d78a-f1c8-d8d80edead50">
+                           
                                 <div class="row">
                                     <div class="col-sm-12 pr-10">
                                         <div class="form-group col-sm-2">
@@ -54,7 +54,7 @@
                                             <label for="#">비밀번호</label>
                                         </div>
                                         <div class="form-group col-sm-7">
-                                            <input type="password" class="form-control" placeholder="비밀번호">
+                                            <input type="password" class="form-control" placeholder="비밀번호" name="memberPwd">
                                         </div>
                                         <!--/.form-group -->
                                     </div>
@@ -80,7 +80,7 @@
                                             <label for="#">이메일</label>
                                         </div>
                                         <div class="form-group col-sm-3" style="padding-right: 0;">
-                                            <input type="text" class="form-control" value="${sessionScope.loginMember.email }">
+                                            <input type="text" class="form-control" name="email" value="${sessionScope.loginMember.email }">
                                         </div>
                                         <div class="form-group col-sm-1" style="padding-right: 0;">
                                             <div class="input-group-prepend">
@@ -90,9 +90,7 @@
                                         <div class="form-group col-md-3">
                                           
                                         </div>
-                                        <div class="col-md-2">
-                                            <a href="info.html#BeautyPrice" class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff;">변경하기</a>
-                                        </div>
+                                        
                                     </div>
                                     <!--/column -->
                                     <div class="col-md-12">
@@ -113,7 +111,7 @@
                                                 <input type="text" class="form-control" name="tel2" value="${fn:substring(TextValue,2,6) }">
                                             </div>
                                             <div class="form-group col-md-2">
-                                                <input type="text" class="form-control" id="tel3" value="${fn:substring(TextValue,6,11) }">
+                                                <input type="text" class="form-control" name="tel3" value="${fn:substring(TextValue,6,11) }">
                                             </div>
                                         </div>
                                     </div>
@@ -123,20 +121,28 @@
                                         </div>
                                         
                                         
-                                        <c:forTokens var="address" items="${sessionScope.loginMember.address }" delims="$">
                                         <div class="col-md-7" style="float: right; margin-right: 220px;">
                                             <div class="form-group">
-                                                <input type="tel" class="form-control" name="address2" placeholder="상세주소" value="${address }" readonly>
+                                                <input type="text" class="form-control" name="address1" id="zipCode"  readonly>
+                                            </div>
+                                        </div>
+                                          <div class="col-md-7" style="float: right; margin-right: 220px;">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="address2" placeholder="상세주소" id="address1" readonly>
+                                            </div>
+                                        </div>
+                                          <div class="col-md-7" style="float: right; margin-right: 220px;">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="address3" placeholder="상세주소" id="address2" >
                                             </div>
                                         </div>
                                         <br>
-                                        </c:forTokens>
                                         <div class="col-sm-7 pl-10">
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="col-md-2 align-self-center">
-                                            <a href="info.html#BeautyPrice" class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff;">변경하기</a>
+                                            <input type="button"  class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff;" value="검색" id="searchZipCode">
                                         </div>
                                         
                                         <div class="col-sm-7" style="float: right; margin-right: 220px;">
@@ -146,16 +152,56 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                           
                         </div>
                     </div>
                 </div>
                 <!-- /.row -->
                 <div class="text-center" style="margin-right: -50px;">
-                    <a href="info.html#BeautyPrice" class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff;">수정</a>
-                    <a href="info.html#BeautyPrice" class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff; background: #FDC647;">탈퇴</a>
+                    <input type="button" class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff;"value="수정" onclick="postRequest('updateMember')">
+                    <input type="button"  class="gp-btn btn-dark small" style=" margin-bottom: 5px; color: #fff; background: #FDC647;" value="탈퇴" onclick="postRequest('deleteMember')">
+                
                 </div>
             </div>
         </section>
+        </form>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		const $searchZipCode = document.getElementById("searchZipCode");
+		
+		$searchZipCode.onclick = function(){
+			
+			new daum.Postcode({
+				oncomplete : function(data){
+					document.getElementById("zipCode").value = data.zonecode;
+					document.getElementById("address1").value = data.address;
+					document.getElementById("address2").focus();
+				}
+			}).open();
+		}
+	
+	</script>
+	<script>
+		function postRequest(intent){
+			var $form = document.getElementById("form");
+			var passwordValue = document.getElementsByName("memberPwd")[0].value;
+			
+			// "", null, undefined, 0, NaN에 해당되면 false
+			if(!passwordValue || passwordValue === "") {	// 사용자가 비번을 입력하지 않았을 때
+				alert("비밀번호는 반드시 입력해야 합니다.");
+				document.getElemetsByName("memberPwd")[0].focus();
+			}
+			
+			requestPath = "<%=request.getContextPath()%>";
+			
+			switch(intent){
+				case "updateMember" : requestPath += "/member/update"; break;
+				case "deleteMember" : requestPath += "/member/delete"; break;
+			}
+			
+			$form.action = requestPath;
+			$form.submit();
+		}
+	</script>
 </body>
 </html>

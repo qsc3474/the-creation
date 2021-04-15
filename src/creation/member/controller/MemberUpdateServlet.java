@@ -27,7 +27,7 @@ public class MemberUpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int no = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
-		String email = request.getParameter("email1") + "@" + request.getParameter("email2");
+		String email = request.getParameter("email");
 		int phone = Integer.valueOf(request.getParameter("tel1") + request.getParameter("tel2") + request.getParameter("tel3"));
 		String address = request.getParameter("address1") + "$" + request.getParameter("address2")
         					+ "$" + request.getParameter("address3");
