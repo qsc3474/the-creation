@@ -19,8 +19,8 @@
 		     , A.HT_BD_DRAWUP_DATE
 		     , A.HT_BD_WATCHED
 		     , A.MEM_NAME
-		     , A.HT_BD_FILE
 		     , A.HT_MEM_NO
+             , A.HT_BD_ANSWER
 		     , A.HT_BD_STATUS
              , A.HT_BD_CMT_COUNT  
 		  FROM (SELECT ROWNUM RNUM
@@ -31,8 +31,8 @@
 		  			 , B.HT_BD_DRAWUP_DATE
                      , B.HT_BD_WATCHED
 		  			 , B.MEM_NAME
-		  			 , B.HT_BD_FILE
 		  			 , B.HT_MEM_NO
+                     , B.HT_BD_ANSWER
 		  			 , B.HT_BD_STATUS
                      , B.HT_BD_CMT_COUNT
 		  		  FROM (SELECT C.HT_BD_NO
@@ -42,13 +42,61 @@
 		  		  			 , C.HT_BD_DRAWUP_DATE
                              , C.HT_BD_WATCHED
 		  		  			 , D.MEM_NAME
-		  		  			 , C.HT_BD_FILE
 		  		  			 , C.HT_MEM_NO
+                             , C.HT_BD_ANSWER
 		  		  			 , C.HT_BD_STATUS
                              , C.HT_BD_CMT_COUNT
 		  		  		  FROM HOTEL_BD C
 		  		  		  JOIN MEM_INFO D ON(C.HT_MEM_NO = D.MEM_NO)
 		  		  		 WHERE C.HT_BD_STATUS = 'PUBLIC'
+		  		  		   AND C.HT_BD_CATEGORY_NO = 'HT_NTC'
+		  		  		 ORDER BY C.HT_BD_NO DESC
+		  		       ) B
+		       ) A
+		 WHERE A.RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="">
+		SELECT 		/* creation.notice.model.dao.HTNoticeDAO#selectTotalCount() */ /* 게시물 전체 조회용 메소드 */
+			   A.RNUM
+		     , A.HT_BD_NO
+             , A.HT_BD_CATEGORY_NO     
+		     , A.HT_BD_TITLE
+		     , A.HT_BD_CONTENT
+		     , A.HT_BD_DRAWUP_DATE
+		     , A.HT_BD_WATCHED
+		     , A.MEM_NAME
+		     , A.HT_MEM_NO
+             , A.HT_BD_ANSWER
+		     , A.HT_BD_STATUS
+             , A.HT_BD_CMT_COUNT  
+		  FROM (SELECT ROWNUM RNUM
+		  			 , B.HT_BD_NO
+		  			 , B.HT_BD_CATEGORY_NO
+		  			 , B.HT_BD_TITLE
+		  			 , B.HT_BD_CONTENT
+		  			 , B.HT_BD_DRAWUP_DATE
+                     , B.HT_BD_WATCHED
+		  			 , B.MEM_NAME
+		  			 , B.HT_MEM_NO
+                     , B.HT_BD_ANSWER
+		  			 , B.HT_BD_STATUS
+                     , B.HT_BD_CMT_COUNT
+		  		  FROM (SELECT C.HT_BD_NO
+		  		  			 , C.HT_BD_CATEGORY_NO
+		  		  			 , C.HT_BD_TITLE
+		  		  			 , C.HT_BD_CONTENT
+		  		  			 , C.HT_BD_DRAWUP_DATE
+                             , C.HT_BD_WATCHED
+		  		  			 , D.MEM_NAME
+		  		  			 , C.HT_MEM_NO
+                             , C.HT_BD_ANSWER
+		  		  			 , C.HT_BD_STATUS
+                             , C.HT_BD_CMT_COUNT
+		  		  		  FROM HOTEL_BD C
+		  		  		  JOIN MEM_INFO D ON(C.HT_MEM_NO = D.MEM_NO)
+		  		  		 WHERE C.HT_BD_STATUS = 'PUBLIC'
+		  		  		   AND C.HT_BD_CATEGORY_NO = 'HT_FAQ'
 		  		  		 ORDER BY C.HT_BD_NO DESC
 		  		       ) B
 		       ) A
@@ -74,7 +122,6 @@
 		, HT_BD_CONTENT
 		, HT_BD_DRAWUP_DATE
 		, HT_BD_WATCHED
-		, HT_BD_FILE
 		, HT_MEM_NO
 		, HT_BD_CATEGORY_NO
 		, HT_BD_STATUS
@@ -86,10 +133,9 @@
 		, ?
 		, DEFAULT
 		, DEFAULT
-		, NULL
 		, ?
 		, ?
-		,'PUBLIC'
+		, DEFAULT
 		)
 	</entry>
 	
@@ -102,7 +148,6 @@
 		     , A.HT_BD_DRAWUP_DATE
 		     , A.HT_BD_WATCHED
 		     , B.MEM_NAME
-		     , A.HT_BD_FILE
 		     , A.HT_MEM_NO
 		     , A.HT_BD_STATUS
              , A.HT_BD_CMT_COUNT
@@ -161,31 +206,31 @@
 		     , A.HT_BD_DRAWUP_DATE
 		     , A.HT_BD_WATCHED
 		     , A.MEM_NAME
-		     , A.HT_BD_FILE
 		     , A.HT_MEM_NO
+             , A.HT_BD_ANSWER
 		     , A.HT_BD_STATUS
              , A.HT_BD_CMT_COUNT  
-          FROM (SELECT ROWNUM RNUM
+		  FROM (SELECT ROWNUM RNUM
                      , B.HT_BD_NO
-                     , B.HT_BD_CATEGORY_NO     
-                     , B.HT_BD_TITLE
-                     , B.HT_BD_CONTENT
-                     , B.HT_BD_DRAWUP_DATE
+		  			 , B.HT_BD_CATEGORY_NO
+		  			 , B.HT_BD_TITLE
+		  			 , B.HT_BD_CONTENT
+		  			 , B.HT_BD_DRAWUP_DATE
                      , B.HT_BD_WATCHED
-                     , B.MEM_NAME
-                     , B.HT_BD_FILE
-                     , B.HT_MEM_NO
-                     , B.HT_BD_STATUS
-                     , B.HT_BD_CMT_COUNT  
-                  FROM (SELECT C.HT_BD_NO
+		  			 , B.MEM_NAME
+		  			 , B.HT_MEM_NO
+                     , B.HT_BD_ANSWER
+		  			 , B.HT_BD_STATUS
+                     , B.HT_BD_CMT_COUNT
+		  		  FROM (SELECT C.HT_BD_NO
                              , C.HT_BD_CATEGORY_NO     
                              , C.HT_BD_TITLE
                              , C.HT_BD_CONTENT
                              , C.HT_BD_DRAWUP_DATE
                              , C.HT_BD_WATCHED
                              , E.MEM_NAME
-                             , C.HT_BD_FILE
                              , C.HT_MEM_NO
+                             , C.HT_BD_ANSWER
                              , C.HT_BD_STATUS
                              , C.HT_BD_CMT_COUNT  
                           FROM HOTEL_BD C
@@ -199,7 +244,7 @@
 	</entry>
 	
 	<entry key="searchTitleNotice">	
-	    SELECT						/* creation.notice.model.dao.HTNoticeDAO#searchTitleNotice() */
+	   SELECT		/* 게시판 검색 결과 조회용 메소드 */	/* creation.notice.model.dao.HTNoticeDAO#searchWriterNotice() */
                A.RNUM
 		     , A.HT_BD_NO
              , A.HT_BD_CATEGORY_NO     
@@ -208,31 +253,31 @@
 		     , A.HT_BD_DRAWUP_DATE
 		     , A.HT_BD_WATCHED
 		     , A.MEM_NAME
-		     , A.HT_BD_FILE
 		     , A.HT_MEM_NO
+             , A.HT_BD_ANSWER
 		     , A.HT_BD_STATUS
              , A.HT_BD_CMT_COUNT  
-          FROM (SELECT ROWNUM RNUM
+		  FROM (SELECT ROWNUM RNUM
                      , B.HT_BD_NO
-                     , B.HT_BD_CATEGORY_NO     
-                     , B.HT_BD_TITLE
-                     , B.HT_BD_CONTENT
-                     , B.HT_BD_DRAWUP_DATE
+		  			 , B.HT_BD_CATEGORY_NO
+		  			 , B.HT_BD_TITLE
+		  			 , B.HT_BD_CONTENT
+		  			 , B.HT_BD_DRAWUP_DATE
                      , B.HT_BD_WATCHED
-                     , B.MEM_NAME
-                     , B.HT_BD_FILE
-                     , B.HT_MEM_NO
-                     , B.HT_BD_STATUS
-                     , B.HT_BD_CMT_COUNT  
-                  FROM (SELECT C.HT_BD_NO
+		  			 , B.MEM_NAME
+		  			 , B.HT_MEM_NO
+                     , B.HT_BD_ANSWER
+		  			 , B.HT_BD_STATUS
+                     , B.HT_BD_CMT_COUNT
+		  		  FROM (SELECT C.HT_BD_NO
                              , C.HT_BD_CATEGORY_NO     
                              , C.HT_BD_TITLE
                              , C.HT_BD_CONTENT
                              , C.HT_BD_DRAWUP_DATE
                              , C.HT_BD_WATCHED
                              , E.MEM_NAME
-                             , C.HT_BD_FILE
                              , C.HT_MEM_NO
+                             , C.HT_BD_ANSWER
                              , C.HT_BD_STATUS
                              , C.HT_BD_CMT_COUNT  
                           FROM HOTEL_BD C
@@ -246,7 +291,7 @@
 	</entry>
 	
 	<entry key="searchContentNotice">	
-	    SELECT								/* creation.notice.model.dao.HTNoticeDAO#searchContentNotice() */
+	   SELECT		/* 게시판 검색 결과 조회용 메소드 */	/* creation.notice.model.dao.HTNoticeDAO#searchWriterNotice() */
                A.RNUM
 		     , A.HT_BD_NO
              , A.HT_BD_CATEGORY_NO     
@@ -255,31 +300,31 @@
 		     , A.HT_BD_DRAWUP_DATE
 		     , A.HT_BD_WATCHED
 		     , A.MEM_NAME
-		     , A.HT_BD_FILE
 		     , A.HT_MEM_NO
+             , A.HT_BD_ANSWER
 		     , A.HT_BD_STATUS
              , A.HT_BD_CMT_COUNT  
-          FROM (SELECT ROWNUM RNUM
+		  FROM (SELECT ROWNUM RNUM
                      , B.HT_BD_NO
-                     , B.HT_BD_CATEGORY_NO     
-                     , B.HT_BD_TITLE
-                     , B.HT_BD_CONTENT
-                     , B.HT_BD_DRAWUP_DATE
+		  			 , B.HT_BD_CATEGORY_NO
+		  			 , B.HT_BD_TITLE
+		  			 , B.HT_BD_CONTENT
+		  			 , B.HT_BD_DRAWUP_DATE
                      , B.HT_BD_WATCHED
-                     , B.MEM_NAME
-                     , B.HT_BD_FILE
-                     , B.HT_MEM_NO
-                     , B.HT_BD_STATUS
-                     , B.HT_BD_CMT_COUNT  
-                  FROM (SELECT C.HT_BD_NO
+		  			 , B.MEM_NAME
+		  			 , B.HT_MEM_NO
+                     , B.HT_BD_ANSWER
+		  			 , B.HT_BD_STATUS
+                     , B.HT_BD_CMT_COUNT
+		  		  FROM (SELECT C.HT_BD_NO
                              , C.HT_BD_CATEGORY_NO     
                              , C.HT_BD_TITLE
                              , C.HT_BD_CONTENT
                              , C.HT_BD_DRAWUP_DATE
                              , C.HT_BD_WATCHED
                              , E.MEM_NAME
-                             , C.HT_BD_FILE
                              , C.HT_MEM_NO
+                             , C.HT_BD_ANSWER
                              , C.HT_BD_STATUS
                              , C.HT_BD_CMT_COUNT  
                           FROM HOTEL_BD C
@@ -291,6 +336,31 @@
                ) A
          WHERE A.RNUM BETWEEN ? AND ?
 	</entry>
+	
+	<entry key="insertThumbnail">
+	    INSERT
+	      INTO FILE_INFO A
+	   	(
+	   	  A.FILE_NO
+	   	, A.BD_NO
+	   	, A.BD_CATEGORY_NO
+	   	, A.ORIGIN_FILE_NAME
+	   	, A.FILE_PATH
+	   	, A.SAVE_FILE_NAME
+	   	, A.FILE_EXTENSION
+	   	)
+	   	VALUES
+	   	(
+	   		1
+	   	, ?
+	   	, ?
+	   	, ?
+	   	, ?
+	   	, ?
+	   	, ?
+	   	)
+	</entry>
+	
 	
 </properties>
 
