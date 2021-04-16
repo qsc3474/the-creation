@@ -6,16 +6,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>개편한 세상- 회원가입</title>
+
+<style>
+.row {margin-right: -15px;}
+
+</style>
+
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	<div id="main_content">
 		<section class="step-title">
             <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
-                <h2>회원가입</h2>
-                <p>
-                    통합회원가입
-                </p>
+                <h2>통합회원가입</h2>
                 <P style="font-size: 15px; margin-top: 20px;">통합회원가입을 통해 하나의 아이디로 <br>
                     휘닉스 호텔앤드리조트 사이트 서비스를 모두 이용하실 수 있습니다.</P>
             </div>
@@ -23,7 +26,7 @@
 
         <section id="pricing" style="padding-top: 0;">
 			<div class="container">
-				<div class="row col-md-offset-3">
+				<div class="row" style="margin:0 auto; padding-left:290px">
 					<div class="col-md-4">
 						<div class="gp-price-table-one clearfix wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="0.3s">
 							<div class="price-table-container">

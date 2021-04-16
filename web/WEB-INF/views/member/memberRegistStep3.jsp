@@ -151,7 +151,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-2 align-self-center">
-                                        	<input type="button" class="gp-btn btn-primary small" value="검색" id="searchZipCode" style="padding: 10px 15px;">
+                                        	<input type="button" class="gp-btn btn-primary small" value="검색" id="searchZipCode" style="padding: 10px 30px; border:0;">
                                         </div>
                                         <div class="form-group col-sm-3">
                                             <label for="#">주소</label>
@@ -178,7 +178,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center mt">
-				                    <button type="submit" class="gp-btn btn-primary larg">회원가입</button>
+				                    <button type="submit" class="gp-btn btn-primary larg" style="border:0">회원가입</button>
 				                </div>
                             </form>
                         </div>

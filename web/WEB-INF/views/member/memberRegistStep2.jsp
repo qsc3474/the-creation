@@ -201,7 +201,7 @@
                         </div>
                     </form>
                     <div class="text-center">
-                        <button class="gp-btn btn-primary larg" id="progressButton">다음</button>
+                        <button class="gp-btn btn-primary" id="progressButton" style="border:0">다음</button>
                     </div>
                 </div>
             </div>
