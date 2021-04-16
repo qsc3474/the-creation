@@ -130,7 +130,7 @@
 						<div class="col-md-6">
 							<div class="blog-post wow fadeInRight" data-wow-delay="0.9s">
 								<div class="blog-thumb">
-									<a href="reservation.html">
+									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy01.jpg" alt="Blog thumb" >
 									</a>
 									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert" class="date"><span>01</span><br>예약하기</a>
