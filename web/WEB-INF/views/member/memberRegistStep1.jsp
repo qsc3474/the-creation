@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>개편한 세상- 회원가입</title>
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
