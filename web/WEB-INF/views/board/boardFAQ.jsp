@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<title>개편한 병원-FAQ</title>
 <style>
 .title-sec {margin-top: 107.628px; height: 100px; margin-bottom: 0; padding: 30px;}
 .section-title {margin-bottom: 10px;}

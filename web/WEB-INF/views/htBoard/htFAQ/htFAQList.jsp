@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>개편한 호텔</title>
+	<title>개편한 호텔 -FAQ</title>
     <!-- 기기(디바이스)별 크기를 인식 하고 1.0으로 확대 및 축소 없이해서 보여줌 -->
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">

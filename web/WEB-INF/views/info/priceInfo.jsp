@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>개편한세상-가격정보</title>
 </head>
 <body>
 <jsp:include page="../common/header.jsp"></jsp:include>

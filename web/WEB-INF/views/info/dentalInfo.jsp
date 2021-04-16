@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>개편한 세상-치과진료 정보</title>
 </head>
 <body>
 
@@ -133,7 +133,7 @@
             </div>
             <div class="row">
                <div class="col-md-6 col-sm-6">
-                        <h3>치료 후</h3>
+                        <h3>치료 전</h3>
                   <div class="feature-box-one box-img">
                      <div class="img-box">
                         <img src="${ pageContext.servletContext.contextPath }/resources/media/img/before.jpg" alt="dog">

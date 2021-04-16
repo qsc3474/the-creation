@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>개편한 병원-게시판 수정</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
