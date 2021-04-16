@@ -130,17 +130,6 @@
 					</ul>
 				</c:if>
 			</div>
-			<c:if test="${ !empty sessionScope.loginMember }">
-				<ul>
-					<li><c:out value="${ sessionScope.loginMember.name }" />님의
-						방문을 환영합니다.</li>
-					<li><a
-						href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
-					<li><a
-						href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
-				</ul>
-			</c:if>
-		</div>
 		</div>
 	</header>
 	<!-- header -->
