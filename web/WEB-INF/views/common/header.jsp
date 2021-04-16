@@ -75,11 +75,22 @@
 							<li><a href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
 						</ul>
 						</c:if>
-							<c:if test="${ !empty sessionScope.loginMember }">
+							<c:if test="${ sessionScope.loginMember.kind eq 'C' }">
 					<ul>
 							<li><c:out value="${ sessionScope.loginMember.name }"/>님의 방문을 환영합니다. </li>
 							<li><a href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
+						</ul>
+					
+					
+							</c:if>
+								<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+					<ul>
+							<li><c:out value="${ sessionScope.loginMember.name }"/>님의 방문을 환영합니다. </li>
+							<li><a href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/member/update">관리자</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
+							
 						</ul>
 					
 					
