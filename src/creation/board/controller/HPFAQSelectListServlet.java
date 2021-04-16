@@ -67,8 +67,9 @@ public class HPFAQSelectListServlet extends HttpServlet {
 			
 		} else {
 			
-			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "FAQ를 조회하지 못했습니다.");
+			path = "/WEB-INF/views/board/boardFAQ.jsp";
+			request.setAttribute("HPFAQList", HPFAQList);
+			request.setAttribute("pageInfo", pageInfo);
 			
 		}
 		

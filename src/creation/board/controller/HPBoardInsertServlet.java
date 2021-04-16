@@ -20,7 +20,8 @@ public class HPBoardInsertServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String path = "/WEB-INF/views/board/boardInsertForm.jsp";
-		
+		String categoryNo = request.getParameter("categoryNo");
+		request.setAttribute("categoryNo", categoryNo);
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}

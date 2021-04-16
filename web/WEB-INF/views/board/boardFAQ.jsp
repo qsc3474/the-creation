@@ -130,7 +130,7 @@
 		if (document.getElementById("insertFAQboard")) {
 			const $insertFAQboard = document.getElementById("insertFAQboard");
 			$insertFAQboard.onclick = function() {
-				location.href = "${pageContext.request.contextPath}/hp/board/insert";
+				location.href = "${pageContext.request.contextPath}/hp/board/insert?categoryNo=HP_FAQ";
 			}
 		}
 	</script>

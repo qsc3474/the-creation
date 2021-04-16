@@ -27,13 +27,12 @@
 						<label for="title">선택</label> <select
 							class="custom-select mr-sm-2" name="boardCategory"
 							id="boardCategory">
-							<option value="def" selected>게시글</option>
-							<option value="HP_RV">후기게시판</option>
-							<option value="HP_QNA">QnA</option>
+							<option value="HP_RV" <c:if test="${ requestScope.categoryNo eq 'HP_RV' }">selected</c:if>>후기게시판</option>
+							<option value="HP_QNA" <c:if test="${ requestScope.categoryNo eq 'HP_QNA' }">selected</c:if>>QnA</option>
 							<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
-								<option value="HP_FAQ">자주묻는질문</option>
-								<option value="HP_INFO">정보게시판</option>
-								<option value="HP_NTC">공지사항</option>
+								<option value="HP_FAQ" <c:if test="${ requestScope.categoryNo eq 'HP_FAQ' }">selected</c:if>>자주묻는질문</option>
+								<option value="HP_INFO" <c:if test="${ requestScope.categoryNo eq 'HP_INFO' }">selected</c:if>>정보게시판</option>
+								<option value="HP_NTC" <c:if test="${ requestScope.categoryNo eq 'HP_NTC' }">selected</c:if>>공지사항</option>
 							</c:if>
 						</select>
 					</div>

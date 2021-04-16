@@ -23,7 +23,13 @@ public class Pagenation {
 		
 		if(pageNo > maxPage) {
 			
-			pageNo = maxPage;
+			if(maxPage == 0) {
+				
+			} else {
+				
+				pageNo = maxPage;
+				
+			}
 			
 		}
 		
