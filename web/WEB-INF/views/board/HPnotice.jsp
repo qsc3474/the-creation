@@ -47,29 +47,7 @@
 	</section>
 	<section class="notice-sec">
 		<div class="container">
-			<div class="col-lg-2">
-				<aside class="page-submenu">
-					<ul>
-						<li><a
-							href="${ pageContext.servletContext.contextPath }/hp/notice/list"
-							class="active"> <span>공지사항</span> <i
-								class="fas fa-chevron-right"></i>
-						</a></li>
-						<li><a href="#"> <span>자주 묻는 질문</span> <i
-								class="fas fa-chevron-right"></i>
-						</a></li>
-						<li><a href="#"> <span>문의사항</span> <i
-								class="fas fa-chevron-right"></i>
-						</a></li>
-						<li><a href="#"> <span>갤러리</span> <i
-								class="fas fa-chevron-right"></i>
-						</a></li>
-						<li><a href="#"> <span>사용후기</span> <i
-								class="fas fa-chevron-right"></i>
-						</a></li>
-					</ul>
-				</aside>
-			</div>
+			<jsp:include page="/WEB-INF/views/board/pageSubmenu.jsp"></jsp:include>
 			<div class="col-lg-10">
 				<div id="page-wrapper">
 					<div id="page-inner">

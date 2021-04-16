@@ -64,8 +64,9 @@ public class HPNoticeSelectListServlet extends HttpServlet {
 			
 		} else {
 			
-			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공지를 조회하지 못했습니다.");
+			path = "/WEB-INF/views/board/HPnotice.jsp";
+			request.setAttribute("HPNCTList", HPNCTList);
+			request.setAttribute("pageInfo", pageInfo);
 			
 		}
 		System.out.println(path);

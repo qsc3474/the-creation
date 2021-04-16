@@ -23,16 +23,22 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	<section id="reviewdetail" class="notice-sec">
 		<div class="container">
-			<div class="row">
-				<div class="bhoechie-tab-content col-md-12">
-					<div align="center">
-						<h2 style="margin-top: 0; color: #F2B138" class="pt pb hide">F&amp;Q</h2>
-						<div class="col-md-12 mb">
-							<div class="choose wow fadeInUp" data-wow-delay="0.5s">
-								<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
-									<button type="button" id="insertFAQboard">작성하기</button>
-								</c:if>
-								<div class="panel-group" id="accordion">
+			<jsp:include page="/WEB-INF/views/board/pageSubmenu.jsp"></jsp:include>
+			<div class="col-lg-10">
+				<div id="page-wrapper">
+					<div id="page-inner">
+						<div class="row">
+							<div class="bhoechie-tab-content col-md-12">
+								<div align="center">
+									<h2 style="margin-top: 0; color: #F2B138" class="pt pb hide">F&amp;Q</h2>
+									<div class="col-md-12 mb">
+										<div class="choose wow fadeInUp" data-wow-delay="0.5s">
+											<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+												<button type="button" id="insertFAQboard">작성하기</button>
+											</c:if>
+											<div class="panel-group" id="accordion"></div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
