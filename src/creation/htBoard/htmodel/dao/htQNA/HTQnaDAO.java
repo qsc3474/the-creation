@@ -1,4 +1,4 @@
-package creation.htBoard.htmodel.dao;
+package creation.htBoard.htmodel.dao.htQNA;
 
 
 import static creation.common.jdbc.JDBCTemplate.close;
@@ -21,23 +21,23 @@ import creation.htBoard.htmodel.dto.HTPageInfoDTO;
 import creation.member.model.dto.MemberDTO;
 
 
-public class HTNoticeDAO {
+public class HTQnaDAO {
 	
 	private final Properties prop;
 	
-	public HTNoticeDAO() {
+	public HTQnaDAO() {
 		
 		prop = new Properties();
 		
 		try {
-			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "htNotice/notice-mapper.xml"));
+			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "htNotice/qna-mapper.xml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	/* 페이징 처리를 위한 전체 게시물 수 조회용 메소드 */
-	public int selectTotalCount(Connection con) {
+	public int QnaSelectTotalCount(Connection con) {
 		Statement stmt = null;
 		ResultSet rset = null;
 		
@@ -242,6 +242,7 @@ public class HTNoticeDAO {
 			close(rset);
 			close(pstmt);
 		}
+		System.out.println("여기는 dao" + noticeCount);
 		
 		return noticeCount;
 	}
@@ -359,7 +360,30 @@ public class HTNoticeDAO {
 		return result;
 	}
 
-	
+	public int insertThumbnail(Connection con, HTFileinfoDTO fileInfo) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertThumbnail");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, fileInfo.getOriginFileName());
+			pstmt.setString(2, fileInfo.getSaveFileName());
+			pstmt.setString(3, fileInfo.getFilePath());
+
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
 
 	
 

@@ -54,7 +54,7 @@
 	                        </a>
 	                    </li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="${ pageContext.servletContext.contextPath }/ht/QNA/list">
 	                            <span>문의사항</span>
 	                            <i class="fas fa-chevron-right"></i>
 	                        </a>
@@ -180,9 +180,9 @@
 						<!-- pagingArea end --> 
 
 						
-						<button id="writeFAQ">작성하기</button>	 
-						<%-- <c:if test="${ sessionScope.loginMember.role eq '관리자'}">
-						</c:if>  --%>
+						<c:if test="${ sessionScope.loginMember.kind eq 'M'}">
+							<button id="writeFAQ">작성하기</button>			
+						</c:if>
 						
 	       			</div>
 	    		</div>
@@ -211,12 +211,10 @@
 					</c:otherwise>
 				</c:choose>
 				<button type="submit">검색하기</button>
-				<c:if test="${ !empty sessionScope.loginMember }">
-					<button type="button" id="FAQsearch">작성하기</button>
-				</c:if>
 			</div>
 		</form>    
 	</section>
+	
 
 <script>
 const link = "${ pageContext.servletContext.contextPath }/ht/FAQ/list";

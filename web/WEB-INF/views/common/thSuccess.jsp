@@ -42,6 +42,20 @@
 				successMessage = "공지사항 삭제에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/ht/FAQ/list";
 				break;
+				
+				/* QNA */	
+			case "thInsertQNA" :
+				successMessage = "공지사항 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/QNA/list";
+				break;
+			case "htUpdateQNA" :
+				successMessage = "공지사항 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/QNA/list";
+				break;
+			case "thDeleteQNA" :
+				successMessage = "공지사항 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/QNA/list";
+				break;
 			}
 			
 			alert(successMessage);

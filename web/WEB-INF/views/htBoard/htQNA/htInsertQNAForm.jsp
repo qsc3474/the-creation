@@ -22,11 +22,11 @@
         <div class="container">
         <h1 align="center">글쓰기</h1>
         <div class="container"  role="main">
-                <form name="form" id="form" role="form" method="post" action="${ pageContext.servletContext.contextPath }/ht/NTC/notice/insert">
+                <form name="form" id="form" role="form" method="post" action="${ pageContext.servletContext.contextPath }/ht/QNA/insert">
                     <div class="mb-12">
-                            <label for="title">공지사항</label>
+                            <label for="title">QNA</label>
                             <select class="custom-select mr-sm-2" name="category" id="category">
-                               <option value="HT_NTC">공지사항</option> 
+                               <option value="HT_QNA">QNA</option> 
                             </select>
                     </div>
                     <div class="mb-12">
@@ -45,7 +45,7 @@
                         <label for="content">업로드</label>
                     <div class="input-group" style="margin-top: 20px;">
                         <label for="tag" class="input-group-text" for="inputGroupFile02" >Upload</label>
-                        <input type="file" class="form-control" id="inputGroupFile02" action="${ pageContext.servletContext.contextPath }/ht/NTC/notice/insert">
+                        <input type="file" class="form-control" id="inputGroupFile02" action="${ pageContext.servletContext.contextPath }/ht/QNA/insert">
                       </div>
                     </div>
                 </form>
@@ -62,7 +62,7 @@
             });
             $(document).on('click', '#btnList', function (e) {
                 e.preventDefault();
-                location.href = "${ pageContext.request.contextPath}/ht/NTC/notice/list";
+                location.href = "${ pageContext.request.contextPath}/ht/QNA/list";
             });
         </script>
         </div>

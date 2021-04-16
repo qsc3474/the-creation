@@ -49,13 +49,12 @@
 		  		  		  FROM HOTEL_BD C
 		  		  		  JOIN MEM_INFO D ON(C.HT_MEM_NO = D.MEM_NO)
 		  		  		 WHERE C.HT_BD_STATUS = 'PUBLIC'
-		  		  		   AND C.HT_BD_CATEGORY_NO = 'HT_NTC'
-		  		  		 ORDER BY C.HT_BD_NO DESC
+		  		  		   AND C.HT_BD_CATEGORY_NO = 'HT_QNA'
+		  		  		 
 		  		       ) B
 		       ) A
 		 WHERE A.RNUM BETWEEN ? AND ?
 	</entry>
-	
 
 	<entry key="incrementNoticeCount">
 	    UPDATE 	/* creation.notice.model.dao.HTNoticeDAO#incrementNoticeCount() */ /* 조회수 증가 메소드 */
@@ -133,6 +132,7 @@
 	      FROM HOTEL_BD A
 	      JOIN MEM_INFO B ON (A.HT_MEM_NO = B.MEM_NO)
 	     WHERE A.HT_BD_STATUS = 'PUBLIC'
+	       AND A.HT_BD_CATEGORY_NO = 'HT_QNA'
 	       AND B.MEM_NAME LIKE '%' || ? || '%'
 	</entry>
 	<entry key="searchTitleNoticeCount">
@@ -140,6 +140,7 @@
 	           COUNT(*)
 	      FROM HOTEL_BD A
 	     WHERE A.HT_BD_STATUS = 'PUBLIC'
+	       AND A.HT_BD_CATEGORY_NO = 'HT_QNA'
 	       AND A.HT_BD_TITLE LIKE '%' || ? || '%'
 	</entry>
 	<entry key="searchContentNoticeCount">
@@ -147,6 +148,7 @@
 	           COUNT(*)
 	      FROM HOTEL_BD A			
 	     WHERE A.HT_BD_STATUS = 'PUBLIC'
+	       AND A.HT_BD_CATEGORY_NO = 'HT_QNA'
 	       AND A.HT_BD_CONTENT LIKE '%' || ? || '%'
 	</entry>
 	
@@ -190,7 +192,6 @@
                           FROM HOTEL_BD C
                           JOIN MEM_INFO E ON(C.HT_MEM_NO = E.MEM_NO)
                          WHERE C.HT_BD_STATUS = 'PUBLIC'
-                           AND C.HT_BD_CATEGORY_NO = 'HT_NTC'
                          ORDER BY C.HT_BD_NO DESC
                         ) B
                   WHERE B.MEM_NAME LIKE '%' || ? || '%'  
@@ -238,7 +239,6 @@
                           FROM HOTEL_BD C
                           JOIN MEM_INFO E ON(C.HT_MEM_NO = E.MEM_NO)
                          WHERE C.HT_BD_STATUS = 'PUBLIC'
-                           AND C.HT_BD_CATEGORY_NO = 'HT_NTC'
                          ORDER BY C.HT_BD_NO DESC
                         ) B
                   WHERE B.HT_BD_TITLE LIKE '%' || ? || '%'  
@@ -286,7 +286,6 @@
                           FROM HOTEL_BD C
                           JOIN MEM_INFO E ON(C.HT_MEM_NO = E.MEM_NO)
                          WHERE C.HT_BD_STATUS = 'PUBLIC'
-                           AND C.HT_BD_CATEGORY_NO = 'HT_NTC'
                          ORDER BY C.HT_BD_NO DESC
                         ) B
                   WHERE B.HT_BD_CONTENT LIKE '%' || ? || '%'  
