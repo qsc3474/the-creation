@@ -14,7 +14,7 @@
       <section id="about" class="bg-light">
          <div class="container">
             <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
-               <h2>안과</h2>
+               <h2>치과</h2>
                <p>
                   치아는 뼈의 건강을 나타내고 잇몸은 체내건강을 나타낸다는 말이 있듯이 구강건강상태는 전신건강과 밀접한 관련을 가지고 있습니다. <br>
                         치석이 많고 잇몸에 염증이 있다면 전신건강이 나쁘다는 반증입니다. 그만큼 치아 건강은 중요합니다.

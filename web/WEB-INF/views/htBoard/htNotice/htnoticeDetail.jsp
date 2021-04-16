@@ -21,16 +21,10 @@
 	
 	 <section>
         <div class="container">
-        <h1 align="center">글쓰기</h1>
+        <h1 align="center"><c:out value="${ requestScope.htnotice.title }"/></h1>
         <div class="container"  role="main">
                 <form name="form" id="form" role="form" action="${ pageContext.servletContext.contextPath }/ht/NTC/notice/delete" method="post">
                 <input type="hidden" name="noticeNo" value="${requestScope.htnotice.no }">
-                    <div class="mb-12">
-                            <label for="title">공지사항</label>
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                              <option selected>NTC</option>
-                            </select>
-                    </div>
                     <div class="mb-12">
                         <label for="title">제목</label> 
                         <input type="text" class="form-control" name="title" id="title"  value="${ requestScope.htnotice.title }">

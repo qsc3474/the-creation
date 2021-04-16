@@ -26,6 +26,7 @@
 						data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
 						data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
+						
 						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/pets01.jpg" alt="" data-lazyload="${ pageContext.servletContext.contextPath }/resources/media/img/pets01.jpg"
 							data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
 							data-bgparallax="8" class="rev-slidebg" data-no-retina>
@@ -129,10 +130,10 @@
 						<div class="col-md-6">
 							<div class="blog-post wow fadeInRight" data-wow-delay="0.9s">
 								<div class="blog-thumb">
-									<a href="reservation.html">
-										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy01.jpg" alt="Blog thumb">
+									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy01.jpg" alt="Blog thumb" >
 									</a>
-									<a href="#" class="date"><span>01</span><br>예약하기</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert" class="date"><span>01</span><br>예약하기</a>
 								</div>
 							</div>
 						</div>
