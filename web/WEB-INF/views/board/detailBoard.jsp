@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>개편한 병원 게시글</title>
 <!-- Meta Data -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
