@@ -30,6 +30,7 @@
 
 </head>
 <body>
+<jsp:include page="../common/header.jsp"></jsp:include>
 
 <section id="service" class="service-sec">
       <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
@@ -247,6 +248,5 @@
         <!-- /column -->
       </div>
     </section>
-
 </body>
 </html>
