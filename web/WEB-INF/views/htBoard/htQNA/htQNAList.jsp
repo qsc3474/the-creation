@@ -200,9 +200,9 @@
            </div>
         </div>
     </div> <!-- pagingArea end --> 
-   					 <c:if test="${ sessionScope.loginMember.kind eq 'M'}">
+   					<%--  <c:if test="${ sessionScope.loginMember.kind eq 'M'}">
 						<button id="writeQNA">작성하기</button>			
-					</c:if>
+					</c:if> --%>
     
 <!-- 검색 폼 -->
 		<form id="searchForm" action="${ pageContext.servletContext.contextPath }/ht/QNA/search" method="get">
@@ -227,7 +227,7 @@
 				</c:choose>
 				<button type="submit">검색하기</button>
 				<c:if test="${ !empty sessionScope.loginMember }">
-					<button type="button" id="QNAwrite">작성하기</button>
+					<button type="button" id="writeQNA">작성하기</button>
 				</c:if>
 			</div>
 		</form>

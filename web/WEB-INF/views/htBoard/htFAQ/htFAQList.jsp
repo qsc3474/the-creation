@@ -24,7 +24,7 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/creation/resources/js/event.js"></script>
-    
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
@@ -94,7 +94,7 @@
 											<span><c:out value="${ HT_FAQ.title }"/></span><i class="fas fa-chevron-down"></i>
 										</a>
 									    <p>
-									    	<b><c:out value="${ HT_FAQ.no }"/></b>.
+									    	<b hidden><c:out value="${ HT_FAQ.no }"/></b>
 									    	<b><c:out value="${ HT_FAQ.content }"/></b>
 									    </p>
 								    </li>					    								    
@@ -107,7 +107,7 @@
 											<span><c:out value="${ HT_FAQ.title }"/></span><i class="fas fa-chevron-down"></i>
 										</a>
 									    <p>
-									    	<b><c:out value="${ HT_FAQ.no }"/></b>.
+									    	<b hidden><c:out value="${ HT_FAQ.no }"/></b>.
 									    	<b><c:out value="${ HT_FAQ.content }"/></b>
 									    </p>
 								    </li>					    								    
