@@ -24,7 +24,7 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/creation/resources/js/event.js"></script>
-    
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
@@ -54,7 +54,7 @@
 	                        </a>
 	                    </li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="${ pageContext.servletContext.contextPath }/ht/QNA/list">
 	                            <span>문의사항</span>
 	                            <i class="fas fa-chevron-right"></i>
 	                        </a>
@@ -94,7 +94,7 @@
 											<span><c:out value="${ HT_FAQ.title }"/></span><i class="fas fa-chevron-down"></i>
 										</a>
 									    <p>
-									    	<b><c:out value="${ HT_FAQ.no }"/></b>.
+									    	<b hidden><c:out value="${ HT_FAQ.no }"/></b>
 									    	<b><c:out value="${ HT_FAQ.content }"/></b>
 									    </p>
 								    </li>					    								    
@@ -107,7 +107,7 @@
 											<span><c:out value="${ HT_FAQ.title }"/></span><i class="fas fa-chevron-down"></i>
 										</a>
 									    <p>
-									    	<b><c:out value="${ HT_FAQ.no }"/></b>.
+									    	<b hidden><c:out value="${ HT_FAQ.no }"/></b>.
 									    	<b><c:out value="${ HT_FAQ.content }"/></b>
 									    </p>
 								    </li>					    								    
@@ -180,9 +180,9 @@
 						<!-- pagingArea end --> 
 
 						
-						<button id="writeFAQ">작성하기</button>	 
-						<%-- <c:if test="${ sessionScope.loginMember.role eq '관리자'}">
-						</c:if>  --%>
+						<c:if test="${ sessionScope.loginMember.kind eq 'M'}">
+							<button id="writeFAQ">작성하기</button>			
+						</c:if>
 						
 	       			</div>
 	    		</div>
@@ -211,12 +211,10 @@
 					</c:otherwise>
 				</c:choose>
 				<button type="submit">검색하기</button>
-				<c:if test="${ !empty sessionScope.loginMember }">
-					<button type="button" id="FAQsearch">작성하기</button>
-				</c:if>
 			</div>
 		</form>    
 	</section>
+	
 
 <script>
 const link = "${ pageContext.servletContext.contextPath }/ht/FAQ/list";

@@ -1,6 +1,7 @@
 package creation.htBoard.htmodel.service;
 
 
+
 import static creation.common.jdbc.JDBCTemplate.close;
 import static creation.common.jdbc.JDBCTemplate.commit;
 import static creation.common.jdbc.JDBCTemplate.getConnection;
@@ -9,19 +10,19 @@ import static creation.common.jdbc.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.List;
 
-import creation.htBoard.htmodel.dao.htNotice.HTNoticeDAO;
+import creation.htBoard.htmodel.dao.htQNA.HTQnaDAO;
+import creation.htBoard.htmodel.dto.HTFileinfoDTO;
 import creation.htBoard.htmodel.dto.HTNoticeDTO;
 import creation.htBoard.htmodel.dto.HTPageInfoDTO;
 
 
 
-
-public class HTNoticeService {
+public class HTQnaService {
 	
-	private final HTNoticeDAO htnoticeDAO;
+	private final HTQnaDAO htQnaDAO;
 	
-	public HTNoticeService() {
-		htnoticeDAO = new HTNoticeDAO();
+	public HTQnaService() {
+		htQnaDAO = new HTQnaDAO();
 	}
 	
 	/* 페이징 처리를 위한 전체 게시물 수 조회용 메소드 */
@@ -29,7 +30,7 @@ public class HTNoticeService {
 		
 		Connection con = getConnection();
 		
-		int totalCount = htnoticeDAO.selectTotalCount(con);
+		int totalCount = htQnaDAO.QnaSelectTotalCount(con);
 		
 		close(con);
 		
@@ -41,7 +42,7 @@ public class HTNoticeService {
 	public List<HTNoticeDTO> selectnoticeList(HTPageInfoDTO pageInfo) {
 		Connection con = getConnection();
 		
-		List<HTNoticeDTO> htnoticeList = htnoticeDAO.selectnoticeList(con, pageInfo);
+		List<HTNoticeDTO> htnoticeList = htQnaDAO.selectnoticeList(con, pageInfo);
 		
 		close(con);
 		
@@ -54,10 +55,10 @@ public class HTNoticeService {
 		
 		Connection con = getConnection();
 		HTNoticeDTO htNoticeDetail = null;
-		int result = htnoticeDAO.incrementNoticeCount(con, no);
+		int result = htQnaDAO.incrementNoticeCount(con, no);
 		
 		if(result > 0) {
-			htNoticeDetail = htnoticeDAO.selectNoticeDetail(con, no);
+			htNoticeDetail = htQnaDAO.selectNoticeDetail(con, no);
 			
 			if(htNoticeDetail != null) {
 				commit(con);
@@ -78,7 +79,7 @@ public class HTNoticeService {
 	public int insertNotice(HTNoticeDTO newNotice) {
 		Connection con = getConnection();
 		
-		int result = htnoticeDAO.insertNotice(con, newNotice);
+		int result = htQnaDAO.insertNotice(con, newNotice);
 		
 		if(result > 0) {
 			commit(con);
@@ -95,7 +96,7 @@ public class HTNoticeService {
 		
 		Connection con = getConnection();
 		
-		int totalCount = htnoticeDAO.searchNoticeCount(con, condition, value);
+		int totalCount = htQnaDAO.searchNoticeCount(con, condition, value);
 		
 		close(con);
 		
@@ -106,7 +107,7 @@ public class HTNoticeService {
 		
 		Connection con = getConnection();
 		
-		List<HTNoticeDTO> htnoticedList = htnoticeDAO.searchNoticeList(con, pageInfo, condition, value);
+		List<HTNoticeDTO> htnoticedList = htQnaDAO.searchNoticeList(con, pageInfo, condition, value);
 		
 		close(con);
 		
@@ -118,7 +119,7 @@ public class HTNoticeService {
 		
 		Connection con = getConnection();
 		
-		int result = htnoticeDAO.htUpdateNotice(con, requestNotice);
+		int result = htQnaDAO.htUpdateNotice(con, requestNotice);
 		if(result > 0) {
 			commit(con);
 		} else {
@@ -135,7 +136,7 @@ public class HTNoticeService {
 		
 		Connection con = getConnection();
 		
-		int result = htnoticeDAO.thDeleteNotice(con, requestNotice);
+		int result = htQnaDAO.thDeleteNotice(con, requestNotice);
 		
 		if(result > 0) {
 			commit(con);
@@ -148,6 +149,24 @@ public class HTNoticeService {
 		return result;
 	}
 
+	public int insertThumbnail(HTFileinfoDTO fileInfo) {
+		
+		Connection con = getConnection();
+		
+		int result = htQnaDAO.insertThumbnail(con, fileInfo);
+		
+		if(result > 0) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+		
+		close(con);
+
+		return result;
+	}
+
+	
 	
 	
 	

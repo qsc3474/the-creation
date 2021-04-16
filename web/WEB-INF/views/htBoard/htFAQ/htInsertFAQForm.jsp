@@ -36,6 +36,7 @@
                     <div class="mb-12">
                         <label for="reg_id">작성자</label>
                         <input type="text" class="form-control" name="writer" id="reg_id" value="${sessionScope.loginMember.name}" readonly>
+                        <input type="hidden" name="memberNo" value="${sessionScope.loginMember.no }">
                     </div>
                     <div class="mb-12">
                         <label for="content">내용</label>

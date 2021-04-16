@@ -34,7 +34,7 @@
  <section class="title-sec">
     <div class="row">
         <h2 class="section-title section-title-upper section-title-line text-center">
-            공지사항
+            QNA
         </h2>
     </div>
  </section>
@@ -89,49 +89,48 @@
                 <div class="row">
                     <div class="col-md-12">
                         
-                        <div class="panel panel-default panel-wrap">
-                            <table class="table table-hover table-bordered" id="dataTables-example" aria-describedby="dataTables-example_info">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 50px;">
-                                            No.
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 335px;" >
-                                            제목
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 50px;">
-                                            작성자
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 50px;">
-                                            작성일
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 10px;">
-                                            조회
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>	
-					                 <c:forEach items="${ requestScope.htnoticeList }" var="HT_NTC">
-										<tr>
-											<td><c:out value="${ HT_NTC.no }"/></td>
-											<td><c:out value="${ HT_NTC.title }"/></td>
-											<td><c:out value="${ HT_NTC.writer.name }"/></td>
-											<td><c:out value="${ HT_NTC.drawupDate }"/></td>						
-											<td><c:out value="${ HT_NTC.watched }"/></td>
-										</tr>
-									</c:forEach>
-									<c:forEach items="${ requestScope.htnoticedList }" var="HT_NTC">
-										<tr>
-											<td><c:out value="${ HT_NTC.no }"/></td>
-											<td><c:out value="${ HT_NTC.title }"/></td>
-											<td><c:out value="${ HT_NTC.writer.name }"/></td>
-											<td><c:out value="${ HT_NTC.drawupDate }"/></td>						
-											<td><c:out value="${ HT_NTC.watched }"/></td>
-										</tr>
-									</c:forEach>
-                                </tbody>
-                            </table>                            
-                        </div>  <!-- table-area end -->
+      <!-- train section -->
+      <div class="bhoechie-tab-content col-md-12"> 
+           <h2 style="margin-top: 0;color:#F2B138" class="pt pb hide">F&amp;Q</h2>
+          	 <div class="col-md-12 mb">
+            	  <div class="card-body">
+                            <div class="table-responsive table_e2">
+                                <table class="table table-hover table-vcenter text-nowrap mb-0">
+                                    <thead>
+                                        <tr>
+	                                        <th>번호</th>                                    
+	                                        <th>제목</th>
+	                                        <th>작성자</th>                                    
+	                                        <th>작성일시</th>                                    
+	                                        <th>조회수</th>                                    
+                                     	   </tr>
+                                    	</thead>
+                                    <tbody>
+                                           <c:forEach items="${ requestScope.htnoticeList }" var="HT_QNA">  
+												<tr>
+													<td><c:out value="${ HT_QNA.no }"/></td>
+													<td><c:out value="${ HT_QNA.title }"/></td>
+													<td><c:out value="${ HT_QNA.writer.name }"/></td>
+													<td><c:out value="${ HT_QNA.drawupDate }"/></td>						
+													<td><c:out value="${ HT_QNA.watched }"/></td>
+												</tr>
+										 </c:forEach>
+										<c:forEach items="${ requestScope.htnoticedList }" var="HT_QNA">
+											<tr>
+												<td><c:out value="${ HT_QNA.no }"/></td>
+												<td><c:out value="${ HT_QNA.title }"/></td>
+												<td><c:out value="${ HT_QNA.writer.name }"/></td>
+												<td><c:out value="${ HT_QNA.drawupDate }"/></td>						
+												<td><c:out value="${ HT_QNA.watched }"/></td>
+											</tr>
+										</c:forEach>
+                                     </tbody>
+                                </table>
+                            </div>
+                        </div>
+                 </div>
+  		   </div><!-- train section and -->
+  		   
         <%-- 페이지 처리 --%>
          <div class="pagingArea" align="center">
 			<c:choose>
@@ -195,22 +194,18 @@
 				</c:otherwise>
 			</c:choose>
 		</div> <!-- pagingArea end --> 
-
-            
-			
-                   
+            		
                 </div>
              </div>
            </div>
         </div>
     </div> <!-- pagingArea end --> 
-   
-   			<c:if test="${ sessionScope.loginMember.kind eq 'M'}">
-				<button id="writeNotice">작성하기</button>			
-			</c:if>
-   
+   					<%--  <c:if test="${ sessionScope.loginMember.kind eq 'M'}">
+						<button id="writeQNA">작성하기</button>			
+					</c:if> --%>
+    
 <!-- 검색 폼 -->
-		<form id="searchForm" action="${ pageContext.servletContext.contextPath }/ht/NTC/notice/search" method="get">
+		<form id="searchForm" action="${ pageContext.servletContext.contextPath }/ht/QNA/search" method="get">
 			<div class="search-area" align="center">
 				<c:choose>
 					<c:when test="${ !empty requestScope.searchValue }">
@@ -231,6 +226,9 @@
 					</c:otherwise>
 				</c:choose>
 				<button type="submit">검색하기</button>
+				<c:if test="${ !empty sessionScope.loginMember }">
+					<button type="button" id="writeQNA">작성하기</button>
+				</c:if>
 			</div>
 		</form>
     </div>  
@@ -238,8 +236,8 @@
 </section>
 
 <script>
-const link = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/list";
-const searchLink = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/search";
+const link = "${ pageContext.servletContext.contextPath }/ht/QNA/list";
+const searchLink = "${ pageContext.servletContext.contextPath }/ht/QNA/search";
 
 		/* 원하는 페이지 클릭시 실행되는 콜백 함수 */
 		function pageButtonAction(text) {
@@ -308,14 +306,16 @@ const searchLink = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/se
 		
 		
 		if(document.getElementsByTagName("td")) {
-			const $tds = document.getElementsByTagName("td");
-			for(var i = 0 ; i < $tds.length ; i++) {
-				$tds[i].onclick = function() {
-					const no = this.parentNode.children[0].innerText;
-					location.href = "${ pageContext.servletContext.contextPath }/ht/NTC/notice/detail?no=" + no;   
-				}
-			}
-		}
+            const $tds = document.getElementsByTagName("td");
+            for(var i = 0 ; i < $tds.length ; i++) {
+
+
+                $tds[i].onclick = function() {
+                    const no = this.parentNode.children[0].innerText;
+                    location.href = "${ pageContext.servletContext.contextPath }/ht/QNA/detail?no=" + no;
+                }
+            }
+        }
 </script>
 
 </body>

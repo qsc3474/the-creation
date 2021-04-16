@@ -18,7 +18,7 @@ public class HTNoticeInsertServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String path = "/WEB-INF/views/board/bordInsertForm.jsp";
+		String path = "/WEB-INF/views/htBoard/htNotice/htInsertNoticeForm.jsp";
 		
 		request.getRequestDispatcher(path).forward(request, response);
 	}
@@ -26,7 +26,7 @@ public class HTNoticeInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String title = request.getParameter("title");
-		int no = 1; /*Integer.valueOf(request.getParameter("memberNo"));*/
+		int no = Integer.valueOf(request.getParameter("memberNo"));
 		String content = request.getParameter("content");
 		String category = request.getParameter("category");
 		

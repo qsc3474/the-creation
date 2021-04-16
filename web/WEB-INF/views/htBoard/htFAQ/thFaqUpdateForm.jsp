@@ -14,7 +14,7 @@
         <div class="container">
         <h1 align="center">공지 사항 수정</h1>
         <div class="container"  role="main">
-              <form name="form" id="form" role="form" action="${ pageContext.servletContext.contextPath }/ht/NTC/notice/update" method="post">
+              <form name="form" id="form" role="form" action="${ pageContext.servletContext.contextPath }/ht/FAQ/update" method="post">
 				<input type="hidden" name="noticeNo" value="${requestScope.htNotice.no }">
                     <div class="mb-12">
                             <label for="title">공지사항</label>

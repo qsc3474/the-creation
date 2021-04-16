@@ -50,12 +50,7 @@ if(document.getElementById("regist")){
 		}
 	}
 	
-	if(document.getElementById("writeBoard")){
-		const $writeBoard = document.getElementById("writeBoard");
-		$writeBoard.onclick = function(){
-			location.href = "/jsp/board/insert";
-		}
-	}
+	
 	
 	
 	
@@ -88,6 +83,43 @@ if(document.getElementById("regist")){
 	
 	
 	
+	
+	
+	
+	
+	if(document.getElementById("delete")){
+	const $delete = document.getElementById("delete");
+	$delete.onclick = function() {
+		location.href= "/creation/ht/QNA/delete";
+	 }
+	}
+	
+	if(document.getElementById("update")){
+	const $update = document.getElementById("update");
+	$update.onclick = function() {
+		location.href= "/creation/ht/QNA/update";
+	 }
+	}
+	if(document.getElementById("writeQNA")){
+		const $writeQNA = document.getElementById("writeQNA");
+		$writeQNA.onclick = function(){
+			location.href = "/creation/ht/QNA/insert";
+		}
+	}
+	if(document.getElementById("QNAsearch")){
+		const $QNAsearch = document.getElementById("QNAsearch");
+		$QNAsearch.onclick = function(){
+			location.href = "/creation/ht/QNA/search";
+		}
+	}
+	
+	
+	if(document.getElementById("writeThumbnail")){
+		const $writeThumbnail = document.getElementById("writeThumbnail");
+		$writeThumbnail.onclick = function(){
+			location.href = "/creation/ht/AGL/thumbnail/list";
+		}
+	}
 	
 
 }
