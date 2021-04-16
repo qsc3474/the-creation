@@ -19,10 +19,9 @@ public class HPBoardDTO implements Serializable {
 	private java.util.Date drawupDate ;
 	private int watched;
 	private int memberNo ;
-	private MemberDTO writer ;	
+	private MemberDTO writer;	
 	private String status;
 	private int cmtCount;
-	
 	
 	private List<FileDTO> fileList;
 	

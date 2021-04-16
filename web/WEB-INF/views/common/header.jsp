@@ -28,71 +28,72 @@
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 
-		<!-- header -->
-		<header id="discohead" class="dt-header fixed">
-			<div class="menu-wrap">
-				<a id="logo" href="${ pageContext.servletContext.contextPath }">
-					<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png" alt="discovery" class="logo-contrast">
-					<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png" alt="discovery" class="logo-normal">
-				</a>
-				<div id="discovery-main-menu" class="discovery-main-menu">
-					<ul id="menu-home" class="menu">
-						<li class="menu-item-has-children">
-							<a href="about.html">병원소개</a>
-							<ul class="sub-menu">
-								<li><a href="about.html">병원소개</a></li>
-								<li><a href="about.html">의료진소개</a></li>
-								<li><a href="about.html">시설소개</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="mg.html">진료과목</a>
-							<ul class="sub-menu">
-								<li><a href="mg.html">내과</a></li>
-								<li><a href="gs.html">외과</a></li>
-								<li><a href="${ pageContext.servletContext.contextPath }/hp/info/price">안과</a></li>
-								<li><a href="${ pageContext.servletContext.contextPath }/hp/info/dental">치과</a></li>
-							</ul>
-						</li>
-						<li><a href="service.html">진료서비스</a></li>
-						<li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
-						<li class="menu-item-has-children">
-							<a href="notice.html">커뮤니티</a>
-							<ul class="sub-menu">
-								<li><a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
-								<li><a href="notice.html">병원소식</a></li>
-								<li><a href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">블로그</a></li>
-								<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">오시는길</a></li>
-							</ul>
-						</li>
-					</ul>
-					<c:if test="${ empty sessionScope.loginMember }">
+	<!-- header -->
+	<header id="discohead" class="dt-header fixed">
+		<div class="menu-wrap">
+			<a id="logo" href="${ pageContext.servletContext.contextPath }">
+				<img
+				src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png"
+				alt="discovery" class="logo-contrast"> <img
+				src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png"
+				alt="discovery" class="logo-normal">
+			</a>
+			<div id="discovery-main-menu" class="discovery-main-menu">
+				<ul id="menu-home" class="menu">
+					<li class="menu-item-has-children"><a href="about.html">병원소개</a>
+						<ul class="sub-menu">
+							<li><a href="about.html">병원소개</a></li>
+							<li><a href="about.html">의료진소개</a></li>
+							<li><a href="about.html">시설소개</a></li>
+						</ul></li>
+					<li class="menu-item-has-children"><a href="mg.html">진료과목</a>
+						<ul class="sub-menu">
+							<li><a href="mg.html">내과</a></li>
+							<li><a href="gs.html">외과</a></li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/hp/info/price">안과</a></li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/hp/info/dental">치과</a></li>
+						</ul></li>
+					<li><a href="service.html">진료서비스</a></li>
+					<li><a
+						href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
+					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
+						<ul class="sub-menu">
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
+							<li><a href="notice.html">병원소식</a></li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">블로그</a></li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">오시는길</a></li>
+						</ul></li>
+				</ul>
+				<c:if test="${ empty sessionScope.loginMember }">
 					<div class="secondary-navigation pull-right">
 						<ul>
-							<li>
-								<a href="${ pageContext.servletContext.contextPath }/member/regist">회원가입</a>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/member/regist">회원가입</a>
 							</li>
-							<li><a href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
 						</ul>
-						</c:if>
-							<c:if test="${ !empty sessionScope.loginMember }">
-					<ul>
-							<li><c:out value="${ sessionScope.loginMember.name }"/>님의 방문을 환영합니다. </li>
-							<li><a href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
-						</ul>
-					
-					
-							</c:if>
 					</div>
-					
-							
-					
-				</div>
+				</c:if>
+				<c:if test="${ !empty sessionScope.loginMember }">
+					<ul>
+						<li><c:out value="${ sessionScope.loginMember.name }" />님의
+							방문을 환영합니다.</li>
+						<li><a
+							href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
+						<li><a
+							href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
+					</ul>
+				</c:if>
 			</div>
-
-		</header>
-		<!-- header -->
+		</div>
+	</header>
+	<!-- header -->
 		
 
 	<!-- Dependency Scripts -->

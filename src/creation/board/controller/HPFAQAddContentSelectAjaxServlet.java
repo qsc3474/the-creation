@@ -18,7 +18,7 @@ import creation.board.model.service.HPFAQBoardService;
 import creation.common.paging.Pagenation;
 
 @WebServlet("/hp/faq/select/add/list")
-public class HPHAQAddContentSelectAjaxServlet extends HttpServlet {
+public class HPFAQAddContentSelectAjaxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

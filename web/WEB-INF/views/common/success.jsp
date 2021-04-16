@@ -40,6 +40,50 @@
 				successMessage = "게시글 작성에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
 				break;
+			case "deleteBoard" :
+				successMessage = "게시글 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/faq/select/list";
+				break;
+			case "insertRVBoard" :
+				successMessage = "후기 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/review/list";
+				break;
+			case "insertQNABoard" :
+				successMessage = "QNA 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/qna/list";
+				break;
+			case "insertFAQBoard" :
+				successMessage = "FAQ 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/faq/select/list";
+				break;
+			case "insertINFOBoard" :
+				successMessage = "정보게시판 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/infomation/list";
+				break;
+			case "insertNTCBoard" :
+				successMessage = "공지사항 등록에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+				break;
+			case "updateRVBoard" :
+				successMessage = "후기 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/review/list";
+				break;
+			case "updateQNABoard" :
+				successMessage = "QNA 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/qna/list";
+				break;
+			case "updateFAQBoard" :
+				successMessage = "FAQ 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/faq/select/list";
+				break;
+			case "updateINFOBoard" :
+				successMessage = "정보게시판 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/infomation/list";
+				break;
+			case "updateNTCBoard" :
+				successMessage = "공지사항 수정에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+				break;
 			}
 			
 			alert(successMessage);

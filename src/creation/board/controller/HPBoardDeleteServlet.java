@@ -1,6 +1,8 @@
 package creation.board.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import creation.board.model.dto.HPBoardDTO;
+import creation.board.model.dto.PageInfoDTO;
 import creation.board.model.service.HPNoticeBoardService;
-import creation.member.model.dto.MemberDTO;
+import creation.common.paging.Pagenation;
 
 /**
  * Servlet implementation class HPBoardDeleteServlet
@@ -20,7 +23,7 @@ public class HPBoardDeleteServlet extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		doPost(request, response);
 	}
 
 	
@@ -28,10 +31,11 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		
 		int boardNo = Integer.valueOf(request.getParameter("no"));
 		
+		HPNoticeBoardService boardService = new HPNoticeBoardService();
+		
 		HPBoardDTO deleteBoard = new HPBoardDTO();
 		deleteBoard.setNo(boardNo);
 		
-		HPNoticeBoardService boardService = new HPNoticeBoardService();
 		int result = boardService.deleteBoard(deleteBoard);
 		
 		String path = "";
@@ -39,7 +43,7 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		if(result > 0) {
 			
 			path = "/WEB-INF/views/common/success.jsp";
-			request.setAttribute("successCode", "deleteboard");
+			request.setAttribute("successCode", "deleteBoard");
 			
 		} else {
 			

@@ -16,65 +16,98 @@
     <title>Document</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
-    <section>
-        <div class="container">
-        <h1 align="center">글쓰기</h1>
-        <div class="container"  role="main">
-                <form name="form" id="form" role="form" method="post"
-                    action="${pageContext.request.contextPath}/hp/board/insert">
-                    <div class="mb-12">
-	                    <label for="title">선택</label>
-	                    <select class="custom-select mr-sm-2" name="boardCategory" id="boardCategory">
+	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
+	<section>
+		<div class="container">
+			<h1 align="center">글쓰기</h1>
+			<div class="container" role="main">
+				<form name="form" id="form" role="form" method="post"
+					action="${pageContext.request.contextPath}/hp/board/insert">
+					<div class="mb-12">
+						<label for="title">선택</label> <select
+							class="custom-select mr-sm-2" name="boardCategory"
+							id="boardCategory">
 							<option value="def" selected>게시글</option>
 							<option value="HP_RV">후기게시판</option>
 							<option value="HP_QNA">QnA</option>
-							<option value="HP_FAQ">자주묻는질문</option>
-							<option value="HP_INFO">정보게시판</option>
-	                   		<option value="HP_NTC">공지사항</option>
-	                      <%-- <c:if test="${ sessionScope.loginMember.memKind == 'M' }">
-	                      	<option value="FAQ">자주묻는질문</option>
-	                     	<option value="INFO">정보게시판</option>
-	                     	<option value="NTC">공지사항</option>
-	                      </c:if> --%>
-	                    </select>
-                    </div>
-                    <div class="mb-12">
-                        <label for="title">제목</label>
-                        <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요">
-                    </div>
-                    <div class="mb-12">
-                        <label for="reg_id">작성자</label>
-                        <input type="text" class="form-control" name="writer" id="writer" value="${ sessionScope.loginMember.name }" readonly>
-                        <input type="hidden" name="memberNo" value="${sessionScope.loginMember.no }">
-                    </div>
-                    <div class="mb-12">
-                        <label for="content">내용</label>
-                        <textarea class="form-control" rows="5" name="content" id="content"
-                            placeholder="내용을 입력해 주세요"></textarea>
-                    </div>
-                    <div class="mb-12">
-                        <label for="content">업로드</label>
-                    <div class="input-group" style="margin-top: 20px;">
-                        <label for="tag" class="input-group-text" for="inputGroupFile02">Upload</label>
-                        <input type="file" class="form-control" id="inputGroupFile02">
-                      </div>
-                    </div>
-                <div class="text-center" style="margin-top: 20px;">
-                    <button type="submit" class="btn btn-primary btn-lg" id="btnSave">저장</button>
-                    <button type="button" class="btn btn-secondary btn-lg" id="btnList">목록</button>
-                </div>
-              	 </form>
-        </div>
-        <script>
-            $(document).on('click', '#btnList', function (e) {
-
-                e.preventDefault();
-                location.href = "${pageContext.request.contextPath}/board/getBoardList";
-
-            });
-        </script>
-        </div>
-    </section>
+							<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+								<option value="HP_FAQ">자주묻는질문</option>
+								<option value="HP_INFO">정보게시판</option>
+								<option value="HP_NTC">공지사항</option>
+							</c:if>
+						</select>
+					</div>
+					<div class="mb-12">
+						<label for="title">제목</label> <input type="text"
+							class="form-control" name="title" id="title"
+							placeholder="제목을 입력해 주세요">
+					</div>
+					<div class="mb-12">
+						<label for="reg_id">작성자</label> 
+						<input type="text"
+							class="form-control" name="writer" id="writer"
+							value="${ sessionScope.loginMember.name }" readonly> 
+						<input
+							type="hidden" name="memberNo"
+							value="${ sessionScope.loginMember.no }">
+					</div>
+					<div class="mb-12">
+						<label for="content">내용</label>
+						<textarea class="form-control" rows="5" name="content"
+							id="content" placeholder="내용을 입력해 주세요"></textarea>
+					</div>
+					<div class="mb-12">
+						<label for="content">업로드</label>
+						<div class="input-group" style="margin-top: 20px;">
+							<label for="tag" class="input-group-text" for="inputGroupFile02">Upload</label>
+							<input type="file" class="form-control" id="inputGroupFile02">
+						</div>
+					</div>
+					<div class="text-center" style="margin-top: 20px;">
+						<button type="button" class="btn btn-primary btn-lg" id="btnSave">저장</button>
+						<button type="button" class="btn btn-secondary btn-lg"
+							id="btnList">목록</button>
+					</div>
+				</form>
+			</div>
+			<script>
+	            $(document).on('click', '#btnList', function (e) {
+	
+	                e.preventDefault();
+	                location.href = "${pageContext.request.contextPath}/board/getBoardList";
+	
+	            });
+	            
+	            if (document.getElementById("btnSave")) {
+	    			const $btnSave = document.getElementById("btnSave");
+	    			$btnSave.onclick = function() {
+	    				console.log(document.getElementById("content").value);
+	    				if(document.getElementById("boardCategory").value == "def") {
+	    					
+	    					alert("카테고리를 선택해주세요!");
+	    					return false;
+	    					
+	    				} else if(document.getElementById("title").value == null || document.getElementById("title").value == "") {
+	    					
+	    					alert("제목을 입력해주세요!");
+	    					return false;
+	    					
+	    				} else if(document.getElementById("content").value == null || document.getElementById("content").value == "") {
+	    					
+	    					alert("내용을 입력해주세요!");
+	    					return false;
+	    					
+	    				} else {
+	    					
+	    					document.getElementById("form").submit();
+	    					
+	    				}
+	    				
+	    			}
+	    			
+	    		}
+        	</script>
+		</div>
+	</section>
 </body>
 </html>

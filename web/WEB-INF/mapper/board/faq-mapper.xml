@@ -90,7 +90,22 @@
 		, ?
 		, ?
 		, ?
-		, 'PUBLIC'
 		)
+	</entry>
+	<entry key="deleteBoard">
+		UPDATE
+		       HOSPITAL_BD A
+		   SET A.HP_BD_STATUS = 'DELETE'
+		 WHERE A.HP_BD_STATUS IN ('PUBLIC','PRIVATE')
+		   AND A.HP_BD_NO = ?
+	</entry>
+	<entry key="updateBoard">
+		UPDATE		/* creation.board.model.dao.HPFAQBoardDAO#updateBoard() */
+		       HOSPITAL_BD A
+		   SET A.HP_BD_TITLE = ?
+		     , A.HP_BD_CONTENT = ?
+		     , A.HP_BD_CATEGORY_NO = ?
+		 WHERE HP_BD_STATUS IN ('PUBLIC', 'PRIVATE')
+		   AND HP_BD_NO = ?
 	</entry>
 </properties>

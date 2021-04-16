@@ -50,8 +50,18 @@ public class HPBoardInsertServlet extends HttpServlet {
 		
 		if(result > 0) {
 			
+			String successCode = "";
+			switch(category) {
+			case "HP_RV": successCode = "insertRVBoard"; break;
+			case "HP_QNA": successCode = "insertQNABoard"; break;
+			case "HP_FAQ": successCode = "insertFAQBoard"; break;
+			case "HP_INFO": successCode = "insertINFOBoard"; break;
+			case "HP_NTC": successCode = "insertNTCBoard"; break;
+			}
+			System.out.println();
+			
 			path = "/WEB-INF/views/common/success.jsp";
-			request.setAttribute("successCode", "insertboard");
+			request.setAttribute("successCode", successCode);
 			
 		} else {
 			

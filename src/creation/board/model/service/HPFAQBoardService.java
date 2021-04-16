@@ -101,5 +101,50 @@ public class HPFAQBoardService {
 		return result;
 		
 	}
+	
+	public int deleteBoard(HPBoardDTO deleteBoard) {
+		
+
+		Connection con = getConnection();
+		
+		int result = boardDAO.deleteBoard(con, deleteBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+	}
+
+	public int updateBoard(HPBoardDTO updateBoard) {
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.updateBoard(con, updateBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+	}
 
 }

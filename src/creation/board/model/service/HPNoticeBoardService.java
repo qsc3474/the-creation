@@ -121,7 +121,7 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 	}
 
 	public int insertThumbnail(HPBoardDTO thumbnail) {
-Connection con = getConnection();
+		Connection con = getConnection();
 		
 		/* 최종적으로 반환 할 result 선언 */
 		int result = 0;

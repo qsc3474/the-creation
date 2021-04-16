@@ -95,13 +95,15 @@ public class HPNoticeBoardDAO {
 				HPBoardDTO boardDTO = new HPBoardDTO();
 				boardDTO.setWriter(new MemberDTO());
 				boardDTO.setNo(rset.getInt("HP_BD_NO"));
+				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
 				boardDTO.setTitle(rset.getString("HP_BD_TITLE"));
 				boardDTO.setContent(rset.getString("HP_BD_CONTENT"));
 				boardDTO.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
 				boardDTO.setWatched(rset.getInt("HP_BD_WATCHED"));
 				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
 				boardDTO.setMemberNo(rset.getInt("HP_MEM_NO"));
-				boardDTO.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				boardDTO.setStatus(rset.getString("HP_BD_STATUS"));
+				boardDTO.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
 				HPNctList.add(boardDTO);
 				
 			}
