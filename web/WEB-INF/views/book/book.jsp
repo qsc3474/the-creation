@@ -117,8 +117,19 @@
                                        			
                                         <label class="fieldlabels">예약 시간<span class="text-danger">*</span></label>
                                       	<input type="date" name ="date">
-                                  		<input type="time" name ="time">
-                                        <input type="datetime-local" name="datetime">
+                                  		<select name ="time" >
+                                  		<optgroup label="오전"></optgroup>
+                                  		<option value="10:00"> 10:00</option>
+                                  		<option value="11:00"> 11:00</option>
+                                  		<option value="12:00"> 12:00</option>
+                                  		
+                                  		<optgroup label="오후"></optgroup>
+                                  		<option value="14:00"> 2:00</option>
+                                  		<option value="15:00"> 3:00</option>
+                                  		<option value="16:00"> 4:00</option>
+ 		                                <option value="17:00"> 5:00</option>
+                                        <option value="18:00"> 6:00</option>
+                                  		</select>
                                               
                                     </div> 
                                     <input type="button" name="previous" class="previous action-button-previous"
