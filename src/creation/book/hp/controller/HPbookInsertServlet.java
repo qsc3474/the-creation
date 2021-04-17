@@ -44,19 +44,19 @@ public class HPbookInsertServlet extends HttpServlet {
 		
 		String dateTime= (date+" "+time);
 		
-		
-		System.out.println(bookMember);
-		System.out.println(petName);
-		System.out.println(kind);
-		System.out.println(gender);
-		System.out.println(neut);
-		System.out.println(dateTime);
+//		
+//		System.out.println(bookMember);
+//		System.out.println(petName);
+//		System.out.println(kind);
+//		System.out.println(gender);
+//		System.out.println(neut);
+//		System.out.println(dateTime);
 
 		
 		HPbookDTO newBook =new HPbookDTO();
 		
 		newBook.setMemberNo(bookMember);
-		newBook.setTime(dateTime);
+		newBook.setTime(java.sql.Date.valueOf(dateTime));
 		newBook.setPetName(petName);
 		newBook.setPetKind(kind);
 		newBook.setPetGender(gender);
@@ -65,7 +65,7 @@ public class HPbookInsertServlet extends HttpServlet {
 		newBook.setMessage(message);
 		
 		
-		System.out.println(newBook);
+//		System.out.println(newBook);
 		
 		
 		HPbookService bookService = new HPbookService();

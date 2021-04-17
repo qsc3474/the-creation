@@ -50,8 +50,8 @@
                 <div class="row justify-content-center">
                     <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                         <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                            <form id="msform" action="${pageContext.request.contextPath}/hp/book/selectt" method="post">
-<fieldset>
+                            <form id="msform" action="${pageContext.request.contextPath}/hp/book/select" method="post">
+							<fieldset>
                                     <div class="form-card">
                                         <div class="row">
                                             <div class="col-7">
@@ -63,28 +63,29 @@
                                         </div> 
                                        			
                                     <label class="fieldlabels">이름<span class="text-danger">*</span></label>
-                                        	<input type="text" name="petName" placeholder="이름" />
+                                        	<input type="text" name="petName" placeholder="${requestScope.HPBookList.petName }" />
                                             <label class="fieldlabels">분류 (종)<span class="text-danger">*</span></label>
-											<input type="text" value="종"> 
+											<input type="text" value="${requestScope.HPBookList.petKind }"> 
                                             <label class="fieldlabels">성별 <span class="text-danger">*</span></label> 
-                                              <input type="text" value="성별"> 
+                                              <input type="text" value="${requestScope.HPBookList.petGender }"> 
                                                <label class="fieldlabels">나이<span class="text-danger">*</span></label>
-												 <input type="text" value="연령"> 
+												 <input type="text" value="${requestScope.HPBookList.petAge }"> 
                                             <label class="fieldlabels">중성화여부<span class="text-danger">*</span></label>
-												<input type="text" value="중성화"> 
+												<input type="text" value="${requestScope.HPBookList.petNeut }"> 
 												 <label class="fieldlabels">예약시간<span class="text-danger">*</span></label>
-												<input type="text" value="예약시간"> 
+												<input type="text" value="${requestScope.HPBookList.time }"> 
                                             <label for="exampleFormControlTextarea1">특이사항</label>
-                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5"></textarea>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5" value="${requestScope.HPBookList.message }"></textarea>
                                     		
                                     
                                     
                                     </div> 
                                     
                                     <input type="button" name="previous" class="previous action-button-previous"
-                                        value="돌아가긴" />
-                                    <input type="button" name="next" class="next action-button" value="예약수정" />
+                                        value="돌아가기" />
+                                    <input type="button" name="" class="next action-button" value="예약취소" />
                                 </fieldset>
+                                </form>
 </section>
 
 

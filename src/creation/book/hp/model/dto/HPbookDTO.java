@@ -15,7 +15,7 @@ public class HPbookDTO implements Serializable {
 
 	
 	private int no;
-	private String time;
+	private java.sql.Date time;
 	private int memberNo;
 	private String status;
 	private String petName;
@@ -29,7 +29,7 @@ public class HPbookDTO implements Serializable {
 		
 	}
 
-	public HPbookDTO(int no, String time, int memberNo, String status, String petName, String petKind, String petGender,
+	public HPbookDTO(int no, Date time, int memberNo, String status, String petName, String petKind, String petGender,
 			String petAge, String petNeut, String message) {
 		super();
 		this.no = no;
@@ -52,12 +52,12 @@ public class HPbookDTO implements Serializable {
 		this.no = no;
 	}
 
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setTime(Date date) {
+		this.time = date;
 	}
 
 	public int getMemberNo() {
