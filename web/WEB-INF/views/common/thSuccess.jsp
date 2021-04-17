@@ -56,6 +56,12 @@
 				successMessage = "공지사항 삭제에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/ht/QNA/list";
 				break;
+				
+				/* 호텔 이벤트 예약  */
+			case "htInsertEvent" :
+				successMessage = "호텔 이벤트 예약에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }";
+				break;
 			}
 			
 			alert(successMessage);
