@@ -9,11 +9,10 @@
 </head>
 <body >
 	
-	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
-	
+		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	<div id="main_content">
 
-			<!-- slider -->
+		<!-- slider -->
 		<div id="rev_slider_5_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-source="gallery"
 			style="background:transparent;padding:0px;">
 			<div id="main_slider" class="rev_slider fullscreenbanner" data-version="5.4.5.2">
@@ -105,7 +104,6 @@
 		</div>
 		<!-- slider -->
 
-
 		<!-- main_menu -->
 		<section id="mainSec" class="sec1 bg-light mt-null">
 			<div class="container">
@@ -185,7 +183,10 @@
 					<div class="col-md-3 col-sm-6">
 						<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
 							<div class="fea-icon">
-								<i><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog.png" alt="dog" style="width: 50px; height: 50px;"></i>
+								<i>
+									<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog.png" alt="dog" 
+									 style="width: 50px; height: 50px;">
+								</i>
 							</div>
 							<h3>내과센터</h3>
 							<p style="padding-top: 10px;">
@@ -406,9 +407,9 @@
 	<!-- style-two -->
 	</div>
 	</section>
-	<!-- /치료사례 -->
+		<!-- /치료사례 -->
 
-	<!-- 오시는길 -->
+		<!-- 오시는길 -->
 		<section id="contact-two" class="bg-light contact-sec" style="padding: 0;">
 			<div class="container-full">
 				<div class="row">
@@ -465,7 +466,7 @@
 		<!-- 오시는길 -->
 
 
-	<!-- quick-menu -->
+		<!-- quick-menu -->
 		<section id="quick-menu" style="padding: 0;">
 			<nav class="side-menu">
 				<ul>
@@ -476,12 +477,10 @@
 				</ul>
 			  </nav>
 		</section>
-	<!-- quick-menu -->
+		<!-- quick-menu -->
 
 	</div>
-	
-	
-	<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 	
 </body>
 </html>

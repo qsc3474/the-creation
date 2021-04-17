@@ -10,9 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180"
 	href="${ pageContext.servletContext.contextPath }/resources/assets/img/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32"
-	href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16"
-	href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon-16x16.png">
+	href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon.png">	
 <!-- Dependency Styles -->
 <link rel="stylesheet"
 	href="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/css/bootstrap.min.css"
@@ -51,9 +49,7 @@
 	type="text/css">
 <script src="/creation/resources/js/event.js"></script>
 </head>
-<body id="home-version-1"
-	class="home-version-1 sticky-header transparent-header menu-two"
-	data-style="default">
+<body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 
 	<!-- header -->
 	<header id="discohead" class="dt-header fixed">
@@ -82,9 +78,8 @@
 							<li><a
 								href="${ pageContext.servletContext.contextPath }/hp/info/dental">치과</a></li>
 						</ul></li>
-					<li><a href="service.html">진료서비스</a></li>
-					<li><a
-						href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
+					<li><a href="service.html">진료가격</a></li>
+					<li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
 					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
 						<ul class="sub-menu">
 							<li><a
