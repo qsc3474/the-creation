@@ -548,7 +548,7 @@ section {
     transition: all 0.25s ease-in-out;
   }
   #discovery-main-menu > ul > li ul {
-    box-shadow: 0 15px 45px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2);
   }
   #discovery-main-menu > ul > li ul > li {
     list-style: none;
@@ -1148,7 +1148,6 @@ section#about-two {
 .about-details-three h4 {
   color: #4772d9;
   background: linear-gradient(180deg, #4772d9, #6d47d9);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -3177,7 +3176,7 @@ section#about-two {
     background: #fcd357;
   }
 
-/*회원가입*/
+/* =============회원가입 ==============*/
   .form-control {
     height: 50px;
     padding: 0 15px;
@@ -3202,8 +3201,11 @@ section#about-two {
   transition: all .3s ease;
   outline: none;
 }
+/* =============회원가입 ========*/
 
-/*service*/
+
+
+/*==========service==============*/
 #service .nav-tabs>li {
   float: left;
   margin-bottom: -1px;
@@ -3231,21 +3233,9 @@ section#about-two {
 .box-roulette {margin-top: 0px !important;}
 
 
-.cf:after{content:"";display:block;clear:both;} 
-.step-title {padding-bottom: 0;}
-.step-title p{font-size: 22px; font-weight: bold;}
-.mb{margin-bottom: 70px;}
-.mt{margin-top: 50px;}
-.pt{padding-top: 50px;}
-.pb{padding-bottom: 30px;}
-.bg-dark{background: #646674;}
-.bg-light{background: #E5E9ED;}
-.mt-null{margin-top: 0 !important;}
-.fm {font-size: 22px !important;}
-
 .footer-logo{font-size: 38px; letter-spacing: 5px; color: #36b2b0 !important; font-weight: bold;}
 
-/*이용약관*/
+/*=============== 약관타이틀 ================*/
 .section-step {
   position: relative;
   padding: 10px 0 20px 0;
@@ -3255,8 +3245,85 @@ section#about-two {
   word-wrap: break-word;
   /* word-break: break-all; */
 }
+/* =============== /약관타이틀 ================*/
 
-/* 진료과목 */
+/* ========= 1:1문의 =========== */
+.page_aticle.aticle_type2 .page_section {
+  width: 600px;
+}
+.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
+  font-family: noto sans;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
+  font-family: noto sans;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.xans-board-write table select {
+  padding: 6px 5px;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 5px;
+  color: #202020;
+}
+
+.xans-board-write .boardWrite2 {
+  table-layout: fixed;
+  border-top: 2px solid #333;
+  line-height: 180%;
+}
+
+.xans-board-write table th {
+  width: 110px;
+  padding: 15px 0 15px 20px;
+  background-color: #f7f5f8;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: left;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.xans-board-write table td {
+  width: auto;
+  padding: 15px 0 15px 10px;
+  height: 23px;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.xans-board-write table td {
+  width: auto;
+  padding: 15px 0 15px 10px;
+  height: 23px;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.linebg {float: left;}
+.tr_0 a {float: right;}
+.tr_0 a img {margin: 0 auto;}
+
+.boardWrite2 .smalle {
+  position: relative;
+}
+
+.boardWrite2 .smalle input[type=checkbox] {
+  position: relative;
+  right: 2px;
+  vertical-align: middle;
+}
+
+/* ========= /1:1문의 =========== */
+
+
+/* =============== 진료과목 ==================*/
 .h3-title {position: relative; color: #30b1ad;}
 
 .contact-sec .row>.col-md-3 {padding: 0 !important;}
@@ -3270,11 +3337,10 @@ section#about-two {
 
 #step-title4{ padding: 150px;}
 
-/*공지사항*/
-#reviewdetail {padding-top: 0;}
-.bhoechie-tab-content {padding: 40px 20px 70px 40px;}
+/* ============== notice ====================*/
 
-/*  bhoechie tab */
+/*  bhoechie tab*/
+/* .bhoechie-tab-content {padding: 40px 20px 70px 40px;} */
 div.bhoechie-tab-container {
   z-index: 10;
   background-color: #ffffff;
@@ -3351,16 +3417,22 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
   display: none;
 }
 
-#reviewdetail {padding-top: 0;}
+.bhoechie-tab {height: auto;}
+.bhoechie-tab .bhoechie-tab-content:nth-of-type(4){height: 1800px;}
 .bhoechie-tab-content {padding: 40px 20px 70px 40px;}
 
+/* 1. 공지사항 */
+#reviewDetail {padding-top: 0;}
+.bhoechie-tab-content {padding: 40px 20px 70px 40px;}
 
+/* ============ /공지사항 bhoechie tab============= */
 .tp-leftarrow .tparrows{visibility: hidden;}
 .tp-bannertimer .tp-bottom {visibility: hidden;}
 
 .quickbk {width: 1216px; background-color: #666666; margin-bottom: 0; padding: 0;}
 .quickbk li{width: 299px; height: 124px; background: #00C851; margin-right: 1px; list-style: none; display: inline-block;} 
 .quickbk li:last-child{margin-right: 0;}
+
 
 
 #comments {
@@ -3449,7 +3521,17 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
   margin: 0;
 }
 
+
 /* ============= booking =========== */
+
+[class*='col-'] {
+  float: left;
+  padding-right: 10px;
+  }
+
+  .bk-form .grid [class*='col-']:last-of-type {
+  padding-right: 0;
+  }
 
 .controls {
   text-align: left;
@@ -4282,7 +4364,29 @@ h2.heading {
   box-shadow: inset 0 -15px 0 0 #333;
 }
 
-/* service sec */
+/* hotel service sec */
+#con {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;}
+
+.ball {
+  color: #000;
+  border-radius: 100%;
+  position: absolute;
+  text-align: center;
+  font-family: Noto Sans Korean;
+  font-weight: bold;
+}
+
+.cover {
+  position: absolute;
+  background-color: #000;
+  border-radius: 100%;
+}
+/* /hotel service sec */
 
 
 /* =========== /hotel-index-main-section ========== */
@@ -4472,20 +4576,50 @@ h2.heading {
 
 
 /* 호텔 전체 버튼 */
+.gp-btn{
+  border-radius: 30px;
+  padding: 15px 40px;
+/*   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+  margin: 20px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.gp-btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 12px 35px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.gp-btn.btn-dark {
+  background: #121212;
+  color: #fff;}
+
+gp-btn.btn-dark:hover {
+  background: #fff;
+  color: #202020;
+}
+
+.gp-btn.btn-dark:hover {
+  background: #f0ad4e;
+  color: #FFF;
+}
+
 .gp-price-table-one .price-table-container .hotel-btn:hover{
   background: #fff;
   color: #202020;
 }
 
-.hotel-btn.btn-dark {
-  background: #121212;
-  color: #fff;
-}
 
 .gp-price-table-one .hotel-btn {
   border-radius: 30px;
-  padding: 15px 40px;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  padding: 15px 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   margin: 15px auto 0;
   text-align: center;
   margin-right: 18px;
@@ -4514,7 +4648,24 @@ h2.heading {
 .review-sec .feature-box-two:hover {
   background: #FDC647;
 }
-/* ======== hotel review page ===== */
+/* ======== /hotel review page ===== */
+
+/* ======== pet-info page ========= */
+.info-sec h3{color: #3D3D3D; padding-bottom: 5px;}
+.info>li{list-style: none;}
+.info span{color: #FDC647; font-size: 18px; font-weight:bold;}
+.underline--magical {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+/* ======== /pet-info page ========= */
+
+/* ======== 이용안내========= */
+.thead-light {background-color: #F0F0EB;}
+/* ======== /이용안내========= */
 
 /* ======== quick메뉴 ========*/
 .side-menu {
@@ -4583,3 +4734,202 @@ display:block;
 
 /* ==========/quick메뉴 =========== */
 
+/* room */
+.macbook {
+  padding: 4% 6%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.screen {
+  background: #000;
+  border-radius: 3% 3% 0.5% 0.5% / 5%;
+  margin: 0 auto;
+  /* for aspect ratio */
+  position: relative;
+  width: 80%;
+}
+
+.screen:before {
+  border: 2px solid #cacacc;
+  border-radius: 3% 3% 0.5% 0.5% / 5%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+  content: "";
+  display: block;
+  /* for aspect ratio ~67:100 */
+  padding-top: 67%;
+}
+
+.screen:after {
+  content: "";
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  position: absolute;
+  bottom: 0.75%;
+  left: 0.5%;
+  padding-top: 1%;
+  width: 99%;
+}
+
+.viewport {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 4.3% 3.2%;
+  background: #333;
+}
+
+.base {
+  /* for aspect ratio */
+  position: relative;
+  width: 100%;
+}
+
+.base:before {
+  content: "";
+  display: block;
+  /* for aspect ratio ~33:1000*/
+  padding-top: 3.3%;
+  /* stylin */
+  background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
+  border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+}
+
+.base::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.8) 0.5%, rgba(0, 0, 0, 0.4) 3.3%, transparent 15%, rgba(255, 255, 255, 0.8) 50%, transparent 85%, rgba(0, 0, 0, 0.4) 96.7%, rgba(255, 255, 255, 0.8) 99.5%, rgba(0, 0, 0, 0.5) 100%);
+  content: "";
+  height: 53%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.notch {
+  background: #ddd;
+  border-radius: 0 0 7% 7% / 0 0 95% 95%;
+  box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3.5%;
+  z-index: 2;
+  /* for aspect ratio */
+  position: relative;
+  width: 14%;
+}
+
+.notch:before {
+  content: "";
+  display: block;
+  /* for aspect ratio ~1:10 */
+  padding-top: 10%;
+}
+
+.macbook .viewport {
+  transition: background-position 12s ease;
+  background-position: 0 0;
+  background-size: 100% auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.macbook:hover .viewport {
+  background-position: 0 100%;
+}
+
+.macbook .viewport:after {
+  background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* /macbook */
+
+/* 메인페이지 tag */
+.package { background: #ccc; color: #fff; padding: 5px 15px; font-size: 12px;
+  border-radius: 30px;}
+/* /메인페이지 tag */
+
+
+.uploadcare--menu__items div:nth-of-type(4), .uploadcare--menu__items div:nth-of-type(5){display: none;}
+
+/* hotel 추가 */
+.member-thumb img{width: 100%;}
+
+/* ===title=== */
+.ht-title  {padding-top: 50px;}
+.ht-title h2 {
+  color: #FDC647;}
+
+.ht-title h2:after {
+  background: #FDC647;
+}
+/* ===/title=== */
+
+/* ===확인필요=== */
+.about-feature {
+  margin: 20px 0 20px 20px;
+}
+
+#call-to-action, #call-to-action-two {
+  background: #a0c3d2;
+}
+
+#call-to-action-two-colorfull, #call-to-action-colorfull {
+  background: #a0c3d2;
+}
+
+.panel-group .panel-title > a {
+  text-align: left;
+}
+
+.panel-group .panel-active a,
+.panel-group .panel-title > a:hover,
+.panel-group .panel-title > a:focus {
+  background:#FFCD00;
+  font-size: 15px;
+}
+
+.style-one {
+  padding: 0;
+}
+
+.style-two {
+  padding: 20px 0 50px 0;
+  background: #f8f8f8;
+}
+.transparent-header #discohead:not(.fixed) #discovery-main-menu > ul > li > a:hover {
+  color: #a0c3d2;}
+ 
+.transparent-header #discohead:not(.fixed) #discovery-main-menu .secondary-navigation > ul > li >a:hover {
+  color:  #a0c3d2;
+}
+
+/* 확인필요 */
+
+/* 추가세팅 */
+.cf:after{content:"";display:block;clear:both;} 
+.step-title {padding-bottom: 0;}
+.step-title p{font-size: 22px; font-weight: bold;}
+.mb{margin-bottom: 70px;}
+.mt{margin-top: 50px;}
+.pt{padding-top: 50px;}
+.pb{padding-bottom: 30px;}
+.bg-light{background: #E5E9ED !important;}
+.mt-null{margin-top: 0 !important;}
+.pt-null{padding-top: 0 !important;}
+.fm {font-size: 22px !important;}
+.p-null {padding: 0 !important;}
+.m-null {margin: 0 !important;}
+.bg-white {background: #f8f8f8;}
+/* .style-two {background: #fff !important;} */
+.font-16 {font-size: 16px;}
+.font-18 {font-size: 18px;}
+.br-null{border-radius: 0%;}
+.b-null{border: 0;}
+.yellow-c {color: #FDC647;} .footer-logo{font-size: 38px; letter-spacing: 5px; color: #36b2b0 !important; font-weight: bold;}
+/* 추가세팅 */

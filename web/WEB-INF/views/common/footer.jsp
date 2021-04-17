@@ -17,9 +17,9 @@
                 </div>
                 <div class="col-sm-12 copy-right">
                     <ul class="text-center foot-info">
-                        <li><a href="terms-list1.html">회원약관<span>|</span></a></li>
-                        <li><a href="terms-list2.html">개인정보처리방침<span>|</span></a></li>
-                        <li><a href="terms-list3.html">환자의 권리와의무</a></li>
+                        <li><a href="termsList1.html">회원약관<span>|</span></a></li>
+                        <li><a href="termsList2.html">개인정보처리방침<span>|</span></a></li>
+                        <li><a href="termsList3.html">환자의 권리와의무</a></li>
                         <li><select id="inputState" class="form-control">
                                 <option selected>패밀리사이트</option>
                                 <option>개편한호텔</option>
