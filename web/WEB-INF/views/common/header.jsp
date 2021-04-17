@@ -67,7 +67,7 @@
 						<ul class="sub-menu">
 							<li><a href="about.html">병원소개</a></li>
 							<li><a href="about.html">의료진소개</a></li>
-							<li><a href="about.html">시설소개</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">시설소개</a></li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="mg.html">진료과목</a>
 						<ul class="sub-menu">

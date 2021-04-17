@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="insertEvent">
+		INSERT
+		  INTO HOTEL_EVENT_RESERVATION
+		(
+		  HT_EVENT_BK_NO
+		, HT_EVENT_TYPE
+		, HT_ER_TIME
+		, HT_ER_TIMEOUT
+		, HT_MEM_NO
+		, HT_PET_NO
+		, HT_PET_NAME
+		, HT_PET_KIND
+		, HT_PET_GENDER
+		, HT_PET_AGE
+		, HT_PET_NEUT
+		, HT_BK_MESSAGE
+		
+		)
+		VALUES
+		(
+		  SEQ_HT_EVENT_BK_NO.NEXTVAL
+		, ?
+		, TO_DATE(?,'YYYY/MM/DD HH24:MI:SS')
+		, TO_DATE(?,'YYYY/MM/DD HH24:MI:SS')
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		)
+	</entry>
+	
+	
+	
+	
+</properties>
+	
