@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<entry key="selectTotalCount">
-		SELECT
-			   COUNT(*)
-		  FROM HOSPITAL_BD A
-		 WHERE A.HP_BD_CATEGORY_NO = 'HP_NTC'
-		   AND A.HP_BD_STATUS = 'PUBLIC'
+	<entry key="selectTotalCount">
+			SELECT
+				   COUNT(*)
+			  FROM HOSPITAL_BD A
+			 WHERE A.HP_BD_CATEGORY_NO = 'HP_INFO'
+			   AND A.HP_BD_STATUS = 'PUBLIC'
 	</entry>
 	<entry key="selectList">
-		SELECT
+	    SELECT
 		       A.HP_BD_NO
 		     , A.HP_BD_CATEGORY_NO     
 		     , A.HP_BD_TITLE
@@ -43,7 +43,7 @@
 		  		  			 , C.HP_BD_CMT_COUNT
 		  		  		  FROM HOSPITAL_BD C
 		  		  		  JOIN MEM_INFO D ON(C.HP_MEM_NO = D.MEM_NO)
-		  		  		 WHERE C.HP_BD_CATEGORY_NO = 'HP_NTC'
+		  		  		 WHERE C.HP_BD_CATEGORY_NO = 'HP_INFO'
 		  		  		   AND C.HP_BD_STATUS = 'PUBLIC'
 		  		  		 ORDER BY C.HP_BD_NO DESC
 		  		       ) B
@@ -61,7 +61,7 @@
 	 	 WHERE A.HP_BD_NO = ?
 	</entry>
 	<entry key="selectOneBoard">
-		SELECT
+	    SELECT
 		       A.HP_BD_NO
 		     , A.HP_BD_CATEGORY_NO
 		     , A.HP_BD_TITLE
@@ -74,16 +74,14 @@
 		  FROM HOSPITAL_BD A
 		  JOIN MEM_INFO B ON(A.HP_MEM_NO = B.MEM_NO)
 		 WHERE A.HP_BD_NO = ?
-		 
 	</entry>
-	
 	<entry key="searchWriterBoardCount">
 	    SELECT 
 	           COUNT(*)
 	      FROM HOSPITAL_BD A
 	      JOIN MEM_INFO B ON (A.HP_MEM_NO = B.MEM_NO)
 	     WHERE A.HP_BD_STATUS = 'PUBLIC'
-	       AND A.HP_BD_CATEGORY_NO = 'HP_NTC'
+	       AND A.HP_BD_CATEGORY_NO = 'HP_INFO'
 	       AND B.MEM_NAME LIKE '%' || ? || '%'
 	       </entry>
 	  
@@ -92,7 +90,7 @@
 	           COUNT(*)
 	      FROM HOSPITAL_BD A
 	     WHERE A.HP_BD_STATUS = 'PUBLIC'
-	       AND A.HP_BD_CATEGORY_NO = 'HP_NTC'
+	       AND A.HP_BD_CATEGORY_NO = 'HP_INFO'
 	       AND A.HP_BD_TITLE LIKE '%' || ? || '%'
 	</entry>
 	<entry key="searchBodyBoardCount">
@@ -100,7 +98,7 @@
 	           COUNT(*)
 	      FROM HOSPITAL_BD A
 	     WHERE A.HP_BD_STATUS = 'PUBLIC'
-	       AND A.HP_BD_CATEGORY_NO = 'HP_NTC'
+	       AND A.HP_BD_CATEGORY_NO = 'HP_INFO'
 	       AND A.HP_BD_CONTENT LIKE '%' || ? || '%'
 	</entry>
 	<entry key="searchWriterBoard">	
@@ -141,7 +139,7 @@
                           JOIN HOSPITAL_BD_CATEGORY D ON (C.HP_BD_CATEGORY_NO = D.HP_BD_CATEGORY_NO)
                           JOIN MEM_INFO E ON(C.HP_MEM_NO = E.MEM_NO)
                          WHERE C.HP_BD_STATUS = 'PUBLIC'
-                           AND A.HP_BD_CATEGORY_NO = 'HP_NTC'
+                           AND C.HP_BD_CATEGORY_NO = 'HP_INFO'
                          ORDER BY C.HP_BD_NO DESC
                         ) B
                   WHERE B.MEM_NAME LIKE '%' || ? || '%'
@@ -187,7 +185,7 @@
                           JOIN HOSPITAL_BD_CATEGORY D ON (C.HP_BD_CATEGORY_NO = D.HP_BD_CATEGORY_NO)
                           JOIN MEM_INFO E ON(C.HP_MEM_NO = E.MEM_NO)
                          WHERE C.HP_BD_STATUS = 'PUBLIC'
-                           AND A.HP_BD_CATEGORY_NO = 'HP_NTC'
+                           AND C.HP_BD_CATEGORY_NO = 'HP_INFO'
                          ORDER BY C.HP_BD_NO DESC
                         ) B
                   WHERE B.HP_BD_TITLE LIKE '%' || ? || '%'
@@ -233,18 +231,11 @@
                           JOIN HOSPITAL_BD_CATEGORY D ON (C.HP_BD_CATEGORY_NO = D.HP_BD_CATEGORY_NO)
                           JOIN MEM_INFO E ON(C.HP_MEM_NO = E.MEM_NO)
                          WHERE C.HP_BD_STATUS = 'PUBLIC'
-                           AND A.HP_BD_CATEGORY_NO = 'HP_NTC'
+                           AND C.HP_BD_CATEGORY_NO = 'HP_INFO'
                          ORDER BY C.HP_BD_NO DESC
                         ) B
                   WHERE B.HP_BD_CONTENT LIKE '%' || ? || '%'
                ) A
          WHERE A.RNUM BETWEEN ? AND ?
     </entry>   
-    <entry key="deleteBoard">
-		UPDATE
-		       HOSPITAL_BD A
-		   SET A.HP_BD_STATUS = 'DELETE'
-		 WHERE A.HP_BD_STATUS IN ('PUBLIC','PRIVATE')
-		   AND A.HP_BD_NO = ?
-	</entry>
 </properties>

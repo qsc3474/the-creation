@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.notice;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.common;
 
 import java.io.IOException;
 import java.util.List;
@@ -30,6 +30,7 @@ public class HPBoardDeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int boardNo = Integer.valueOf(request.getParameter("no"));
+		String categoryNo = request.getParameter("categoryNo");
 		
 		HPNoticeBoardService boardService = new HPNoticeBoardService();
 		
@@ -43,7 +44,15 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		if(result > 0) {
 			
 			path = "/WEB-INF/views/common/success.jsp";
-			request.setAttribute("successCode", "deleteBoard");
+			String successCode = "";
+			switch(categoryNo) {
+			case "HP_RV": successCode = "deleteRVBoard"; break;
+			case "HP_QNA": successCode = "deleteQNABoard"; break;
+			case "HP_FAQ": successCode = "deleteFAQBoard"; break;
+			case "HP_INFO": successCode = "deleteINFOBoard"; break;
+			case "HP_NTC": successCode = "deleteNTCBoard"; break;
+			}
+			request.setAttribute("successCode", successCode);
 			
 		} else {
 			

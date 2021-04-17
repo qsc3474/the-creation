@@ -129,7 +129,7 @@
 		    	var $parent = this.parentNode;
 			    var getNo = $parent.children[1];
 			    no = getNo.value;
-			    location.href = "${pageContext.request.contextPath}/hp/board/delete?no=" + no;
+			    location.href = "${pageContext.request.contextPath}/hp/board/delete?no=" + no + "&categoryNo=HP_FAQ";
 		    });
 			
 		}

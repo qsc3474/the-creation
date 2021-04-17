@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.QNA;
 
 import java.io.IOException;
 
@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import creation.board.model.dto.HPBoardDTO;
-import creation.board.model.service.HPFAQBoardService;
+import creation.board.model.service.HPQNABoardService;
 
-@WebServlet("/hp/faq/detail")
-public class HPFAQDetailServlet extends HttpServlet {
+@WebServlet("/hp/qna/detail")
+public class HPQNADetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String boardNo = request.getParameter("no");
-		int no = Integer.valueOf(boardNo);
-		HPBoardDTO board = new HPFAQBoardService().selectDetail(no);
+		
+		String hpBdNo = request.getParameter("no");
+		int no = Integer.valueOf(hpBdNo);
+		System.out.println(no);
+		HPBoardDTO board = new HPQNABoardService().selectDetail(no);
 		
 		String path = "";
 		

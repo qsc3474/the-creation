@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,6 +80,8 @@
     font-size: 16px;
 }
 </style>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script	src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
@@ -122,6 +125,13 @@
 						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
 					</div>
 				</div>
+				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+					<div>
+						<input type='hidden' value="${ requestScope.board.no }" >
+						<button type='button' id='updateBoard'>수정하기</button>
+						<button type='button' id='deleteBoard'>삭제하기</button>
+					</div>
+				</c:if>
 			</div>
 			<!-- /.row -->
 
@@ -150,22 +160,6 @@
 					</ul>
 				</div>
 			</div>
-			<div class="Page navigation example text-center">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#"
-						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-							<span class="sr-only">Previous</span>
-					</a></li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#"
-						aria-label="Next"> <span aria-hidden="true">&raquo;</span> 
-						<span class="sr-only">Next</span>
-					</a></li>
-				</ul>
-			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>
@@ -200,8 +194,35 @@
 var insertCount = 0;
 
 $(function(){  //페이지가 로드되면 댓글 데이터를 가져온다.
+	deleteAndUpdateButtonAction();
 	getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
+	if("${ requestScope.board.categoryNo }" === "HP_NTC" || "${ requestScope.board.categoryNo }" === "HP_INFO"){
+		
+		var comments = document.getElementById("comments");
+		comments.style.display = "none";
+		
+	}
 });
+
+function deleteAndUpdateButtonAction(){
+	
+	var no = 0;
+	
+	$("#updateBoard").click(function() {
+	    var $parent = this.parentNode;
+	    var getNo = $parent.children[0];
+	    no = getNo.value;
+	    location.href = "${pageContext.servletContext.contextPath}/hp/board/update?no=" + no;
+    });
+
+    $("#deleteBoard").click(function () {
+    	var $parent = this.parentNode;
+	    var getNo = $parent.children[0];
+	    no = getNo.value;
+	    location.href = "${pageContext.servletContext.contextPath}/hp/board/delete?no=" + no + "&categoryNo=" + "${ requestScope.board.categoryNo }";
+    });
+	
+}
 
 if(document.getElementById("commentSubmitButton")){
 	const $commentSubmitButton = document.getElementById("commentSubmitButton");
@@ -403,8 +424,7 @@ function insertReplyOfReply(parentCommentNo, content, currentBoardNo, currentBoa
 }
 </script>
 
-
-
+<!-- modal -->
 <script id="rendered-js">
 function replyCommentButtonAction() {
 
@@ -430,6 +450,6 @@ function replyCommentButtonAction() {
 }
 //# sourceURL=pen.js
 </script>
-<!-- modal -->
+
 </body>
 </html>

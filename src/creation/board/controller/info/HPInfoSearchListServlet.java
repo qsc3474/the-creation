@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.info;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,18 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
-import creation.board.model.service.HPNoticeBoardService;
+import creation.board.model.service.HPInfoBoardService;
 import creation.common.paging.Pagenation;
 
-/**
- * Servlet implementation class HPNoticeSearchServlet
- */
-@WebServlet("/hp/notice/search")
-public class HPNoticeSearchListServlet extends HttpServlet {
+@WebServlet("/hp/info/search/list")
+public class HPInfoSearchListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String condition = request.getParameter("searchCondition");
 		String value = request.getParameter("searchValue");
 		
@@ -43,7 +40,7 @@ public class HPNoticeSearchListServlet extends HttpServlet {
 		}
 		
 		/* 2. 검색 조건에 맞는 게시물 갯수 조회 */
-		HPNoticeBoardService boardService = new HPNoticeBoardService();
+		HPInfoBoardService boardService = new HPInfoBoardService();
 		int totalCount = boardService.searchBoardCount(condition, value);
 		
 		System.out.println("totalSearchBoardCount : " + totalCount);
@@ -60,25 +57,27 @@ public class HPNoticeSearchListServlet extends HttpServlet {
 		System.out.println("pageInfo : " + pageInfo);
 		
 		/* 6. 검색한 게시글을 조회 해 온다. */
-		List<HPBoardDTO> HPNCTList = boardService.searchBoardList(pageInfo, condition, value);
+		List<HPBoardDTO> boardList = boardService.searchBoardList(pageInfo, condition, value);
 		
-		System.out.println(HPNCTList);
+		System.out.println(boardList);
 		
 		String path = "";
-		if(!HPNCTList.isEmpty()) {
-			path = "/WEB-INF/views/board/HPnotice.jsp";
-			request.setAttribute("HPNCTList", HPNCTList);
+		if(!boardList.isEmpty()) {
+			path = "/WEB-INF/views/board/boardInfo.jsp";
+			request.setAttribute("boardList", boardList);
 			request.setAttribute("pageInfo", pageInfo);
 			request.setAttribute("searchCondition", condition);
 			request.setAttribute("searchValue", value);
 		} else {
-			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "게시물 검색 결과 조회 실패!");
+			path = "/WEB-INF/views/board/boardInfo.jsp";
+			request.setAttribute("boardList", boardList);
+			request.setAttribute("pageInfo", pageInfo);
+			request.setAttribute("searchCondition", condition);
+			request.setAttribute("searchValue", value);
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}
-
 
 }

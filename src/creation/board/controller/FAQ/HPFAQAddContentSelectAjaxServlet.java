@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.FAQ;
 
 import java.io.IOException;
 import java.io.PrintWriter;

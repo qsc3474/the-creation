@@ -24,15 +24,23 @@
 				<form name="form" id="form" role="form" method="post"
 					action="${pageContext.request.contextPath}/hp/board/insert">
 					<div class="mb-12">
-						<label for="title">선택</label> <select
+						<label for="title">카테고리</label> <select
 							class="custom-select mr-sm-2" name="boardCategory"
 							id="boardCategory">
-							<option value="HP_RV" <c:if test="${ requestScope.categoryNo eq 'HP_RV' }">selected</c:if>>후기게시판</option>
-							<option value="HP_QNA" <c:if test="${ requestScope.categoryNo eq 'HP_QNA' }">selected</c:if>>QnA</option>
-							<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
-								<option value="HP_FAQ" <c:if test="${ requestScope.categoryNo eq 'HP_FAQ' }">selected</c:if>>자주묻는질문</option>
-								<option value="HP_INFO" <c:if test="${ requestScope.categoryNo eq 'HP_INFO' }">selected</c:if>>정보게시판</option>
-								<option value="HP_NTC" <c:if test="${ requestScope.categoryNo eq 'HP_NTC' }">selected</c:if>>공지사항</option>
+							<c:if test="${ requestScope.categoryNo eq 'HP_RV' }">
+								<option value="HP_RV" selected>후기게시판</option>
+							</c:if>
+							<c:if test="${ requestScope.categoryNo eq 'HP_QNA' }">
+								<option value="HP_QNA" selected>QnA</option>
+							</c:if>
+							<c:if test="${ requestScope.categoryNo eq 'HP_FAQ' }">
+								<option value="HP_FAQ" selected>자주묻는질문</option>
+							</c:if>
+							<c:if test="${ requestScope.categoryNo eq 'HP_INFO' }">
+								<option value="HP_INFO" selected>정보게시판</option>
+							</c:if>
+							<c:if test="${ requestScope.categoryNo eq 'HP_NTC' }">
+								<option value="HP_NTC" selected>공지사항</option>
 							</c:if>
 						</select>
 					</div>

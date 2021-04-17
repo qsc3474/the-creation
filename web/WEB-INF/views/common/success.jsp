@@ -28,22 +28,30 @@
 				successMessage = "회원 탈퇴에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
 				break;
-			case "insertNotice" :
-				successMessage = "공지사항 등록에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+				
+			/* 게시글 삭제 */
+			case "deleteRVBoard" :
+				successMessage = "후기 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/review/list";
 				break;
-			case "updateNotice" :
-				successMessage = "공지사항 수정에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+			case "deleteQNABoard" :
+				successMessage = "QNA 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/qna/list";
 				break;
-			case "insertboard" :
-				successMessage = "게시글 작성에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
-				break;
-			case "deleteBoard" :
-				successMessage = "게시글 삭제에 성공하셨습니다!";
+			case "deleteFAQBoard" :
+				successMessage = "FAQ 삭제에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/hp/faq/select/list";
 				break;
+			case "deleteINFOBoard" :
+				successMessage = "정보게시판 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/info/select/list";
+				break;
+			case "deleteNTCBoard" :
+				successMessage = "공지사항 삭제에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/notice/select/list";
+				break;
+				
+			/* 게시글 등록 */
 			case "insertRVBoard" :
 				successMessage = "후기 등록에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/review/list";
@@ -58,12 +66,14 @@
 				break;
 			case "insertINFOBoard" :
 				successMessage = "정보게시판 등록에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/infomation/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/info/select/list";
 				break;
 			case "insertNTCBoard" :
 				successMessage = "공지사항 등록에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/notice/select/list";
 				break;
+				
+			/* 게시글 수정 */
 			case "updateRVBoard" :
 				successMessage = "후기 수정에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/review/list";
@@ -78,11 +88,11 @@
 				break;
 			case "updateINFOBoard" :
 				successMessage = "정보게시판 수정에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/infomation/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/info/select/list";
 				break;
 			case "updateNTCBoard" :
 				successMessage = "공지사항 수정에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/notice/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/notice/select/list";
 				break;
 			}
 			

@@ -14,22 +14,22 @@ import java.util.List;
 import java.util.Properties;
 
 import creation.board.model.dto.CategoryDTO;
-import creation.board.model.dto.FileDTO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
 import creation.common.config.ConfigLocation;
 import creation.member.model.dto.MemberDTO;
 
-public class HPNoticeBoardDAO {
+public class HPInfoBoardDAO {
+
 	private final Properties prop;
 	
-	public HPNoticeBoardDAO() {
+	public HPInfoBoardDAO() {
 		
 		prop = new Properties();
 		
 		try {
 			
-			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "board/hp-ntc-mapper.xml"));
+			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "board/hp-info-mapper.xml"));
 			
 		} catch (IOException e) {
 			
@@ -69,17 +69,77 @@ public class HPNoticeBoardDAO {
 			
 		}
 		
-		
 		return totalCount;
+		
+	}
+
+	public List<HPBoardDTO> searchBoardList(Connection con, PageInfoDTO pageInfo, String condition, String value) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		String query = null;
+		List<HPBoardDTO> boardList = null;
+
+		if (condition.equals("writer")) {
+			query = prop.getProperty("searchWriterBoard");
+
+		} else if (condition.equals("title")) {
+			query = prop.getProperty("searchTitleBoard");
+
+		} else if (condition.equals("content")) {
+			query = prop.getProperty("searchBodyBoard");
+
+		}
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, value);
+			pstmt.setInt(2, pageInfo.getStartRow());
+			pstmt.setInt(3, pageInfo.getEndRow());
+
+			rset = pstmt.executeQuery();
+
+			boardList = new ArrayList<>();
+
+			while (rset.next()) {
+				HPBoardDTO board = new HPBoardDTO();
+				board.setCategory(new CategoryDTO());
+				board.setWriter(new MemberDTO());
+
+				board.setNo(rset.getInt("HP_BD_NO"));
+				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
+				board.getCategory().setCategoryName(rset.getString("HP_BD_CATEGORY_NAME"));
+				board.setTitle(rset.getString("HP_BD_TITLE"));
+				board.setContent(rset.getString("HP_BD_CONTENT"));
+				board.setMemberNo(rset.getInt("HP_MEM_NO"));
+				board.getWriter().setName(rset.getString("MEM_NAME"));
+				board.setWatched(rset.getInt("HP_BD_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_BD_STATUS"));
+
+				boardList.add(board);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+
+		return boardList;
+		
 	}
 
 	public List<HPBoardDTO> selectList(Connection con, PageInfoDTO pageInfo) {
+		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
 		String query = prop.getProperty("selectList");
 		
-		List<HPBoardDTO> HPNctList = null;
+		List<HPBoardDTO> boardList = null;
 		
 		try {
 			
@@ -88,7 +148,7 @@ public class HPNoticeBoardDAO {
 			pstmt.setInt(2, pageInfo.getEndRow());
 			rset = pstmt.executeQuery();
 			
-			HPNctList = new ArrayList<>();
+			boardList = new ArrayList<>();
 			
 			while(rset.next()) {
 				
@@ -104,7 +164,7 @@ public class HPNoticeBoardDAO {
 				boardDTO.setMemberNo(rset.getInt("HP_MEM_NO"));
 				boardDTO.setStatus(rset.getString("HP_BD_STATUS"));
 				boardDTO.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
-				HPNctList.add(boardDTO);
+				boardList.add(boardDTO);
 				
 			}
 			
@@ -118,10 +178,13 @@ public class HPNoticeBoardDAO {
 			close(pstmt);
 			
 		}
-				return HPNctList;
+		
+		return boardList;
+		
 	}
 
 	public int increamentBoardCount(Connection con, int no) {
+		
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
@@ -146,9 +209,11 @@ public class HPNoticeBoardDAO {
 		}
 		
 		return result;
+		
 	}
 
 	public HPBoardDTO selectDetail(Connection con, int no) {
+		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
@@ -195,208 +260,47 @@ public class HPNoticeBoardDAO {
 		}
 		
 		return board;
+		
 	}
 
 	public int searchBoardCount(Connection con, String condition, String value) {
+		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		
+
 		String query = null;
 		int boardCount = 0;
-		
-	
-		 if(condition.equals("writer")) {
-			
+
+		if (condition.equals("writer")) {
+
 			query = prop.getProperty("searchWriterBoardCount");
-		} else if(condition.equals("title")) {
-			
+		} else if (condition.equals("title")) {
+
 			query = prop.getProperty("searchTitleBoardCount");
-		} else if(condition.equals("content")) {
-			
+		} else if (condition.equals("content")) {
+
 			query = prop.getProperty("searchBodyBoardCount");
 		}
-		
+
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, value);
-			
+
 			rset = pstmt.executeQuery();
-			
-			if(rset.next()) {
+
+			if (rset.next()) {
 				boardCount = rset.getInt("COUNT(*)");
 			}
-				
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close(rset);
 			close(pstmt);
 		}
-		
+
 		return boardCount;
+		
 	}
-
-	public List<HPBoardDTO> searchBoardList(Connection con, PageInfoDTO pageInfo, String condition, String value) {
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		
-		String query = null;
-		List<HPBoardDTO> HPNCTList = null;
-		
-		 if(condition.equals("writer")) {	
-			query = prop.getProperty("searchWriterBoard");
 	
-		 } else if(condition.equals("title")) {
-			query = prop.getProperty("searchTitleBoard");
-			
-		} else if(condition.equals("content")) {
-			query = prop.getProperty("searchBodyBoard");
-		
-		}
-		
-		try {
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, value);
-			pstmt.setInt(2, pageInfo.getStartRow());
-			pstmt.setInt(3, pageInfo.getEndRow());
-			
-			rset = pstmt.executeQuery();
-			
-			HPNCTList = new ArrayList<>();
-			
-			while(rset.next()) {
-				HPBoardDTO board = new HPBoardDTO();
-				board.setCategory(new CategoryDTO());
-				board.setWriter(new MemberDTO());
-				
-				board.setNo(rset.getInt("HP_BD_NO"));
-				board.setCategoryNo(rset.getString("HP_BD_CATEGORY_NO"));
-				board.getCategory().setCategoryName(rset.getString("HP_BD_CATEGORY_NAME"));
-				board.setTitle(rset.getString("HP_BD_TITLE"));
-				board.setContent(rset.getString("HP_BD_CONTENT"));
-				board.setMemberNo(rset.getInt("HP_MEM_NO"));
-				board.getWriter().setName(rset.getString("MEM_NAME"));
-				board.setWatched(rset.getInt("HP_BD_WATCHED"));
-				board.setDrawupDate(rset.getDate("HP_BD_DRAWUP_DATE"));
-				board.setStatus(rset.getString("HP_BD_STATUS"));
-				board.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
-				HPNCTList.add(board);				
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rset);
-			close(pstmt);
-		}
-		
-		return HPNCTList;
-	}
-
-	public int deleteBoard(Connection con, HPBoardDTO deleteBoard) {
-		
-		PreparedStatement pstmt = null;
-		int result = 0;
-		
-		String query = prop.getProperty("deleteBoard");
-		
-		try {
-			
-			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, deleteBoard.getNo());
-			
-			
-			result = pstmt.executeUpdate();
-			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-			
-		} finally {
-			
-			close(pstmt);
-			
-		}
-		
-		return result;
-	}
-
-	public int insertThumbnailContent(Connection con, HPBoardDTO thumbnail) {
-		PreparedStatement pstmt = null;
-		
-		int result = 0;
-		
-		String query = prop.getProperty("insertThumbnailContent");
-		
-		try {
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, thumbnail.getTitle());
-			pstmt.setString(2, thumbnail.getContent());
-			pstmt.setInt(3, thumbnail.getMemberNo());
-			
-			result = pstmt.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
-
-	public int selectThumbnailSequence(Connection con) {
-
-		Statement stmt = null;
-		ResultSet rset = null;
-		
-		int lastBoardNo = 0;
-		
-		String query = prop.getProperty("selectThumbnailSequence");
-		
-		try {
-			stmt = con.createStatement();
-			
-			rset = stmt.executeQuery(query);
-			
-			if(rset.next()) {
-				lastBoardNo = rset.getInt("CURRVAL");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rset);
-			close(stmt);
-		}
-		
-		return lastBoardNo;
-	}
-
-	public int insertFile(Connection con, FileDTO fileDTO) {
-		PreparedStatement pstmt = null;
-		int result = 0;
-		
-		String query = prop.getProperty("insertAttachment");
-		
-		try {
-			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, fileDTO.getBdNo());
-			pstmt.setString(2, fileDTO.getOriginName());
-			pstmt.setString(3, fileDTO.getName());
-			pstmt.setString(4, fileDTO.getPath());
-			pstmt.setString(5, fileDTO.getExtension());
-			
-			result = pstmt.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
-
-	
-	}
-
+}

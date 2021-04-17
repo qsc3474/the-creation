@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.common;
 
 import java.io.IOException;
 

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>개편한 병원- 공지사항</title>
+<title>개편한 병원-정보게시판</title>
 <!-- 기기(디바이스)별 크기를 인식 하고 1.0으로 확대 및 축소 없이해서 보여줌 -->
 <title>Document</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,7 +42,7 @@
 		<div class="row">
 			<h2
 				class="section-title section-title-upper section-title-line text-center">
-				공지사항</h2>
+				Q&amp;A</h2>
 		</div>
 	</section>
 	<section class="notice-sec">
@@ -87,16 +87,24 @@
 													aria-controls="dataTables-example" rowspan="1" colspan="1"
 													aria-label="CSS grade: activate to sort column ascending"
 													style="width: 10px;">조회</th>
+												<th class="sorting" tabindex="0"
+													aria-controls="dataTables-example" rowspan="1" colspan="1"
+													aria-label="CSS grade: activate to sort column ascending"
+													style="width: 30px;">상태</th>
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach items="${ requestScope.HPNCTList }" var="ntc">
+											<c:forEach items="${ requestScope.boardList }" var="qna">
 												<tr>
-													<td><c:out value="${ ntc.no }" /></td>
-													<td><c:out value="${ ntc.title }"/><c:if test="${ ntc.cmtCount ne 0 }"><c:out value="(${ ntc.cmtCount })"/></c:if></td>
-													<td><c:out value="${ ntc.writer.name }" /></td>
-													<td><c:out value="${ ntc.drawupDate }" /></td>
-													<td><c:out value="${ ntc.watched }" /></td>
+													<td><c:out value="${ qna.no }" /></td>
+													<td><c:out value="${ qna.title }"/>
+														<c:if test="${ qna.cmtCount ne 0 }">
+															<c:out value="(${ qna.cmtCount })"/>
+														</c:if></td>
+													<td><c:out value="${ qna.writer.name }"/></td>
+													<td><c:out value="${ qna.drawupDate }"/></td>
+													<td><c:out value="${ qna.watched }"/></td>
+													<td><c:out value="${ qna.answer }"/></td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -148,7 +156,7 @@
 
 
 								<form id="searchForm"
-									action="${ pageContext.servletContext.contextPath }/hp/notice/search"
+									action="${ pageContext.servletContext.contextPath }/hp/info/search/list"
 									method="get">
 									<div class="search-area" align="center">
 										<c:choose>
@@ -162,7 +170,7 @@
 														<c:if test="${requestScope.searchCondition eq 'content' }">selected</c:if>>내용</option>
 												</select>
 												<input type="search" id="searchValue" name="searchValue"
-													value="${requestScope.searchValue}"}>
+													value="${requestScope.searchValue}">
 											</c:when>
 											<c:otherwise>
 												<select id="searchCondition" name="searchCondition">
@@ -190,75 +198,74 @@
 
 
 	<script>
-		const link = "${pageContext.servletContext.contextPath}/hp/notice/select/list"
+		const link = "${pageContext.servletContext.contextPath}/hp/qna/search/list"
 		/* 페이지 번호 클릭시 실행되는 함수 */
 		function pageButtonAction(text) {
-			location.href = link + "?currentPage="
-					+ text;
+			location.href = link + "?currentPage=" + text
+								 + "&searchCondition=" + document.getElementById("searchCondition").value
+								 + "&searchValue=" + document.getElementById("searchValue").value;
 		}
-	
-		if (document
-				.getElementById("searchStartPage")) {
-			const $searchStartPage = document
-					.getElementById("searchStartPage");
+
+		if (document.getElementById("searchStartPage")) {
+			const $searchStartPage = document.getElementById("searchStartPage");
 			$searchStartPage.onclick = function() {
-				location.href = link
-						+ "?currentPage=1"
+				location.href = link + "?currentPage=1"
+									 + "&searchCondition=" + document.getElementById("searchCondition").value
+									 + "&searchValue=" + document.getElementById("searchValue").value;
 			}
 		}
-		if (document
-				.getElementById("searchMaxPage")) {
-			const $searchMaxPage = document
-					.getElementById("searchMaxPage");
+		if (document.getElementById("searchMaxPage")) {
+			const $searchMaxPage = document.getElementById("searchMaxPage");
 			$searchMaxPage.onclick = function() {
 				location.href = link
-						+ "?currentPage=${requestScope.pageInfo.maxPage}";
+						+ "?currentPage=${ requestScope.pageInfo.maxPage }"
+						+ "&searchCondition=" + document.getElementById("searchCondition").value
+						+ "&searchValue=" + document.getElementById("searchValue").value;
 			}
 		}
-	
-		if (document
-				.getElementById("searchPrevPage")) {
-			const $searchPrevPage = document
-					.getElementById("searchPrevPage");
+
+		if (document.getElementById("searchPrevPage")) {
+			const $searchPrevPage = document.getElementById("searchPrevPage");
 			$searchPrevPage.onclick = function() {
 				location.href = link
-						+ "?currentPage=${requestScope.pageInfo.pageNo-1}";
+						+ "?currentPage=${requestScope.pageInfo.pageNo - 1}"
+						+ "&searchCondition=" + document.getElementById("searchCondition").value
+						+ "&searchValue=" + document.getElementById("searchValue").value;
 			}
 		}
-		if (document
-				.getElementById("searchNextPage")) {
-			const $searchNextPage = document
-					.getElementById("searchNextPage");
+		if (document.getElementById("searchNextPage")) {
+			const $searchNextPage = document.getElementById("searchNextPage");
 			$searchNextPage.onclick = function() {
 				location.href = link
-						+ "?currentPage=${requestScope.pageInfo.pageNo+1}";
+						+ "?currentPage=${requestScope.pageInfo.pageNo + 1}"
+						+ "&searchCondition=" + document.getElementById("searchCondition").value
+						+ "&searchValue=" + document.getElementById("searchValue").value;
 			}
 		}
 		/* 게시글 관련 css 및 이벤트 처리(마우스 호버 및 클릭) */
 		if (document.getElementsByTagName("td")) {
-			const $tds = document
-					.getElementsByTagName("td");
+			const $tds = document.getElementsByTagName("td");
 			for (var i = 0; i < $tds.length; i++) {
-	
+
 				$tds[i].onmouseenter = function() {
 					this.parentNode.style.cursor = "pointer";
 				}
-	
+
 				$tds[i].onmouseout = function() {
 				}
-	
+
 				$tds[i].onclick = function() {
 					const no = this.parentNode.children[0].innerText;
-					location.href = "${ pageContext.servletContext.contextPath }/hp/notice/detail?no="
+					location.href = "${ pageContext.servletContext.contextPath }/hp/qna/detail?no="
 							+ no;
 				}
 			}
 		}
-		
+
 		if (document.getElementById("writeBoard")) {
 			const $writeBoard = document.getElementById("writeBoard");
 			$writeBoard.onclick = function() {
-				location.href = "${pageContext.request.contextPath}/hp/board/insert?categoryNo=HP_NTC";
+				location.href = "${pageContext.request.contextPath}/hp/board/insert?categoryNo=HP_QNA";
 			}
 		}
 	</script>
@@ -267,16 +274,16 @@
 		$(document).ready(
 			function() {
 				$("div.bhoechie-tab-menu>div.list-group>a").click(
-					function(e) {
-						e.preventDefault();
-						$(this).siblings('a.active').removeClass(
-								"active");
-						$(this).addClass("active");
-						var index = $(this).index();
-						$("div.bhoechie-tab>div.bhoechie-tab-content")
-								.removeClass("active");
-						$("div.bhoechie-tab>div.bhoechie-tab-content")
-								.eq(index).addClass("active");
+						function(e) {
+							e.preventDefault();
+							$(this).siblings('a.active').removeClass(
+									"active");
+							$(this).addClass("active");
+							var index = $(this).index();
+							$("div.bhoechie-tab>div.bhoechie-tab-content")
+									.removeClass("active");
+							$("div.bhoechie-tab>div.bhoechie-tab-content")
+									.eq(index).addClass("active");
 					});
 			});
 	</script>

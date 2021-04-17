@@ -1,4 +1,4 @@
-package creation.board.controller;
+package creation.board.controller.notice;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -45,5 +45,5 @@ public class HPNoticeDetailServlet extends HttpServlet {
 	}
 
 	
-	}
+}
 
