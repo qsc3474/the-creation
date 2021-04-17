@@ -55,7 +55,8 @@
 						data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
 						data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/pets01.jpg" alt="" data-lazyload="${ pageContext.servletContext.contextPath }/resources/media/img/pets01.jpg"
+						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog42.jpg" alt="" 
+						data-lazyload="${ pageContext.servletContext.contextPath }/resources/media/img/dog42.jpg"
 							data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
 							data-bgparallax="8" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
@@ -74,20 +75,6 @@
 							style="z-index: 5; white-space: nowrap; font-size: 70px; line-height: 75px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: px;font-family:Catamaran;letter-spacing:-1px;">
 							개 편한 호텔 </div>
 
-						<!-- LAYER NR. 7 -->
-						<div class="tp-caption rev-btn  rs-parallaxlevel-4" id="slide-10-layer-4"
-							data-x="['center','center','center','center']" data-hoffset="['0','-15','0','0']"
-							data-y="['middle','middle','middle','middle']" data-voffset="['116','122','33','77']"
-							data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
-							data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
-							data-responsive_offset="off" data-responsive="off"
-							data-frames='[{"delay":1300,"speed":1000,"frame":"0","from":"y:20px;sX:0.9;sY:0.9;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255,255,255,1);bg:rgba(31,31,36,1);bs:solid;bw:0 0 0 0;"}]'
-							data-textAlign="['left','left','left','left']" data-paddingtop="[3,3,3,3]"
-							data-paddingright="[30,30,30,30]" data-paddingbottom="[3,3,3,3]"
-							data-paddingleft="[30,30,30,30]"
-							style="z-index: 7; white-space: nowrap; font-size: 12px; line-height: 40px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: px;font-family:Montserrat;background-color:rgb(37,171,209);border-color:rgba(0,0,0,1);border-radius:50px 50px 50px 50px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-							호텔 가기 </div>
-
 						<!-- LAYER NR. 8 -->
 						<div class="tp-caption   tp-resizeme" id="slide-10-layer-6"
 							data-x="['center','center','center','center']" data-hoffset="['0','0','0','-4']"
@@ -99,7 +86,7 @@
 							data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
 							data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
 							style="z-index: 8; white-space: nowrap; font-size: 25px; line-height: 30px; font-weight: 300; color: #ffffff; letter-spacing: 0px;font-family:Catamaran;">
-							Quickly setup your website </div>
+							개편한 세상은 여러분과 함께 합니다.</div>
 					</li>
 					<li data-index="rs-11" data-transition="parallaxtobottom" data-slotamount="default"
 						data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default"
@@ -108,14 +95,12 @@
 						data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
 						data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/pets01.jpg" alt="" data-lazyload="${ pageContext.servletContext.contextPath }/resources/media/img/pets01.jpg"
+						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog38.jpg" alt="" data-lazyload="${ pageContext.servletContext.contextPath }/resources/media/img/dog38.jpg"
 							data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
 							data-bgparallax="8" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 				</ul>
-				<div class="tp-bannertimer tp-bottom" style="height: 8px; background: rgba(255,255,255,0.15);">
-				</div>
 			</div>
 		</div>
 		<!-- slider -->
@@ -133,7 +118,7 @@
 									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy01.jpg" alt="Blog thumb" >
 									</a>
-									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert" class="date"><span>01</span><br>예약하기</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/book/insert" class="date">병원<br>예약하기</a>
 								</div>
 							</div>
 						</div>
@@ -142,9 +127,9 @@
 
 								<div class="blog-thumb">
 									<a href="team.html">
-										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy02.jpg" alt="Blog thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat11.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date"><span>02</span><br>병원소개</a>
+									<a href="#" class="date">공지<br>사항</a>
 								</div>
 
 							</div>
@@ -154,9 +139,9 @@
 
 								<div class="blog-thumb">
 									<a href="team.html">
-										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog15.jpg" alt="Blog thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog23.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date"><span>03</span><br>의료진 <br> 소개</a>
+									<a href="#" class="date">치료<br>사례</a>
 								</div>
 							</div>
 						</div>
@@ -166,7 +151,7 @@
 									<a href="notice.html">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog09.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date"><span>04</span><br>병원소식</a>
+									<a href="#" class="date">진료<br>가격안내</a>
 								</div>
 							</div>
 						</div>
@@ -176,16 +161,13 @@
 									<a href="#">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat06.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date"><span>05</span><br>진료안내</a>
+									<a href="#" class="date">동물<br>정보상식</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- /.row -->
 				</div>
-				<!-- /.blog-items -->
 			</div>
-			<!-- /.container -->
 		</section>
 
 		<!-- 진료과목 -->
@@ -285,11 +267,11 @@
 								<h2 style="color: #30b1ad;">개편한 호텔</h2>
 
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum at atque aperiam
-									cumque est, consequatur minima. Officia unde minus, assumenda tempore, distinctio
-									aperiam facilis quasi id ullam temporibus. Tenetur, fuga. repellendus impedit
-									adipisci quo
-									eligendi facilis.
+									‘반려동물 동반 객실’은 반려동물의 성향과 행동 동선을 배려하여<br>
+									 보호자와 반려동물 모두가 편안하게 머무를 수 있도록 세심하게<br> 설계되었습니다. 
+									반려동물의 관절부상을 막기 위한 논슬립 플로어,<br> 
+									반려동물과 더욱 가깝게 교감할 수 있는 낮은 높이의 침대와 툇마루, <br>
+									냄새를 제거하는 배기 시스템 등 안전하고 쾌적한 환경을 조성하는<br> 데 가장 중점을 두었습니다.
 								</p>
 							</div>
 							<a href="index-three.html" target="_self" title=""
@@ -302,22 +284,24 @@
 
 						<div class="ab-three-thumb">
 							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy01.jpg" alt="thumb" class="wow fadeIn">
-							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy02.jpg" alt="thumb" class="wow fadeIn" data-wow-delay="0.8s">
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy03.jpg" alt="thumb" class="wow fadeIn" data-wow-delay="0.8s">
 						</div>
 
 					</div>
 				</div>
 				<!-- /.container -->
+			</div>
 		</section>
 
 		<!-- 치료사례 -->
-		<section id="testomonial-element bg-white"">
+		<section id="testomonial-element" class="bg-white">
+			<div class="container">
 			<div class=" gp-contact-form-two">
-			<div class="section-title text-center">
-				<h2>치료사례</h2>
+				<div class="section-title text-center">
+					<h2>치료사례</h2>
+				</div>
 			</div>
-	</div>
-	<div class="style-two" style="padding-top: 0px;">
+		<div class="style-two" style="padding-top: 0px;">
 		<div class="testomonial-con">
 			<div class="gp-testimonial-wrapper-two">
 				<div class="swiper-container gp-slider wow fadeInUp swiper-container-horizontal" data-wow-delay="0.8s"
@@ -418,109 +402,81 @@
 				</div>
 			</div>
 		</div>
-		<!-- /.container -->
+	</div>
+	<!-- style-two -->
 	</div>
 	</section>
 	<!-- /치료사례 -->
 
 	<!-- 오시는길 -->
-	<section id="contact-two" class="bg-light contact-sec">
-		<div class="container-full">
-			<div class="gp-contact-form-two">
-				<div class="section-title text-center">
-					<h2>찾아오시는길</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="content mt text-center">
-						<h2 class="pb">오시는길</h2>
-						<p>
-							<span style="color: green; font-weight: bold;">[2호선]</span><span
-								style="color: #c61b33; font-weight: bold;">[신분당선]</span> <br>
-							강남역 10번 출구 200m 직진
-						</p>
-						<p> <span style="color: #bc9e4a; font-weight: bold;">[9호선]</span> <br> 신논현역 6번출구 100m 직진
-							CHICOR빌딩 4F.5F</p>
+		<section id="contact-two" class="bg-light contact-sec" style="padding: 0;">
+			<div class="container-full">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="content mt text-center">
+							<h2 class="pb">오시는길</h2>
+							<p>
+								<span style="color: green; font-weight: bold;">[2호선]</span><span
+									style="color: #c61b33; font-weight: bold;">[신분당선]</span> <br>
+								강남역 10번 출구 200m 직진
+							</p>
+							<p> <span style="color: #bc9e4a; font-weight: bold;">[9호선]</span> <br> 신논현역 6번출구 100m 직진
+								CHICOR빌딩 4F.5F</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="content mt text-center info">
-						<h2 class="pb">진료안내</h2>
-						<p>
-							<span>평일</span>
-							10:00~19:00
-						</p>
-						<p>
-							<span>토/일</span>
-							10:00~13:00
-						</p>
-						<p>
-							<span>점심시간</span>
-							13:00~14:00
-						</p>
-						<p>
-							<span>월/공휴일</span>
-							휴진
-						</p>
+					<div class="col-md-3">
+						<div class="content mt text-center info">
+							<h2 class="pb">진료안내</h2>
+							<p>
+								<span>평일</span>
+								10:00~19:00
+							</p>
+							<p>
+								<span>토/일</span>
+								10:00~13:00
+							</p>
+							<p>
+								<span>점심시간</span>
+								13:00~14:00
+							</p>
+							<p>
+								<span>월/공휴일</span>
+								휴진
+							</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="map-box" style="width: 100%;">
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2635470377377!2d127.02307125090698!3d37.50170183549705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a0c163d41%3A0xfac759224c6bc427!2z642U7KGw7J2A7Lu07ZOo7YSw7JWE7Lm0642w66-4!5e0!3m2!1sko!2skr!4v1617897326449!5m2!1sko!2skr"
-							width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					<div class="col-md-3">
+						<div class="map-box" style="width: 100%;">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2635470377377!2d127.02307125090698!3d37.50170183549705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a0c163d41%3A0xfac759224c6bc427!2z642U7KGw7J2A7Lu07ZOo7YSw7JWE7Lm0642w66-4!5e0!3m2!1sko!2skr!4v1617897326449!5m2!1sko!2skr"
+								width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="content mt text-center">
-						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo-dog.png" alt="logo" style="width: 150px; height: 150px;">
-						<p style="font-size: 20px; font-weight: bold; padding-top: 10px;">개 편한 세상이 올때까지 함께 합니다.</p>
+					<div class="col-md-3">
+						<div class="content mt text-center">
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo-dog.png" alt="logo" style="width: 150px; height: 150px;">
+							<p style="font-size: 20px; font-weight: bold; padding-top: 10px;">개 편한 세상이 올때까지 함께 합니다.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- 오시는길 -->
+			<!-- /.container -->
+		</section>
+		<!-- 오시는길 -->
 
 
-	<!-- quickmenu -->
-	<section id="quickmenu">
-		<div id="accordian">
-			<ul>
-				<li class="quickmenu">
-					<h3><span class="top_btn"><img
-								src="https://cdn.imweb.me/upload/S201905285cec8cdf420ec/1b884cf4e9bfa.png" alt="#"
-								style="width:90px;"></span></h3>
-					<ul class="quick_2">
-						<li><a href="#"><img src="media/img/cat07.jpg" alt="#" style="width:90px;"></a></li>
-						<li><a href="#"><img src="media/img/cat06.jpg" alt="" style="width:90px;"></a></li>
-						<li><a href="#"><img src="media/img/cat07.jpg" alt="" style="width:90px;"></a></li>
-					</ul>
-				</li>
-				<li>
-				<li><a href="#doz_header"><img
-							src="https://cdn.imweb.me/upload/S201905285cec8cdf420ec/d39f1b6b780ba.png" alt=""
-							style="width:90px;"></a>
-				</li>
-			</ul>
-		</div>
-		<script type="text/javascript">
-			$(function () {
-				$("#accordian li .top_btn").click(function () {
-
-					if ($("#accordian ul .quick_2").css('display') == 'none') {
-						$("#accordian ul .quick_2").slideDown();
-					} else {
-						$("#accordian ul .quick_2").slideUp();
-					}
-
-				})
-			})
-		</script>
-	</section>
-	<!-- quickmenu -->
+	<!-- quick-menu -->
+		<section id="quick-menu" style="padding: 0;">
+			<nav class="side-menu">
+				<ul>
+				  <li><a href="reservation.html" class="quick">진료예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
+				  <li><a href="#" class="quick">진료과목</a><span><i class="glyphicon glyphicon-th"></i></span></li>
+				  <li><a href="#" class="quick">진료서비스</a><span><i class="glyphicon glyphicon-check"></i></span></li>
+				  <li><a href="#" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>
+				</ul>
+			  </nav>
+		</section>
+	<!-- quick-menu -->
 
 	</div>
 	
