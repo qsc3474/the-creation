@@ -18,7 +18,6 @@
 			</p>
 		</div>
 		<div class="login-box">
-		
 			<form id="loginForm" action="${ pageContext.servletContext.contextPath }/member/login"method="post">
 				<div class="form-group">
 					<label for="exampleInputName1">아이디</label>
@@ -37,8 +36,8 @@
 							<span></span>
 							<span class="wrapped-label">아이디 저장</span>
 						</label>
-						<a href="idFind.html"><span class="pwd_find">&nbsp; 비밀번호찾기</span></a>
-						<a href="idFind.html"><span class="pwd_find">아이디찾기&nbsp; | </span></a>
+						<a href="${ pageContext.servletContext.contextPath }/member/idPwdFind"><span class="pwd_find">&nbsp; 비밀번호찾기</span></a>
+						<a href="${ pageContext.servletContext.contextPath }/member/idPwdFind"><span class="pwd_find">아이디찾기&nbsp; | </span></a>
 					</div>
 
 				</div>

@@ -1,4 +1,4 @@
-package creation.htPage;
+package creation.hpPage;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

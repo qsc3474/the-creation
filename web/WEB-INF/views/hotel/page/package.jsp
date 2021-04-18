@@ -52,12 +52,20 @@
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	
-	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"></jsp:include>
 	
 		<div id="main_content">
 		
+			<!-- title -->
+		    <section class="step-title bg-white mt">
+		      <div class="section-title ht-title text-center mb-null" data-wow-duration="1000ms" data-wow-delay="0.3s">
+		        <h2>패키지</h2>
+		      </div>
+		    </section>
+		     <!-- title -->
+     
 			<!-- 패키지 상품 -->
-		    <section id="pricing" class="bg-white pt-null">
+		    <section id="pricing" class="bg-white">
 		      <div class="container">
 		        <div class="row">
 		          <div class="col-md-4">

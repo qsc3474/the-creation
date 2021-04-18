@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Index</title>
+<title>Insert title here</title>
 </head>
 <body>
 
-	<jsp:forward page="/WEB-INF/views/main/main.jsp"></jsp:forward>
 </body>
 </html>

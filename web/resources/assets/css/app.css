@@ -3169,7 +3169,7 @@ section#about-two {
     color: #555;
 }
 
-#step-title4{ padding: 150px;}
+#step-title{ padding: 150px;}
 
 /* ============== notice ====================*/
 
@@ -4695,7 +4695,7 @@ display:block;
 .member-thumb img{width: 100%;}
 
 /* ===title=== */
-.ht-title  {padding-top: 50px;}
+.ht-title  {padding-top: 50px; margin-bottom: 0;}
 .ht-title h2 {
   color: #FDC647;}
 
@@ -4747,7 +4747,7 @@ display:block;
 
 /* 추가세팅 */
 .cf:after{content:"";display:block;clear:both;} 
-.step-title {padding-bottom: 0;}
+.step-title {padding-bottom: 0 !important;}
 .step-title p{font-size: 22px; font-weight: bold;}
 .mb{margin-bottom: 70px;}
 .mt{margin-top: 50px;}

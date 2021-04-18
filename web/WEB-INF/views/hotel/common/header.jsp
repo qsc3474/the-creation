@@ -40,33 +40,34 @@
 			</a>
 			<div id="discovery-main-menu" class="discovery-main-menu">
 				<ul id="menu-home" class="menu">
-					<li class="menu-item-has-children"><a href="about.html">병원소개</a>
-						<ul class="sub-menu">
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/about" >병원소개</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/about#Introduce">의료진소개</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/about#Facility">시설소개</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">시설소개</a></li>
-						</ul></li>
-					<li class="menu-item-has-children"><a href="mg.html">진료과목</a>
-						<ul class="sub-menu">
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/mg">내과</a></li>
-							<li><a href="${pageContext.servletContext.contextPath }/hp/gs">외과</a></li>
-							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/ey">안과</a></li>
-							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/dental">치과</a></li>
-						</ul></li>
-					<li><a href="${ pageContext.servletContext.contextPath }/hp/info/price">진료가격</a></li>
-					<li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
+					<li class="menu-item-has-children"><a href="about.html">호텔소개</a>
+                        <ul class="sub-menu">
+                            <li><a href="about.html">호텔소개</a></li>
+                            <li><a href="about.html#portfolio">시설소개</a></li>
+                        </ul>
+                    </li>
+					<li class="menu-item-has-children"><a href="service.html">서비스안내</a>
+                        <ul class="sub-menu">
+                            <li><a href="service.html">서비스 프로그램</a></li>
+                            <li><a href="package.html">피키지 프로그램</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                            <a href="booking.html">예약하기</a>
+                            <ul class="sub-menu">
+                                <li><a href="info.html">이용안내</a></li>
+                                <li><a href="room.html">ROOM</a></li>
+                                <li><a href="booking.html">RESERVATION</a></li>
+                            </ul>
+                    </li>
 					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
 						<ul class="sub-menu">
-							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
-							<li><a href="notice.html">병원소식</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">FAQ</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">Q&amp;A</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">치료사례</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/petInfo">동물정보상식</a></li>
+							<li><a href="reviewList.html">이용후기</a></li>
+                            <li><a href="galleryList.html">gallery</a></li>
 						</ul>
 					</li>
 				</ul>
