@@ -7,10 +7,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>index</title>
-<link rel="apple-touch-icon" sizes="180x180"
-	href="${ pageContext.servletContext.contextPath }/resources/assets/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32"
-	href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon.png">	
+<link rel="apple-touch-icon" sizes="180x180" href="${ pageContext.servletContext.contextPath }/resources/assets/img/apple-touch-icon.png">
+<link rel="icon" href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon.png">
 <!-- Dependency Styles -->
 <link rel="stylesheet"
 	href="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/css/bootstrap.min.css"

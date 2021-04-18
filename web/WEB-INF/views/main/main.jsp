@@ -159,7 +159,7 @@
 									<a href="${ pageContext.servletContext.contextPath }/hp/info/select/list">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat06.jpg" alt="Blog thumb">
 									</a>
-									<a href="${ pageContext.servletContext.contextPath }/hp/info/select/list" class="date">동물<br>정보상식</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/petInfo" class="date">동물<br>정보상식</a>
 								</div>
 							</div>
 						</div>
