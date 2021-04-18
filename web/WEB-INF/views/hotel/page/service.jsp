@@ -8,7 +8,7 @@
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	
-	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"></jsp:include>
 	
 		<div id="main_content">
 		
@@ -37,7 +37,7 @@
                                 <th scope="row">운영시간</th>
                                 <td>뷰티 운영이 한시적으로 변경되오니 고객님의 양해 부탁드립니다. <br>화~일요일: 10시 ~ 19시 <br>월요일: 미운영</td>
                                 <td rowspan="5" style="padding-top: 100px; width: 150px;">
-                                    <a href="info.html#BeautyPrice" class="hotel-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
+                                    <a href="${ pageContext.servletContext.contextPath }/ht/info#BeautyPrice" class="gp-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
                               </tr>
                               <tr>
                                 <th scope="row">이용기준</th>
@@ -81,7 +81,7 @@
                                 <th scope="row">운영시간</th>
                                 <td>뷰티 운영이 한시적으로 변경되오니 고객님의 양해 부탁드립니다. <br>화~일요일: 10시 ~ 19시 <br>월요일: 미운영</td>
                                 <td rowspan="5" style="padding-top: 130px; width: 150px;">
-                                    <a href="info.html#HealthPrice" class="hotel-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
+                                    <a href="${ pageContext.servletContext.contextPath }/ht/info#HealthPrice" class="gp-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
                               </tr>
                               <tr>
                                 <th scope="row">이용기준</th>
@@ -150,7 +150,7 @@
                                 <td>9:00 ~ 18: 00</td>
                                 <td>아카데미(주중)</td>
                                 <td rowspan="5" style="padding-top: 50px; width: 150px;">
-                                    <a href="info.html#SchoolPrice" class="hotel-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
+                                    <a href="${ pageContext.servletContext.contextPath }/hp/info#SchoolPrice" class="gp-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
                               </tr>
                               <tr>
                                 <td>9:00 ~ 19: 00</td>

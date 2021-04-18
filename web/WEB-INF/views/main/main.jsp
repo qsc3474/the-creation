@@ -276,7 +276,7 @@
 								</p>
 							</div>
 							<div class="cta-btncontainer-two">
-					<a href="${ pageContext.servletContext.contextPath }/ht/main" target="_self" title="" class="gp-btn btn-dark medium btn-bradius" style="float:left" >호텔 보러가기</a>
+					<a href="${ pageContext.servletContext.contextPath }/htMain.jsp" target="_self" title="" class="gp-btn btn-dark medium btn-bradius" style="float:left" >호텔 보러가기</a>
 				</div>
 						</div>
 					</div>

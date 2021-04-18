@@ -4410,25 +4410,7 @@ h2.heading {
 
 
 /* 호텔 전체 버튼 */
-.gp-btn{
-  border-radius: 30px;
-  padding: 15px 40px;
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 5%); */
-  margin: 20px auto 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-}
 
-.gp-btn {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  padding: 12px 35px;
-  color: #333;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-}
 
 .gp-btn.btn-dark {
   background: #121212;
@@ -4450,7 +4432,7 @@ gp-btn.btn-dark:hover {
 }
 
 
-.gp-price-table-one .hotel-btn {
+.hotel-btn {
   border-radius: 30px;
   padding: 15px 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>호텔메인페이지</title>
 <style>
 #service-box, #mainSec {
 	padding-bottom: 100px;
@@ -39,6 +39,7 @@
 	transform: translateY(-3px);
 	background: #FFF;
 }
+
 </style>
 </head>
 <body id="home-version-1"
@@ -91,7 +92,7 @@
 			<div class="container">
 				<div class="section-title ht-title text-center wow fadeIn"
 					data-wow-duration="1000ms" data-wow-delay="0.3s">
-					<h2>EVENTS & PACKAGE</h2>
+					<h2>EVENTS &amp; PACKAGE</h2>
 					<p>소중한 내 pet의 특별한 날, 개편한세상과 함께 하세요!</p>
 				</div>
 
@@ -103,14 +104,13 @@
 									src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg"
 									alt="dog" style="width: 100%; height: 220px;"></i>
 							</p>
-							<a class="package" href="#">Package</a>
+							<span class="package">Package</span>
 							<h3 style="margin-top: 10px;">
 								Happy Birthday<br>To My Pet
 							</h3>
 							<p>반려동물 생일파티 패키지 출시</p>
 						</div>
 					</div>
-
 					<div class="col-md-4 col-sm-6">
 						<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
 							<p>
@@ -118,7 +118,7 @@
 									src="${ pageContext.servletContext.contextPath }/resources/media/img/dog34.jpg"
 									alt="dog" style="width: 100%; height: 220px;"></i>
 							</p>
-							<a class="package" href="#">Package</a>
+							<span class="package">Package</span>
 							<h3 style="margin-top: 10px;">
 								Pet Photo <br>Studio
 							</h3>
@@ -133,7 +133,7 @@
 									src="${ pageContext.servletContext.contextPath }/resources/media/img/doctor02.jpg"
 									alt="dog" style="width: 100%; height: 220px;"></i>
 							</p>
-							<a class="package" href="#">Package</a>
+							<span class="package">Package</span>
 							<h3 style="margin-top: 10px;">
 								Healthy <br> Healing Retreat
 							</h3>
@@ -142,7 +142,8 @@
 					</div>
 				</div>
 				<div class="cta-btncontainer-two mt">
-					<a href="${ pageContext.servletContext.contextPath }/ht/package" class="gp-btn btn-dark large btn-bradius">전체보기</a>
+					<a href="${ pageContext.servletContext.contextPath }/ht/package"
+						class="gp-btn btn-dark large btn-bradius">전체보기</a>
 				</div>
 			</div>
 			<!-- /.container -->
@@ -158,63 +159,55 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 col-sm-6">
-						<a href="dental.html">
-							<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-								<p style="padding-bottom: 10px;">
-									<i><img
-										src="${ pageContext.servletContext.contextPath }/resources/media/img/beauty02.jpg"
-										alt="dog" style="width: 100%; height: auto;"></i>
-								</p>
-								<a class="package" href="#">SERVICE</a>
-								<h3>Pet Beauty</h3>
-							</div>
-						</a>
+						<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
+							<p style="padding-bottom: 10px;">
+								<i><img
+									src="${ pageContext.servletContext.contextPath }/resources/media/img/beauty02.jpg"
+									alt="dog" style="width: 100%; height: auto;"></i>
+							</p>
+							<span class="package">SERVICE</span>
+							<h3 style="margin-top: 10px;">Pet Beauty</h3>
+						</div>
 					</div>
 
 					<div class="col-md-3 col-sm-6">
-						<a href="dental.html">
-							<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-								<p style="padding-bottom: 10px;">
-									<i><img
-										src="${ pageContext.servletContext.contextPath }/resources/media/img/hospital.jpg"
-										alt="dog" style="width: 100%; height: auto;"></i>
-								</p>
-								<a class="package" href="#">SERVICE</a>
-								<h3>Pet Hospital</h3>
-							</div>
-						</a>
+						<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
+							<p style="padding-bottom: 10px;">
+								<i><img
+									src="${ pageContext.servletContext.contextPath }/resources/media/img/hospital.jpg"
+									alt="dog" style="width: 100%; height: auto;"></i>
+							</p>
+							<span class="package">SERVICE</span>
+							<h3 style="margin-top: 10px;">Pet Hospital</h3>
+						</div>
 					</div>
 
 					<div class="col-md-3 col-sm-6">
-						<a href="dental.html">
-							<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-								<p style="padding-bottom: 10px;">
-									<i><img
-										src="${ pageContext.servletContext.contextPath }/resources/media/img/school.jpg"
-										alt="dog" style="width: 100%; height: auto;"></i>
-								</p>
-								<a class="package" href="#">SERVICE</a>
-								<h3>Pet School</h3>
-							</div>
-						</a>
+						<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
+							<p style="padding-bottom: 10px;">
+								<i><img
+									src="${ pageContext.servletContext.contextPath }/resources/media/img/school.jpg"
+									alt="dog" style="width: 100%; height: auto;"></i>
+							</p>
+							<span class="package">SERVICE</span>
+							<h3 style="margin-top: 10px;">Pet School</h3>
+						</div>
 					</div>
 
 					<div class="col-md-3 col-sm-6">
-						<a href="dental.html">
-							<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-								<p style="padding-bottom: 10px;">
-									<i><img
-										src="${ pageContext.servletContext.contextPath }/resources/media/img/foamy.jpg"
-										alt="dog" style="width: 100%; height: auto;"></i>
-								</p>
-								<a class="package" href="#">SERVICE</a>
-								<h3>Pet Foamy</h3>
-							</div>
-						</a>
+						<div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
+							<p style="padding-bottom: 10px;">
+								<i><img
+									src="${ pageContext.servletContext.contextPath }/resources/media/img/foamy.jpg"
+									alt="dog" style="width: 100%; height: auto;"></i>
+							</p>
+							<span class="package">SERVICE</span>
+							<h3 style="margin-top: 10px;">Pet Foamy</h3>
+						</div>
 					</div>
 				</div>
 				<div class="cta-btncontainer-two mt">
-					<a href="service.html" class="gp-btn btn-dark large btn-bradius">전체보기</a>
+					<a href="${ pageContext.servletContext.contextPath }/ht/service" class="gp-btn btn-dark large btn-bradius">전체보기</a>
 				</div>
 			</div>
 			<!-- /.container -->
@@ -251,14 +244,10 @@
 									검진뿐만 아니라 수술보다는 재활을 통한 자연 치유를 위한 병원 국내 유일의 펫 보행 분석기와 펫 전용 수중
 									트레드밀을 구비하는 등 고차원적인 동물 의료 서비스를 제공합니다.</p>
 							</div>
-							<a href="index-three.html" target="_self" title=""
-								class="gp-btn color-two medium btn-bradius">호텔 보러가기</a>
+							<a href="${ pageContext.servletContext.contextPath }" target="_self" class="gp-btn color-two medium btn-bradius">병원 보러가기</a>
 						</div>
 					</div>
-					<!-- /.col-md-6 -->
-
 					<div class="col-md-6">
-
 						<div class="ab-three-thumb">
 							<img
 								src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy01.jpg"
@@ -269,7 +258,8 @@
 
 					</div>
 				</div>
-				<!-- /.container -->
+			</div>
+			<!-- /.container -->
 		</section>
 		<!-- 병원banner -->
 
@@ -305,7 +295,6 @@
 						</div>
 						<div class="col-md-3">
 							<div class="blog-post wow fadeInRight" data-wow-delay="0.9s">
-
 								<div class="blog-thumb">
 									<a href="team.html"> <img
 										src="${ pageContext.servletContext.contextPath }/resources/media/img/dog.jpeg"
@@ -335,7 +324,7 @@
 									<a href="notice.html"> <img
 										src="${ pageContext.servletContext.contextPath }/resources/media/img/cat09.jpg"
 										alt="Blog thumb">
-									</a> <a href="#" class="date">Q&A</a>
+									</a> <a href="#" class="date">Q&amp;A</a>
 								</div>
 							</div>
 						</div>
@@ -399,8 +388,7 @@
 						<div class="map-box" style="width: 100%;">
 							<iframe
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2635470377377!2d127.02307125090698!3d37.50170183549705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a0c163d41%3A0xfac759224c6bc427!2z642U7KGw7J2A7Lu07ZOo7YSw7JWE7Lm0642w66-4!5e0!3m2!1sko!2skr!4v1617897326449!5m2!1sko!2skr"
-								width="100%" height="400px" style="border: 0;"
-								allowfullscreen="" loading="lazy"></iframe>
+								width="100%" height="400px" style="border: 0;" loading="lazy"></iframe>
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -425,14 +413,10 @@
 		<section id="quickMenu" style="padding: 0;">
 			<nav class="side-menu">
 				<ul>
-					<li><a href="reservation.html" class="quick">진료예약</a><span><i
-							class="glyphicon glyphicon-calendar"></i></span></li>
-					<li><a href="#" class="quick">진료과목</a><span><i
-							class="glyphicon glyphicon-th"></i></span></li>
-					<li><a href="#" class="quick">진료서비스</a><span><i
-							class="glyphicon glyphicon-check"></i></span></li>
-					<li><a href="#" class="quick">공지사항</a><span><i
-							class="glyphicon glyphicon-pencil"></i></span></li>
+					<li><a href="reservation.html" class="quick">호텔예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
+					<li><a href="#" class="quick">호텔패키지</a><span><i class="glyphicon glyphicon-th"></i></span></li>
+					<li><a href="#" class="quick">호텔서비스</a><span><i class="glyphicon glyphicon-check"></i></span></li>
+					<li><a href="#" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>
 				</ul>
 			</nav>
 		</section>

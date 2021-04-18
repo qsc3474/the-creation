@@ -188,12 +188,12 @@
 		      <div class="container">
 		        <div class="section-title ht-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
 		          <h2>Pet Photo Studio</h2>
-		          <p>가장 특별한 내 아이의 생일, 완벽한 파티 패키지로 축하해주세요. <br>신선하고 좋은 재료로 만든 수제 펫 생일 케이크와 예쁜 생일 선물,
-		            럭셔리한 소노펫 객실을 프라이빗한 파티룸으로 꾸밀 수 있는 <br> 데코용품까지 모두 담긴 올인원 생일 파티 박스와 함께 Thinking Dog 펫 식사,
+		          <p>가장 특별한 내 아이의 생일, 완벽한 파티 패키지로 축하해주세요. 신선하고 좋은 재료로 만든 수제 펫 생일 케이크와 예쁜 생일 선물,<br>
+		            럭셔리한 소노펫 객실을 프라이빗한 파티룸으로 꾸밀 수 있는 데코용품까지 모두 담긴 올인원 생일 파티 박스와 함께 Thinking Dog 펫 식사,<br> 
 		            즐거운 놀이시간을 보낼 수 있는 플레이그라운드 입장 혜택이 포함되어 있습니다.</p>
 		        </div>
 		        <div class="row mb">
-		          <div class="col-md-6">
+		          <div class="col-md-4">
 		            <div class="about-details">
 		              <ul class="info">
 		                <li>
@@ -214,9 +214,14 @@
 		              </ul>
 		            </div>
 		          </div>
-		          <div class="col-md-6">
+		          <div class="col-md-4">
 		            <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog23.jpg">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/phote.jpg">
+		            </div>
+		          </div>
+		          <div class="col-md-4">
+		            <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio21.jpg">
 		            </div>
 		          </div>
 		        </div>
@@ -233,12 +238,12 @@
 		            반려동물 동반 객실에서 함께 휴식하며 힐링 할 수 있는 소노펫 올인원 건강 관리 패키지를 만나보세요..</p>
 		        </div>
 		        <div class="row mb">
-		          <div class="col-md-6">
+		          <div class="col-md-4">
 		            <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
 		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog05.jpg">
 		            </div>
 		          </div>
-		          <div class="col-md-6">
+		          <div class="col-md-8">
 		            <div class="about-details">
 		              <ul class="info">
 		                <li>
