@@ -8,10 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
 
 import creation.board.model.dto.HPBoardDTO;
 import creation.book.hp.model.dto.HPbookDTO;
@@ -108,6 +108,55 @@ public HPbookDAO() {
 		}
 		
 		return bookList;
+	}
+
+
+		
+		
+		
+		
+	
+	public HPbookDTO selectbookDetail(Connection con, int no) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		HPbookDTO bookDetail = null;
+		System.out.println("여긴 오나");
+		String query = prop.getProperty("bookDetail");
+		
+		try {
+			pstmt=con.prepareStatement(query);
+			pstmt.setInt(1, no );
+			
+			rset= pstmt.executeQuery();
+			
+			if(rset.next()) {
+				bookDetail = new HPbookDTO();
+				
+				bookDetail.setNo(rset.getInt("HP_BK_NO"));
+				bookDetail.setTime(rset.getString("HP_BK_TIME"));
+				bookDetail.setStatus(rset.getString("HP_BK_STATUS"));
+				bookDetail.setPetName(rset.getString("HP_PET_NAME"));
+				bookDetail.setPetKind(rset.getString("HP_PET_KIND"));
+				bookDetail.setPetGender(rset.getString("HP_PET_GENDER"));
+				bookDetail.setPetAge(rset.getString("HP_PET_AGE"));
+				bookDetail.setPetNeut(rset.getString("HP_PET_NEUT"));
+				bookDetail.setMessage(rset.getString("HP_BK_MESSAGE"));
+				bookDetail.setMemberNo(rset.getInt("HP_MEM_NO"));
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			close(rset);
+			close(pstmt);
+		}
+		return bookDetail;
 	}
 
 

@@ -74,6 +74,28 @@
 										</tbody>
 									</table>
 									</form>
-
+	<script type="text/javascript">
+		if (document.getElementsByTagName("td")) {
+			const $tds = document
+					.getElementsByTagName("td");
+			for (var i = 0; i < $tds.length; i++) {
+	
+				$tds[i].onmouseenter = function() {
+					this.parentNode.style.cursor = "pointer";
+				}
+	
+				$tds[i].onmouseout = function() {
+				}
+	
+				$tds[i].onclick = function() {
+					const no = this.parentNode.children[0].innerText;
+					location.href = "${ pageContext.servletContext.contextPath }/hp/book/detail?no="
+							+ no;
+				}
+			}
+		}
+		
+	
+		</script>
 </body>
 </html>

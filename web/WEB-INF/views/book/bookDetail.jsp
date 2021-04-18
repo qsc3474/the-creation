@@ -63,31 +63,45 @@
                                         </div> 
                                        			
                                     <label class="fieldlabels">이름<span class="text-danger">*</span></label>
-                                        	<input type="text" name="petName" placeholder="${requestScope.HPBookList.petName }" />
+                                        	<input type="text" name="petName" placeholder="${requestScope.HPBookDetail.petName }" />
                                             <label class="fieldlabels">분류 (종)<span class="text-danger">*</span></label>
-											<input type="text" value="${requestScope.HPBookList.petKind }"> 
+											<input type="text" value="${requestScope.HPBookDetail.petKind }" readonly> 
                                             <label class="fieldlabels">성별 <span class="text-danger">*</span></label> 
-                                              <input type="text" value="${requestScope.HPBookList.petGender }"> 
+                                              <input type="text" value="${requestScope.HPBookDetail.petGender }"readonly> 
                                                <label class="fieldlabels">나이<span class="text-danger">*</span></label>
-												 <input type="text" value="${requestScope.HPBookList.petAge }"> 
+												 <input type="text" value="${requestScope.HPBookDetail.petAge }"readonly> 
                                             <label class="fieldlabels">중성화여부<span class="text-danger">*</span></label>
-												<input type="text" value="${requestScope.HPBookList.petNeut }"> 
+												<input type="text" value="${requestScope.HPBookDetail.petNeut }"readonly> 
 												 <label class="fieldlabels">예약시간<span class="text-danger">*</span></label>
-												<input type="text" value="${requestScope.HPBookList.time }"> 
+												<input type="text" value="${requestScope.HPBookDetail.time }"readonly> 
                                             <label for="exampleFormControlTextarea1">특이사항</label>
-                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5" value="${requestScope.HPBookList.message }"></textarea>
+                                            <input type="text" value="${requestScope.HPBookDetail.message }"readonly>
+                                             
                                     		
                                     
                                     
                                     </div> 
                                     
-                                    <input type="button" name="previous" class="previous action-button-previous"
+                                    <input type="button" id="home" class="previous action-button-previous"
                                         value="돌아가기" />
-                                    <input type="button" name="" class="next action-button" value="예약취소" />
+                                    <input type="button" id="bookCancel" class="next action-button" value="예약취소" />
                                 </fieldset>
                                 </form>
 </section>
 
-
+<script type="text/javascript">
+if (document.getElementById("bookCancel")) {
+			const $bookCancel = document.getElementById("bookCancel");
+			$bookCancel.onclick = function() {
+				location.href = "${pageContext.request.contextPath}/hp/book/delete";
+			}
+		}
+if (document.getElementById("home")) {
+	const $home = document.getElementById("home");
+	$home.onclick = function() {
+		location.href = "${pageContext.request.contextPath}";
+	}
+}
+</script>
 </body>
 </html>

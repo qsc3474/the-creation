@@ -1,6 +1,7 @@
 package creation.book.hp.model.service;
 
 
+
 import static creation.common.jdbc.JDBCTemplate.close;
 import static creation.common.jdbc.JDBCTemplate.commit;
 import static creation.common.jdbc.JDBCTemplate.getConnection;
@@ -60,9 +61,28 @@ private final HPbookDAO bookDAO;
 		return bookList;
 	}
 
+
+
+	public HPbookDTO selectBookDetail(int no) {
+		Connection con = getConnection();
+		HPbookDTO bookDetail = null;
+		
+		bookDetail = bookDAO.selectbookDetail(con, no);
+		
+		
+			if(bookDetail != null) {
+				commit(con);
+			} else {
+				rollback(con);
+			}
+		close(con);
+		
+		return bookDetail;
+	}
+	}
+
 	
 	
 
 	
 
-}

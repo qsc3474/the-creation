@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 import creation.book.hp.model.dto.HPbookDTO;
 import creation.book.hp.model.service.HPbookService;
 import creation.member.model.dto.MemberDTO;
@@ -24,30 +26,19 @@ public class HPbookDetailServlet extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/views/book/bookDetail.jsp";
-		
-		request.getRequestDispatcher(path).forward(request, response);
-	
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int bookMember = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
-		
-		HPbookDTO book =new HPbookDTO();
-		book.setMemberNo(bookMember);
-		
-		
+		int no = Integer.valueOf(request.getParameter("no"));
+		System.out.println("넘버 넘어오는지"+no);
 		HPbookService bookService = new HPbookService();
-		List<HPbookDTO> HPBookList =bookService.selectBook(book);
+		HPbookDTO HPBookDetail = bookService.selectBookDetail(no);
+		System.out.println(HPBookDetail);
+	
+		String path = "";
 		
-		System.out.println(HPBookList);
-		String path="";
+	
 		
-		if(!HPBookList.isEmpty()) {
-			path="";
-			request.setAttribute("book", "bookSuccess");
+		if(HPBookDetail != null) {
+			path="/WEB-INF/views/book/bookDetail.jsp";
+			request.setAttribute("HPBookDetail", HPBookDetail);
 		}else {
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("message", "예약에 실패하셨습니다.");
@@ -55,7 +46,9 @@ public class HPbookDetailServlet extends HttpServlet {
 		
 		request.getRequestDispatcher(path).forward(request, response);
 	}
-		}
+	
+	}
+
 	
 	
 
