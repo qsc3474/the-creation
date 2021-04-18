@@ -58,7 +58,7 @@
 	<!-- header -->
 	<header id="discohead" class="dt-header fixed">
 		<div class="menu-wrap">
-			<a id="logo" href="${ pageContext.servletContext.contextPath }/htMain">
+			<a id="logo" href="${ pageContext.servletContext.contextPath }/ht/home">
 				<img
 				src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png"
 				alt="discovery" class="logo-contrast"> <img
