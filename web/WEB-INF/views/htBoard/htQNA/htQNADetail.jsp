@@ -14,7 +14,7 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/creation/resources/js/event.js"></script>
-<title>Insert title here</title>
+<title>개편한 호텔 QNA</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"/>

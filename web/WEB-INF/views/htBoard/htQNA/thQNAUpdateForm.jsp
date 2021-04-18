@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>개편한 호텔 QNA 수정</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"/>

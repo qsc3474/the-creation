@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-    <title>이벤트룸 예약</title>
+    <title>호텔 이벤트룸 예약</title>
     <!-- Dependency Styles -->
     <link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
