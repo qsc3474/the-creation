@@ -34,6 +34,7 @@
         color="#111" />
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
@@ -50,7 +51,7 @@
                 <div class="row justify-content-center">
                     <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                         <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                            <form id="msform" action="${pageContext.request.contextPath}/hp/book/select" method="post">
+                            <form id="msform" action="${pageContext.request.contextPath}/hp/book/delete" method="get">
 							<fieldset>
                                     <div class="form-card">
                                         <div class="row">
@@ -61,9 +62,9 @@
                                                 <h2 class="steps"></h2>
                                             </div>
                                         </div> 
-                                       			
                                     <label class="fieldlabels">이름<span class="text-danger">*</span></label>
                                         	<input type="text" name="petName" placeholder="${requestScope.HPBookDetail.petName }" />
+                                           
                                             <label class="fieldlabels">분류 (종)<span class="text-danger">*</span></label>
 											<input type="text" value="${requestScope.HPBookDetail.petKind }" readonly> 
                                             <label class="fieldlabels">성별 <span class="text-danger">*</span></label> 
@@ -79,23 +80,24 @@
                                              
                                     		
                                     
+                                     <label>번호</label>	<input type="text" value="${requestScope.HPBookDetail.no }" name="no">
                                     
                                     </div> 
                                     
                                     <input type="button" id="home" class="previous action-button-previous"
                                         value="돌아가기" />
-                                    <input type="button" id="bookCancel" class="next action-button" value="예약취소" />
+                                    <input type="submit" id="bookCancel" class="next action-button" value="예약취소" />
                                 </fieldset>
                                 </form>
 </section>
 
 <script type="text/javascript">
 if (document.getElementById("bookCancel")) {
-			const $bookCancel = document.getElementById("bookCancel");
-			$bookCancel.onclick = function() {
-				location.href = "${pageContext.request.contextPath}/hp/book/delete";
-			}
-		}
+	const $bookCancel = document.getElementById("bookCancel");
+	$bookCancel.onclick = function() {
+		location.href = "${pageContext.request.contextPath}/hp/book/delete";
+	}
+}
 if (document.getElementById("home")) {
 	const $home = document.getElementById("home");
 	$home.onclick = function() {

@@ -10,7 +10,7 @@ import static creation.common.jdbc.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.List;
 
-
+import creation.board.model.dto.HPBoardDTO;
 import creation.book.hp.model.dao.HPbookDAO;
 import creation.book.hp.model.dto.HPbookDTO;
 import creation.member.model.dto.MemberDTO;
@@ -78,6 +78,23 @@ private final HPbookDAO bookDAO;
 		close(con);
 		
 		return bookDetail;
+	}
+
+	public int deleteBook(HPbookDTO deleteBook) {
+
+		Connection con = getConnection();
+	
+		int result = bookDAO.deleteBook(con, deleteBook);
+		
+		if(result>0) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
 	}
 	}
 

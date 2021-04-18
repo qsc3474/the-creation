@@ -122,7 +122,6 @@ public HPbookDAO() {
 		ResultSet rset = null;
 		
 		HPbookDTO bookDetail = null;
-		System.out.println("여긴 오나");
 		String query = prop.getProperty("bookDetail");
 		
 		try {
@@ -157,6 +156,33 @@ public HPbookDAO() {
 			close(pstmt);
 		}
 		return bookDetail;
+	}
+
+	public int deleteBook(Connection con, HPbookDTO deleteBook) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("bookCancel");
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, deleteBook.getNo());
+			
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
 	}
 
 
