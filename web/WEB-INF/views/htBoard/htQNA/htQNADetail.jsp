@@ -24,7 +24,7 @@
         <h1 align="center"><c:out value="${ requestScope.htnotice.title }"/></h1>
         <div class="container"  role="main">
                 <form name="form" id="form" role="form" action="${ pageContext.servletContext.contextPath }/ht/QNA/delete" method="post">
-                <input type="hidden" name="noticeNo" value="${requestScope.htnotice.no }">
+                <input type="hidden" name="faqNo" value="${requestScope.htnotice.no }">
                     <div class="mb-12">
                         <label for="title">제목</label> 
                         <input type="text" class="form-control" name="title" id="title"  value="${ requestScope.htnotice.title }">
