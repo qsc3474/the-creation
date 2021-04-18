@@ -120,6 +120,12 @@ if(document.getElementById("regist")){
 			location.href = "/creation/ht/AGL/thumbnail/list";
 		}
 	}
+	if(document.getElementById("eventOut")){
+		const $eventOut = document.getElementById("eventOut");
+		$eventOut.onclick = function(){
+			location.href = "/creation//ht/home";
+		}
+	}
 	
 
 }

@@ -142,3 +142,28 @@ ul, li {
     margin-bottom: 0;
     background: #d0f5f4;
 }
+.form-user-input {
+    margin-top: 20px;
+}
+.form-user-input ul {
+	padding-left: 0;
+}
+.form-user-input ul li select {
+	width: 100% !important;
+}
+.form-user-input ul li label.fieldlabels {
+	width: 100%;
+}
+.reserv-listbox {
+	margin: 20px 0 50px 0 !important;
+	border-top: 2px solid #0f0f0f !important;
+	border-bottom: 1px solid #0f0f0f !important;
+}
+.reserv-listbox th {
+	width: 210px;
+    background-color: #eee;
+    padding: 15px 0 !important;
+}
+.reserv-listbox td {
+	padding: 15px 0 !important;
+}
