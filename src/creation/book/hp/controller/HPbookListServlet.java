@@ -9,54 +9,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import creation.book.hp.model.dto.HPbookDTO;
 import creation.book.hp.model.service.HPbookService;
 import creation.member.model.dto.MemberDTO;
 
-
-
 /**
- * Servlet implementation class HPbookSelectServlet
+ * Servlet implementation class HPbookListServlet
  */
-@WebServlet("/hp/book/select")
-public class HPbookSelectServlet extends HttpServlet {
+@WebServlet("/hp/book/list")
+public class HPbookListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/views/book/bookCheck.jsp";
-		
-		request.getRequestDispatcher(path).forward(request, response);
-	
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("나오냐");
 		int bookMember = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
 		
-		HPbookDTO book =new HPbookDTO();
-		book.setMemberNo(bookMember);
 		
+		HPbookService bookService= new HPbookService();
+		List<HPbookDTO> bookList= bookService.selectBookList(bookMember);
 		
-		HPbookService bookService = new HPbookService();
-		List<HPbookDTO> HPBookList =bookService.selectBook(book);
-		
-		System.out.println(HPBookList);
-		String path="";
-		
-		if(!HPBookList.isEmpty()) {
-			path="";
-			request.setAttribute("book", "bookSuccess");
-		}else {
+		System.out.println(bookList);
+		String path = "";
+		if(!bookList.isEmpty()) {		// 공지사항이 조회 되었다면
+			path = "/WEB-INF/views/book/bookList.jsp";
+			request.setAttribute("bookList", bookList);
+		} else {						// 공지사항이 조회 되지 않았다면
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "예약에 실패하셨습니다.");
+			request.setAttribute("message", "공지사항 조회 실패!");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
+		
+		
 	}
-		}
-	
-	
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		
+		
+	}
 
+}

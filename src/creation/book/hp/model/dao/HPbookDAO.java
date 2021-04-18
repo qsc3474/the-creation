@@ -67,50 +67,52 @@ public HPbookDAO() {
 		return result;
 	}
 
-	public List<HPbookDTO> selectBook(Connection con, HPbookDTO book) {
+	public List<HPbookDTO> bookList(Connection con, int bookMember) {
 
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
+		PreparedStatement pstmt= null;
+		ResultSet rset =null;
 		
-		String query = prop.getProperty("checkBook");
+		List<HPbookDTO> bookList = null;
 		
-		List<HPbookDTO> HPBookList = null;
+		String query =prop.getProperty("bookList");
 		
 		try {
-			pstmt=con.prepareStatement(query);
-			pstmt.setInt(1, book.getMemberNo());
-			rset= pstmt.executeQuery();
+			pstmt =con.prepareStatement(query);
+			pstmt.setInt(1, bookMember);
 			
-			HPBookList = new ArrayList<>();
+			rset = pstmt.executeQuery();
 			
-			
+			bookList =new ArrayList<>();
 			while(rset.next()) {
-				HPbookDTO bookDTO= new HPbookDTO();
-				bookDTO.setNo(rset.getInt("HP_BK_NO"));
-				bookDTO.setTime(rset.getString("HP_BK_TIME"));
-				bookDTO.setStatus(rset.getString("HP_BK_STATUS"));
-				bookDTO.setPetName(rset.getString("HP_PET_NAME"));
-				bookDTO.setPetKind(rset.getString("HP_PET_KIND"));
-				bookDTO.setPetGender(rset.getString("HP_PET_GENDER"));
-				bookDTO.setPetAge(rset.getString("HP_PET_AGE"));
-				bookDTO.setPetNeut(rset.getString("HP_PET_NEUT"));
-				bookDTO.setMessage(rset.getString("HP_BK_MESSAGE"));
-
-				HPBookList.add(bookDTO);
+				HPbookDTO book = new HPbookDTO();
+				book.setMemberNo(bookMember);
+				
+				book.setNo(rset.getInt("HP_BK_NO"));
+				book.setTime(rset.getString("HP_BK_TIME"));
+				book.setStatus(rset.getString("HP_BK_STATUS"));
+				book.setPetName(rset.getString("HP_PET_NAME"));
+				book.setPetKind(rset.getString("HP_PET_KIND"));
+				book.setPetGender(rset.getString("HP_PET_GENDER"));
+				book.setPetAge(rset.getString("HP_PET_AGE"));
+				book.setPetNeut(rset.getString("HP_PET_NEUT"));
+				book.setMessage(rset.getString("HP_BK_MESSAGE"));
+				
+				bookList.add(book);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			
 			close(rset);
 			close(pstmt);
-			
 		}
 		
-		
-		return HPBookList;
+		return bookList;
 	}
+
+
+	
+
 
 	
 	}
