@@ -16,7 +16,7 @@
 </head>
 <body id="home-version-1" class="home-version-1 sticky-header transparent-header menu-two" data-style="default">
 	
-	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"></jsp:include>
 	
 		<div id="main_content">
 		
@@ -200,7 +200,7 @@
                                     <td>2㎡</td>
                                     <td>35,000원</td>
                                     <td rowspan="4">
-                                        <a href="room.html#DogRoom" class="hotel-btn btn-dark center cta-btncontainer-two">자세히 보러가기</a>
+                                        <a href="${ pageContext.servletContext.contextPath }/ht/room#DogRoom" class="gp-btn btn-dark center" style="margin-top:40px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -249,7 +249,7 @@
                                     <td>일반실</td>
                                     <td>35,000원</td>
                                     <td rowspan="3">
-                                        <a href="room.html#CatRoom" class="hotel-btn btn-dark center cta-btncontainer-two">자세히 보러가기</a>
+                                        <a href="${ pageContext.servletContext.contextPath }/ht/room#CatRoom" class="gp-btn btn-dark center" style="margin-top:25px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -292,7 +292,7 @@
                                     <td>3시간</td>
                                     <td>90,000원</td>
                                     <td rowspan="6">
-                                        <a href="room.html#EventRoom" class="hotel-btn btn-dark center cta-btncontainer-two" style="margin-top: 70px;">자세히 보러가기</a>
+                                        <a href="${ pageContext.servletContext.contextPath }/ht/room#EventRoom" class="gp-btn btn-dark center" style="margin-top: 70px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -347,7 +347,7 @@
                                     <td>3시간</td>
                                     <td>90,000원</td>
                                     <td rowspan="3">
-                                        <a href="package.html" class="hotel-btn btn-dark center cta-btncontainer-two">자세히 보러가기</a>
+                                        <a href="package.html" class="gp-btn btn-dark center" style="margin-top:30px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -398,7 +398,7 @@
                             <td>55,000원</td>
                             <td>70,000원</td>
                             <td rowspan="4">
-                                <a href="service.html#Beauty" class="hotel-btn btn-dark center cta-btncontainer-two">자세히 보러가기</a>
+                                <a href="${ pageContext.servletContext.contextPath }/ht/service#Beauty" class="gp-btn btn-dark center" style="margin-top:40px;">자세히 보러가기</a>
                             </td>
                           </tr>
                           <tr>
@@ -453,7 +453,7 @@
                                     <td>50,000원</td>
                                     <td>60,000원</td>
                                     <td rowspan="4">
-                                        <a href="service.html#Beauty" class="hotel-btn btn-dark center cta-btncontainer-two">자세히 보러가기</a>
+                                        <a href="${ pageContext.servletContext.contextPath }/ht/service#Beauty" class="gp-btn btn-dark center" style="margin-top:40px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -524,7 +524,7 @@
                             </td>
                             <td>99,000원</td>
                             <td rowspan="4">
-                                <a href="service.html#Health" class="hotel-btn btn-dark center cta-btncontainer-two"
+                                <a href="${ pageContext.servletContext.contextPath }/ht/service#Health" class="gp-btn btn-dark center"
                                     style=" margin-top: 90px;">자세히 보러가기</a>
                             </td>
                           </tr>
@@ -587,7 +587,7 @@
                                     <td>3개월</td>
                                     <td>2,100,000원</td>
                                     <td rowspan="8">
-                                        <a href="service.html#School" class="hotel-btn btn-dark center cta-btncontainer-two"
+                                        <a href="${ pageContext.servletContext.contextPath }/ht/service#School" class="gp-btn btn-dark center"
                                             style="margin-top: 100px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
@@ -650,8 +650,7 @@
                                     <td>3개월</td>
                                     <td>2,600,000원</td>
                                     <td rowspan="8">
-                                        <a href="service.html#School" class="hotel-btn btn-dark center cta-btncontainer-two"
-                                            style="margin-top: 100px;">자세히 보러가기</a>
+                                        <a href="${ pageContext.servletContext.contextPath }/ht/service#School" class="gp-btn btn-dark center" style="margin-top:120px;">자세히 보러가기</a>
                                     </td>
                                 </tr>
                                 <tr>

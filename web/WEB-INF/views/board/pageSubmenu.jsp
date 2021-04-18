@@ -21,8 +21,14 @@
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	crossorigin="anonymous" />
 <link rel="stylesheet" href="/creation/resources/css/common2.css">
+
+<style>
+	.active{background-color: #fff !important;}
+	.active:hover {background-color: #FFCD00 !important; color:#fff !important;}
+
+</style>
 </head>
-<body>
+<body class="bg-white">
 	<div class="col-lg-2">
 		<aside class="page-submenu">
 			<ul>

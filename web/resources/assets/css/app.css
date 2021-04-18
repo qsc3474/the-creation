@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5 {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  padding: 12px 35px;
+  padding: 12px 25px;
   color: #333;
   outline: none;
   transition: all 0.3s ease-in-out;
@@ -540,7 +540,7 @@ section {
     margin: 0;
     background-color: white;
     padding: 10px;
-    min-width: 240px;
+    min-width: 160px;
     top: 100%;
     left: 0;
     opacity: 0;
@@ -1801,7 +1801,7 @@ section#about-two {
   --------------------------------------------------------------*/
 #service, #service-colofull, #service-animate {
   padding: 100px 0;
-  background: #f8f8f8;
+  background: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -3626,13 +3626,13 @@ h2.heading {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #673AB7;
+  border: 1px solid #36b2b0;
   outline-width: 0
 }
 
 #msform .action-button {
   width: 100px;
-  background: #673AB7;
+  background: #FFCD00;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -3644,7 +3644,7 @@ h2.heading {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-  background-color: #311B92
+  background-color: #36b2b0
 }
 
 #msform .action-button-previous {
@@ -3672,14 +3672,14 @@ h2.heading {
 
 #msform .fs-title {
   font-size: 25px;
-  color: #673AB7;
+  color: #36b2b0;
   margin-bottom: 15px;
   font-weight: normal;
   text-align: left
 }
 
 #msform .purple-text {
-  color: #673AB7;
+  color: #36b2b0;
   font-weight: normal
 }
 
@@ -3703,7 +3703,7 @@ h2.heading {
 }
 
 #progressbar .active {
-  color: #673AB7
+  color: #36b2b0
 }
 
 #progressbar li {
@@ -3761,7 +3761,7 @@ h2.heading {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #673AB7
+  background: #36b2b0
 }
 
 #msform .progress {
@@ -3769,7 +3769,7 @@ h2.heading {
 }
 
 #msform .progress-bar {
-  background-color: #673AB7
+  background-color: #36b2b0
 }
 
 #msform .fit-image {

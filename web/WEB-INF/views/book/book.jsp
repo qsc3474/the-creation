@@ -47,7 +47,7 @@
         </section>
         <!-- title -->
 
-        <section id="booking" class="bk-sec bg-white">
+        <section id="booking" class="bk-sec bg-white pt-null">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">

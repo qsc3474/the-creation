@@ -5,18 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>개편한세상-가격정보</title>
+
+<style>
+.nav-tabs>li>a{
+    color: #36b2b0;
+        }
+</style>
 </head>
 <body>
 <jsp:include page="../common/header.jsp"></jsp:include>
 
-<section id="service" class="service-sec">
+<section id="service" class="service-sec ">
       <div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
         <h2>진료이용 금액</h2>
         <p>
           개편한 세상은 투명한 진료 금액정보 공개 하고 있습니다.
         </p>
       </div>
-      <div class="row">
+      <div class="row col-md-10 col-md-offset-1">
         <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
           <ul class="nav nav-tabs nav-tabs-lined nav-tabs-lined-bottom">
             <li class=""><a href="#tab1-1" data-toggle="tab" aria-expanded="false">내과</a></li>
@@ -28,6 +34,12 @@
           <div class="tab-content">
             <div class="tab-pane fade" id="tab1-1">
               <table class="table table-striped table-dark mt">
+              <colgroup>
+                   <col width="20%">
+                   <col width="20%">
+                   <col width="40%">
+                   <col width="20%">
+                </colgroup>
                 <thead>
                   <tr>
                     <th scope="col">번호</th>
@@ -177,6 +189,12 @@
             <!-- /.tab-pane -->
             <div class="tab-pane fade active in" id="tab1-2">
               <table class="table table-striped table-dark mt">
+              <colgroup>
+                   <col width="20%">
+                   <col width="20%">
+                   <col width="30%">
+                   <col width="30%">
+                </colgroup>
                 <thead>
                   <tr>
                     <th scope="col">번호</th>
@@ -270,6 +288,12 @@
             <!-- /.tab-pane -->
             <div class="tab-pane fade" id="tab1-3">
               <table class="table table-striped table-dark mt">
+              <colgroup>
+                   <col width="20%">
+                   <col width="20%">
+                   <col width="30%">
+                   <col width="30%">
+                </colgroup>
                 <thead>
                   <tr>
                     <th scope="col">번호</th>

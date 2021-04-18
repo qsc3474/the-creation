@@ -150,7 +150,7 @@
                                 <td>9:00 ~ 18: 00</td>
                                 <td>아카데미(주중)</td>
                                 <td rowspan="5" style="padding-top: 50px; width: 150px;">
-                                    <a href="${ pageContext.servletContext.contextPath }/hp/info#SchoolPrice" class="gp-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
+                                    <a href="${ pageContext.servletContext.contextPath }/ht/info#SchoolPrice" class="gp-btn btn-dark small center cta-btncontainer-two "  style=" margin-bottom: 5px; color: #fff;">이용요금보기</a>
                               </tr>
                               <tr>
                                 <td>9:00 ~ 19: 00</td>

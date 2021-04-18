@@ -33,19 +33,20 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="/creation/resources/js/event.js"></script>
+
+<style>
+
+</style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-
-	<section class="title-sec">
-		<div class="row">
-			<h2
-				class="section-title section-title-upper section-title-line text-center">
-				공지사항</h2>
-		</div>
+	<section class="step-title bg-white " >
+			<div class="section-title ht-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
+				<h2>공지사항</h2>
+			</div>
 	</section>
-	<section class="notice-sec">
+	<section class="notice-sec bg-white pt-null">
 		<div class="container">
 			<jsp:include page="/WEB-INF/views/board/pageSubmenu.jsp"></jsp:include>
 			<div class="col-lg-10">
@@ -59,9 +60,8 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-
 								<div class="panel panel-default panel-wrap">
-									<table class="table table-hover table-bordered"
+									<table class="table table-striped"
 										id="dataTables-example"
 										aria-describedby="dataTables-example_info">
 										<thead>
@@ -165,17 +165,17 @@
 													value="${requestScope.searchValue}"}>
 											</c:when>
 											<c:otherwise>
-												<select id="searchCondition" name="searchCondition">
+												<select id="searchCondition" name="searchCondition" style="width: 400px;">
 													<option value="writer">작성자</option>
 													<option value="title">제목</option>
 													<option value="content">내용</option>
 												</select>
-												<input type="search" id="searchValue" name="searchValue">
+												<input type="search" id="searchValue" name="searchValue" >
 											</c:otherwise>
 										</c:choose>
-										<button type="submit">검색하기</button>
+										<button type="submit" class="gp-btn btn-dark center" style="border:0; padding: 7px 18px;">검색하기</button>
 										<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
-											<button type="button" id="writeBoard"
+											<button type="button" id="writeBoard" 
 												style="text-align: right">작성하기</button>
 										</c:if>
 									</div>

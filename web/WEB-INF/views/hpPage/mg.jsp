@@ -11,7 +11,7 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 		
 		<!-- about -->
-		<section id="about" class="bg-light">
+		<section id="about" class="bg-white">
 			<div class="container">
 				<div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
 					<h2>내과</h2>
@@ -53,7 +53,7 @@
 		</section>
 		<!-- /about -->
 
-        <section id="feature-two">
+        <section id="feature-two" class="bg-white">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">

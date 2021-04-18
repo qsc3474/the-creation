@@ -54,12 +54,10 @@
 						</ul></li>
 					<li class="menu-item-has-children"><a href="mg.html">진료과목</a>
 						<ul class="sub-menu">
-							<li><a href="mg.html">내과</a></li>
-							<li><a href="gs.html">외과</a></li>
-							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/info/price">안과</a></li>
-							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/info/dental">치과</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/hp/mg">내과</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/hp/gs">외과</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/hp/ey">안과</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/hp/dental">치과</a></li>
 						</ul></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/hp/info/price">진료가격</a></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>

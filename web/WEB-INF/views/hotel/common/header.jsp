@@ -70,7 +70,7 @@
 					<li class="menu-item-has-children"><a href="${ pageContext.servletContext.contextPath }/ht/about">호텔소개</a>
 						<ul class="sub-menu">
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/about">호텔소개</a></li>
-							<li><a href="about.html#portfolio">시설소개</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/about#portfolio">시설소개</a></li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="${ pageContext.servletContext.contextPath }/ht/service">서비스안내</a>
 						<ul class="sub-menu">

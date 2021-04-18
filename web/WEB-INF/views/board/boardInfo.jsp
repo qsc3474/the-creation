@@ -12,19 +12,13 @@
 <title>Document</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap">
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!--폰트어썸 웹 아이콘-->
-<link rel="stylesheet"
-	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-	crossorigin="anonymous" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 <!-- 커스텀 스타일시트 -->
 <script src="/creation/resources/js/event.js"></script>
 <link rel="stylesheet" href="/creation/resources/css/common2.css">
@@ -45,7 +39,7 @@
 				정보게시판</h2>
 		</div>
 	</section>
-	<section class="notice-sec">
+	<section id="reviewdetail" class="notice-sec">
 		<div class="container">
 			<jsp:include page="/WEB-INF/views/board/pageSubmenu.jsp"></jsp:include>
 			<div class="col-lg-10">
@@ -59,7 +53,6 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-
 								<div class="panel panel-default panel-wrap">
 									<table class="table table-hover table-bordered"
 										id="dataTables-example"

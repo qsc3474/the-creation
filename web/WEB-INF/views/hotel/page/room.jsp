@@ -11,7 +11,7 @@
     /* body {
           background: rgba(0, 0, 0, 0) radial-gradient(circle, #fff 20%, #999) repeat scroll 0 0;
         } */
-    .feature-box-one {padding: 0;}
+    .feature-box-one {padding: 0 !important;}
  </style>
 
 </head>
@@ -37,7 +37,7 @@
 		      <div class="container">
 		        <div class="macbook">
 		          <div class="screen">
-		            <div class="viewport" style="background-image:url('${ pageContext.servletContext.contextPath }/resources/media/img/slider2.png)">
+		            <div class="viewport" style="background-image:url('${ pageContext.servletContext.contextPath }/resources/media/img/slider2.png')">
 		            </div>
 		          </div>
 		          <div class="base"></div>
