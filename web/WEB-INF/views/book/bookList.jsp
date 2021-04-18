@@ -42,7 +42,7 @@
 													aria-controls="dataTables-example" rowspan="1" colspan="1"
 													aria-sort="ascending"
 													aria-label="Rendering engine: activate to sort column ascending"
-													style="width: 50px;">No.</th>
+													style="width: 50px;">예약번호</th>
 												<th class="sorting" tabindex="0"
 													aria-controls="dataTables-example" rowspan="1" colspan="1"
 													aria-label="Browser: activate to sort column ascending"
@@ -64,11 +64,11 @@
 										<tbody>
 											<c:forEach items="${ requestScope.bookList }" var="book">
 												<tr>
-													<td><input type="text" value="${book.no } " readonly></td>
-													<td><c:set var="TextValue" value="${sessionScope.loginMember.phone }"/></td>
-													<td><c:set var="TextValue" value="${sessionScope.loginMember.phone }"/></td>
-													<td><c:set var="TextValue" value="${sessionScope.loginMember.phone }"/></td>
-													<td></td>
+													<td><c:out value="${book.no }"/></td>
+													<td><c:out value="${book.time }"/></td>
+													<td><c:out value="${book.memberNo }"/></td>
+													<td><c:out value="${book.petName }"/></td>
+													<td><c:out value="${book.status }"/></td>
 												</tr>
 											</c:forEach>
 										</tbody>

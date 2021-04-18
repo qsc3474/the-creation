@@ -89,7 +89,8 @@ public HPbookDAO() {
 				
 				book.setNo(rset.getInt("HP_BK_NO"));
 				book.setTime(rset.getString("HP_BK_TIME"));
-				book.setStatus(rset.getString("HP_PET_NAME"));
+				book.setStatus(rset.getString("HP_BK_STATUS"));
+				book.setPetName(rset.getString("HP_PET_NAME"));
 				book.setPetKind(rset.getString("HP_PET_KIND"));
 				book.setPetGender(rset.getString("HP_PET_GENDER"));
 				book.setPetAge(rset.getString("HP_PET_AGE"));

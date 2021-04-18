@@ -22,14 +22,6 @@ public class HPbookListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/views/book/bookList.jsp";
-		
-		request.getRequestDispatcher(path).forward(request, response);
-		
-		
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("나오냐");
 		int bookMember = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
 		
@@ -37,10 +29,10 @@ public class HPbookListServlet extends HttpServlet {
 		HPbookService bookService= new HPbookService();
 		List<HPbookDTO> bookList= bookService.selectBookList(bookMember);
 		
-		
+		System.out.println(bookList);
 		String path = "";
 		if(!bookList.isEmpty()) {		// 공지사항이 조회 되었다면
-			path = "/WEB-INF/views/notice/noticeList.jsp";
+			path = "/WEB-INF/views/book/bookList.jsp";
 			request.setAttribute("bookList", bookList);
 		} else {						// 공지사항이 조회 되지 않았다면
 			path = "/WEB-INF/views/common/failed.jsp";
@@ -48,6 +40,12 @@ public class HPbookListServlet extends HttpServlet {
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
+		
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		
 		
 	}
