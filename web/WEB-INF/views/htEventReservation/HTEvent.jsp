@@ -282,7 +282,7 @@
                                         <h2 class="purple-text text-center"><strong>이용해 주셔서 감사합니다!</strong></h2> <br>
                                         <div class="row justify-content-center">
                                             <div class="col-3"> 
-                                            	<img src="${ pageContext.servletContext.contextPath }/resources/media/img/GwStPmg.png">
+                                            	<img src="${ pageContext.servletContext.contextPath }/resources/media/img/GwStPmg.png" style="width:150px; height:150px">
                                            	</div>
                                         </div>
                                     </div>

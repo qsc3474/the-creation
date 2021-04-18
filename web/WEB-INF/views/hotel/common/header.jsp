@@ -87,11 +87,11 @@
 					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
 						<ul class="sub-menu">
 							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
+								href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">공지사항</a></li>
 							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">FAQ</a></li>
+								href="${ pageContext.servletContext.contextPath }/ht/FAQ/list">FAQ</a></li>
 							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">Q&amp;A</a></li>
+								href="${ pageContext.servletContext.contextPath }/ht/QNA/list">Q&amp;A</a></li>
 							<li><a href="reviewList.html">이용후기</a></li>
 							<li><a href="galleryList.html">gallery</a></li>
 						</ul></li>

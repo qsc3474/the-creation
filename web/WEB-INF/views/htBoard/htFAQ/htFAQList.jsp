@@ -27,8 +27,7 @@
 
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	
+<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"/>
 	 <section class="title-sec">
 	    <div class="row">
 	        <h2 class="section-title section-title-upper section-title-line text-center">
