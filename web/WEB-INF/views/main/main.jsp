@@ -124,10 +124,10 @@
 							<div class="blog-post wow fadeInRight" data-wow-delay="0.9s">
 
 								<div class="blog-thumb">
-									<a href="team.html">
+									<a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat11.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date">공지<br>사항</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list" class="date">공지<br>사항</a>
 								</div>
 
 							</div>
@@ -136,30 +136,30 @@
 							<div class="blog-post wow fadeInRight" data-wow-delay="0.9s">
 
 								<div class="blog-thumb">
-									<a href="team.html">
+									<a href="${ pageContext.servletContext.contextPath }/hp/review/select/list">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog23.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date">치료<br>사례</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/review/select/list" class="date">치료<br>사례</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="blog-post wow fadeInUp list-hover" data-wow-delay="0.5s">
 								<div class="blog-thumb inner" style="float: right;">
-									<a href="notice.html">
+									<a href="${ pageContext.servletContext.contextPath }/hp/info/price">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog09.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date">진료<br>가격안내</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/info/price" class="date">진료<br>가격안내</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="blog-post wow fadeInUp list-hover" data-wow-delay="0.5s">
 								<div class="blog-thumb inner" style="float: right;">
-									<a href="#">
+									<a href="${ pageContext.servletContext.contextPath }/hp/info/select/list">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat06.jpg" alt="Blog thumb">
 									</a>
-									<a href="#" class="date">동물<br>정보상식</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/info/select/list" class="date">동물<br>정보상식</a>
 								</div>
 							</div>
 						</div>
@@ -471,10 +471,10 @@
 		<section id="quick-menu" style="padding: 0;">
 			<nav class="side-menu">
 				<ul>
-				  <li><a href="reservation.html" class="quick">진료예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
-				  <li><a href="#" class="quick">진료과목</a><span><i class="glyphicon glyphicon-th"></i></span></li>
+				  <li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert" class="quick">진료예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
+				  <li><a href="${ pageContext.servletContext.contextPath }/hp/info/dental" class="quick">진료과목</a><span><i class="glyphicon glyphicon-th"></i></span></li>
 				  <li><a href="#" class="quick">진료서비스</a><span><i class="glyphicon glyphicon-check"></i></span></li>
-				  <li><a href="#" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>
+				  <li><a href="${ pageContext.servletContext.contextPath }/hp/notice/select/list" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>
 				</ul>
 			  </nav>
 		</section>

@@ -176,9 +176,9 @@
                                                         </div>
                                                         <h5 class="eventType">예약내용</h5>
                                                         <ul class="description">
-                                                        
-                                                            <li></li>
-                                                          
+                                                            <li>
+                                                            
+                                                            </li>
                                                         </ul>
                                                         <input type="text" readonly name="TotalPrice">
                                                     </div>

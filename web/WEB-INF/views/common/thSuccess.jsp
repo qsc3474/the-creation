@@ -60,7 +60,7 @@
 				/* 호텔 이벤트 예약  */
 			case "htInsertEvent" :
 				successMessage = "호텔 이벤트 예약에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }";
+				/* movePath = "${ pageContext.servletContext.contextPath }"; */
 				break;
 			}
 			
