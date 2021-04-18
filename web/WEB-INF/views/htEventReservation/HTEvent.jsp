@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-    <title>이벤트룸 예약</title>
+    <title>호텔 이벤트룸 예약</title>
     <!-- Dependency Styles -->
     <link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
@@ -282,7 +282,7 @@
                                         <h2 class="purple-text text-center"><strong>이용해 주셔서 감사합니다!</strong></h2> <br>
                                         <div class="row justify-content-center">
                                             <div class="col-3"> 
-                                            	<img src="${ pageContext.servletContext.contextPath }/resources/media/img/GwStPmg.png">
+                                            	<img src="${ pageContext.servletContext.contextPath }/resources/media/img/GwStPmg.png" style="width:150px; height:150px">
                                            	</div>
                                         </div>
                                     </div>

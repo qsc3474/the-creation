@@ -10,7 +10,7 @@ import static creation.common.jdbc.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.List;
 
-
+import creation.board.model.dao.HPFAQBoardDAO;
 import creation.board.model.dao.HPNoticeBoardDAO;
 import creation.board.model.dto.FileDTO;
 import creation.board.model.dto.HPBoardDTO;
@@ -155,6 +155,55 @@ private final HPNoticeBoardDAO hpNctBoardDAO;
 		}
 		
 		close(con);
+		
+		return result;
+	}
+
+	public int insertFileBoard(HPBoardDTO noticeBoard) {
+		
+		Connection con = getConnection();
+		
+		/* 최종적으로 반환 할 result 선언 */
+		int result = 0;
+		
+		int boardResult = hpNctBoardDAO.insertFileBoard(con, noticeBoard);
+		
+		System.out.println(boardResult);
+		
+		int boardNo = hpNctBoardDAO.selectFileBoardSequence(con);
+		
+		System.out.println(boardNo);
+		
+		/* Attachment List를 불러온다. */
+		List<FileDTO> fileList = noticeBoard.getFileList();
+		
+		/* 각각의 AttachmentDTO(파일 정보)들에 boardNo를 넣는다. */
+		for(int i = 0 ; i < fileList.size() ; i++) {
+			
+			fileList.get(i).setBdNo(boardNo);
+			
+		}
+		
+		int fileResult = 0;
+		
+		for(int i = 0 ; i < fileList.size() ; i++) {
+			
+			fileResult += hpNctBoardDAO.insertFile(con, fileList.get(i));
+			
+		}
+		
+		System.out.println(fileResult);
+		
+		if(boardResult > 0 && fileResult == fileList.size()) {
+			
+			commit(con);
+			result = 1;
+			
+		} else {
+			
+			rollback(con);
+			
+		}
 		
 		return result;
 	}

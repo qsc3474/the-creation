@@ -5,11 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>개편한 호텔 QNA 수정</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	
+	<jsp:include page="/WEB-INF/views/hotel/common/header.jsp"/>
 	<section>
         <div class="container">
         <h1 align="center">공지 사항 수정</h1>

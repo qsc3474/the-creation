@@ -60,5 +60,13 @@ AND HP_BK_STATUS='진행중'
 FROM HOSPITAL_BOOK A
 WHERE HP_BK_NO =?
 </entry>
+
+<entry key="bookCancel">
+UPDATE
+      HOSPITAL_BOOK A
+   SET A.HP_BK_STATUS = '취소'
+ WHERE HP_BK_STATUS ='진행중'
+   AND HP_BK_NO =?
+  </entry>
 </properties>
 	

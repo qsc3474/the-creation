@@ -95,6 +95,12 @@
 				successMessage = "공지사항 수정에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/hp/notice/select/list";
 				break;
+				
+			/* 파일업로드 */
+			case "insertFile" :
+				successMessage = "공지사항 파일업로드에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/notice/select/list";
+				break;
 			}
 			
 			alert(successMessage);

@@ -75,32 +75,32 @@
                                             </div>
                                         </div> 
                                         	 <label class="fieldlabels">이름<span class="text-danger">*</span></label>
-                                        	<input type="text" name="petName" placeholder="이름" />
+                                        	<input type="text" name="petName" id="petName" placeholder="이름" />
                                             <label class="fieldlabels">분류 (종)<span class="text-danger">*</span></label>
-                                            <select name="kind">
+                                            <select name="kind" id="kind">
                                                   <option value="D">Dog</option>
                                                   <option value="C">Cat</option>
                                               </select> 
                                             <label class="fieldlabels">성별 <span class="text-danger">*</span></label> 
-                                              <select name="gender">
+                                              <select name="gender" id="gender">
                                                   <option value="M">남</option>
                                                   <option value="F">여</option>
                                               </select> 
                                                <label class="fieldlabels">나이<span class="text-danger">*</span></label>
-												 <select name="age">
+												 <select name="age" id="age">
                                                   <option value="baby">1년 이하</option>
                                                   <option value="adult">성견/성묘</option>
                                                    <option value="old">노견/노묘</option>
                                               </select>  
                                             <label class="fieldlabels">중성화여부<span class="text-danger">*</span></label>
-												 <select name="neut">
+												 <select name="neut" id="neut">
                                                   <option value="Y">O</option>
                                                   <option value="N">X</option>
                                                  <option value=" ">모름</option>
                                                   
                                               </select> 
                                             <label for="exampleFormControlTextarea1">특이사항</label>
-                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5"></textarea>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1" name="message" id="message" rows="5"></textarea>
                                     </div> 
                                     <input type="button" name="next" class="next action-button" value="Next" />
                                 </fieldset>
@@ -116,8 +116,8 @@
                                         </div> 
                                        			
                                         <label class="fieldlabels">예약 시간<span class="text-danger">*</span></label>
-                                      	<input type="date" name ="date">
-                                  		<select name ="time" >
+                                      	<input type="date" name ="date" id="date">
+                                  		<select name ="time" id="time">
                                   		<optgroup label="오전"></optgroup>
                                   		<option value="10:00"> 10:00</option>
                                   		<option value="11:00"> 11:00</option>
@@ -154,12 +154,42 @@
                                                             <span class="price">예약 확인</span>
                                                         </div>
                                                         <h5 class="title">예약내용</h5>
-                                                        <ul class="description">
+                                                        <table class="table table-bordered reserv-listbox">
+														 <tr>
+															 <th>이름</th>
+															 <td><span id="setPetName"></span></td>
+														 </tr>
+														 <tr>
+															 <th>분류</th>
+															 <td><span id="setPetCategory"></span></td>
+														 </tr>
+														 <tr>
+															 <th>성별</th>
+															 <td><span id="setPetGender"></span></td>
+														 </tr>
+														 <tr>
+															 <th>나이</th>
+															 <td><span id="setPetAge"></span></td>
+														 </tr>
+														 <tr>
+															 <th>중성화 여부</th>
+															 <td><span id="setPetNeut"></span></td>
+														 </tr>
+														 <tr>
+															 <th>특이사항</th>
+															 <td><span id="setPetMsg"></span></td>
+														 </tr>
+														 <tr>
+															 <th>예약 날짜</th>
+															 <td><span id="bookDate"></span></td>
+														 </tr>
+														 <tr>
+															 <th>예약 시간</th>
+															 <td><span id="bookTime"></span></td>
+														 </tr>
+														 									 														 
+													 </table>
                                                         
-                                                            <li></li>
-                                                          
-                                                        </ul>
-                                                        <input type="text" readonly name="TotalPrice">
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,7 +330,57 @@
                 //# sourceURL=pen.js
             </script>
 		
-	
+	<script>
+          		//[01] 이름
+          		function getUserPetName() {
+          			var selPetNameVal = document.getElementById("petName").value; //value
+	            	document.getElementById("setPetName").innerText = selPetNameVal;	
+          		}
+          		//[01] 분류
+         		function getCategorySelect() {
+	         		var selCategoryOpt = document.getElementById("kind"); //element
+	            	var selCategoryVal = selCategoryOpt.options[selCategoryOpt.selectedIndex].value; //value
+	            	var selCategoryTxt = selCategoryOpt.options[selCategoryOpt.selectedIndex].text; //text
+	            	document.getElementById("setPetCategory").innerText = selCategoryTxt;
+         		}
+         		//[01] 성별
+          		function getUserPetGender() {
+          			var selPetGenderOpt = document.getElementById("gender"); //element
+	            	var selPetGenderVal = selPetGenderOpt.options[selPetGenderOpt.selectedIndex].value; //value
+	            	var selPetGenderTxt = selPetGenderOpt.options[selPetGenderOpt.selectedIndex].text; //text
+	            	document.getElementById("setPetGender").innerText = selPetGenderTxt;	
+          		}          		
+         		//[01] 나이
+          		function getUserPetAge() {
+          			var selPetAgeOpt = document.getElementById("age"); //element
+	            	var selPetAgeVal = selPetAgeOpt.options[selPetAgeOpt.selectedIndex].value; //value
+	            	var selPetAgeTxt = selPetAgeOpt.options[selPetAgeOpt.selectedIndex].text; //text
+	            	document.getElementById("setPetAge").innerText = selPetAgeTxt;	
+          		}          		
+         		//[01] 중성화
+          		function getUserPetNeut() {
+          			var selPetNeutOpt = document.getElementById("neut"); //element
+	            	var selPetNeutVal = selPetNeutOpt.options[selPetNeutOpt.selectedIndex].value; //value
+	            	var selPetNeutTxt = selPetNeutOpt.options[selPetNeutOpt.selectedIndex].text; //text
+	            	document.getElementById("setPetNeut").innerText = selPetNeutTxt;	
+          		}           		
+         		//[01] 특이사항
+          		function getUserPetMsg() {
+          			var selPetMsgVal = document.getElementById("message").value; //value
+	            	document.getElementById("setPetMsg").innerText = selPetMsgVal;	
+          		}       
+         		//[02] 예약날짜
+         		function getRoomDate() {
+          			var selRoomDateVal = document.getElementById("date").value;
+	            	document.getElementById("setRoomDate").innerText = selRoomDateVal;	
+         		}
+         		//[02] 예약시간(체크인)
+         		function getStartTime() {
+          			var selStartTimeVal = document.getElementById("time").value;
+         			document.getElementById("bookTime").innerText = selStartTimeVal;
+         		}
+         		
+       		</script>
 		
 		
    <!-- Dependency Scripts -->

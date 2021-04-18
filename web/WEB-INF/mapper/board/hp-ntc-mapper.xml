@@ -239,5 +239,52 @@
                   WHERE B.HP_BD_CONTENT LIKE '%' || ? || '%'
                ) A
          WHERE A.RNUM BETWEEN ? AND ?
-    </entry>   
+    </entry>
+    <entry key="selectFileBoardSequence">
+        SELECT
+               SEQ_HP_BD_NO.CURRVAL
+          FROM DUAL
+    </entry>
+    <entry key="insertFile">
+        INSERT
+          INTO FILE_INFO A
+        (
+          A.FILE_NO
+        , A.BD_NO
+        , A.BD_CATEGORY_NO
+        , A.ORIGIN_FILE_NAME
+        , A.FILE_PATH
+        , A.SAVE_FILE_NAME
+        , A.FILE_EXTENSION
+        )
+        VALUES
+        (
+          SEQ_HP_FILE_NO.NEXTVAL
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        )
+    </entry>
+    <entry key="insertFileBoard">
+        INSERT
+		  INTO HOSPITAL_BD
+		(
+		  HP_BD_NO
+		, HP_BD_CATEGORY_NO
+		, HP_BD_TITLE
+		, HP_BD_CONTENT
+		, HP_MEM_NO
+		)
+		VALUES
+		(
+		  SEQ_HP_BD_NO.NEXTVAL
+		, ?
+		, ?
+		, ?
+		, ?
+		)
+    </entry>
 </properties>

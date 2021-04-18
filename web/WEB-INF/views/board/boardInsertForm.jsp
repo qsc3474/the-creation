@@ -21,8 +21,9 @@
 		<div class="container">
 			<h1 align="center">글쓰기</h1>
 			<div class="container" role="main">
-				<form name="form" id="form" role="form" method="post"
-					action="${pageContext.request.contextPath}/hp/board/insert">
+				<form name="form" id="form" role="form"
+					action="${ pageContext.servletContext.contextPath }/hp/board/insert"
+					method="post">
 					<div class="mb-12">
 						<label for="title">카테고리</label> <select
 							class="custom-select mr-sm-2" name="boardCategory"
@@ -66,8 +67,16 @@
 					<div class="mb-12" id="fileUploadDiv">
 						<label for="content">업로드</label>
 						<div class="input-group" style="margin-top: 20px;">
-							<label for="tag" class="input-group-text" for="inputGroupFile02">Upload</label>
-							<input type="file" class="form-control" id="inputGroupFile02">
+							<c:if test="${ requestScope.categoryNo eq 'HP_NTC' }">
+								<label for="tag" class="input-group-text" for="inputGroupFile">파일</label>
+								<input type="file" class="form-control" name="inputGroupFile" id="inputGroupFile" >
+							</c:if>
+							<c:if test="${ requestScope.categoryNo eq 'HP_RV' }">
+								<label for="tag" class="input-group-text" for="thumbnailFile">썸네일</label>
+								<input type="file" class="form-control" name="thumbnailFile" id="thumbnailFile" >
+								<label for="tag" class="input-group-text" for="inputGroupPicture">사진</label>
+								<input type="file" class="form-control" name="inputGroupPicture" id="inputGroupPicture" >
+							</c:if>
 						</div>
 					</div>
 					<div class="text-center" style="margin-top: 20px;">
@@ -87,7 +96,7 @@
 	            
 	            if (document.getElementById("btnSave")) {
 	    			const $btnSave = document.getElementById("btnSave");
-	    			
+	    			var theForm = document.getElementById("form");
 	    			$btnSave.onclick = function() {
 	    				if(document.getElementById("boardCategory").value == "def") {
 	    					
@@ -106,6 +115,14 @@
 	    					
 	    				} else {
 	    					
+	    					if(${ requestScope.categoryNo eq "HP_NTC" }){
+	    						
+	    						theForm.action = "${ pageContext.servletContext.contextPath }/hp/notice/file/insert";
+	    						theForm.encoding = "multipart/form-data";
+	    						
+	    						console.log(theForm);
+	    							
+	    					}
 	    					document.getElementById("form").submit();
 	    					
 	    				}
@@ -118,7 +135,7 @@
 	            
 	            if(document.getElementById("fileUploadDiv")) {
 	            	
-	            	if(!${ requestScope.categoryNo eq 'HP_RV' } && !${ requestScope.categoryNo eq 'HP_NTC' }){
+	            	if(!${ requestScope.categoryNo eq 'HP_RV' } && !${ requestScope.categoryNo eq 'HP_NTC' }){ // 후기, 공지사항 게시판만 파일업로드 가능
 	            		
 	            		var fileUploadDiv = document.getElementById("fileUploadDiv");
 		            	fileUploadDiv.style.display = "none";
