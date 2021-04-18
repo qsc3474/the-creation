@@ -83,8 +83,8 @@
                                               </select> 
                                             <label class="fieldlabels">성별 <span class="text-danger">*</span></label> 
                                               <select name="gender">
-                                                  <option value="male">남</option>
-                                                  <option value="female">여</option>
+                                                  <option value="M">남</option>
+                                                  <option value="F">여</option>
                                               </select> 
                                                <label class="fieldlabels">나이<span class="text-danger">*</span></label>
 												 <select name="age">

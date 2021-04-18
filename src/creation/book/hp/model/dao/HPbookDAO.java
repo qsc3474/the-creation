@@ -45,7 +45,7 @@ public HPbookDAO() {
 		
 		try {
 			pstmt=con.prepareStatement(query);
-			pstmt.setDate(1, newBook.getTime());
+			pstmt.setString(1, newBook.getTime());
 			pstmt.setInt(2, newBook.getMemberNo());
 			pstmt.setString(3, newBook.getPetName());
 			pstmt.setString(4, newBook.getPetKind());
@@ -87,7 +87,7 @@ public HPbookDAO() {
 			while(rset.next()) {
 				HPbookDTO bookDTO= new HPbookDTO();
 				bookDTO.setNo(rset.getInt("HP_BK_NO"));
-				bookDTO.setTime(rset.getDate("HP_BK_TIME"));
+				bookDTO.setTime(rset.getString("HP_BK_TIME"));
 				bookDTO.setStatus(rset.getString("HP_BK_STATUS"));
 				bookDTO.setPetName(rset.getString("HP_PET_NAME"));
 				bookDTO.setPetKind(rset.getString("HP_PET_KIND"));

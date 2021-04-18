@@ -56,7 +56,7 @@ public class HPbookInsertServlet extends HttpServlet {
 		HPbookDTO newBook =new HPbookDTO();
 		
 		newBook.setMemberNo(bookMember);
-		newBook.setTime(java.sql.Date.valueOf(dateTime));
+		newBook.setTime((dateTime));
 		newBook.setPetName(petName);
 		newBook.setPetKind(kind);
 		newBook.setPetGender(gender);
