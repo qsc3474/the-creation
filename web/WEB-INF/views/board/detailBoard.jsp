@@ -209,7 +209,7 @@ var insertCount = 0;
 $(function(){  //페이지가 로드되면 댓글 데이터를 가져온다.
 	deleteAndUpdateButtonAction();
 	getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
-	if("${ requestScope.board.categoryNo }" == "HP_NTC" || "${ requestScope.board.categoryNo }" == "HP_INFO"){
+	if("${ requestScope.board.categoryNo }" == "HP_NTC" || "${ requestScope.board.categoryNo }" == "HP_INFO"){ // info, ntc게시판은 댓글 불가능
 		
 		var comments = document.getElementById("comments");
 		comments.style.display = "none";

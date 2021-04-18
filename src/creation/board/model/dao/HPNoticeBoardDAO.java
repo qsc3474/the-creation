@@ -376,15 +376,16 @@ public class HPNoticeBoardDAO {
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String query = prop.getProperty("insertAttachment");
+		String query = prop.getProperty("insertFile");
 		
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, fileDTO.getBdNo());
-			pstmt.setString(2, fileDTO.getOriginName());
-			pstmt.setString(3, fileDTO.getName());
+			pstmt.setString(2, fileDTO.getCategoryNo());
+			pstmt.setString(3, fileDTO.getOriginName());
 			pstmt.setString(4, fileDTO.getPath());
-			pstmt.setString(5, fileDTO.getExtension());
+			pstmt.setString(5, fileDTO.getName());
+			pstmt.setString(6, fileDTO.getExtension());
 			
 			result = pstmt.executeUpdate();
 			
@@ -395,6 +396,65 @@ public class HPNoticeBoardDAO {
 		}
 		
 		return result;
+	}
+
+	public int selectFileBoardSequence(Connection con) {
+		
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		int lastBoardNo = 0;
+		
+		String query = prop.getProperty("selectFileBoardSequence");
+		
+		try {
+			stmt = con.createStatement();
+			
+			rset = stmt.executeQuery(query);
+			
+			if(rset.next()) {
+				lastBoardNo = rset.getInt(1);
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(rset);
+			close(stmt);
+			
+		}
+		
+		return lastBoardNo;
+		
+	}
+
+	public int insertFileBoard(Connection con, HPBoardDTO noticeBoard) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("insertFileBoard");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, noticeBoard.getCategoryNo());
+			pstmt.setString(2, noticeBoard.getTitle());
+			pstmt.setString(3, noticeBoard.getContent());
+			pstmt.setInt(4, noticeBoard.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+		
 	}
 
 	

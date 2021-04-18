@@ -28,14 +28,14 @@ import net.coobird.thumbnailator.Thumbnails;
  * Servlet implementation class HPNoticethumbnailInsertServlet
  */
 @WebServlet("/hp/notice/file/insert")
-public class HPNoticeFileInsertServlet extends HttpServlet {
+public class HPNoticeInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		doPost(request, response);
 	}
 
 
@@ -45,22 +45,23 @@ public class HPNoticeFileInsertServlet extends HttpServlet {
 		 * 2. 업로드 할 파일의 최대 용량
 		 * 3. 인코딩 방식
 		 */
+		System.out.println("파일업로드 진입 성공");
+		
 		if(ServletFileUpload.isMultipartContent(request)) {
 			
+			System.out.println("파일여부 확인 성공");
+			
 			String rootLocation = request.getServletContext().getRealPath("/");
-			String fileUploadDirectory = rootLocation + "/resources/upload/original/";
-			String thumbnailDirectory = rootLocation + "/resources/upload/thumbnail/";
+			String fileUploadDirectory = rootLocation + "/resources/upload/file/";
 			
 			int maxFileSize = 1024 * 1024 * 10;
 			String encodingType = "UTF-8";
 			
 			File directory = new File(fileUploadDirectory);
-			File directory2 = new File(thumbnailDirectory);
 			
 			/* 파일 경로가 존재하지 않는 경우 디렉토리 생성 */
-			if(!directory.exists() || !directory2.exists()) {
-				System.out.println("폴더 생성 : " + directory.mkdirs());
-				System.out.println("폴더 생성 : " + directory2.mkdirs());
+			if(!directory.exists()) {
+				directory.mkdirs();
 			}
 			
 			/* 파일에 대한 정보는 리스트에, 다른 파라미터의 정보는 맵에 담자 */
@@ -73,13 +74,9 @@ public class HPNoticeFileInsertServlet extends HttpServlet {
 			fileItemFactory.setSizeThreshold(maxFileSize);
 			
 			ServletFileUpload fileUpload = new ServletFileUpload(fileItemFactory);
-			
+			System.out.println(1);
 			try {
 				List<FileItem> fileItems = fileUpload.parseRequest(request);
-				
-//				for(FileItem item : fileItems) {
-//					System.out.println(item);
-//				}
 				
 				/* 모든 FileItem들을 다 처리해 보자 */
 				for(int i = 0 ; i < fileItems.size(); i++) {
@@ -92,37 +89,12 @@ public class HPNoticeFileInsertServlet extends HttpServlet {
 						
 						if(item.getSize() > 0) {
 							
-							String fieldName = item.getFieldName();
 							String originFileName = item.getName();
 							
 							int dot = originFileName.lastIndexOf(".");
 							String ext = originFileName.substring(dot);
 							
-							if(ext.equals("PNG") || ext.equals("JPG")) {
-								
-								
-								int width = 0;
-								int height = 0;
-								if("thumbnailImg1".equals(fieldName)) {
-									fileMap.put("fileType", "TITLE");
-									
-									width = 350;
-									height = 200;
-									
-								} else {
-									fileMap.put("fileType", "BODY");
-									
-									width = 120;
-									height = 100;
-								}
-								
-							}else {
-								
-							}
-							
 							String randomFileName = UUID.randomUUID().toString().replace("-","") + ext;
-							
-							
 							
 							File storeFile = new File(fileUploadDirectory + randomFileName);
 							
@@ -131,16 +103,10 @@ public class HPNoticeFileInsertServlet extends HttpServlet {
 							
 							/* 필요한 정보를 Map에 담자 */
 							Map<String, String> fileMap = new HashMap<>();
-							fileMap.put("fieldName", fieldName);
 							fileMap.put("originFileName", originFileName);
 							fileMap.put("savedFileName", randomFileName);
-							fileMap.put("savePath", fileUploadDirectory);
-							
-							/* 대표 사진과 나머지 사진을 구분하고 썸네일(이미지 리사이징)도 생성하자. */
-							
-							
-							
-							fileMap.put("filePath", "/resources/upload/file/thumbnail_" + randomFileName);
+							fileMap.put("filePath", fileUploadDirectory);
+							fileMap.put("ext", ext);
 							
 							fileList.add(fileMap);
 							
@@ -153,62 +119,75 @@ public class HPNoticeFileInsertServlet extends HttpServlet {
 					}
 				}
 				
-//				System.out.println("parameter : " + parameter);
-//				System.out.println("fileList : " + fileList);
-				
 				/* 서비스를 요청 할 수 있도록 하나의 사진 게시판 내용을 하나의 BoardDTO에 담는다. */
-				HPBoardDTO thumbnail = new HPBoardDTO();
-				thumbnail.setTitle(parameter.get("title"));
-				thumbnail.setContent(parameter.get("content"));
-				thumbnail.setMemberNo(((MemberDTO)request.getSession().getAttribute("loginMember")).getNo());
+				HPBoardDTO noticeBoard = new HPBoardDTO();
+				noticeBoard.setTitle(parameter.get("title"));
+				noticeBoard.setMemberNo(Integer.valueOf(parameter.get("memberNo")));
+				noticeBoard.setContent(parameter.get("content"));
+				noticeBoard.setCategoryNo(parameter.get("boardCategory"));
 				
-				thumbnail.setFileList(new ArrayList<FileDTO>());
-				List<FileDTO> list = thumbnail.getFileList();
+				noticeBoard.setFileList(new ArrayList<FileDTO>());
+				List<FileDTO> list = noticeBoard.getFileList();
 				for(int i = 0 ; i < fileList.size(); i++) {
 					Map<String, String> file = fileList.get(i);
 					
-					FileDTO tempFileInfo = new FileDTO();
-					tempFileInfo.setOriginName(file.get("originFileName"));
-					tempFileInfo.setName(file.get("savedFileName"));
-					tempFileInfo.setPath(file.get("savePath"));
-//					tempFileInfo.set(file.get("fileType"));
-//					tempFileInfo.setThumbnailPath(file.get("thumbnailPath"));
-//					
-					list.add(tempFileInfo);
+					FileDTO fileInfo = new FileDTO();
+					fileInfo.setOriginName(file.get("originFileName"));
+					fileInfo.setName(file.get("savedFileName"));
+					fileInfo.setPath(file.get("filePath"));
+					fileInfo.setExtension(file.get("ext"));
+					fileInfo.setCategoryNo(parameter.get("boardCategory"));
+					
+					list.add(fileInfo);
+					
 				}
 				
 				/* 서비스 메소드를 요청하며 비지니스 로직을 처리한다. */
-				int result = new HPNoticeBoardService().insertThumbnail(thumbnail);
-				
+				int result = new HPNoticeBoardService().insertFileBoard(noticeBoard);
+				System.out.println(result);
 				/* 성공 실패 여부를 파악 후 처리 */
 				String path = "";
 				if(result > 0) {
+					
 					path = "/WEB-INF/views/common/success.jsp";
-					request.setAttribute("successCode", "insertThumbnail");
+					request.setAttribute("successCode", "insertFile");
+					
 				} else {
+					
 					path = "/WEB-INF/views/common/failed.jsp";
 					request.setAttribute("message", "썸네일 게시판 등록 실패!");
+					
 				}
 				
-				request.getRequestDispatcher(path).forward(request, response);	
+				request.getRequestDispatcher(path).forward(request, response);
 								
 			} catch (Exception e) {
+				
 				int cnt = 0;
+				
 				/* 어떤 종류의 Exception이 발생 하더라도 실패 시 올라간 파일은 삭제해야 한다. */
 				for(int i = 0 ; i < fileList.size() ; i++) {
+					
 					Map<String, String> file = fileList.get(i);
 					
 					File deleteFile = new File(fileUploadDirectory + file.get("savedFileName"));
 					boolean isDeleted = deleteFile.delete();
 					
 					if(isDeleted) {
+						
 						cnt++;
+						
 					}
 				}
+				
 				if(cnt == fileList.size()) {
+					
 					System.out.println("업로드에 실패한 모든 사진 삭제 완료!");
+					
 				}else {
+					
 					System.out.println("업로드에 실패한 모든 사진 삭제 실패!");
+					
 				}
 			}
 			

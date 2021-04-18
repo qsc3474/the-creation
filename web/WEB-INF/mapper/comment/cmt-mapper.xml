@@ -96,7 +96,8 @@
 	       							  FROM HOSPITAL_QNA B
 	       							 WHERE HP_QNA_NO = ?
 	       							   AND HP_QNA_CATEGORY_NO = ?
-	       						   )
+	       						    )
+	       	 , A.HP_QNA_ANSWER = 'Y'
 	     WHERE HP_QNA_NO = ?
 	       AND HP_QNA_CATEGORY_NO = ?
 	</entry>

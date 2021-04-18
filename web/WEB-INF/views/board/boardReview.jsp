@@ -32,7 +32,9 @@
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 								<a href="#">
 									<div class="blog-thumb">
-										<img src="${ bestReview.fileList[0].path }" alt="Blog thumb">
+										<c:if test="${ bestReview.fileList[0].path ne null}">
+											<img src="${ bestReview.fileList[0].path }" alt="Blog thumb">
+										</c:if>
 										<div class="blog-overlay"></div>
 									</div>
 								</a>
@@ -86,8 +88,11 @@
 								<c:forEach items="${ requestScope.boardList }" var="review">
 									<tr>
 										<td><c:out value="${ review.no }" /></td>
-										<td><img src="${ review.fileList[0].path }"
-											style="width: 80px; height: 80px;"></td>
+										<td style="height: 100px;">
+											<c:if test="${ review.fileList[0].path ne null}">
+												<img src="${ review.fileList[0].path }" style="width: 80px; height: 80px;">
+											</c:if>
+										</td>
 										<td><c:out value="${ review.writer.name }" /></td>
 										<td><c:out value="${ review.title }" /> <c:if
 												test="${ review.cmtCount ne 0 }">
