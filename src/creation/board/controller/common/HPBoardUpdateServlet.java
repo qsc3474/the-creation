@@ -20,10 +20,22 @@ public class HPBoardUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int no = Integer.valueOf(request.getParameter("no"));
+		System.out.println(request.getParameter("categoryNo"));
+		String categoryNo = request.getParameter("categoryNo");
 		
 		HPFAQBoardService boardService = new HPFAQBoardService();
 		
-		HPBoardDTO board = boardService.selectDetail(no);
+		HPBoardDTO board = null;
+		
+		if("HP_RV".equals(categoryNo) || "HP_QNA".equals(categoryNo)) {
+			
+			board = boardService.anotherSelectDetail(no, categoryNo);
+			
+		} else {
+		
+			board = boardService.selectDetail(no);
+		
+		}
 		
 		String path ="";
 		
@@ -59,8 +71,18 @@ public class HPBoardUpdateServlet extends HttpServlet {
 		System.out.println(updateBoard);
 		
 		HPFAQBoardService boardService = new HPFAQBoardService();
-
-		int result = boardService.updateBoard(updateBoard);
+		
+		int result = 0;
+		
+		if("HP_RV".equals(categoryNo) || "HP_QNA".equals(categoryNo)) {
+			
+			result = boardService.anotherUpdateBoard(updateBoard);
+			
+		} else {
+		
+			result = boardService.updateBoard(updateBoard);
+		
+		}
 
 		String page = "";
 		if (result > 0) {

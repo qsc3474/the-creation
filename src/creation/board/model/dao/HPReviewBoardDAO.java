@@ -14,22 +14,23 @@ import java.util.List;
 import java.util.Properties;
 
 import creation.board.model.dto.CategoryDTO;
+import creation.board.model.dto.FileDTO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
 import creation.common.config.ConfigLocation;
 import creation.member.model.dto.MemberDTO;
 
-public class HPQNABoardDAO {
+public class HPReviewBoardDAO {
 
-	private final Properties prop;
+private final Properties prop;
 	
-	public HPQNABoardDAO() {
+	public HPReviewBoardDAO() {
 		
 		prop = new Properties();
 		
 		try {
 			
-			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "board/hp-qna-mapper.xml"));
+			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "board/hp-review-mapper.xml"));
 			
 		} catch (IOException e) {
 			
@@ -104,21 +105,28 @@ public class HPQNABoardDAO {
 			boardList = new ArrayList<>();
 
 			while (rset.next()) {
+				
 				HPBoardDTO board = new HPBoardDTO();
+				FileDTO thumbnail = new FileDTO();
+				ArrayList<FileDTO> file = new ArrayList<FileDTO>();
 				board.setCategory(new CategoryDTO());
 				board.setWriter(new MemberDTO());
-
-				board.setNo(rset.getInt("HP_QNA_NO"));
-				board.setCategoryNo(rset.getString("HP_QNA_CATEGORY_NO"));
-				board.setTitle(rset.getString("HP_QNA_TITLE"));
-				board.setContent(rset.getString("HP_QNA_CONTENT"));
-				board.setMemberNo(rset.getInt("HP_QNA_MEM_NO"));
+				
+				board.setNo(rset.getInt("HP_RV_NO"));
+				board.setCategoryNo(rset.getString("HP_RV_CATEGORY_NO"));
+				board.setTitle(rset.getString("HP_RV_TITLE"));
+				board.setContent(rset.getString("HP_RV_CONTENT"));
+				board.setMemberNo(rset.getInt("HP_RV_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
-				board.setWatched(rset.getInt("HP_QNA_WATCHED"));
-				board.setDrawupDate(rset.getDate("HP_QNA_DRAWUP_DATE"));
-				board.setStatus(rset.getString("HP_QNA_STATUS"));
-				board.setAnswer(rset.getString("HP_QNA_ANSWER"));
-				board.setCmtCount(rset.getInt("HP_QNA_CMT_COUNT"));
+				board.setWatched(rset.getInt("HP_RV_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_RV_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_RV_STATUS"));
+				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
+				
+				thumbnail.setPath(rset.getString("FILE_PATH"));
+				
+				file.add(thumbnail);
+				board.setFileList(file);
 
 				boardList.add(board);
 			}
@@ -154,20 +162,29 @@ public class HPQNABoardDAO {
 			
 			while(rset.next()) {
 				
-				HPBoardDTO boardDTO = new HPBoardDTO();
-				boardDTO.setWriter(new MemberDTO());
-				boardDTO.setNo(rset.getInt("HP_QNA_NO"));
-				boardDTO.setCategoryNo(rset.getString("HP_QNA_CATEGORY_NO"));
-				boardDTO.setTitle(rset.getString("HP_QNA_TITLE"));
-				boardDTO.setContent(rset.getString("HP_QNA_CONTENT"));
-				boardDTO.setMemberNo(rset.getInt("HP_QNA_MEM_NO"));
-				boardDTO.getWriter().setName(rset.getString("MEM_NAME"));
-				boardDTO.setWatched(rset.getInt("HP_QNA_WATCHED"));
-				boardDTO.setDrawupDate(rset.getDate("HP_QNA_DRAWUP_DATE"));
-				boardDTO.setStatus(rset.getString("HP_QNA_STATUS"));
-				boardDTO.setAnswer(rset.getString("HP_QNA_ANSWER"));
-				boardDTO.setCmtCount(rset.getInt("HP_QNA_CMT_COUNT"));
-				boardList.add(boardDTO);
+				HPBoardDTO board = new HPBoardDTO();
+				FileDTO thumbnail = new FileDTO();
+				ArrayList<FileDTO> file = new ArrayList<FileDTO>();
+				board.setCategory(new CategoryDTO());
+				board.setWriter(new MemberDTO());
+				
+				board.setNo(rset.getInt("HP_RV_NO"));
+				board.setCategoryNo(rset.getString("HP_RV_CATEGORY_NO"));
+				board.setTitle(rset.getString("HP_RV_TITLE"));
+				board.setContent(rset.getString("HP_RV_CONTENT"));
+				board.setMemberNo(rset.getInt("HP_RV_MEM_NO"));
+				board.getWriter().setName(rset.getString("MEM_NAME"));
+				board.setWatched(rset.getInt("HP_RV_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_RV_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_RV_STATUS"));
+				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
+				
+				thumbnail.setPath(rset.getString("FILE_PATH"));
+				
+				file.add(thumbnail);
+				board.setFileList(file);
+
+				boardList.add(board);
 				
 			}
 			
@@ -235,21 +252,25 @@ public class HPQNABoardDAO {
 				
 				board = new HPBoardDTO();
 				
+				FileDTO file = new FileDTO();
+				ArrayList<FileDTO> fileList = new ArrayList<FileDTO>();
 				board.setWriter(new MemberDTO());
 				
-				board.setNo(rset.getInt("HP_QNA_NO"));
-				board.setCategoryNo(rset.getString("HP_QNA_CATEGORY_NO"));
-				board.setTitle(rset.getString("HP_QNA_TITLE"));
-				board.setContent(rset.getString("HP_QNA_CONTENT"));
-				board.setMemberNo(rset.getInt("HP_QNA_MEM_NO"));
+				board.setNo(rset.getInt("HP_RV_NO"));
+				board.setCategoryNo(rset.getString("HP_RV_CATEGORY_NO"));
+				board.setTitle(rset.getString("HP_RV_TITLE"));
+				board.setContent(rset.getString("HP_RV_CONTENT"));
+				board.setMemberNo(rset.getInt("HP_RV_MEM_NO"));
 				board.getWriter().setName(rset.getString("MEM_NAME"));
-				board.setWatched(rset.getInt("HP_QNA_WATCHED"));
-				board.setDrawupDate(rset.getDate("HP_QNA_DRAWUP_DATE"));
-				board.setStatus(rset.getString("HP_QNA_STATUS"));
-				board.setAnswer(rset.getString("HP_QNA_ANSWER"));
-				board.setCmtCount(rset.getInt("HP_QNA_CMT_COUNT"));
+				board.setWatched(rset.getInt("HP_RV_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_RV_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_RV_STATUS"));
+				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
 				
-				System.out.println(board);
+				file.setPath(rset.getString("FILE_PATH"));
+				
+				fileList.add(file);
+				board.setFileList(fileList);
 				
 			}
 			

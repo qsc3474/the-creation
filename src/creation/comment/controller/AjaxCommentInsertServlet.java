@@ -41,7 +41,7 @@ public class AjaxCommentInsertServlet extends HttpServlet {
 		
 		System.out.println(insertComment);
 		
-		int result = new CommentService().insertComment(insertComment);
+		int result = new CommentService().insertComment(insertComment ,refBoardCategory);
 		
 		String jsonString = new Gson().toJson(result);
 		

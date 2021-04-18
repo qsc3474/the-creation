@@ -90,11 +90,11 @@
                 e.preventDefault();
                 var link = "";
                 switch("${ requestScope.board.categoryNo }"){
-                case "HP_RV": link = "/review/list"; break;
-                case "HP_QNA": link = "/qna/list"; break;
+                case "HP_RV": link = "/hp/review/select/list"; break;
+                case "HP_QNA": link = "/hp/qna/select/list"; break;
                 case "HP_FAQ": link = "/hp/faq/select/list"; break;
-                case "HP_INFO": link = "/infomation/list"; break;
-                case "HP_NTC": link = "/notice/list"; break;
+                case "HP_INFO": link = "/hp/info/select/list"; break;
+                case "HP_NTC": link = "/hp/notice/select/list"; break;
                 }
                 location.href = "${pageContext.request.contextPath}" + link;
             });

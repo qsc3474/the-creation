@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.service.HPFAQBoardService;
@@ -31,7 +30,7 @@ public class HPBoardInsertServlet extends HttpServlet {
 		String title = request.getParameter("title");
 		int no = Integer.valueOf(request.getParameter("memberNo"));
 		String content = request.getParameter("content");
-		String category = request.getParameter("boardCategory");
+		String categoryNo = request.getParameter("boardCategory");
 		
 		HPBoardDTO insertBoard = new HPBoardDTO();
 		
@@ -39,20 +38,29 @@ public class HPBoardInsertServlet extends HttpServlet {
 		
 		insertBoard.setTitle(title);
 		insertBoard.setContent(content);
-		insertBoard.setCategoryNo(category);
+		insertBoard.setCategoryNo(categoryNo);
 		insertBoard.getWriter().setNo(no);
 		
-		System.out.println(insertBoard);
-		
 		HPFAQBoardService boardService = new HPFAQBoardService();
-		int result = boardService.insertBoard(insertBoard);
+		
+		int result = 0;
+		
+		if("HP_RV".equals(categoryNo) || "HP_QNA".equals(categoryNo)) {
+			
+			result = boardService.anotherTableInsertBoard(insertBoard);
+			
+		} else {
+		
+			result = boardService.insertBoard(insertBoard);
+		
+		}
 		
 		String path = "";
 		
 		if(result > 0) {
 			
 			String successCode = "";
-			switch(category) {
+			switch(categoryNo) {
 			case "HP_RV": successCode = "insertRVBoard"; break;
 			case "HP_QNA": successCode = "insertQNABoard"; break;
 			case "HP_FAQ": successCode = "insertFAQBoard"; break;

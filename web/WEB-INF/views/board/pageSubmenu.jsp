@@ -46,7 +46,9 @@
 					class="active"> <span>Q&amp;A</span> <i
 						class="fas fa-chevron-right"></i>
 				</a></li>
-				<li><a href="#"> <span>사용후기</span> <i
+				<li><a
+					href="${ pageContext.servletContext.contextPath }/hp/review/select/list"
+					class="active"> <span>사용후기</span> <i
 						class="fas fa-chevron-right"></i>
 				</a></li>
 			</ul>

@@ -16,6 +16,7 @@
 			var movePath = "";
 			
 			switch(successCode){
+			/* 회원관련 */
 			case "insertMember" :
 				successMessage = "회원 가입에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
@@ -32,11 +33,11 @@
 			/* 게시글 삭제 */
 			case "deleteRVBoard" :
 				successMessage = "후기 삭제에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/review/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/review/select/list";
 				break;
 			case "deleteQNABoard" :
 				successMessage = "QNA 삭제에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/qna/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/qna/select/list";
 				break;
 			case "deleteFAQBoard" :
 				successMessage = "FAQ 삭제에 성공하셨습니다!";
@@ -54,11 +55,11 @@
 			/* 게시글 등록 */
 			case "insertRVBoard" :
 				successMessage = "후기 등록에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/review/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/review/select/list";
 				break;
 			case "insertQNABoard" :
 				successMessage = "QNA 등록에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/qna/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/qna/select/list";
 				break;
 			case "insertFAQBoard" :
 				successMessage = "FAQ 등록에 성공하셨습니다!";
@@ -76,11 +77,11 @@
 			/* 게시글 수정 */
 			case "updateRVBoard" :
 				successMessage = "후기 수정에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/review/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/review/select/list";
 				break;
 			case "updateQNABoard" :
 				successMessage = "QNA 수정에 성공하셨습니다!";
-				movePath = "${ pageContext.servletContext.contextPath }/qna/list";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/qna/select/list";
 				break;
 			case "updateFAQBoard" :
 				successMessage = "FAQ 수정에 성공하셨습니다!";

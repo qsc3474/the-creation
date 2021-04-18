@@ -89,4 +89,26 @@
 	     WHERE HP_BD_NO = ?
 	       AND HP_BD_CATEGORY_NO = ?
 	</entry>
+	<entry key="incrementQNACommentCount">
+	    UPDATE HOSPITAL_QNA A
+	       SET A.HP_QNA_CMT_COUNT = (SELECT
+	       								   B.HP_QNA_CMT_COUNT + 1
+	       							  FROM HOSPITAL_QNA B
+	       							 WHERE HP_QNA_NO = ?
+	       							   AND HP_QNA_CATEGORY_NO = ?
+	       						   )
+	     WHERE HP_QNA_NO = ?
+	       AND HP_QNA_CATEGORY_NO = ?
+	</entry>
+	<entry key="incrementRVCommentCount">
+	    UPDATE HOSPITAL_RV A
+	       SET A.HP_RV_CMT_COUNT = (SELECT
+	       								   B.HP_RV_CMT_COUNT + 1
+	       							  FROM HOSPITAL_RV B
+	       							 WHERE HP_RV_NO = ?
+	       							   AND HP_RV_CATEGORY_NO = ?
+	       						   )
+	     WHERE HP_RV_NO = ?
+	       AND HP_RV_CATEGORY_NO = ?
+	</entry>
 </properties>

@@ -170,6 +170,52 @@ public class CommentDAO {
 		return result;
 		
 	}
+
+	public int anotherIncrementCommentCount(Connection con, CommentDTO insertComment) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String refBoardNo = insertComment.getRefBoardNo();
+		int index = refBoardNo.indexOf("-");
+		int boardNo = Integer.valueOf(refBoardNo.substring(index + 1));
+		String categoryNo = refBoardNo.substring(0, index);
+		
+		String query = "";
+		
+		if("HP_RV".equals(categoryNo)) {
+			
+			query = prop.getProperty("incrementRVCommentCount");
+			
+		} else if("HP_QNA".equals(categoryNo)) {
+		
+			query = prop.getProperty("incrementQNACommentCount");
+		
+		}
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, boardNo);
+			pstmt.setString(2, categoryNo);
+			pstmt.setInt(3, boardNo);
+			pstmt.setString(4, categoryNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+		
+	}
 	
 	
 	

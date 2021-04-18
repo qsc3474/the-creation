@@ -1,7 +1,6 @@
 package creation.board.controller.common;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import creation.board.model.dto.HPBoardDTO;
-import creation.board.model.dto.PageInfoDTO;
-import creation.board.model.service.HPNoticeBoardService;
-import creation.common.paging.Pagenation;
+import creation.board.model.service.HPFAQBoardService;
 
 /**
  * Servlet implementation class HPBoardDeleteServlet
@@ -32,12 +29,23 @@ public class HPBoardDeleteServlet extends HttpServlet {
 		int boardNo = Integer.valueOf(request.getParameter("no"));
 		String categoryNo = request.getParameter("categoryNo");
 		
-		HPNoticeBoardService boardService = new HPNoticeBoardService();
+		HPFAQBoardService boardService = new HPFAQBoardService();
 		
 		HPBoardDTO deleteBoard = new HPBoardDTO();
 		deleteBoard.setNo(boardNo);
+		deleteBoard.setCategoryNo(categoryNo);
 		
-		int result = boardService.deleteBoard(deleteBoard);
+		int result = 0;
+		
+		if("HP_RV".equals(categoryNo) || "HP_QNA".equals(categoryNo)) {
+			
+			result = boardService.anotherTableDeleteBoard(deleteBoard);
+			
+		} else {
+		
+			result = boardService.deleteBoard(deleteBoard);
+		
+		}
 		
 		String path = "";
 		

@@ -63,7 +63,7 @@
 						<textarea class="form-control" rows="5" name="content"
 							id="content" placeholder="내용을 입력해 주세요"></textarea>
 					</div>
-					<div class="mb-12">
+					<div class="mb-12" id="fileUploadDiv">
 						<label for="content">업로드</label>
 						<div class="input-group" style="margin-top: 20px;">
 							<label for="tag" class="input-group-text" for="inputGroupFile02">Upload</label>
@@ -87,8 +87,8 @@
 	            
 	            if (document.getElementById("btnSave")) {
 	    			const $btnSave = document.getElementById("btnSave");
+	    			
 	    			$btnSave.onclick = function() {
-	    				console.log(document.getElementById("content").value);
 	    				if(document.getElementById("boardCategory").value == "def") {
 	    					
 	    					alert("카테고리를 선택해주세요!");
@@ -112,7 +112,21 @@
 	    				
 	    			}
 	    			
+	    			
+	    			
 	    		}
+	            
+	            if(document.getElementById("fileUploadDiv")) {
+	            	
+	            	if(!${ requestScope.categoryNo eq 'HP_RV' } && !${ requestScope.categoryNo eq 'HP_NTC' }){
+	            		
+	            		var fileUploadDiv = document.getElementById("fileUploadDiv");
+		            	fileUploadDiv.style.display = "none";
+	            		
+	            	}
+	            	
+	            	
+	            }
         	</script>
 		</div>
 	</section>

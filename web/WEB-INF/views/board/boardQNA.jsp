@@ -182,7 +182,7 @@
 											</c:otherwise>
 										</c:choose>
 										<button type="submit">검색하기</button>
-										<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+										<c:if test="${ !empty sessionScope.loginMember }">
 											<button type="button" id="writeBoard"
 												style="text-align: right">작성하기</button>
 										</c:if>
@@ -287,6 +287,5 @@
 					});
 			});
 	</script>
-
 </body>
 </html>

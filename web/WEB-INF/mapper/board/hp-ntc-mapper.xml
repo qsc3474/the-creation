@@ -240,11 +240,4 @@
                ) A
          WHERE A.RNUM BETWEEN ? AND ?
     </entry>   
-    <entry key="deleteBoard">
-		UPDATE
-		       HOSPITAL_BD A
-		   SET A.HP_BD_STATUS = 'DELETE'
-		 WHERE A.HP_BD_STATUS IN ('PUBLIC','PRIVATE')
-		   AND A.HP_BD_NO = ?
-	</entry>
 </properties>

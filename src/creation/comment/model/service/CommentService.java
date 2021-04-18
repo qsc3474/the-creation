@@ -36,11 +36,9 @@ public class CommentService {
 		
 	}
 
-	public int insertComment(CommentDTO insertComment) {
+	public int insertComment(CommentDTO insertComment, String categoryNo) {
 		
 		Connection con = getConnection();
-		
-		CommentDTO comment = null;
 		
 		int result = commentDAO.insertComment(con, insertComment);
 		
@@ -48,7 +46,15 @@ public class CommentService {
 		
 		if(result > 0) {
 			
-			incrementCommentCount = commentDAO.incrementCommentCount(con, insertComment);
+			if("HP_RV".equals(categoryNo) || "HP_QNA".equals(categoryNo)) {
+				
+				incrementCommentCount = commentDAO.anotherIncrementCommentCount(con, insertComment);
+				
+			} else {
+			
+				incrementCommentCount = commentDAO.incrementCommentCount(con, insertComment);
+			
+			}
 			
 			if(incrementCommentCount > 0) {
 				

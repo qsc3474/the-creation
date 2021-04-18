@@ -102,6 +102,28 @@ public class HPFAQBoardService {
 		
 	}
 	
+	public int anotherTableInsertBoard(HPBoardDTO insertBoard) {
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.anotherTableInsertBoard(con, insertBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+	}
+	
 	public int deleteBoard(HPBoardDTO deleteBoard) {
 		
 
@@ -124,12 +146,92 @@ public class HPFAQBoardService {
 		return result;
 		
 	}
+	
+	public int anotherTableDeleteBoard(HPBoardDTO deleteBoard) {
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.anotherTableDeleteBoard(con, deleteBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+	}
 
 	public int updateBoard(HPBoardDTO updateBoard) {
 		
 		Connection con = getConnection();
 		
 		int result = boardDAO.updateBoard(con, updateBoard);
+		
+		if(result > 0) {
+			
+			commit(con);
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return result;
+		
+	}
+
+	public HPBoardDTO anotherSelectDetail(int no, String categoryNo) {
+
+		System.out.println(10);
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.anotherBoardIncreamentCount(con, no, categoryNo);
+		
+		HPBoardDTO board = null;
+		
+		if(result > 0) {
+			
+			board = boardDAO.anotherSelectDetail(con, no, categoryNo);
+			
+			if(board != null) {
+				
+				commit(con);
+				
+			} else {
+				
+				rollback(con);
+				
+			}
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		close(con);
+		
+		return board;
+		
+	}
+
+	public int anotherUpdateBoard(HPBoardDTO updateBoard) {
+		
+		Connection con = getConnection();
+		
+		int result = boardDAO.anotherUpdateBoard(con, updateBoard);
 		
 		if(result > 0) {
 			

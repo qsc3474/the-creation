@@ -97,7 +97,20 @@
 	<section class="step-title">
 		<div class="section-title text-center" data-wow-duration="1000ms"
 			data-wow-delay="0.3s">
-			<h2>후기detail</h2>
+			<c:choose>
+				<c:when test="${ requestScope.board.categoryNo eq 'HP_NTC' }">
+					<h2>공지사항detail</h2>
+				</c:when>
+				<c:when test="${ requestScope.board.categoryNo eq 'HP_INFO' }">
+					<h2>정보게시판detail</h2>
+				</c:when>
+				<c:when test="${ requestScope.board.categoryNo eq 'HP_RV' }">
+					<h2>후기게시판detail</h2>
+				</c:when>
+				<c:when test="${ requestScope.board.categoryNo eq 'HP_QNA' }">
+					<h2>Q&amp;Adetail</h2>
+				</c:when>
+			</c:choose>
 		</div>
 	</section>
 	<!-- 섹션타이틀 -->
@@ -196,7 +209,7 @@ var insertCount = 0;
 $(function(){  //페이지가 로드되면 댓글 데이터를 가져온다.
 	deleteAndUpdateButtonAction();
 	getCommentList(${ requestScope.board.no },"${ requestScope.board.categoryNo }");
-	if("${ requestScope.board.categoryNo }" === "HP_NTC" || "${ requestScope.board.categoryNo }" === "HP_INFO"){
+	if("${ requestScope.board.categoryNo }" == "HP_NTC" || "${ requestScope.board.categoryNo }" == "HP_INFO"){
 		
 		var comments = document.getElementById("comments");
 		comments.style.display = "none";
@@ -212,14 +225,14 @@ function deleteAndUpdateButtonAction(){
 	    var $parent = this.parentNode;
 	    var getNo = $parent.children[0];
 	    no = getNo.value;
-	    location.href = "${pageContext.servletContext.contextPath}/hp/board/update?no=" + no;
+	    location.href = "${pageContext.servletContext.contextPath}/hp/board/update?no=" + no + "&categoryNo=${ requestScope.board.categoryNo }";
     });
 
     $("#deleteBoard").click(function () {
     	var $parent = this.parentNode;
 	    var getNo = $parent.children[0];
 	    no = getNo.value;
-	    location.href = "${pageContext.servletContext.contextPath}/hp/board/delete?no=" + no + "&categoryNo=" + "${ requestScope.board.categoryNo }";
+	    location.href = "${pageContext.servletContext.contextPath}/hp/board/delete?no=" + no + "&categoryNo=${ requestScope.board.categoryNo }";
     });
 	
 }

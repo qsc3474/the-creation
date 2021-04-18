@@ -11,7 +11,7 @@
 	<entry key="selectList">
 	    SELECT
 		       A.HP_BD_NO
-		     , A.HP_BD_CATEGORY_NO     
+		     , A.HP_BD_CATEGORY_NO
 		     , A.HP_BD_TITLE
 		     , A.HP_BD_CONTENT
 		     , A.HP_BD_DRAWUP_DATE
