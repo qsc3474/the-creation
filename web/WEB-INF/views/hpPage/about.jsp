@@ -11,7 +11,7 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 			
 			<!-- 병원소개 -->
-		<section id="about">
+		<section id="about" class="bg-white">
 			<div class="container">
 				<div class="section-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
 					<h2>병원 소개</h2>
@@ -54,7 +54,7 @@
 		<!-- /병원소개 -->
 
 		<!-- 의료진소개 -->
-		<section id="team-element" class="bg-light">
+		<section id="Introduce" class="bg-light">
 			<div class="style-one">
 				<div class="container">
 					<div class="section-title text-center wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
@@ -137,7 +137,7 @@
 		<!-- /의료진소개 -->
 
 		<!-- 병원시설 -->
-		<section id="portfolio-two-colorfull">
+		<section id=Facility class="bg-white">
 			<div class="container">
 				<div class="section-title text-center wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
 					<h2>병원시설</h2>

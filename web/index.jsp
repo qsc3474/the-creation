@@ -9,6 +9,5 @@
 <body>
 
 	<jsp:forward page="/WEB-INF/views/main/main.jsp"></jsp:forward>
-	
 </body>
 </html>

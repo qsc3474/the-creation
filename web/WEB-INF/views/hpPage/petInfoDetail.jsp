@@ -22,7 +22,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="width: 70%; margin: 0 auto;">
-								<img src="media/img/travelInfo.jpg">
+								<img src="${ pageContext.servletContext.contextPath }/resources/media/img/travelInfo.jpg">
 							</div>
 						</div>
 						<div class="col-md-12" style="margin-top: 25px;">
@@ -73,7 +73,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="width: 70%; margin: 0 auto;">
-								<img src="media/img/can-dogs-eat-broccoli.jpg">
+								<img src="${ pageContext.servletContext.contextPath }/resources/media/img/can-dogs-eat-broccoli.jpg">
 							</div>
 						</div>
 						<div class="col-md-12" style="margin-top: 25px;">
@@ -118,7 +118,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="width: 70%; margin: 0 auto;">
-								<img src="media/img/cat-with-ball.jpg">
+								<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat-with-ball.jpg">
 							</div>
 						</div>
 						<div class="col-md-12" style="margin-top: 25px;">
@@ -163,7 +163,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="width: 70%; margin: 0 auto;">
-								<img src="media/img/info04.jpg">
+								<img src="${ pageContext.servletContext.contextPath }/resources/media/img/info04.jpg">
 							</div>
 						</div>
 						<div class="col-md-12" style="margin-top: 25px;">
@@ -216,7 +216,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="width: 70%; margin: 0 auto;">
-								<img src="media/img/chocolate.jpg">
+								<img src="${ pageContext.servletContext.contextPath }/resources/media/img/chocolate.jpg">
 							</div>
 						</div>
 						<div class="col-md-12" style="margin-top: 25px;">
@@ -264,7 +264,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="width: 70%; margin: 0 auto;">
-								<img src="media/img/adoption.jpg">
+								<img src="${ pageContext.servletContext.contextPath }/resources/media/img/adoption.jpg">
 							</div>
 						</div>
 						<div class="col-md-12" style="margin-top: 25px;">
