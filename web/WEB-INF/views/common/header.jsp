@@ -7,8 +7,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>index</title>
-<link rel="apple-touch-icon" sizes="180x180" href="${ pageContext.servletContext.contextPath }/resources/assets/img/apple-touch-icon.png">
-<link rel="icon" href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180"
+	href="${ pageContext.servletContext.contextPath }/resources/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="${ pageContext.servletContext.contextPath }/resources/assets/img/favicon.png">	
 <!-- Dependency Styles -->
 <link rel="stylesheet"
 	href="${ pageContext.servletContext.contextPath }/resources/dependencies/bootstrap/css/bootstrap.min.css"
@@ -63,19 +65,18 @@
 				<ul id="menu-home" class="menu">
 					<li class="menu-item-has-children"><a href="about.html">병원소개</a>
 						<ul class="sub-menu">
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/about" >병원소개</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/about#Introduce">의료진소개</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/about#Facility">시설소개</a></li>
-							<%-- <li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">시설소개</a></li> --%>
+							<li><a href="about.html">병원소개</a></li>
+							<li><a href="about.html">의료진소개</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">시설소개</a></li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="mg.html">진료과목</a>
 						<ul class="sub-menu">
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/mg">내과</a></li>
-							<li><a href="${pageContext.servletContext.contextPath }/hp/gs">외과</a></li>
+							<li><a href="mg.html">내과</a></li>
+							<li><a href="gs.html">외과</a></li>
 							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/ey">안과</a></li>
+								href="${ pageContext.servletContext.contextPath }/hp/info/price">안과</a></li>
 							<li><a
-								href="${ pageContext.servletContext.contextPath }/hp/dental">치과</a></li>
+								href="${ pageContext.servletContext.contextPath }/hp/info/dental">치과</a></li>
 						</ul></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/hp/info/price">진료가격</a></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/hp/book/insert">예약하기</a></li>
@@ -84,12 +85,11 @@
 							<li><a
 								href="${ pageContext.servletContext.contextPath }/hp/notice/select/list">공지사항</a></li>
 							<li><a href="notice.html">병원소식</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">FAQ</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">Q&amp;A</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">치료사례</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/hp/petInfo">동물정보상식</a></li>
-						</ul>
-					</li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/hp/faq/select/list">블로그</a></li>
+							<li><a
+								href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list">오시는길</a></li>
+						</ul></li>
 				</ul>
 				<c:if test="${ empty sessionScope.loginMember }">
 					<div class="secondary-navigation pull-right">
@@ -111,7 +111,7 @@
 						<li><a
 							href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
 							<li><a
-							href="${ pageContext.servletContext.contextPath }/hp/book/select">예약확인</a></li>
+							href="${ pageContext.servletContext.contextPath }/hp/book/list">예약확인</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">

@@ -12,6 +12,7 @@ import java.util.List;
 
 import creation.book.hp.model.dao.HPbookDAO;
 import creation.book.hp.model.dto.HPbookDTO;
+import creation.member.model.dto.MemberDTO;
 
 public class HPbookService {
 
@@ -43,20 +44,25 @@ private final HPbookDAO bookDAO;
 		return result;
 	}
 
-	public List<HPbookDTO> selectBook(HPbookDTO book) {
-		Connection con = getConnection();
+	public List<HPbookDTO> selectBookList(int bookMember) {
+
+		Connection con=getConnection();
+		List<HPbookDTO> bookList = null;
 		
-		List<HPbookDTO> HPBookList = bookDAO.selectBook(con, book);
+		bookList = bookDAO.bookList(con,bookMember);
 		
-		
-		
+		if(bookList !=null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
 		close(con);
-		
-		return HPBookList;	
-
-
+		return bookList;
+	}
 
 	
-	}
+	
+
+	
 
 }

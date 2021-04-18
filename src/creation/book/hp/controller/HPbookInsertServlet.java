@@ -74,7 +74,7 @@ public class HPbookInsertServlet extends HttpServlet {
 		String path="";
 		
 		if(result>0) {
-			path="";
+			path="/WEB-INF/views/main/main.jsp";
 			request.setAttribute("book", "bookSuccess");
 		}else {
 			path = "/WEB-INF/views/common/failed.jsp";
