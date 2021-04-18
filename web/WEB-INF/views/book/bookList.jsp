@@ -66,7 +66,7 @@
 												<tr>
 													<td><c:out value="${book.no }"/></td>
 													<td><c:out value="${book.time }"/></td>
-													<td><c:out value="${book.memberNo }"/></td>
+													<td><c:out value="${sessionScope.loginMember.name }"/></td>
 													<td><c:out value="${book.petName }"/></td>
 													<td><c:out value="${book.status }"/></td>
 												</tr>
