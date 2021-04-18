@@ -275,8 +275,9 @@
 									냄새를 제거하는 배기 시스템 등 안전하고 쾌적한 환경을 조성하는<br> 데 가장 중점을 두었습니다.
 								</p>
 							</div>
-							<a href="index-three.html" target="_self" title=""
-								class="gp-btn color-two medium btn-bradius">호텔 보러가기</a>
+							<div class="cta-btncontainer-two">
+					<a href="event.html" target="_self" title="" class="gp-btn btn-dark medium btn-bradius" style="float:left" >호텔 보러가기</a>
+				</div>
 						</div>
 					</div>
 					<!-- /.col-md-6 -->
@@ -450,13 +451,13 @@
 						<div class="map-box" style="width: 100%;">
 							<iframe
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2635470377377!2d127.02307125090698!3d37.50170183549705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a0c163d41%3A0xfac759224c6bc427!2z642U7KGw7J2A7Lu07ZOo7YSw7JWE7Lm0642w66-4!5e0!3m2!1sko!2skr!4v1617897326449!5m2!1sko!2skr"
-								width="100%" height="400px" style="border:0;" loading="lazy"></iframe>
+								width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="content mt text-center">
-							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/logo-dog.png" alt="logo" style="width: 150px; height: 150px;">
-							<p style="font-size: 20px; font-weight: bold; padding-top: 10px;">개 편한 세상이 올때까지 함께 합니다.</p>
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/golden-retriever.png" alt="logo" style="width: 150px; height: 150px; float: left; margin-left: 110px;">
+							<p style="font-size: 50px; font-weight: bold; padding-top: 10px; line-height: 60px; margin-top: 20px; display: inline-block; margin-left: -120px;" >편한<br> 세상</p>
 						</div>
 					</div>
 				</div>

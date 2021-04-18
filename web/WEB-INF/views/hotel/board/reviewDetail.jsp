@@ -90,10 +90,10 @@
 					</p>
 					<div class="col-md-12" style="margin-bottom: 5px;">
 						<div class="col-md-6">
-							<img src="media/img/cat01.jpg" alt="" style="width: 100%;">
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
 						</div>
 						<div class="col-md-6">
-							<img src="media/img/cat01.jpg" alt="" style="width: 100%;">
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
 						</div>
 					</div>
 				</div>
@@ -109,7 +109,7 @@
 							<li class="comment">
 								<div class="clearfix">
 									<figure class="avatar-box">
-										<img alt="" src="media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
+										<img alt="" src="${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
 									</figure>
 									<div class="comment-content">
 										<header class="comment-author">
@@ -135,7 +135,7 @@
 									<li class="comment byuser comment-author-melissa-fox odd alt depth-2">
 										<div class="clearfix">
 											<figure class="avatar-box">
-												<img alt="" src="media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
+												<img alt="" src="${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
 											</figure>
 											<div class="comment-content">
 												<header class="comment-author">
@@ -161,7 +161,7 @@
 							<li class="comment">
 								<div class="clearfix">
 									<figure class="avatar-box">
-										<img alt="" src="media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
+										<img alt="" src="${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
 									</figure>
 									<div class="comment-content">
 										<header class="comment-author">
@@ -184,7 +184,7 @@
 							<li class="comment">
 								<div class="clearfix">
 									<figure class="avatar-box">
-										<img alt="" src="media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
+										<img alt="" src="${ pageContext.servletContext.contextPath }/resources/media/img/dog_icon01.png" class="avatar" style="padding-right: 10px;">
 									</figure>
 									<div class="comment-content">
 										<header class="comment-author">

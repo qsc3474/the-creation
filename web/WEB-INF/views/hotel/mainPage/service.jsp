@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="box-shadow: 0 5px 10px rgb(0 0 0 / 30%);">
-                            <img src="media/img/beauty.jpg">
+                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/beauty.jpg">
                         </div>
                     </div>
 
@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-5">
                         <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="box-shadow: 0 5px 10px rgb(0 0 0 / 30%);">
-                            <img src="media/img/doctor04.jpeg">
+                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/doctor04.jpeg">
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="box-shadow: 0 5px 10px rgb(0 0 0 / 30%);">
-                            <img src="media/img/school-education01.jpg">
+                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/school-education01.jpg">
                         </div>
                     </div>
 

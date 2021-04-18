@@ -39,7 +39,7 @@
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 								<a href="#">
 									<div class="blog-thumb">
-										<img src="media/img/cat01.jpg" alt="Blog thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 										<div class="blog-overlay"></div>
 									</div>
 								</a>
@@ -59,7 +59,7 @@
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 								<a href="#">
 									<div class="blog-thumb">
-										<img src="media/img/cat01.jpg" alt="Blog thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 										<div class="blog-overlay"></div>
 									</div>
 								</a>
@@ -79,7 +79,7 @@
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 								<a href="#">
 									<div class="blog-thumb">
-										<img src="media/img/cat01.jpg" alt="Blog thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 										<div class="blog-overlay"></div>
 									</div>
 								</a>
@@ -99,7 +99,7 @@
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 								<a href="#">
 									<div class="blog-thumb">
-										<img src="media/img/cat01.jpg" alt="Blog thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 										<div class="blog-overlay"></div>
 									</div>
 								</a>
@@ -151,7 +151,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -162,7 +162,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -173,7 +173,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -184,7 +184,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -195,7 +195,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -206,7 +206,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -217,7 +217,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -228,7 +228,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>
@@ -239,7 +239,7 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
+                                <td><img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog11.jpg" alt="" style="width: 80px; height: 80px;"></td>
 								<td>댕댕이주인</td>
 								<td>호텔 장이 이용 후기</td>
 								<td>2010-01-14</td>

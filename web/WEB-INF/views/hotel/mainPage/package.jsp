@@ -144,7 +144,7 @@
 		        <div class="row mb">
 		          <div class="col-md-6">
 		            <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-		              <img src="media/img/dog14.jpg">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog14.jpg">
 		            </div>
 		          </div>
 		          <div class="col-md-6">
@@ -208,7 +208,7 @@
 		          </div>
 		          <div class="col-md-6">
 		            <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-		              <img src="media/img/dog23.jpg">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog23.jpg">
 		            </div>
 		          </div>
 		        </div>
@@ -227,7 +227,7 @@
 		        <div class="row mb">
 		          <div class="col-md-6">
 		            <div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-		              <img src="media/img/dog05.jpg">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog05.jpg">
 		            </div>
 		          </div>
 		          <div class="col-md-6">

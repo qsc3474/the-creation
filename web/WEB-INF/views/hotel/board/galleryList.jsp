@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>갤러리게시판</title>
 
 <style>
         .style-two {
@@ -50,7 +50,7 @@
 	                                    style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/party01.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/party01.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                        <div class="gp-testimonial-author clearfix">
 	                                            <div class="team-details">
@@ -66,7 +66,7 @@
 	                                    style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/studio.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                        <div class="gp-testimonial-author clearfix">
 	                                            <div class="team-details">
@@ -82,7 +82,7 @@
 	                                    style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/puppy05.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy05.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                        <div class="gp-testimonial-author clearfix">
 	                                            <div class="team-details">
@@ -99,7 +99,7 @@
 	                                    style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/hospital.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/hospital.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                        <div class="gp-testimonial-author clearfix">
 	                                            <div class="team-details">
@@ -115,7 +115,7 @@
 	                                    style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/school01.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/school01.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                        <div class="gp-testimonial-author clearfix">
 	                                            <div class="team-details">
@@ -132,7 +132,7 @@
 	                                    style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/beauty.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/beauty.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                        <div class="gp-testimonial-author clearfix">
 	                                            <div class="team-details">
@@ -148,7 +148,7 @@
 	                                    data-swiper-slide-index="1" style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/dog24.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog24.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -156,7 +156,7 @@
 	                                    data-swiper-slide-index="2" style="width: 376.667px; margin-right: 30px;">
 	                                    <div class="gp-testimonial-two">
 	                                        <div class="gp-testmonial-content">
-	                                            <img src="media/img/dog24.jpg" alt="" style="width: 100%;">
+	                                            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog24.jpg" alt="" style="width: 100%;">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -192,7 +192,7 @@
 								<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 									<a href="#">
 										<div class="blog-thumb">
-											<img src="media/img/cat01.jpg" alt="Blog thumb">
+											<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 											<div class="blog-overlay"></div>
 										</div>
 									</a>
@@ -212,7 +212,7 @@
 								<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 									<a href="#">
 										<div class="blog-thumb">
-											<img src="media/img/cat01.jpg" alt="Blog thumb">
+											<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 											<div class="blog-overlay"></div>
 										</div>
 									</a>
@@ -232,7 +232,7 @@
 								<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 									<a href="#">
 										<div class="blog-thumb">
-											<img src="media/img/cat01.jpg" alt="Blog thumb">
+											<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 											<div class="blog-overlay"></div>
 										</div>
 									</a>
@@ -254,7 +254,7 @@
 								<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 									<a href="#">
 										<div class="blog-thumb">
-											<img src="media/img/cat01.jpg" alt="Blog thumb">
+											<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 											<div class="blog-overlay"></div>
 										</div>
 									</a>
@@ -276,7 +276,7 @@
 								<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 									<a href="#">
 										<div class="blog-thumb">
-											<img src="media/img/cat01.jpg" alt="Blog thumb">
+											<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 											<div class="blog-overlay"></div>
 										</div>
 									</a>
@@ -298,7 +298,7 @@
 								<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 									<a href="#">
 										<div class="blog-thumb">
-											<img src="media/img/cat01.jpg" alt="Blog thumb">
+											<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="Blog thumb">
 											<div class="blog-overlay"></div>
 										</div>
 									</a>

@@ -37,7 +37,7 @@
 		      <div class="container">
 		        <div class="macbook">
 		          <div class="screen">
-		            <div class="viewport" style="background-image:url('media/img/slider2.png)">
+		            <div class="viewport" style="background-image:url('${ pageContext.servletContext.contextPath }/resources/media/img/slider2.png)">
 		            </div>
 		          </div>
 		          <div class="base"></div>
@@ -63,7 +63,7 @@
 		          <div class="col-md-3 col-sm-6">
 		            <h3 class="underline-magical text-center pb"><span class="underline--magical"> STANDARD</span></h3>
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-		              <img src="media/img/room06.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/room06.jpg" alt="" style="width: 100%;">
 		            </div>
 		            <!-- /.feature-box-one -->
 		          </div>
@@ -72,7 +72,7 @@
 		          <div class="col-md-3 col-sm-6">
 		            <h3 class="underline-magical text-center pb"><span class="underline--magical">VIP</span></h3>
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/room2.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/room2.jpg" alt="" style="width: 100%;">
 		            </div>
 		            <!-- /.feature-box-one -->
 		          </div>
@@ -81,7 +81,7 @@
 		          <div class="col-md-3 col-sm-6">
 		            <h3 class="underline-magical text-center pb"><span class="underline--magical"> VVIP</span></h3>
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.6s">
-		              <img src="media/img/room03.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/room03.jpg" alt="" style="width: 100%;">
 		            </div>
 		            <!-- /.feature-box-one -->
 		          </div>
@@ -90,7 +90,7 @@
 		          <div class="col-md-3 col-sm-6">
 		            <h3 class="underline-magical text-center pb"><span class="underline--magical">DIAMOND</span></h3>
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.8s">
-		              <img src="media/img/diamondRoom.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/diamondRoom.jpg" alt="" style="width: 100%;">
 		            </div>
 		            <!-- /.feature-box-one -->
 		          </div>
@@ -117,7 +117,7 @@
 		          <div class="col-md-4">
 		            <h3 class="underline-magical text-center pb"><span class="underline--magical"> STANDARD</span></h3>
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-		              <img src="media/img/catRoom01.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/catRoom01.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <!-- /.col-md-3 -->
@@ -125,7 +125,7 @@
 		          <div class="col-md-4">
 		            <h3 class="underline-magical text-center pb"><span class="underline--magical">VIP</span></h3>
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/catRoom02.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/catRoom02.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		        
@@ -133,7 +133,7 @@
 		        <div class="col-md-4">
 		          <h3 class="underline-magical text-center pb"><span class="underline--magical">LOUNGE</span></h3>
 		          <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		            <img src="media/img/cathotel02.jpg" alt="" style="width: 100%;">
+		            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/cathotel02.jpg" alt="" style="width: 100%;">
 		          </div>
 		        </div>
 		      </div>
@@ -155,24 +155,24 @@
 		        <div class="row">
 		          <div class="col-md-3">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.2s">
-		              <img src="media/img/partyRoom03.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom03.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <!-- /.col-md-3 -->
 		
 		          <div class="col-md-3">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/partyRoom04.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom04.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <div class="col-md-3">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/party03.jpeg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/party03.jpeg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <div class="col-md-3">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/partyRoom05.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom05.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		      </div>
@@ -193,44 +193,44 @@
 		        <div class="row">
 		          <div class="col-md-3 p-null">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/studio11.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio11.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <div class="col-md-3 p-null">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/studio12.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio12.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <div class="col-md-3 p-null">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/studio05.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio05.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		          <div class="col-md-3 p-null">
 		            <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		              <img src="media/img/studio13.jpg" alt="" style="width: 100%;">
+		              <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio13.jpg" alt="" style="width: 100%;">
 		            </div>
 		          </div>
 		      </div>
 		      <div class="row">
 		        <div class="col-md-3 p-null">
 		          <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		            <img src="media/img/studio17.jpg" alt="" style="width: 100%;">
+		            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio17.jpg" alt="" style="width: 100%;">
 		          </div>
 		        </div>
 		        <div class="col-md-3 p-null">
 		          <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		            <img src="media/img/studio14.jpg" alt="" style="width: 100%;">
+		            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio14.jpg" alt="" style="width: 100%;">
 		          </div>
 		        </div>
 		        <div class="col-md-3 p-null">
 		          <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		            <img src="media/img/studio19.jpg" alt="" style="width: 100%;">
+		            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio19.jpg" alt="" style="width: 100%;">
 		          </div>
 		        </div>
 		        <div class="col-md-3 p-null">
 		          <div class="feature-box-one wow fadeInUp" data-wow-delay="0.4s">
-		            <img src="media/img/studio01.jpg" alt="" style="width: 100%;">
+		            <img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio01.jpg" alt="" style="width: 100%;">
 		          </div>
 		        </div>
 		    </div>

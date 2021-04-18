@@ -21,7 +21,7 @@
 				<div class="row mb">
 					<div class="col-md-6">
 						<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-							<img src="media/img/cat08.jpg">
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat08.jpg">
 						</div>
 					</div>
 
@@ -47,7 +47,7 @@
 					</div>
 					<div class="col-md-6 ">
 						<div class="about-box wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-							<img src="media/img/puppy05.jpg">
+							<img src="${ pageContext.servletContext.contextPath }/resources/media/img/puppy05.jpg">
 						</div>
 					</div>
 				</div>
@@ -85,167 +85,167 @@
 								<li class="grid-sizer"></li>
 								<li class="gp-portfolio-item gredient grid-item room" style="position: absolute; left: 0%; top: 0px;">
 									<div class="gp-isotope-grid__img effect-active">
-										<img src="media/img/room06.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/room06.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item ui room" style="position: absolute; left: 49.9165%; top: 0px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/room2.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/room2.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item room" style="position: absolute; left: 0%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/room03.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/room03.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item room" style="position: absolute; left: 49.9165%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/diamondRoom.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/diamondRoom.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item ui room" style="position: absolute; left: 49.9165%; top: 0px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/bathroom.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/bathroom.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item room" style="position: absolute; left: 0%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/room07.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/room07.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item room" style="position: absolute; left: 49.9165%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/room08.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/room08.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item room" style="position: absolute; left: 49.9165%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/room05.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/room05.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<!-- room -->
 								<!-- event-room -->
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/partyRoom03.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom03.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/partyRoom06.jpeg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom06.jpeg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 0%; top: 0px;">
 									<div class="gp-isotope-grid__img effect-active">
-										<img src="media/img/partyRoom05.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom05.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 49.9165%; top: 0px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio03.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio03.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 0%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/party01.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/party01.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 49.9165%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/partyRoom02.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/partyRoom02.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item event" style="position: absolute; left: 49.9165%; top: 299px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/party02.jpeg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/party02.jpeg" alt="portfolio thumb">
 									</div>
 								</li>
 								
 								<!-- studio -->
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio05.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio05.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio11.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio11.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio08.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio08.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio21.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio21.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio06.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio06.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio02.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio02.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/studio09.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/studio09.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item studio" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/phote.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/phote.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<!-- service -->
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/school.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/school.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/beauty02.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/beauty02.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/cat-with-ball.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat-with-ball.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/sub-service-hospital.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/sub-service-hospital.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/petsalong.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/petsalong.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/beauty02.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/beauty02.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 0%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/pet-beauty.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/pet-beauty.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/hospital.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/hospital.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 								<li class="gp-portfolio-item gredient grid-item service" style="position: absolute; left: 49.9165%; top: 599px;">
 									<div class="gp-isotope-grid__img">
-										<img src="media/img/school-education01.jpg" alt="portfolio thumb">
+										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/school-education01.jpg" alt="portfolio thumb">
 									</div>
 								</li>
 							</ul>
