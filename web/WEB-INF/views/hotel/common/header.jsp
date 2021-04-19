@@ -82,7 +82,8 @@
 						<ul class="sub-menu">
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/info">이용안내</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/room">ROOM</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">RESERVATION</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/room/insert">ROOM RESERVATION</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">EVENT RESERVATION</a></li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
 						<ul class="sub-menu">
