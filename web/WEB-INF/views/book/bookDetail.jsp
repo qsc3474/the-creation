@@ -80,7 +80,7 @@
                                              
                                     		
                                     
-                                     <label>번호</label>	<input type="text" value="${requestScope.HPBookDetail.no }" name="no">
+                                   	<input type="hidden" value="${requestScope.HPBookDetail.no }" name="no">
                                     
                                     </div> 
                                     
@@ -92,12 +92,8 @@
 </section>
 
 <script type="text/javascript">
-if (document.getElementById("bookCancel")) {
-	const $bookCancel = document.getElementById("bookCancel");
-	$bookCancel.onclick = function() {
-		location.href = "${pageContext.request.contextPath}/hp/book/delete";
-	}
-}
+
+
 if (document.getElementById("home")) {
 	const $home = document.getElementById("home");
 	$home.onclick = function() {
