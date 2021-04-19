@@ -58,7 +58,7 @@
 	<!-- header -->
 	<header id="discohead" class="dt-header fixed">
 		<div class="menu-wrap">
-			<a id="logo" href="${ pageContext.servletContext.contextPath }/ht/home">
+			<a id="logo" href="${ pageContext.servletContext.contextPath }/ht/main">
 				<img
 				src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png"
 				alt="discovery" class="logo-contrast"> <img
@@ -93,7 +93,7 @@
 							<li><a
 								href="${ pageContext.servletContext.contextPath }/ht/QNA/list">Q&amp;A</a></li>
 							<li><a href="reviewList.html">이용후기</a></li>
-							<li><a href="galleryList.html">gallery</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/gallery/list">gallery</a></li>
 						</ul></li>
 				</ul>
 				<c:if test="${ empty sessionScope.loginMember }">
