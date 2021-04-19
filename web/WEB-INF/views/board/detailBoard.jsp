@@ -121,8 +121,42 @@
 	<section class="blog-single bg-white">
 		<div class="container">
 			<div class="row">
-				<h2 class="hide">후기 디테일</h2>
-				<p>
+				<div class="row coments-row">
+                    게시글 상세조회<table class="table table-bordered">
+                        <colgroup></colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">제목</th>
+                            <td colspan="5">${ requestScope.board.title }</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">등록자</th>
+                            <td>${ requestScope.board.writer.name }</td>
+                            <td>등록일</td>
+                            <td>${ requestScope.board.drawupDate }</td>
+                            <td>조회수</td>
+                            <td>${ requestScope.board.watched }</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">내용</th>
+                            <td colspan="5">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">${ requestScope.board.content }</textarea>
+                            <c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+			                      <div class="button-group text-center" style="margin-top:10px">
+			                      	<input type='hidden' value="${ requestScope.board.no }" >
+			                        <button id='updateBoard' type="button" class="gp-btn small btn-primary">수정</button>
+			                        <button id='deleteBoard' type="button" class="gp-btn small btn-dark center">삭제</button>
+			                      </div>
+			                 </c:if>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                
+                
+				<%-- <h2 class="hide">후기 디테일</h2>
+				<p style="background:#ccc;">
 					${ requestScope.board.title }
 				</p>
 				<p>
@@ -139,7 +173,7 @@
 						<button type='button' id='updateBoard'>수정하기</button>
 						<button type='button' id='deleteBoard'>삭제하기</button>
 					</div>
-				</c:if>
+				</c:if> --%>
 			</div>
 			<!-- /.row -->
 
@@ -149,14 +183,19 @@
 						<h3 class="related-post-title">댓글</h3>
 						<div class="row coments-row">
 							<table class="table table-bordered">
+							<colgroup>
+                                <col style="width: 13%;">
+                                <col>
+                                <col>
+                            </colgroup>
 								<tbody>
 									<tr>
 										<th rowspan="2">댓글내용</th>
-										<td><textarea class="form-control" rows="5"
-												name="content" id="content" placeholder="내용을 입력해 주세요"></textarea></td>
-										<td style="width: 20%;">
-											<div class="text-center" style="margin-top: 100px;">
-												<button type="button" id="commentSubmitButton" class="gp-btn btn-primary">댓글등록</button>
+										<td><textarea class="form-control" rows="2"
+												name="content" id="content" placeholder="내용을 입력해 주세요"></textarea>
+												<div class="text-center" style="margin-top: 10px;">
+												<button type="button" id="commentSubmitButton" class="gp-btn small btn-primary">수정</button>
+												<button type="button" id="commentSubmitButton" class="gp-btn small btn-dark center">삭제</button>
 											</div>
 										</td>
 									</tr>
@@ -288,12 +327,15 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 			          var $replyAuthorInfo = $("<header>").addClass("comment-author");
 			          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data[key].no + "' style='display:none;'>" + data[key].no + "</div>");
 			          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
-			          var $replyOfReply = $("<div>").addClass("modal-button");
+			          var $replyOfReply = $("<div>").addClass("reply modal-button");
 			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
 			          var $replyWriteTime = $("<div class='entry-meta'><i class='fa fa-clock-o'></i>" + data[key].writeTime + "</div>");
 			          var $contentDiv = $("<div>").addClass("ovh");
 			          var $contentText = $("<p>").text(data[key].content);
 			          var $end = $("<div>").addClass("clear");
+			          
+			         
+					
 			          
 			          $li.append($divClearfix);
 			          $divClearfix.append($profilePicture);
@@ -325,7 +367,7 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 			          var $replyAuthorInfo = $("<header>").addClass("comment-author");
 			          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data[key].no + "' style='display:none;'>" + data[key].no + "</div>");
 			          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
-			          var $replyOfReply = $("<div>").addClass("modal-button");
+			          var $replyOfReply = $("<div>").addClass("reply modal-button");
 			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
 			          var $replyWriteTime = $("<div class='entry-meta'><i class='fa fa-clock-o'></i>" + data[key].writeTime + "</div>");
 			          var $contentDiv = $("<div>").addClass("ovh");
