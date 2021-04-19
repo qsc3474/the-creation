@@ -84,7 +84,8 @@
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/room">ROOM</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/room/insert">룸 예약</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">이벤트 예약</a></li>
-						</ul></li>
+						</ul>
+					</li>
 					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
 						<ul class="sub-menu">
 							<li><a
@@ -116,10 +117,13 @@
 							href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
 						<li><a
 							href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
-						<li><a
-							href="${ pageContext.servletContext.contextPath }/ht/room/list">예약확인</a></li>
-						<li><a
-							href="${ pageContext.servletContext.contextPath }/ht/event/list">이벤트예약확인</a></li>
+						<li class="menu-item-has-children"><a href="reservation.html">예약확인</a>
+							<ul class="sub-menu">
+								<li><a href="${ pageContext.servletContext.contextPath }/ht/room/list">룸예약</a></li>
+								<li><a href="${ pageContext.servletContext.contextPath }/ht/event/list">이벤트룸예약</a></li>
+							</ul>
+						</li>	
+						
 					</ul>
 				</c:if>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
