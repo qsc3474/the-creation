@@ -19,7 +19,7 @@
 		     , A.HP_RV_MEM_NO
 		     , A.HP_RV_STATUS
 		     , A.HP_RV_CMT_COUNT
-		     , A.FILE_PATH
+		     , A.THUMBNAIL_PATH
 		  FROM (SELECT ROWNUM RNUM
 		             , B.HP_RV_NO
 		             , B.HP_RV_CATEGORY_NO
@@ -31,7 +31,7 @@
 		             , B.HP_RV_MEM_NO
 		             , B.HP_RV_STATUS
 		             , B.HP_RV_CMT_COUNT
-		             , B.FILE_PATH
+		             , B.THUMBNAIL_PATH
 		          FROM (SELECT C.HP_RV_NO
 		                     , C.HP_RV_CATEGORY_NO
 		                     , C.HP_RV_TITLE
@@ -42,7 +42,7 @@
 		                     , C.HP_RV_MEM_NO
 		                     , C.HP_RV_STATUS
 		                     , C.HP_RV_CMT_COUNT
-		                     , E.FILE_PATH
+		                     , E.THUMBNAIL_PATH
 		                  FROM HOSPITAL_RV C
 		                  JOIN MEM_INFO D ON(C.HP_RV_MEM_NO = D.MEM_NO)
 		                  LEFT JOIN V_THUMBNAIL_FILE E ON(C.HP_RV_NO = E.BD_NO AND C.HP_RV_CATEGORY_NO = E.BD_CATEGORY_NO)
@@ -74,7 +74,7 @@
   			 , A.HP_RV_MEM_NO
   			 , A.HP_RV_STATUS
   			 , A.HP_RV_CMT_COUNT
-  			 , C.FILE_PATH
+  			 , C.THUMBNAIL_PATH
 		  FROM HOSPITAL_RV A
 		  JOIN MEM_INFO B ON(A.HP_RV_MEM_NO = B.MEM_NO)
 		  LEFT JOIN FILE_INFO C ON(A.HP_RV_NO = C.BD_NO AND A.HP_RV_CATEGORY_NO = C.BD_CATEGORY_NO)
@@ -115,7 +115,7 @@
 		     , A.HP_RV_MEM_NO
 		     , A.HP_RV_STATUS
 		     , A.HP_RV_CMT_COUNT
-		     , A.FILE_PATH
+		     , A.THUMBNAIL_PATH
 		  FROM (SELECT ROWNUM RNUM
 		             , B.HP_RV_NO
 		             , B.HP_RV_CATEGORY_NO
@@ -127,7 +127,7 @@
 		             , B.HP_RV_MEM_NO
 		             , B.HP_RV_STATUS
 		             , B.HP_RV_CMT_COUNT
-		             , B.FILE_PATH
+		             , B.THUMBNAIL_PATH
 		          FROM (SELECT C.HP_RV_NO
 		                     , C.HP_RV_CATEGORY_NO
 		                     , C.HP_RV_TITLE
@@ -138,7 +138,7 @@
 		                     , C.HP_RV_MEM_NO
 		                     , C.HP_RV_STATUS
 		                     , C.HP_RV_CMT_COUNT
-		                     , E.FILE_PATH
+		                     , E.THUMBNAIL_PATH
 		                  FROM HOSPITAL_RV C
 		                  JOIN MEM_INFO D ON(C.HP_RV_MEM_NO = D.MEM_NO)
 		                  LEFT JOIN V_THUMBNAIL_FILE E ON(C.HP_RV_NO = E.BD_NO AND C.HP_RV_CATEGORY_NO = E.BD_CATEGORY_NO)
@@ -161,7 +161,7 @@
 		     , A.HP_RV_MEM_NO
 		     , A.HP_RV_STATUS
 		     , A.HP_RV_CMT_COUNT
-		     , A.FILE_PATH
+		     , A.THUMBNAIL_PATH
 		  FROM (SELECT ROWNUM RNUM
 		             , B.HP_RV_NO
 		             , B.HP_RV_CATEGORY_NO
@@ -173,7 +173,7 @@
 		             , B.HP_RV_MEM_NO
 		             , B.HP_RV_STATUS
 		             , B.HP_RV_CMT_COUNT
-		             , B.FILE_PATH
+		             , B.THUMBNAIL_PATH
 		          FROM (SELECT C.HP_RV_NO
 		                     , C.HP_RV_CATEGORY_NO
 		                     , C.HP_RV_TITLE
@@ -184,7 +184,7 @@
 		                     , C.HP_RV_MEM_NO
 		                     , C.HP_RV_STATUS
 		                     , C.HP_RV_CMT_COUNT
-		                     , E.FILE_PATH
+		                     , E.THUMBNAIL_PATH
 		                  FROM HOSPITAL_RV C
 		                  JOIN MEM_INFO D ON(C.HP_RV_MEM_NO = D.MEM_NO)
 		                  LEFT JOIN V_THUMBNAIL_FILE E ON(C.HP_RV_NO = E.BD_NO AND C.HP_RV_CATEGORY_NO = E.BD_CATEGORY_NO)
@@ -207,7 +207,7 @@
 		     , A.HP_RV_MEM_NO
 		     , A.HP_RV_STATUS
 		     , A.HP_RV_CMT_COUNT
-		     , A.FILE_PATH
+		     , A.THUMBNAIL_PATH
 		  FROM (SELECT ROWNUM RNUM
 		             , B.HP_RV_NO
 		             , B.HP_RV_CATEGORY_NO
@@ -219,7 +219,7 @@
 		             , B.HP_RV_MEM_NO
 		             , B.HP_RV_STATUS
 		             , B.HP_RV_CMT_COUNT
-		             , B.FILE_PATH
+		             , B.THUMBNAIL_PATH
 		          FROM (SELECT C.HP_RV_NO
 		                     , C.HP_RV_CATEGORY_NO
 		                     , C.HP_RV_TITLE
@@ -230,7 +230,7 @@
 		                     , C.HP_RV_MEM_NO
 		                     , C.HP_RV_STATUS
 		                     , C.HP_RV_CMT_COUNT
-		                     , E.FILE_PATH
+		                     , E.THUMBNAIL_PATH
 		                  FROM HOSPITAL_RV C
 		                  JOIN MEM_INFO D ON(C.HP_RV_MEM_NO = D.MEM_NO)
 		                  LEFT JOIN V_THUMBNAIL_FILE E ON(C.HP_RV_NO = E.BD_NO AND C.HP_RV_CATEGORY_NO = E.BD_CATEGORY_NO)
@@ -276,4 +276,55 @@
 		 WHERE HP_RV_STATUS IN ('PUBLIC', 'PRIVATE')
 		   AND HP_RV_NO = ?
 	</entry>
+	<entry key="insertFileBoard">
+        INSERT
+		  INTO HOSPITAL_RV
+		(
+		  HP_RV_NO
+		, HP_RV_CATEGORY_NO
+		, HP_RV_TITLE
+		, HP_RV_CONTENT
+		, HP_RV_MEM_NO
+		)
+		VALUES
+		(
+		  SEQ_HP_RV_NO.NEXTVAL
+		, ?
+		, ?
+		, ?
+		, ?
+		)
+    </entry>
+    <entry key="selectFileBoardSequence">
+        SELECT
+               SEQ_HP_RV_NO.CURRVAL
+          FROM DUAL
+    </entry>
+    <entry key="insertFile">
+        INSERT
+          INTO FILE_INFO A
+        (
+          A.FILE_NO
+        , A.BD_NO
+        , A.BD_CATEGORY_NO
+        , A.ORIGIN_FILE_NAME
+        , A.FILE_PATH
+        , A.THUMBNAIL_PATH
+        , A.SAVE_FILE_NAME
+        , A.FILE_TYPE
+        , A.FILE_EXTENSION
+        )
+        VALUES
+        (
+          SEQ_HP_FILE_NO.NEXTVAL
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        )
+    </entry>
 </properties>

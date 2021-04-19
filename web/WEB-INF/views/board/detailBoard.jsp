@@ -131,12 +131,7 @@
 						: ${ requestScope.board.drawupDate }</span> <span><strong>조회</strong> : ${ requestScope.board.watched }</span>
 				</p>
 				<div class="col-md-12" style="margin-bottom: 5px;">
-					<div class="col-md-6">
-						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
-					</div>
-					<div class="col-md-6">
-						<img src="${ pageContext.servletContext.contextPath }/resources/media/img/cat01.jpg" alt="" style="width: 100%;">
-					</div>
+					${ requestScope.board.content }
 				</div>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
 					<div>
@@ -205,6 +200,7 @@
 <script>
 
 var insertCount = 0;
+var currentLoginMemberNo = "${sessionScope.loginMember.no}";
 
 $(function(){  //페이지가 로드되면 댓글 데이터를 가져온다.
 	deleteAndUpdateButtonAction();
@@ -378,7 +374,7 @@ function insertComment(content, currentBoardNo, currentBoardCategoryNo){
 	
 	$.ajax({
 	    url:"${ pageContext.servletContext.contextPath }/insert/comment",
-	    data:{writerNo:${ sessionScope.loginMember.no }, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
+	    data:{writerNo:currentLoginMemberNo, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
 	    type:'POST',
 	    success:function(data){
 	      console.log(data);
@@ -410,7 +406,7 @@ function insertReplyOfReply(parentCommentNo, content, currentBoardNo, currentBoa
 	
 	$.ajax({
 	    url:"${ pageContext.servletContext.contextPath }/insert/reply",
-	    data:{writerNo:${ sessionScope.loginMember.no }, parentCommentNo:parentCommentNo, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
+	    data:{writerNo:currentLoginMemberNo, parentCommentNo:parentCommentNo, content:content, currentBoardNo:currentBoardNo, currentBoardCategoryNo:currentBoardCategoryNo},
 	    type:'POST',
 	    success:function(data){
 	      console.log(data);

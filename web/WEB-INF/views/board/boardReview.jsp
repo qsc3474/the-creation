@@ -32,8 +32,8 @@
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
 								<a href="#">
 									<div class="blog-thumb">
-										<c:if test="${ bestReview.fileList[0].path ne null}">
-											<img src="${ bestReview.fileList[0].path }" alt="Blog thumb">
+										<c:if test="${ bestReview.fileList[0].thumbnailPath ne null}">
+											<img src="${ pageContext.servletContext.contextPath }${ bestReview.fileList[0].thumbnailPath }'" alt="Blog thumb">
 										</c:if>
 										<div class="blog-overlay"></div>
 									</div>
@@ -89,8 +89,8 @@
 									<tr>
 										<td><c:out value="${ review.no }" /></td>
 										<td style="height: 100px;">
-											<c:if test="${ review.fileList[0].path ne null}">
-												<img src="${ review.fileList[0].path }" style="width: 80px; height: 80px;">
+											<c:if test="${ review.fileList[0].thumbnailPath ne null}">
+												<img src="${ pageContext.servletContext.contextPath }${ review.fileList[0].thumbnailPath }" style="width: 80px; height: 80px;">
 											</c:if>
 										</td>
 										<td><c:out value="${ review.writer.name }" /></td>

@@ -97,9 +97,13 @@
 				break;
 				
 			/* 파일업로드 */
-			case "insertFile" :
+			case "insertNoticeFileBoard" :
 				successMessage = "공지사항 파일업로드에 성공하셨습니다!";
 				movePath = "${ pageContext.servletContext.contextPath }/hp/notice/select/list";
+				break;
+			case "insertReviewFileBoard" :
+				successMessage = "후기게시판 파일업로드에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/hp/review/select/list";
 				break;
 			}
 			

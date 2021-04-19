@@ -163,9 +163,17 @@ public class HPNoticeBoardDAO {
 			
 			rset = pstmt.executeQuery();
 			
-			if(rset.next()) {
+			while(rset.next()) {
 				
-				board = new HPBoardDTO();
+				if(board == null) {
+					
+					board = new HPBoardDTO();
+					ArrayList<FileDTO> files = new ArrayList<FileDTO>();
+					board.setFileList(files);
+					
+				}
+				
+				FileDTO file = new FileDTO();
 				
 				board.setWriter(new MemberDTO());
 				
@@ -179,7 +187,9 @@ public class HPNoticeBoardDAO {
 				board.getWriter().setName(rset.getString("MEM_NAME"));
 				board.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
 				
-				System.out.println(board);
+				file.setPath(rset.getString("FILE_PATH"));
+				
+				board.getFileList().add(file);
 				
 			}
 			
@@ -385,7 +395,8 @@ public class HPNoticeBoardDAO {
 			pstmt.setString(3, fileDTO.getOriginName());
 			pstmt.setString(4, fileDTO.getPath());
 			pstmt.setString(5, fileDTO.getName());
-			pstmt.setString(6, fileDTO.getExtension());
+			pstmt.setString(6, fileDTO.getType());
+			pstmt.setString(7, fileDTO.getExtension());
 			
 			result = pstmt.executeUpdate();
 			

@@ -255,11 +255,13 @@
         , A.ORIGIN_FILE_NAME
         , A.FILE_PATH
         , A.SAVE_FILE_NAME
+        , A.FILE_TYPE
         , A.FILE_EXTENSION
         )
         VALUES
         (
           SEQ_HP_FILE_NO.NEXTVAL
+        , ?
         , ?
         , ?
         , ?

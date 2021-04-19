@@ -123,7 +123,7 @@ private final Properties prop;
 				board.setStatus(rset.getString("HP_RV_STATUS"));
 				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
 				
-				thumbnail.setPath(rset.getString("FILE_PATH"));
+				thumbnail.setThumbnailPath(rset.getString("THUMBNAIL_PATH"));
 				
 				file.add(thumbnail);
 				board.setFileList(file);
@@ -179,7 +179,7 @@ private final Properties prop;
 				board.setStatus(rset.getString("HP_RV_STATUS"));
 				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
 				
-				thumbnail.setPath(rset.getString("FILE_PATH"));
+				thumbnail.setThumbnailPath(rset.getString("THUMBNAIL_PATH"));
 				
 				file.add(thumbnail);
 				board.setFileList(file);
@@ -267,7 +267,7 @@ private final Properties prop;
 				board.setStatus(rset.getString("HP_RV_STATUS"));
 				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
 				
-				file.setPath(rset.getString("FILE_PATH"));
+				file.setThumbnailPath(rset.getString("THUMBNAIL_PATH"));
 				
 				fileList.add(file);
 				board.setFileList(fileList);
@@ -326,6 +326,95 @@ private final Properties prop;
 		}
 
 		return boardCount;
+		
+	}
+
+	public int insertFileBoard(Connection con, HPBoardDTO reviewBoard) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("insertFileBoard");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, reviewBoard.getCategoryNo());
+			pstmt.setString(2, reviewBoard.getTitle());
+			pstmt.setString(3, reviewBoard.getContent());
+			pstmt.setInt(4, reviewBoard.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+		
+	}
+
+	public int selectFileBoardSequence(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		int lastBoardNo = 0;
+		
+		String query = prop.getProperty("selectFileBoardSequence");
+		
+		try {
+			stmt = con.createStatement();
+			
+			rset = stmt.executeQuery(query);
+			
+			if(rset.next()) {
+				lastBoardNo = rset.getInt(1);
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(rset);
+			close(stmt);
+			
+		}
+		
+		return lastBoardNo;
+		
+	}
+
+	public int insertFile(Connection con, FileDTO fileDTO) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertFile");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, fileDTO.getBdNo());
+			pstmt.setString(2, fileDTO.getCategoryNo());
+			pstmt.setString(3, fileDTO.getOriginName());
+			pstmt.setString(4, fileDTO.getPath());
+			pstmt.setString(5, fileDTO.getThumbnailPath());
+			pstmt.setString(6, fileDTO.getName());
+			pstmt.setString(7, fileDTO.getType());
+			pstmt.setString(8, fileDTO.getExtension());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 		
 	}
 	

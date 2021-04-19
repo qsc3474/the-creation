@@ -107,6 +107,7 @@ public class HPNoticeInsertServlet extends HttpServlet {
 							fileMap.put("savedFileName", randomFileName);
 							fileMap.put("filePath", fileUploadDirectory);
 							fileMap.put("ext", ext);
+							fileMap.put("fileType", "body");
 							
 							fileList.add(fileMap);
 							
@@ -137,6 +138,7 @@ public class HPNoticeInsertServlet extends HttpServlet {
 					fileInfo.setPath(file.get("filePath"));
 					fileInfo.setExtension(file.get("ext"));
 					fileInfo.setCategoryNo(parameter.get("boardCategory"));
+					fileInfo.setType(file.get("body"));
 					
 					list.add(fileInfo);
 					
@@ -150,7 +152,7 @@ public class HPNoticeInsertServlet extends HttpServlet {
 				if(result > 0) {
 					
 					path = "/WEB-INF/views/common/success.jsp";
-					request.setAttribute("successCode", "insertFile");
+					request.setAttribute("successCode", "insertNoticeFileBoard");
 					
 				} else {
 					

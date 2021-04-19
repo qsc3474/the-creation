@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import creation.board.model.dao.HPReviewBoardDAO;
+import creation.board.model.dto.FileDTO;
 import creation.board.model.dto.HPBoardDTO;
 import creation.board.model.dto.PageInfoDTO;
 
@@ -102,6 +103,55 @@ public class HPReviewBoardService {
 		
 		return totalCount;
 		
+	}
+
+	public int insertFileBoard(HPBoardDTO reviewBoard) {
+		
+		Connection con = getConnection();
+		
+		/* 최종적으로 반환 할 result 선언 */
+		int result = 0;
+		
+		int boardResult = BoardDAO.insertFileBoard(con, reviewBoard);
+		
+		System.out.println(boardResult);
+		
+		int boardNo = BoardDAO.selectFileBoardSequence(con);
+		
+		System.out.println(boardNo);
+		
+		/* Attachment List를 불러온다. */
+		List<FileDTO> fileList = reviewBoard.getFileList();
+		
+		/* 각각의 AttachmentDTO(파일 정보)들에 boardNo를 넣는다. */
+		for(int i = 0 ; i < fileList.size() ; i++) {
+			
+			fileList.get(i).setBdNo(boardNo);
+			
+		}
+		
+		int fileResult = 0;
+		
+		for(int i = 0 ; i < fileList.size() ; i++) {
+			
+			fileResult += BoardDAO.insertFile(con, fileList.get(i));
+			
+		}
+		
+		System.out.println(fileResult);
+		
+		if(boardResult > 0 && fileResult == fileList.size()) {
+			
+			commit(con);
+			result = 1;
+			
+		} else {
+			
+			rollback(con);
+			
+		}
+		
+		return result;
 	}
 	
 }

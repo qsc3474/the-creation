@@ -120,9 +120,13 @@
 	    						theForm.action = "${ pageContext.servletContext.contextPath }/hp/notice/file/insert";
 	    						theForm.encoding = "multipart/form-data";
 	    						
-	    						console.log(theForm);
-	    							
+	    					} else if (${ requestScope.categoryNo eq "HP_RV" }){
+	    						
+	    						theForm.action = "${ pageContext.servletContext.contextPath }/hp/review/file/insert";
+	    						theForm.encoding = "multipart/form-data";
+	    						
 	    					}
+	    					
 	    					document.getElementById("form").submit();
 	    					
 	    				}
