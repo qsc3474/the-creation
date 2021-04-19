@@ -139,7 +139,7 @@
 									<a href="${ pageContext.servletContext.contextPath }/hp/review/select/list">
 										<img src="${ pageContext.servletContext.contextPath }/resources/media/img/dog23.jpg" alt="Blog thumb">
 									</a>
-									<a href="${ pageContext.servletContext.contextPath }/hp/review/select/list" class="date">치료<br>사례</a>
+									<a href="${ pageContext.servletContext.contextPath }/hp/healingList" class="date">치료<br>사례</a>
 								</div>
 							</div>
 						</div>

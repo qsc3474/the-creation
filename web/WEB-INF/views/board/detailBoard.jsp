@@ -131,7 +131,8 @@ tbody {
                         <tbody>
                           <tr>
                             <th scope="row">제목</th>
-                            <td colspan="5">${ requestScope.board.title }</td>
+                            <td colspan="5">${ requestScope.board.title }
+                            </td>
                           </tr>
                           <tr>
                             <th scope="row">등록자</th>
@@ -140,6 +141,12 @@ tbody {
                             <td>${ requestScope.board.drawupDate }</td>
                             <td>조회수</td>
                             <td>${ requestScope.board.watched }</td>
+                          </tr>
+                          <tr>
+                          <th scope="row">파일</th>
+                          <td colspan="5">
+                          	<input type="file" id="customFile" style="border:0;">
+                          </td>
                           </tr>
                           <tr>
                             <th scope="row">내용</th>
@@ -158,7 +165,7 @@ tbody {
                       </table>
                 </div>
                 
-                
+                 
 				<%-- <h2 class="hide">후기 디테일</h2>
 				<p style="background:#ccc;">
 					${ requestScope.board.title }
@@ -187,7 +194,7 @@ tbody {
 			<div class="row">
 				<div id="comments">
 					<div class="releted-post">
-						<h3 class="related-post-title">댓글</h3>
+						<p class="related-post-title">댓글달기</p>
 						<div class="row coments-row">
 							<table class="table table-bordered">
 							<colgroup>

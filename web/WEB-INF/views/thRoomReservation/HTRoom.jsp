@@ -278,19 +278,23 @@
 														 </tr>
 														 <tr>
 															 <th>룸 종류</th>
-															 <td><span id="setserviceType"></span></td>
+															 <td><span id="setroomType"></span></td>
 														 </tr>
 														 <tr>
 															 <th>투숙 인원</th>
 															 <td><span id="setStayPets"></span></td>
 														 </tr>
 														 <tr>
-															 <th>예약 날짜</th>
-															 <td><span id="setRoomDate"></span></td>
+															 <th>예약 날짜(체크인)</th>
+															 <td><span id="setStartDate"></span></td>
 														 </tr>
 														 <tr>
 															 <th>예약 시간(체크인)</th>
 															 <td><span id="setStartTime"></span></td>
+														 </tr>
+														 <tr>
+															 <th>예약 날짜(체크아웃)</th>
+															 <td><span id="setEndDate"></span></td>
 														 </tr>
 														 <tr>
 															 <th>예약 시간(체크아웃)</th>
@@ -425,85 +429,86 @@
             </script>
             <!-- [CHJ.0418] form get value -->
             <script>
-          		//[01] 이름
-          		function getUserPetName() {
-          			var selPetNameVal = document.getElementById("userPetName").value; //value
-	            	document.getElementById("setPetName").innerText = selPetNameVal;	
-          		}
-          		//[01] 분류
-         		function getCategorySelect() {
-	         		var selCategoryOpt = document.getElementById("userPetCategory"); //element
-	            	var selCategoryVal = selCategoryOpt.options[selCategoryOpt.selectedIndex].value; //value
-	            	var selCategoryTxt = selCategoryOpt.options[selCategoryOpt.selectedIndex].text; //text
-	            	document.getElementById("setPetCategory").innerText = selCategoryTxt;
-         		}
-         		//[01] 성별
-          		function getUserPetGender() {
-          			var selPetGenderOpt = document.getElementById("userPetGender"); //element
-	            	var selPetGenderVal = selPetGenderOpt.options[selPetGenderOpt.selectedIndex].value; //value
-	            	var selPetGenderTxt = selPetGenderOpt.options[selPetGenderOpt.selectedIndex].text; //text
-	            	document.getElementById("setPetGender").innerText = selPetGenderTxt;	
-          		}          		
-         		//[01] 나이
-          		function getUserPetAge() {
-          			var selPetAgeOpt = document.getElementById("userPetAge"); //element
-	            	var selPetAgeVal = selPetAgeOpt.options[selPetAgeOpt.selectedIndex].value; //value
-	            	var selPetAgeTxt = selPetAgeOpt.options[selPetAgeOpt.selectedIndex].text; //text
-	            	document.getElementById("setPetAge").innerText = selPetAgeTxt;	
-          		}          		
-         		//[01] 중성화
-          		function getUserPetNeut() {
-          			var selPetNeutOpt = document.getElementById("userPetNeut"); //element
-	            	var selPetNeutVal = selPetNeutOpt.options[selPetNeutOpt.selectedIndex].value; //value
-	            	var selPetNeutTxt = selPetNeutOpt.options[selPetNeutOpt.selectedIndex].text; //text
-	            	document.getElementById("setPetNeut").innerText = selPetNeutTxt;	
-          		}           		
-         		//[01] 특이사항
-          		function getUserPetMsg() {
-          			var selPetMsgVal = document.getElementById("userPetMsg").value; //value
-	            	document.getElementById("setPetMsg").innerText = selPetMsgVal;	
-          		}       
-         		//[02] 서비스 종류
-         		function getServiceType() {
-          			var selserviceTypeOpt = document.getElementById("serviceType");
-	            	var selserviceTypeVal = selserviceTypeOpt.options[selserviceTypeOpt.selectedIndex].value;
-	            	var selserviceTypeTxt = selserviceTypeOpt.options[selserviceTypeOpt.selectedIndex].text;
-	            	document.getElementById("setserviceType").innerText = selserviceTypeTxt;
-         		}
-         		//[02] 룸 종류
-         		function getRoomType() {
-          			var selroomTypeOpt = document.getElementById("roomType");
-	            	var selroomTypeVal = selroomTypeOpt.options[selroomTypeOpt.selectedIndex].value;
-	            	var selroomTypeTxt = selroomTypeOpt.options[selroomTypeOpt.selectedIndex].text;
-	            	document.getElementById("setroomType").innerText = selroomTypeTxt;
-         		}
-         		//[02] 투숙
-         		function getStayPets() {
-          			var selStayPetsOpt = document.getElementById("stayPets");
-	            	var selStayPetsVal = selStayPetsOpt.options[selStayPetsOpt.selectedIndex].value;
-	            	var selStayPetsTxt = selStayPetsOpt.options[selStayPetsOpt.selectedIndex].text;
-	            	document.getElementById("setStayPets").innerText = selStayPetsTxt;         			
-         		}
-         		//[02] 예약날짜(체크인)
-         		function getStartDate()() {
-          			var selstartDateVal = document.getElementById("startDate").value;
-	            	document.getElementById("setstartDate").innerText = selstartDateVal;	
-         		}
-         		//[02] 예약시간(체크인)
-         		function getStartTime() {
-          			var selStartTimeVal = document.getElementById("startTime").value;
-         			document.getElementById("setStartTime").innerText = selStartTimeVal;
-         		}
-         		//[02] 예약날짜(체크아웃)
-      			function getEndDate() {
-          			var selEndDateVal = document.getElementById("endDate").value;
-	            	document.getElementById("setEndDate").innerText = selEndDateVal;        			
-         		}
-         		//[02] 예약시간(체크아웃)
-      			function getEndTime() {
-          			var selEndTimeVal = document.getElementById("endTime").value;
-	            	document.getElementById("setEndTime").innerText = selEndTimeVal;        			
-         		}
+         	 //[01] 이름
+      		function getUserPetName() {
+      			var selPetNameVal = document.getElementById("userPetName").value; //value
+            	document.getElementById("setPetName").innerText = selPetNameVal;	
+      		}
+          
+      		//[01] 분류
+     		function getCategorySelect() {
+         		var selCategoryOpt = document.getElementById("userPetCategory"); //element
+            	var selCategoryVal = selCategoryOpt.options[selCategoryOpt.selectedIndex].value; //value
+            	var selCategoryTxt = selCategoryOpt.options[selCategoryOpt.selectedIndex].text; //text
+            	document.getElementById("setPetCategory").innerText = selCategoryTxt;
+     		}
+     		//[01] 성별
+      		function getUserPetGender() {
+      			var selPetGenderOpt = document.getElementById("userPetGender"); //element
+            	var selPetGenderVal = selPetGenderOpt.options[selPetGenderOpt.selectedIndex].value; //value
+            	var selPetGenderTxt = selPetGenderOpt.options[selPetGenderOpt.selectedIndex].text; //text
+            	document.getElementById("setPetGender").innerText = selPetGenderTxt;	
+      		}          		
+     		//[01] 나이
+      		function getUserPetAge() {
+      			var selPetAgeOpt = document.getElementById("userPetAge"); //element
+            	var selPetAgeVal = selPetAgeOpt.options[selPetAgeOpt.selectedIndex].value; //value
+            	var selPetAgeTxt = selPetAgeOpt.options[selPetAgeOpt.selectedIndex].text; //text
+            	document.getElementById("setPetAge").innerText = selPetAgeTxt;	
+      		}          		
+     		//[01] 중성화
+      		function getUserPetNeut() {
+      			var selPetNeutOpt = document.getElementById("userPetNeut"); //element
+            	var selPetNeutVal = selPetNeutOpt.options[selPetNeutOpt.selectedIndex].value; //value
+            	var selPetNeutTxt = selPetNeutOpt.options[selPetNeutOpt.selectedIndex].text; //text
+            	document.getElementById("setPetNeut").innerText = selPetNeutTxt;	
+      		}           		
+     		//[01] 특이사항
+      		function getUserPetMsg() {
+      			var selPetMsgVal = document.getElementById("userPetMsg").value; //value
+            	document.getElementById("setPetMsg").innerText = selPetMsgVal;	
+      		}       
+      		//[02] 서비스 종류
+     		function getServiceType() {
+      			var selserviceTypeOpt = document.getElementById("serviceType");
+            	var selserviceTypeVal = selserviceTypeOpt.options[selserviceTypeOpt.selectedIndex].value;
+            	var selserviceTypeTxt = selserviceTypeOpt.options[selserviceTypeOpt.selectedIndex].text;
+            	document.getElementById("setserviceType").innerText = selserviceTypeTxt;
+     		}
+     		//[02] 룸 종류
+     		function getRoomType() {
+      			var selroomTypeOpt = document.getElementById("roomType");
+            	var selroomTypeVal = selroomTypeOpt.options[selroomTypeOpt.selectedIndex].value;
+            	var selroomTypeTxt = selroomTypeOpt.options[selroomTypeOpt.selectedIndex].text;
+            	document.getElementById("setroomType").innerText = selroomTypeTxt;
+     		}
+     		//[02] 투숙
+     		function getStayPets() {
+      			var selStayPetsOpt = document.getElementById("stayPets");
+            	var selStayPetsVal = selStayPetsOpt.options[selStayPetsOpt.selectedIndex].value;
+            	var selStayPetsTxt = selStayPetsOpt.options[selStayPetsOpt.selectedIndex].text;
+            	document.getElementById("setStayPets").innerText = selStayPetsTxt;         			
+     		}
+     		//[02] 예약날짜(체크인)
+     		function getStartDate() {
+      			var selstartDateVal = document.getElementById("startDate").value;
+            	document.getElementById("setStartDate").innerText = selstartDateVal;	
+     		}
+     		//[02] 예약시간(체크인)
+     		function getStartTime() {
+      			var selStartTimeVal = document.getElementById("startTime").value;
+     			document.getElementById("setStartTime").innerText = selStartTimeVal;
+     		}
+     		//[02] 예약날짜(체크아웃)
+  			function getEndDate() {
+      			var selEndDateVal = document.getElementById("endDate").value;
+            	document.getElementById("setEndDate").innerText = selEndDateVal;        			
+     		}
+     		//[02] 예약시간(체크아웃)
+  			function getEndTime() {
+      			var selEndTimeVal = document.getElementById("endTime").value;
+            	document.getElementById("setEndTime").innerText = selEndTimeVal;        			
+     		}
        		</script>
        		<!--// [CHJ.0418] form get value -->
         </section>
