@@ -188,6 +188,8 @@ public class HPNoticeBoardDAO {
 				board.setCmtCount(rset.getInt("HP_BD_CMT_COUNT"));
 				
 				file.setPath(rset.getString("FILE_PATH"));
+				file.setName(rset.getString("SAVE_FILE_NAME"));
+				file.setOriginName(rset.getString("ORIGIN_FILE_NAME"));
 				
 				board.getFileList().add(file);
 				
