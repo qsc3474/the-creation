@@ -102,7 +102,7 @@
 						<li><a
 							href="${ pageContext.servletContext.contextPath }/member/logout">로그아웃</a></li>
 						<li><a
-							href="${ pageContext.servletContext.contextPath }/member/update">관리자</a></li>
+							href="${ pageContext.servletContext.contextPath }/admin">관리자</a></li>
 						<li><a
 							href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
 					</ul>
