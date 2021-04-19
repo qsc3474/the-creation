@@ -296,10 +296,10 @@
 						<div class="col-md-3">
 							<div class="blog-post wow fadeInRight" data-wow-delay="0.9s">
 								<div class="blog-thumb">
-									<a href="team.html"> <img
+									<a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list"> <img
 										src="${ pageContext.servletContext.contextPath }/resources/media/img/dog.jpeg"
 										alt="Blog thumb">
-									</a> <a href="notice.html" class="date">공지<br>사항
+									</a> <a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list" class="date">공지<br>사항
 									</a>
 								</div>
 
@@ -321,10 +321,10 @@
 							<div class="blog-post wow fadeInUp list-hover"
 								data-wow-delay="0.5s">
 								<div class="blog-thumb inner" style="float: right;">
-									<a href="notice.html"> <img
+									<a href="${ pageContext.servletContext.contextPath }/ht/QNA/list"> <img
 										src="${ pageContext.servletContext.contextPath }/resources/media/img/cat09.jpg"
 										alt="Blog thumb">
-									</a> <a href="#" class="date">Q&amp;A</a>
+									</a> <a href="${ pageContext.servletContext.contextPath }/ht/QNA/list" class="date">Q&amp;A</a>
 								</div>
 							</div>
 						</div>
@@ -332,10 +332,10 @@
 							<div class="blog-post wow fadeInUp list-hover"
 								data-wow-delay="0.5s">
 								<div class="blog-thumb inner" style="float: right;">
-									<a href="notice.html"> <img
+									<a href="${ pageContext.servletContext.contextPath }/ht/FAQ/lis"> <img
 										src="${ pageContext.servletContext.contextPath }/resources/media/img/dog09.jpg"
 										alt="Blog thumb">
-									</a> <a href="#" class="date">FAQ</a>
+									</a> <a href="${ pageContext.servletContext.contextPath }/ht/FAQ/lis" class="date">FAQ</a>
 								</div>
 							</div>
 						</div>
@@ -414,9 +414,9 @@
 			<nav class="side-menu">
 				<ul>
 					<li><a href="reservation.html" class="quick">호텔예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
-					<li><a href="#" class="quick">호텔패키지</a><span><i class="glyphicon glyphicon-th"></i></span></li>
-					<li><a href="#" class="quick">호텔서비스</a><span><i class="glyphicon glyphicon-check"></i></span></li>
-					<li><a href="#" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>
+					<li><a href="${ pageContext.servletContext.contextPath }/ht/package" class="quick">호텔패키지</a><span><i class="glyphicon glyphicon-th"></i></span></li>
+					<li><a href="${ pageContext.servletContext.contextPath }/ht/service" class="quick">호텔서비스</a><span><i class="glyphicon glyphicon-check"></i></span></li>
+					<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>
 				</ul>
 			</nav>
 		</section>
