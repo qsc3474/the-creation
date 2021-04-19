@@ -6,7 +6,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import creation.book.ht.model.dao.HTroomDTO;
@@ -31,7 +34,7 @@ private final Properties prop;
 		}
 		
 	}
-
+	/* 호텔 룸 예약 인서트 메소드 */
 	public int insertRoom(Connection con, HTroomDTO newRoom) {
 		
 		PreparedStatement pstmt = null;
@@ -63,6 +66,46 @@ private final Properties prop;
 		}
 		
 		return result;
+	}
+	/* 호텔 룸 예약확인 셀렉트 메소드*/
+	public List<HTroomDTO> selectRoomList(Connection con, int roomMember) {
+		
+		PreparedStatement pstmt= null;
+		ResultSet rset =null;
+		
+		List<HTroomDTO> roomList = null;
+		
+		String query =prop.getProperty("roomList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, roomMember);
+			
+			rset = pstmt.executeQuery();
+			
+			roomList = new ArrayList<>();
+			while(rset.next()) {
+				HTroomDTO room = new HTroomDTO();
+				room.setMemNo(roomMember);
+				
+				room.setNo(rset.getInt("HT_ROOM_BK_NO"));
+				room.setType(rset.getString("HT_SERVICE_TYPE"));
+				room.setRoomNo(rset.getString("ROOM_TYPE"));
+				room.setPetName(rset.getString("HT_PET_NAME"));
+				room.setCheckIn(rset.getString("HT_CHECK_IN_TIME"));
+				room.setCheckOut(rset.getString("HT_CHECK_OUT_TIME"));
+			
+				roomList.add(room);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return roomList;
 	}
 
 }
