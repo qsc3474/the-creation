@@ -240,13 +240,11 @@
 										<ul class="post-meta">
 											<li><a href="#">2021-01-13 09:21:20</a></li>
 										</ul>
-										<h3><a href="#">쓸개골 수술</a></h3>
-										<p>
-	                                        안녕하세요. 루시드 동물 메디컬 센터 입니다.​  
-	                                        본 환자는 1년 된 강아지로 산책 중 큰 강아지에게 물려 응급으로 내원하였고, 
-	                                        오른쪽 다리에 교상이 있었습니다.  ​​감염이 우려되어 ... 
+										<h3><a href="#">호텔 이용 후기</a></h3>
+										<p class="font-16">
+	                                        개편한 호텔에 우리 자두 4박 5일 지냈습니다.
 										</p>
-										<a href="#" class="read-more-btn">Read More</a>
+										<a href="reviewDetail.html" class="read-more-btn">Read More</a>
 									</div>
 								</div>
 							</div>
@@ -262,13 +260,11 @@
 										<ul class="post-meta">
 											<li><a href="#">2021-01-13 09:21:20</a></li>
 										</ul>
-										<h3><a href="#">쓸개골 수술</a></h3>
-										<p>
-	                                        안녕하세요. 루시드 동물 메디컬 센터 입니다.​  
-	                                        본 환자는 1년 된 강아지로 산책 중 큰 강아지에게 물려 응급으로 내원하였고, 
-	                                        오른쪽 다리에 교상이 있었습니다.  ​​감염이 우려되어 ... 
+										<h3><a href="#">호텔 이용 후기</a></h3>
+										<p class="font-16">
+	                                        개편한 호텔에 우리 자두 4박 5일 지냈습니다.
 										</p>
-										<a href="#" class="read-more-btn">Read More</a>
+										<a href="reviewDetail.html" class="read-more-btn">Read More</a>
 									</div>
 								</div>
 							</div>
@@ -284,13 +280,11 @@
 										<ul class="post-meta">
 											<li><a href="#">2021-01-13 09:21:20</a></li>
 										</ul>
-										<h3><a href="#">쓸개골 수술</a></h3>
-										<p>
-	                                        안녕하세요. 루시드 동물 메디컬 센터 입니다.​  
-	                                        본 환자는 1년 된 강아지로 산책 중 큰 강아지에게 물려 응급으로 내원하였고, 
-	                                        오른쪽 다리에 교상이 있었습니다.  ​​감염이 우려되어 ... 
+										<h3><a href="#">호텔 이용 후기</a></h3>
+										<p class="font-16">
+	                                        개편한 호텔에 우리 자두 4박 5일 지냈습니다.
 										</p>
-										<a href="#" class="read-more-btn">Read More</a>
+										<a href="reviewDetail.html" class="read-more-btn">Read More</a>
 									</div>
 								</div>
 							</div>
@@ -306,13 +300,11 @@
 										<ul class="post-meta">
 											<li><a href="#">2021-01-13 09:21:20</a></li>
 										</ul>
-										<h3><a href="#">쓸개골 수술</a></h3>
-										<p>
-	                                        안녕하세요. 루시드 동물 메디컬 센터 입니다.​  
-	                                        본 환자는 1년 된 강아지로 산책 중 큰 강아지에게 물려 응급으로 내원하였고, 
-	                                        오른쪽 다리에 교상이 있었습니다.  ​​감염이 우려되어 ... 
+										<h3><a href="#">호텔 이용 후기</a></h3>
+										<p class="font-16">
+	                                        개편한 호텔에 우리 자두 4박 5일 지냈습니다.
 										</p>
-										<a href="#" class="read-more-btn">Read More</a>
+										<a href="reviewDetail.html" class="read-more-btn">Read More</a>
 									</div>
 								</div>
 							</div>

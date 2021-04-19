@@ -1,4 +1,4 @@
-package creation.admin;
+package creation.htPage;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,20 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class AdminPageServlet
- */
-@WebServlet("/admin")
-public class AdminPageServlet extends HttpServlet {
+@WebServlet("/ht/gallery/list")
+public class HTGalleryListPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String path = "WEB-INF/views/admin/admin.jsp";
-	request.getRequestDispatcher(path).forward(request, response);
-	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String path = "/WEB-INF/views/hotel/board/galleryList.jsp";
+		request.getRequestDispatcher(path).forward(request, response);
 	
 	}
 

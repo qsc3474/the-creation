@@ -58,7 +58,7 @@
 	<!-- header -->
 	<header id="discohead" class="dt-header fixed">
 		<div class="menu-wrap">
-			<a id="logo" href="${ pageContext.servletContext.contextPath }/ht/home">
+			<a id="logo" href="${ pageContext.servletContext.contextPath }/ht/main">
 				<img
 				src="${ pageContext.servletContext.contextPath }/resources/media/img/logo.png"
 				alt="discovery" class="logo-contrast"> <img
@@ -82,7 +82,8 @@
 						<ul class="sub-menu">
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/info">이용안내</a></li>
 							<li><a href="${ pageContext.servletContext.contextPath }/ht/room">ROOM</a></li>
-							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">RESERVATION</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/room/insert">룸 예약</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/event/Insert">이벤트 예약</a></li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="notice.html">커뮤니티</a>
 						<ul class="sub-menu">
@@ -93,7 +94,7 @@
 							<li><a
 								href="${ pageContext.servletContext.contextPath }/ht/QNA/list">Q&amp;A</a></li>
 							<li><a href="reviewList.html">이용후기</a></li>
-							<li><a href="galleryList.html">gallery</a></li>
+							<li><a href="${ pageContext.servletContext.contextPath }/ht/gallery/list">gallery</a></li>
 						</ul></li>
 				</ul>
 				<c:if test="${ empty sessionScope.loginMember }">
@@ -116,7 +117,9 @@
 						<li><a
 							href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
 						<li><a
-							href="${ pageContext.servletContext.contextPath }/hp/book/select">예약확인</a></li>
+							href="${ pageContext.servletContext.contextPath }/ht/room/list">예약확인</a></li>
+						<li><a
+							href="${ pageContext.servletContext.contextPath }/ht/event/list">이벤트예약확인</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">

@@ -121,14 +121,7 @@
                                         		<!-- 특이사항 -->
                                         		<li>
                                         			<label for="exampleFormControlTextarea1">특이사항</label>
-                                              		<textarea 
-                                              			name="message" 
-                                              			id="userPetMsg" 
-                                              			class="form-control" 
-                                              			rows="5"
-                                              			onchange="getUserPetMsg()"
-                                            		>
-                                              		</textarea>
+                                              		<textarea name="message" id="userPetMsg" class="form-control" rows="5" onchange="getUserPetMsg()"></textarea>
                                         		</li>
                                         	</ul>
                                         </div>
