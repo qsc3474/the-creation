@@ -70,12 +70,12 @@ private final Properties prop;
 	/* 호텔 룸 예약확인 셀렉트 메소드*/
 	public List<HTroomDTO> selectRoomList(Connection con, int roomMember) {
 		
-		PreparedStatement pstmt= null;
-		ResultSet rset =null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
 		
 		List<HTroomDTO> roomList = null;
 		
-		String query =prop.getProperty("roomList");
+		String query = prop.getProperty("roomList");
 		
 		try {
 			pstmt = con.prepareStatement(query);

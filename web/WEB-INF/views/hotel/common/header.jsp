@@ -118,6 +118,8 @@
 							href="${ pageContext.servletContext.contextPath }/member/update">마이페이지</a></li>
 						<li><a
 							href="${ pageContext.servletContext.contextPath }/ht/room/list">예약확인</a></li>
+						<li><a
+							href="${ pageContext.servletContext.contextPath }/ht/event/list">이벤트예약확인</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">

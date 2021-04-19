@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>개편한 호텔 - 예약확인</title>
+	<title>개편한 호텔 - 이벤트룸 예약확인</title>
     <!-- 기기(디바이스)별 크기를 인식 하고 1.0으로 확대 및 축소 없이해서 보여줌 -->
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -31,7 +31,7 @@
  <section class="title-sec">
     <div class="row">
         <h2 class="section-title section-title-upper section-title-line text-center">
-            룸 예약확인
+            이벤트룸 예약확인
         </h2>
     </div>
  </section>
@@ -78,7 +78,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <c:forEach items="${ requestScope.roomList }" var="htRoom">
+                                     <c:forEach items="${ requestScope.eventList }" var="htevent">
                                         <tr>
                                             <td class="width45">
                                                 <label class="custom-control custom-checkbox mb-0">
@@ -87,19 +87,19 @@
                                                 </label>
                                             </td>
                                             <td>
-                                               <c:out value="${ htRoom.no }"/>
+                                               <c:out value="${ thevent.eventNo }"/>
                                             </td>
                                             <td>
-                                                <c:out value="${ htRoom.type }"/>
+                                                <c:out value="${ htevent.eventType }"/>
                                             </td>
                                             <td>
-                                                <c:out value="${ htRoom.roomNo }"/>
+                                                <c:out value="${ htevent.petName }"/>
                                             </td>
                                             <td>
-                                                <c:out value="${ htRoom.checkIn }"/>
+                                                <c:out value="${ htevent.time }"/>
                                             </td>
                                             <td>
-                                                <c:out value="${ htRoom.checkOut }"/>
+                                                <c:out value="${ htevent.timeOut }"/>
                                             </td>                                   
                                             <td>                                            
                                                 <button type="button" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
@@ -115,8 +115,8 @@
                 </div>
             </div>
         </section>
-
-<script>
+        
+ <script>
 const link = "${ pageContext.servletContext.contextPath }/ht/room/list";
 
 		if(document.getElementsByTagName("td")) {

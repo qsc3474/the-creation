@@ -32,7 +32,7 @@ public class HTRommListServlet extends HttpServlet {
 			request.setAttribute("roomList", roomList);
 		} else {						
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공지사항 조회 실패!");
+			request.setAttribute("message", "예약확인 조회 실패!");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);

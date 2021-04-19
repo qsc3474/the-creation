@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import creation.book.hp.model.dto.HPbookDTO;
-import creation.book.hp.model.service.HPbookService;
+import creation.book.ht.model.dao.HTeventDTO;
+import creation.book.ht.model.service.HTevnetService;
 import creation.member.model.dto.MemberDTO;
 
 
@@ -20,21 +20,24 @@ public class HTeventListServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("나오냐");
-		int bookMember = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
+		int eventMember = ((MemberDTO)request.getSession().getAttribute("loginMember")).getNo();
 		
+		HTevnetService eventService= new HTevnetService();
+		List<HTeventDTO> eventList = eventService.selectEventList(eventMember);
 		
-		HPbookService bookService= new HPbookService();
-		List<HPbookDTO> bookList= bookService.selectBookList(bookMember);
+		System.out.println(eventList);
 		
-		System.out.println(bookList);
 		String path = "";
-		if(!bookList.isEmpty()) {		// 공지사항이 조회 되었다면
-			path = "/WEB-INF/views/book/bookList.jsp";
-			request.setAttribute("bookList", bookList);
-		} else {						// 공지사항이 조회 되지 않았다면
+		
+		if(!eventList.isEmpty()) {		
+			
+			path = "/WEB-INF/views/htEventReservation/theventList.jsp";
+			request.setAttribute("eventList", eventList);
+			
+		} else {						
+			
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공지사항 조회 실패!");
+			request.setAttribute("message", "예약확인 조회 실패!");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
