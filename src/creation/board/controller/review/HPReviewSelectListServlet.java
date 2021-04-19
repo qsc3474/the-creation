@@ -46,6 +46,7 @@ public class HPReviewSelectListServlet extends HttpServlet {
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 
 		List<HPBoardDTO> boardList = boardService.selectList(pageInfo);
+		List<HPBoardDTO> bestBoardList = boardService.bestSelectList();
 
 		System.out.println(boardList);
 		String path = "";
@@ -54,12 +55,14 @@ public class HPReviewSelectListServlet extends HttpServlet {
 
 			path = "/WEB-INF/views/board/boardReview.jsp";
 			request.setAttribute("boardList", boardList);
+			request.setAttribute("bestBoardList", bestBoardList);
 			request.setAttribute("pageInfo", pageInfo);
 
 		} else {
 
 			path = "/WEB-INF/views/board/boardReview.jsp";
 			request.setAttribute("boardList", boardList);
+			request.setAttribute("bestBoardList", bestBoardList);
 			request.setAttribute("pageInfo", pageInfo);
 
 		}

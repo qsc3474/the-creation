@@ -153,5 +153,17 @@ public class HPReviewBoardService {
 		
 		return result;
 	}
+
+	public List<HPBoardDTO> bestSelectList() {
+		
+		Connection con = getConnection();
+		
+		List<HPBoardDTO> boardList = BoardDAO.bestSelectList(con);
+		
+		close(con);
+		
+		return boardList;
+		
+	}
 	
 }

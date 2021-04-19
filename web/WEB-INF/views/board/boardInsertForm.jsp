@@ -37,9 +37,6 @@
 							<c:if test="${ requestScope.categoryNo eq 'HP_FAQ' }">
 								<option value="HP_FAQ" selected>자주묻는질문</option>
 							</c:if>
-							<c:if test="${ requestScope.categoryNo eq 'HP_INFO' }">
-								<option value="HP_INFO" selected>정보게시판</option>
-							</c:if>
 							<c:if test="${ requestScope.categoryNo eq 'HP_NTC' }">
 								<option value="HP_NTC" selected>공지사항</option>
 							</c:if>

@@ -29,8 +29,6 @@
 							<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
 								<option value="HP_FAQ"
 									<c:if test="${ requestScope.board.categoryNo eq 'HP_FAQ' }">selected</c:if>>자주묻는질문</option>
-								<option value="HP_INFO"
-									<c:if test="${ requestScope.board.categoryNo eq 'HP_INFO' }">selected</c:if>>정보게시판</option>
 								<option value="HP_NTC"
 									<c:if test="${ requestScope.board.categoryNo eq 'HP_NTC' }">selected</c:if>>공지사항</option>
 							</c:if>
@@ -93,7 +91,6 @@
                 case "HP_RV": link = "/hp/review/select/list"; break;
                 case "HP_QNA": link = "/hp/qna/select/list"; break;
                 case "HP_FAQ": link = "/hp/faq/select/list"; break;
-                case "HP_INFO": link = "/hp/info/select/list"; break;
                 case "HP_NTC": link = "/hp/notice/select/list"; break;
                 }
                 location.href = "${pageContext.request.contextPath}" + link;
