@@ -118,16 +118,12 @@
                                                     <span class="custom-control-label">&nbsp;</span>
                                                 </label>
                                             </th>
-                                            <th>회원번호</th>                                    
-                                            <th>이름</th>
-                                            <th>아이디</th>
-                                            <th>회원그룹</th>                                    
-                                            <th>이메일</th>                                    
-                                            <th>전화번호</th>                                    
-                                            <th>지역</th>
-                                            <th>가입일</th>
-                                            <th>탈퇴일</th>
-                                            <th>수정/삭제</th>
+                                            <th>No.</th>                                    
+                                            <th>서비스</th>
+                                            <th>룸</th>
+                                            <th>체크인</th>                                    
+                                            <th>체크아웃</th>                                    
+                                   
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -149,13 +145,6 @@
                                                 <span class="c_name">홍길동</span>
                                             </td>
                                             <td>
-                                                <select id="select">
-                                                    <option value="">일반회원</option>
-                                                      <option value="">우수회원</option>
-                                                      <option value="">블랙리스트</option>
-                                                  </select>
-                                            </td>
-                                            <td>
                                                 123@123
                                             </td>
                                             <td>
@@ -171,138 +160,6 @@
                                                 *
                                             </td>
                                             <td>                                            
-                                                <button type="button" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-danger btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="custom-control custom-checkbox mb-0">
-                                                    <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked="">
-                                                    <span class="custom-control-label">&nbsp;</span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>
-                                                user2
-                                            </td>
-                                            <td>
-                                                <img src="../assets/images/xs/avatar3.jpg" class="rounded" alt="">
-                                                <span class="c_name">유관순</span>
-                                            </td>
-                                            <td>
-                                                <select id="select">
-                                                    <option value="">일반회원</option>
-                                                      <option value="">우수회원</option>
-                                                      <option value="">블랙리스트</option>
-                                                  </select>
-                                            </td>
-                                            <td>
-                                                123@123
-                                            </td>
-                                            <td>
-                                                <span class="phone"><i class="fa fa-phone mr-2"></i>264-625-5689</span>
-                                            </td>                                    
-                                            <td>
-                                                <address><i class="fa fa-map-marker"></i>서울</address>
-                                            </td>
-                                            <td>
-                                                19/02/21
-                                            </td>
-                                            <td>
-                                                *
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-danger btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="custom-control custom-checkbox mb-0">
-                                                    <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked="">
-                                                    <span class="custom-control-label">&nbsp;</span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>
-                                                user3
-                                            </td>
-                                            <td>
-                                                <img src="../assets/images/xs/avatar9.jpg" class="rounded" alt="">
-                                                <span class="c_name">이순신</span>
-                                            </td>
-                                            <td>
-                                                <select id="select">
-                                                    <option value="">일반회원</option>
-                                                      <option value="">우수회원</option>
-                                                      <option value="">블랙리스트</option>
-                                                  </select>
-                                            </td>
-                                            <td>
-                                                123@123
-                                            </td>
-                                            <td>
-                                                <span class="phone"><i class="fa fa-phone mr-2"></i>264-625-9999</span>
-                                            </td>
-                                            <td>
-                                                <address><i class="fa fa-map-marker"></i>서울</address>
-                                            </td>
-                                            <td>
-                                                19/02/21
-                                            </td>
-                                            <td>
-                                                *
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-danger btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="custom-control custom-checkbox mb-0">
-                                                    <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked="">
-                                                    <span class="custom-control-label">&nbsp;</span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                4
-                                            </td>
-                                            <td>
-                                                user4
-                                            </td>
-                                            <td>
-                                                <img src="../assets/images/xs/avatar10.jpg" class="rounded" alt="">
-                                                <span class="c_name">윤봉길</span>
-                                            </td>
-                                            <td>
-                                                <select id="select">
-                                                    <option value="">일반회원</option>
-                                                      <option value="">우수회원</option>
-                                                      <option value="">블랙리스트</option>
-                                                  </select>
-                                            </td>
-                                            <td>
-                                                123@123
-                                            </td>
-                                            <td>
-                                                <span class="phone"><i class="fa fa-phone mr-2"></i>264-625-1212</span>
-                                            </td>
-                                            <td>
-                                                <address><i class="fa fa-map-marker"></i>서울</address>
-                                            </td>
-                                            <td>
-                                                19/02/21
-                                            </td>
-                                            <td>
-                                                *
-                                            </td>
-                                            <td>
                                                 <button type="button" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
                                                 <button type="button" class="btn btn-danger btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
                                             </td>
