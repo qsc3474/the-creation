@@ -59,4 +59,21 @@ private final AdminDAO adminDAO;
 		return result;
 	}
 
+
+	public int deleteBook(HPbookDTO deleteBook) {
+		Connection con = getConnection();
+		
+		int result= adminDAO.deleteBook(con,deleteBook);
+		
+		if(result>0) {
+			commit(con);
+		}else {
+			rollback(con);
+		
+		}
+		close(con);
+		
+		return result;
+	}
+
 }
