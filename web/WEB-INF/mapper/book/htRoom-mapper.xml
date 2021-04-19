@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="roomEvent">
+		INSERT
+		  INTO HOTEL_ROOM_RESERVATION
+		(
+		  HT_ROOM_BK_NO
+		, HT_SERVICE_TYPE
+		, HT_ROOM_NO
+		, HT_CHECK_IN_TIME
+		, HT_CHECK_OUT_TIME
+		, HT_MEM_NO
+		, HT_PET_NO
+		, HT_PET_NAME
+		, HT_PET_KIND
+		, HT_PET_GENDER
+		, HT_PET_AGE
+        , HT_PET_NEUT
+        , HT_BK_MESSAGE
+		)
+		VALUES
+		(
+		  SEQ_HT_ROOM_BK_NO.NEXTVAL
+		, ?
+        , ?
+		, TO_DATE(?,'YYYY/MM/DD HH24:MI:SS')
+		, TO_DATE(?,'YYYY/MM/DD HH24:MI:SS')
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+        , ? 
+		)
+	</entry>
+	
+	
+	
+	
+</properties>
+	
