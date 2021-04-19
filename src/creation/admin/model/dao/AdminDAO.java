@@ -5,6 +5,7 @@ import static creation.common.jdbc.JDBCTemplate.close;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -71,6 +72,29 @@ public class AdminDAO {
 		}
 		
 		return allBookList;
+	}
+	public int updateBook(Connection con, HPbookDTO updateBook) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateBook");
+		
+		try {
+			pstmt=con.prepareStatement(query);
+			pstmt.setInt(1, updateBook.getNo());
+			
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			close(pstmt);
+		}
+		
+		return result;
+
 	}
 
 }

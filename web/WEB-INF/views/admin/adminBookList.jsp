@@ -123,8 +123,9 @@
                                                         <tbody>
                                                         
                                                          <c:forEach var="book" items="${requestScope.allBookList }">                                                           <tr>
+                                                              
                                                                
-                                                                <td><c:out value="${book.no }"/></td>
+                                                                <td><c:out  value="${book.no }"/></td>
                                                                 <td><c:out value="${book.memberNo }"/></td>
                                                                 <td><c:out value="${book.time }"/></td>
                                                                 <td><c:out value="${book.petKind }"/></td>
@@ -133,12 +134,13 @@
                                                                 <td><c:out value="${book.petNeut }"/></td>
                                                                 <td><c:out value="${book.message }"/></td>
                                                                 <td><c:out value="${book.status }"/></td>
-                                                                <td>                                            
-                                                                    <button type="button" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
+                                                                <td>   <input type="hidden" name="no" value="${book.no }" >                                          
+                                                                    <button type="submit" class="btn btn-primary btn-sm" title="Edit" ><i class="fa fa-edit"></i></button>
+                                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete" id="deleteBook"><i class="fa fa-trash-o"></i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
+                                                            
                                                           </c:forEach> 
                                                         </tbody>
                                                     </table>
@@ -167,6 +169,18 @@
                });
             });
          </script>
+         
+         <script type="text/javascript">
+
+
+
+if (document.getElementById("deleteBook")) {
+	const $deleteBook = document.getElementById("deleteBook");
+	$deleteBook.onclick = function() {
+		location.href = "${pageContext.request.contextPath}/admin/book/delete";
+	}
+}
+</script>
       </section>
 
 </body>

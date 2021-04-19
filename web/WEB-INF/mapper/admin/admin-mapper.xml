@@ -8,5 +8,11 @@
          WHERE HP_BK_STATUS='진행중'
       ORDER BY HP_BK_TIME DESC
 	</entry>
-	
+	<entry key="updateBook">
+UPDATE
+      HOSPITAL_BOOK A
+   SET A.HP_BK_STATUS = '완료'
+ WHERE HP_BK_STATUS ='진행중'
+   AND HP_BK_NO =?	
+	</entry>
 </properties>

@@ -42,4 +42,21 @@ private final AdminDAO adminDAO;
 		
 	}
 
+
+	public int updateBook(HPbookDTO updateBook) {
+		Connection con = getConnection();
+		
+		int result= adminDAO.updateBook(con,updateBook);
+		
+		if(result>0) {
+			commit(con);
+		}else {
+			rollback(con);
+		
+		}
+		close(con);
+		
+		return result;
+	}
+
 }
