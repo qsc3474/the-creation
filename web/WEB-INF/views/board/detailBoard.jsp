@@ -169,6 +169,9 @@ tbody {
 						: ${ requestScope.board.drawupDate }</span> <span><strong>조회</strong> : ${ requestScope.board.watched }</span>
 				</p>
 				<div class="col-md-12" style="margin-bottom: 5px;">
+					<c:if test="${ requestScope.board.fileList[0].path ne null}">
+						<div><a href="${pageContext.request.contextPath }\resources\\upload\\file\\7786ee78719942edbebb7ca6a80d26ec.txt" download="${ requestScope.board.fileList[0].originName }">첨부파일</a></div>
+					</c:if>
 					${ requestScope.board.content }
 				</div>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
