@@ -60,7 +60,14 @@
 				/* 호텔 이벤트 예약  */
 			case "htInsertEvent" :
 				successMessage = "호텔 이벤트 예약에 성공하셨습니다!";
-				/* movePath = "${ pageContext.servletContext.contextPath }"; */
+				movePath = "${ pageContext.servletContext.contextPath }/ht/home"; 
+				break;
+				
+				
+				/* 호텔 룸 예약  */
+			case "htInsertRoom" :
+				successMessage = "호텔 룸 예약에 성공하셨습니다!";
+				movePath = "${ pageContext.servletContext.contextPath }/ht/home"; 
 				break;
 			}
 			

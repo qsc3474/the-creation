@@ -138,7 +138,7 @@ public class HPNoticeInsertServlet extends HttpServlet {
 					fileInfo.setPath(file.get("filePath"));
 					fileInfo.setExtension(file.get("ext"));
 					fileInfo.setCategoryNo(parameter.get("boardCategory"));
-					fileInfo.setType(file.get("body"));
+					fileInfo.setType(file.get("fileType"));
 					
 					list.add(fileInfo);
 					

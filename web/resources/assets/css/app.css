@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-title {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   padding-bottom: 30px;
   padding-top: 100px;
 }
@@ -2970,7 +2970,7 @@ section#about-two {
 
 /*title*/
 .title-sec {margin-top: 107.628px; height: 100px; margin-bottom: 0; padding: 30px;}
-.section-title {margin-bottom: 20px;}
+.section-title {margin-bottom: 0px;}
 
 .bg-gray {background: #f4f4f4 ;}
 .bg-white, .style-two {background: #fdfdfd;}
@@ -4748,4 +4748,5 @@ display:block;
 .br-null{border-radius: 0%;}
 .b-null{border: 0;}
 .yellow-c {color: #FDC647;} .footer-logo{font-size: 38px; letter-spacing: 5px; color: #36b2b0 !important; font-weight: bold;}
+.gp-btn{border: 0 !important;}
 /* 추가세팅 */

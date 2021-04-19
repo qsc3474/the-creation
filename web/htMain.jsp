@@ -413,7 +413,7 @@
 		<section id="quickMenu" style="padding: 0;">
 			<nav class="side-menu">
 				<ul>
-					<li><a href="reservation.html" class="quick">호텔예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
+					<li><a href="${ pageContext.servletContext.contextPath }/ht/room/insert" class="quick">호텔예약</a><span><i class="glyphicon glyphicon-calendar"></i></span></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/ht/package" class="quick">호텔패키지</a><span><i class="glyphicon glyphicon-th"></i></span></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/ht/service" class="quick">호텔서비스</a><span><i class="glyphicon glyphicon-check"></i></span></li>
 					<li><a href="${ pageContext.servletContext.contextPath }/ht/NTC/notice/list" class="quick">공지사항</a><span><i class="glyphicon glyphicon-pencil"></i></span></li>

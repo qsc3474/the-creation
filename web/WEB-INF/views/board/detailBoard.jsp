@@ -78,7 +78,11 @@
     padding: 20px 65px 20px 65px;
     color: dimgray;
     font-size: 16px;
+    }
+tbody {
+    border-top: 2px solid #36b2b0 !important;
 }
+    
 </style>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -94,7 +98,7 @@
 
 
 	<!-- 섹션타이틀 -->
-	<section class="step-title">
+	<section class="step-title bg-white">
 		<div class="section-title text-center" data-wow-duration="1000ms"
 			data-wow-delay="0.3s">
 			<c:choose>
@@ -121,8 +125,42 @@
 	<section class="blog-single bg-white">
 		<div class="container">
 			<div class="row">
-				<h2 class="hide">후기 디테일</h2>
-				<p>
+				<div class="row coments-row">
+                    게시글 상세조회<table class="table table-bordered">
+                        <colgroup></colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">제목</th>
+                            <td colspan="5">${ requestScope.board.title }</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">등록자</th>
+                            <td>${ requestScope.board.writer.name }</td>
+                            <td>등록일</td>
+                            <td>${ requestScope.board.drawupDate }</td>
+                            <td>조회수</td>
+                            <td>${ requestScope.board.watched }</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">내용</th>
+                            <td colspan="5">
+                            <p id="exampleFormControlTextarea1" style="height: 200px; background: #fff; border: 1px solid #ddd; padding: 10px;">${ requestScope.board.content }</p>
+                            <c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+			                      <div class="button-group text-center" style="margin-top:10px">
+			                      	<input type='hidden' value="${ requestScope.board.no }" >
+			                        <button id='updateBoard' type="button" class="gp-btn small btn-primary">수정</button>
+			                        <button id='deleteBoard' type="button" class="gp-btn small btn-dark center">삭제</button>
+			                      </div>
+			                 </c:if>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                
+                
+				<%-- <h2 class="hide">후기 디테일</h2>
+				<p style="background:#ccc;">
 					${ requestScope.board.title }
 				</p>
 				<p>
@@ -131,6 +169,9 @@
 						: ${ requestScope.board.drawupDate }</span> <span><strong>조회</strong> : ${ requestScope.board.watched }</span>
 				</p>
 				<div class="col-md-12" style="margin-bottom: 5px;">
+					<c:if test="${ requestScope.board.fileList[0].path ne null}">
+						<div><a href="${pageContext.request.contextPath }\resources\\upload\\file\\7786ee78719942edbebb7ca6a80d26ec.txt" download="${ requestScope.board.fileList[0].originName }">첨부파일</a></div>
+					</c:if>
 					${ requestScope.board.content }
 				</div>
 				<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
@@ -139,7 +180,7 @@
 						<button type='button' id='updateBoard'>수정하기</button>
 						<button type='button' id='deleteBoard'>삭제하기</button>
 					</div>
-				</c:if>
+				</c:if> --%>
 			</div>
 			<!-- /.row -->
 
@@ -149,14 +190,18 @@
 						<h3 class="related-post-title">댓글</h3>
 						<div class="row coments-row">
 							<table class="table table-bordered">
+							<colgroup>
+                                <col style="width: 13%;">
+                                <col>
+                                <col>
+                            </colgroup>
 								<tbody>
 									<tr>
 										<th rowspan="2">댓글내용</th>
-										<td><textarea class="form-control" rows="5"
-												name="content" id="content" placeholder="내용을 입력해 주세요"></textarea></td>
-										<td style="width: 20%;">
-											<div class="text-center" style="margin-top: 100px;">
-												<button type="button" id="commentSubmitButton" class="gp-btn btn-primary">댓글등록</button>
+										<td><textarea class="form-control" rows="2"
+												name="content" id="content" placeholder="내용을 입력해 주세요"></textarea>
+												<div class="text-center" style="margin-top: 10px;">
+												<button type="button" id="commentSubmitButton" class="gp-btn small btn-primary">등록하기</button>
 											</div>
 										</td>
 									</tr>
@@ -176,17 +221,20 @@
         <div class="pop">
             <div class="pop-up-box small-6 large-centered">
                 <a href="#" class="close-button">&#10006;</a>
-                <h2>댓글내용</h2>
-                <table class="table table-bordered">
+                <h3 style="margin-bottom:0">댓글내용</h3>
+                <table class="table table-bordered" style="background:#fff">
 					<tbody>
 						<tr>
 							<td><textarea class="form-control" rows="5"
-									name="content" id="replyContent" placeholder="내용을 입력해 주세요"></textarea></td>
-							<td style="width: 20%;">
-								<div class="text-center" style="margin-top: 100px;">
-									<button type="button" id="replySubmitButton" class="gp-btn btn-primary">댓글등록</button>
-								</div>
+									name="content" id="replyContent" placeholder="내용을 입력해 주세요"></textarea>
 							</td>
+						</tr>
+						<tr>
+						<td style="width: 30%;">
+								<div class="text-center" style="margin-top: 10px;">
+									<button type="button" id="replySubmitButton" class="gp-btn btn-dark">댓글등록</button>
+								</div>
+						</td>
 						</tr>
 					</tbody>
 				</table>
@@ -194,6 +242,7 @@
         </div>
     </div>
 	<!-- 팝업창 -->
+
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 
@@ -288,12 +337,15 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 			          var $replyAuthorInfo = $("<header>").addClass("comment-author");
 			          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data[key].no + "' style='display:none;'>" + data[key].no + "</div>");
 			          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
-			          var $replyOfReply = $("<div>").addClass("modal-button");
+			          var $replyOfReply = $("<div>").addClass("reply modal-button");
 			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
 			          var $replyWriteTime = $("<div class='entry-meta'><i class='fa fa-clock-o'></i>" + data[key].writeTime + "</div>");
 			          var $contentDiv = $("<div>").addClass("ovh");
 			          var $contentText = $("<p>").text(data[key].content);
 			          var $end = $("<div>").addClass("clear");
+			          
+			         
+					
 			          
 			          $li.append($divClearfix);
 			          $divClearfix.append($profilePicture);
@@ -325,7 +377,7 @@ function getCommentList(currentBoardNo, currentBoardCategoryNo){
 			          var $replyAuthorInfo = $("<header>").addClass("comment-author");
 			          var $hiddenReplyNo = $("<div id='hiddenCommentNo" + data[key].no + "' style='display:none;'>" + data[key].no + "</div>");
 			          var $replyAuthorName = $("<div>").addClass("author gp-content-title-big").text(data[key].writer.name);
-			          var $replyOfReply = $("<div>").addClass("modal-button");
+			          var $replyOfReply = $("<div>").addClass("reply modal-button");
 			          var $replyButton = $("<button type='button' class='comment-reply-link btn btn-dark button' style='padding: 5px 10px;'><i class='fa fa-reply-all'></i><span>댓글작성</span></button>");
 			          var $replyWriteTime = $("<div class='entry-meta'><i class='fa fa-clock-o'></i>" + data[key].writeTime + "</div>");
 			          var $contentDiv = $("<div>").addClass("ovh");
