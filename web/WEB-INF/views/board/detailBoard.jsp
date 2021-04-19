@@ -78,7 +78,11 @@
     padding: 20px 65px 20px 65px;
     color: dimgray;
     font-size: 16px;
+    }
+tbody {
+    border-top: 2px solid #36b2b0 !important;
 }
+    
 </style>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -94,7 +98,7 @@
 
 
 	<!-- 섹션타이틀 -->
-	<section class="step-title">
+	<section class="step-title bg-white">
 		<div class="section-title text-center" data-wow-duration="1000ms"
 			data-wow-delay="0.3s">
 			<c:choose>
@@ -140,7 +144,7 @@
                           <tr>
                             <th scope="row">내용</th>
                             <td colspan="5">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">${ requestScope.board.content }</textarea>
+                            <p id="exampleFormControlTextarea1" style="height: 200px; background: #fff; border: 1px solid #ddd; padding: 10px;">${ requestScope.board.content }</p>
                             <c:if test="${ sessionScope.loginMember.kind eq 'M' }">
 			                      <div class="button-group text-center" style="margin-top:10px">
 			                      	<input type='hidden' value="${ requestScope.board.no }" >
@@ -194,8 +198,7 @@
 										<td><textarea class="form-control" rows="2"
 												name="content" id="content" placeholder="내용을 입력해 주세요"></textarea>
 												<div class="text-center" style="margin-top: 10px;">
-												<button type="button" id="commentSubmitButton" class="gp-btn small btn-primary">수정</button>
-												<button type="button" id="commentSubmitButton" class="gp-btn small btn-dark center">삭제</button>
+												<button type="button" id="commentSubmitButton" class="gp-btn small btn-primary">등록하기</button>
 											</div>
 										</td>
 									</tr>
@@ -215,17 +218,20 @@
         <div class="pop">
             <div class="pop-up-box small-6 large-centered">
                 <a href="#" class="close-button">&#10006;</a>
-                <h2>댓글내용</h2>
-                <table class="table table-bordered">
+                <h3 style="margin-bottom:0">댓글내용</h3>
+                <table class="table table-bordered" style="background:#fff">
 					<tbody>
 						<tr>
 							<td><textarea class="form-control" rows="5"
-									name="content" id="replyContent" placeholder="내용을 입력해 주세요"></textarea></td>
-							<td style="width: 20%;">
-								<div class="text-center" style="margin-top: 100px;">
-									<button type="button" id="replySubmitButton" class="gp-btn btn-primary">댓글등록</button>
-								</div>
+									name="content" id="replyContent" placeholder="내용을 입력해 주세요"></textarea>
 							</td>
+						</tr>
+						<tr>
+						<td style="width: 30%;">
+								<div class="text-center" style="margin-top: 10px;">
+									<button type="button" id="replySubmitButton" class="gp-btn btn-dark">댓글등록</button>
+								</div>
+						</td>
 						</tr>
 					</tbody>
 				</table>
@@ -233,6 +239,7 @@
         </div>
     </div>
 	<!-- 팝업창 -->
+
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 
