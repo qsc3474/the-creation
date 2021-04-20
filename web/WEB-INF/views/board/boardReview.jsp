@@ -28,26 +28,27 @@ thead{border-top: 2px solid #FDC647 !important;}
 
 	<section id="Gallery" class="bg-white">
 		<div class="container">
-			<div class="cf"></div>
+			<div class="cf"></div>	
 			<div class="blog-items">
 				<div class="row">
 					<c:forEach items="${ requestScope.bestBoardList }" var="bestReview">
 						<div class="col-md-3">
 							<div class="blog-post wow fadeInUp" data-wow-delay="0.3s">
-								<a href="#">
+								<a href="${ pageContext.servletContext.contextPath }/hp/review/detail?no=${ bestReview.no }">
 									<div class="blog-thumb">
-										<c:if test="${ bestReview.fileList[0].thumbnailPath ne null}">
-											<img src="${ pageContext.servletContext.contextPath }${ bestReview.fileList[0].thumbnailPath }'" alt="Blog thumb">
+										<c:if test="${ bestReview.fileList[0].path ne null}">
+											<img src="${ pageContext.servletContext.contextPath }/resources/upload/picture/original/${ bestReview.fileList[0].name }">
 										</c:if>
 										<div class="blog-overlay"></div>
 									</div>
 								</a>
 								<div class="blog-content">
+									<input type="hidden" value="${ bestReview.no }">
 									<ul class="post-meta">
 										<li><a href="#">${ bestReview.drawupDate }</a></li>
 									</ul>
 									<h3>
-										<a href="#">${ bestReview.title }</a>
+										<a href="${ pageContext.servletContext.contextPath }/hp/review/detail?no=${ bestReview.no }">${ bestReview.title }</a>
 									</h3>
 									<p class="font-16">
 										${ bestReview.content }
@@ -55,8 +56,8 @@ thead{border-top: 2px solid #FDC647 !important;}
 											<c:out value="(${ bestReview.cmtCount })" />
 										</c:if>
 									</p>
-									<h6>${ bestReview.watched }</h6>
-									<a href="review-detail.html" class="read-more-btn">Read
+									<h6>조회수 : ${ bestReview.watched }</h6>
+									<a href="${ pageContext.servletContext.contextPath }/hp/review/detail?no=${ bestReview.no }" class="read-more-btn">Read
 										More</a>
 								</div>
 							</div>
@@ -292,6 +293,13 @@ thead{border-top: 2px solid #FDC647 !important;}
 										.eq(index).addClass("active");
 							});
 				});
+		function detailBestReviewBoard(){
+			
+			const no = this.parentNode.children[0].value;
+			location.href = "${ pageContext.servletContext.contextPath }/hp/review/detail?no="
+				+ no;
+			
+		}
 	</script>
 </body>
 </html>

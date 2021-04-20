@@ -125,8 +125,8 @@ public class HPReviewInsertServlet extends HttpServlet {
 								
 								fileMap.put("fileType", "body");
 								
-								width = 120;
-								height = 100;
+								width = 200;
+								height = 160;
 							}
 							
 							Thumbnails.of(fileUploadDirectory + randomFileName)

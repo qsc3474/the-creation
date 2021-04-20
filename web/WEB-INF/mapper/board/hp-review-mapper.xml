@@ -77,7 +77,7 @@
   			 , C.THUMBNAIL_PATH
 		  FROM HOSPITAL_RV A
 		  JOIN MEM_INFO B ON(A.HP_RV_MEM_NO = B.MEM_NO)
-		  LEFT JOIN FILE_INFO C ON(A.HP_RV_NO = C.BD_NO AND A.HP_RV_CATEGORY_NO = C.BD_CATEGORY_NO)
+		  LEFT JOIN V_BODY_FILE C ON(A.HP_RV_NO = C.BD_NO AND A.HP_RV_CATEGORY_NO = C.BD_CATEGORY_NO)
 		 WHERE A.HP_RV_NO = ?
 	</entry>
 	<entry key="searchWriterBoardCount">
@@ -326,5 +326,53 @@
         , ?
         , ?
         )
+    </entry>
+    <entry key="bestSelectList">
+        SELECT
+		       A.HP_RV_NO
+		     , A.HP_RV_CATEGORY_NO
+		     , A.HP_RV_TITLE
+		     , A.HP_RV_CONTENT
+		     , A.HP_RV_DRAWUP_DATE
+		     , A.HP_RV_WATCHED
+		     , A.MEM_NAME
+		     , A.HP_RV_MEM_NO
+		     , A.HP_RV_STATUS
+		     , A.HP_RV_CMT_COUNT
+		     , A.FILE_PATH
+             , A.SAVE_FILE_NAME
+		  FROM (SELECT ROWNUM RNUM
+		             , B.HP_RV_NO
+		             , B.HP_RV_CATEGORY_NO
+		             , B.HP_RV_TITLE
+		             , B.HP_RV_CONTENT
+		             , B.HP_RV_DRAWUP_DATE
+		             , B.HP_RV_WATCHED
+		             , B.MEM_NAME
+		             , B.HP_RV_MEM_NO
+		             , B.HP_RV_STATUS
+		             , B.HP_RV_CMT_COUNT
+		             , B.FILE_PATH
+                     , B.SAVE_FILE_NAME
+		          FROM (SELECT C.HP_RV_NO
+		                     , C.HP_RV_CATEGORY_NO
+		                     , C.HP_RV_TITLE
+		                     , C.HP_RV_CONTENT
+		                     , C.HP_RV_DRAWUP_DATE
+		                     , C.HP_RV_WATCHED
+		                     , D.MEM_NAME
+		                     , C.HP_RV_MEM_NO
+		                     , C.HP_RV_STATUS
+		                     , C.HP_RV_CMT_COUNT
+		                     , E.FILE_PATH
+		                     , E.SAVE_FILE_NAME
+		                  FROM HOSPITAL_RV C
+		                  JOIN MEM_INFO D ON(C.HP_RV_MEM_NO = D.MEM_NO)
+		                  LEFT JOIN V_THUMBNAIL_FILE E ON(C.HP_RV_NO = E.BD_NO AND C.HP_RV_CATEGORY_NO = E.BD_CATEGORY_NO)
+		                 WHERE C.HP_RV_STATUS = 'PUBLIC'
+		                 ORDER BY C.HP_RV_WATCHED DESC
+		               ) B
+		       ) A
+		 WHERE A.RNUM BETWEEN 1 AND 4
     </entry>
 </properties>

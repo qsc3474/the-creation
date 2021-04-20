@@ -248,13 +248,18 @@ private final Properties prop;
 			
 			rset = pstmt.executeQuery();
 			
-			if(rset.next()) {
+			while(rset.next()) {
 				
-				board = new HPBoardDTO();
+				if(board == null) {
+					
+					board = new HPBoardDTO();
+					ArrayList<FileDTO> fileList = new ArrayList<FileDTO>();
+					board.setWriter(new MemberDTO());
+					board.setFileList(fileList);
+					
+				}
 				
 				FileDTO file = new FileDTO();
-				ArrayList<FileDTO> fileList = new ArrayList<FileDTO>();
-				board.setWriter(new MemberDTO());
 				
 				board.setNo(rset.getInt("HP_RV_NO"));
 				board.setCategoryNo(rset.getString("HP_RV_CATEGORY_NO"));
@@ -269,8 +274,11 @@ private final Properties prop;
 				
 				file.setThumbnailPath(rset.getString("THUMBNAIL_PATH"));
 				
-				fileList.add(file);
-				board.setFileList(fileList);
+				if(rset.getString("THUMBNAIL_PATH") != null) {
+					
+					board.getFileList().add(file);
+					
+				}
 				
 			}
 			
@@ -415,6 +423,80 @@ private final Properties prop;
 		}
 		
 		return result;
+		
+	}
+
+	public List<HPBoardDTO> bestSelectList(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("bestSelectList");
+		
+		List<HPBoardDTO> boardList = null;
+		
+		try {
+			
+			stmt = con.createStatement();
+			
+			rset = stmt.executeQuery(query);
+			
+			boardList = new ArrayList<>();
+			
+			while(rset.next()) {
+				
+				HPBoardDTO board = new HPBoardDTO();
+				FileDTO thumbnail = new FileDTO();
+				ArrayList<FileDTO> file = new ArrayList<FileDTO>();
+				board.setCategory(new CategoryDTO());
+				board.setWriter(new MemberDTO());
+				
+				String subContent = "";
+				
+				if(rset.getString("HP_RV_CONTENT").length() <= 30) {
+					
+					subContent = rset.getString("HP_RV_CONTENT");
+					
+				} else {
+					
+					subContent = rset.getString("HP_RV_CONTENT").substring(0, 30) + "...";
+					
+				}
+				
+				
+				board.setNo(rset.getInt("HP_RV_NO"));
+				board.setCategoryNo(rset.getString("HP_RV_CATEGORY_NO"));
+				board.setTitle(rset.getString("HP_RV_TITLE"));
+				board.setContent(subContent);
+				board.setMemberNo(rset.getInt("HP_RV_MEM_NO"));
+				board.getWriter().setName(rset.getString("MEM_NAME"));
+				board.setWatched(rset.getInt("HP_RV_WATCHED"));
+				board.setDrawupDate(rset.getDate("HP_RV_DRAWUP_DATE"));
+				board.setStatus(rset.getString("HP_RV_STATUS"));
+				board.setCmtCount(rset.getInt("HP_RV_CMT_COUNT"));
+				
+				thumbnail.setPath(rset.getString("FILE_PATH"));
+				thumbnail.setName(rset.getString("SAVE_FILE_NAME"));
+				
+				file.add(thumbnail);
+				board.setFileList(file);
+
+				boardList.add(board);
+				
+			}
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			close(rset);
+			close(stmt);
+			
+		}
+		
+		return boardList;
 		
 	}
 	

@@ -2116,14 +2116,6 @@ section#about-two {
   font-size: 15px;
 }
 
-.blog-post .blog-content .post-meta li:first-child:after {
-  position: absolute;
-  right: -20px;
-  top: 0;
-  content: 'In';
-  color: #000;
-}
-
 .blog-post .blog-content .post-meta li a {
   color: #03a9f4;
   transition: all 0.3s ease-in-out;

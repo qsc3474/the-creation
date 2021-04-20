@@ -96,5 +96,26 @@ public class AdminDAO {
 		return result;
 
 	}
+	public int deleteBook(Connection con, HPbookDTO deleteBook) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("deleteBook");
+		
+		try {
+			pstmt=con.prepareStatement(query);
+			pstmt.setInt(1, deleteBook.getNo());
+			
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 }

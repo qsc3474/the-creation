@@ -35,6 +35,18 @@
 		, ?
 		)
 	</entry>
+	<entry key="EventList">
+	    SELECT  
+	           A.HT_EVENT_BK_NO
+	         , A.HT_EVENT_TYPE
+	         , A.HT_PET_NAME
+	         , A.HT_ER_TIME
+	         , A.HT_ER_TIMEOUT
+	      FROM HOTEL_EVENT_RESERVATION A
+	     WHERE HT_MEM_NO = ?
+	       AND HT_EVENT_STAUS = '진행중'
+	</entry>
+	
 	
 	
 	

@@ -134,9 +134,10 @@
                                                                 <td><c:out value="${book.petNeut }"/></td>
                                                                 <td><c:out value="${book.message }"/></td>
                                                                 <td><c:out value="${book.status }"/></td>
-                                                                <td>   <input type="hidden" name="no" value="${book.no }" >                                          
+                                                                <td>
+                                                                    <input type="hidden"  name="no" value="${book.no }" >                                          
                                                                     <button type="submit" class="btn btn-primary btn-sm" title="Edit" ><i class="fa fa-edit"></i></button>
-                                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete" id="deleteBook"><i class="fa fa-trash-o"></i></button>
+                                                                    <button type="button" class="btn btn-danger btn-sm deleteBtn" title="Delete" id="deleteBook"><i class="fa fa-trash-o" > </i></button>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -158,6 +159,12 @@
                   </div>
             
          <script>
+        	 $(function(){
+        		 
+        		 deleteButtonAction();
+        		 
+	   		}); 
+         
             $(document).ready(function () {
                $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
                   e.preventDefault();
@@ -168,19 +175,26 @@
                   $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
                });
             });
+            
+            function deleteButtonAction(){
+            	
+            	$(".deleteBtn").click(function(){
+            		
+            		var $parent = this.parentNode;
+            		console.log($parent);
+    			    var getNo = $parent.children[0];
+    			    console.log(getNo);
+    			    var no = getNo.value;
+    			    console.log(no);
+    			    location.href = "${pageContext.request.contextPath}/admin/book/delete?no=" + no;
+    			    
+            		
+            	})
+            	
+            }
          </script>
          
-         <script type="text/javascript">
-
-
-
-if (document.getElementById("deleteBook")) {
-	const $deleteBook = document.getElementById("deleteBook");
-	$deleteBook.onclick = function() {
-		location.href = "${pageContext.request.contextPath}/admin/book/delete";
-	}
-}
-</script>
+    
       </section>
 
 </body>

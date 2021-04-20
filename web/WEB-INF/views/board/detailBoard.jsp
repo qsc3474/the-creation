@@ -105,9 +105,6 @@ tbody {
 				<c:when test="${ requestScope.board.categoryNo eq 'HP_NTC' }">
 					<h2>공지사항detail</h2>
 				</c:when>
-				<c:when test="${ requestScope.board.categoryNo eq 'HP_INFO' }">
-					<h2>정보게시판detail</h2>
-				</c:when>
 				<c:when test="${ requestScope.board.categoryNo eq 'HP_RV' }">
 					<h2>후기게시판detail</h2>
 				</c:when>
@@ -151,12 +148,24 @@ tbody {
                           <tr>
                             <th scope="row">내용</th>
                             <td colspan="5">
+                            <c:if test="${ requestScope.board.categoryNo eq 'HP_RV' }">
+                            	<c:if test="${ !empty requestScope.board.fileList[0] }">
+		                            <c:forEach items="${ requestScope.board.fileList }" var="pictures">
+		                            	<div style="float:left;"><img src="${pageContext.servletContext.contextPath}${ pictures.thumbnailPath }"></div>
+		                            </c:forEach>
+	                            </c:if>
+                            </c:if>
                             <p id="exampleFormControlTextarea1" style="height: 200px; background: #fff; border: 1px solid #ddd; padding: 10px;">${ requestScope.board.content }</p>
                             <c:if test="${ sessionScope.loginMember.kind eq 'M' }">
 			                      <div class="button-group text-center" style="margin-top:10px">
 			                      	<input type='hidden' value="${ requestScope.board.no }" >
 			                        <button id='updateBoard' type="button" class="gp-btn small btn-primary">수정</button>
 			                        <button id='deleteBoard' type="button" class="gp-btn small btn-dark center">삭제</button>
+			                        <div style="float:left;">
+			                        	<c:if test="${ requestScope.board.categoryNo eq 'HP_RV' || requestScope.board.categoryNo eq 'HP_QNA' }">
+			                      			<button id='reportBoard' type="button" class="gp-btn small btn-dark center" style="background:red">신고</button>
+			                      		</c:if>
+			                     	</div>
 			                      </div>
 			                 </c:if>
                             </td>
@@ -223,9 +232,9 @@ tbody {
 		</div>
 		<!-- /.container -->
 	</section>
-	<!-- 팝업창 -->
+	<!-- 대댓글 팝업창 -->
 	<div id="pop-up">
-        <div class="pop">
+        <div class="pop" id="reply-pop-up">
             <div class="pop-up-box small-6 large-centered">
                 <a href="#" class="close-button">&#10006;</a>
                 <h3 style="margin-bottom:0">댓글내용</h3>
@@ -248,7 +257,28 @@ tbody {
             </div>
         </div>
     </div>
-	<!-- 팝업창 -->
+	<!-- 신고 팝업창 -->
+	<div id="pop-up">
+        <div class="pop" id="report-pop-up">
+            <div class="pop-up-box small-6 large-centered">
+                <a href="#" class="close-button">&#10006;</a>
+                <div class="mb-12">
+						<label for="title">신고사유</label>
+						<select	class="custom-select mr-sm-2" name="reportCategory" id="reportCategory" onchange="reportCategoryChanged(this.value)">
+								<option value="def" selected>--</option>
+								<option value="a1">욕설 및 부적절한 언어 사용</option>
+								<option value="i2">광고성 게시글 작성</option>
+								<option value="r3">음란물 업로드</option>
+								<option value="s4">회원들간의 분쟁 조장</option>
+								<option value="m5">기타</option>
+						</select>
+						<textarea class="form-control" rows="3" name="reportContent"
+							id="reportContent" style="display:none;" placeholder="신고 사유를 입력해 주세요"></textarea>
+						<button type="button" id="reportSubmitButton" class="gp-btn btn-primary">신고접수</button>
+					</div>
+            </div>
+        </div>
+    </div>
 
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
@@ -295,6 +325,24 @@ if(document.getElementById("commentSubmitButton")){
 		var content = document.getElementById("content");
 		insertComment(content.value,${ requestScope.board.no },"${ requestScope.board.categoryNo }");
 	}
+}
+
+function reportCategoryChanged(reportReason){
+	
+	console.log(reportReason);
+	
+	if(reportReason == 'm5'){
+		
+		var $reportContentText = document.getElementById("reportContent");
+		$reportContentText.style.display = "block";
+		
+	} else {
+		
+		var $reportContentText = document.getElementById("reportContent");
+		$reportContentText.style.display = "none";
+		
+	}
+	
 }
 
 function replyOfReply(clickParentCommentNo){
@@ -502,21 +550,45 @@ function replyCommentButtonAction() {
 		    var $parent = this.parentNode;
 		    var getNo = $parent.parentNode.children[0];
 		    no = getNo.innerText;
-	        $(".pop").fadeIn(300);
+	        $("#reply-pop-up").fadeIn(300);
     });
 
     $("#replySubmitButton").click(function () {
-        $(".pop").fadeOut(300);
+        $("#reply-pop-up").fadeOut(300);
         replyOfReply(no);
         document.getElementById("replyContent").value='';
     });
     
     $(".close-button").click(function () {
-        $(".pop").fadeOut(300);
+        $("#reply-pop-up").fadeOut(300);
         document.getElementById("replyContent").value='';
     });
 }
 //# sourceURL=pen.js
+
+$(function(){
+	
+	$("#reportBoard").click(function() {
+		
+        $("#report-pop-up").fadeIn(300);
+        
+    });
+
+    $("#reportSubmitButton").click(function () {
+    	
+        $("#report-pop-up").fadeOut(300);
+        document.getElementById("replyContent").value='';
+        
+    });
+    
+    $(".close-button").click(function () {
+    	
+        $("#report-pop-up").fadeOut(300);
+        document.getElementById("replyContent").value='';
+        
+    });
+		
+});
 </script>
 
 </body>

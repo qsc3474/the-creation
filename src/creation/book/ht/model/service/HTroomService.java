@@ -37,7 +37,7 @@ public class HTroomService {
 		close(con);
 		return result;
 	}
-	/* 호텔 룸 예약확인 셀렉트 메소드*/
+	/* 호텔 룸 예약확인 리스트 메소드*/
 	public List<HTroomDTO> selectRoomList(int roomMember) {
 		
 		Connection con = getConnection();
