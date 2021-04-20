@@ -33,19 +33,22 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="/creation/resources/js/event.js"></script>
+ <style>
+html {background: #f8f8f8;}
+ </style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 
-	<section class="title-sec">
-		<div class="row">
-			<h2
-				class="section-title section-title-upper section-title-line text-center">
-				Q&amp;A</h2>
-		</div>
-	</section>
-	<section class="notice-sec">
+	<!-- title -->
+        <section class="step-title bg-white">
+            <div class="section-title ht-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
+                <h2>Q&amp;A</h2>
+            </div>
+        </section>
+        <!-- /title -->
+	<section class="notice-sec bg-white pt-null">
 		<div class="container">
 			<jsp:include page="/WEB-INF/views/board/pageSubmenu.jsp"></jsp:include>
 			<div class="col-lg-10">
@@ -112,7 +115,7 @@
 								</div>
 								<!-- table-area end -->
 								<%-- 페이지 처리 --%>
-								<div class="pageingArea" align="center">
+								<div class="pageingArea" align="center" style="margin-top: 50px; padding-top:10px;">
 									<button id="searchStartPage"><<</button>
 
 									<c:if test="${requestScope.pageInfo.pageNo == 1 }">
@@ -152,12 +155,10 @@
 									<button id="searchMaxPage">>></button>
 
 								</div>
-								<br> <br>
-
 
 								<form id="searchForm"
 									action="${ pageContext.servletContext.contextPath }/hp/info/search/list"
-									method="get">
+									method="get" style="padding-top:20px">
 									<div class="search-area" align="center">
 										<c:choose>
 											<c:when test="${ !empty requestScope.searchValue }">
@@ -181,10 +182,10 @@
 												<input type="search" id="searchValue" name="searchValue">
 											</c:otherwise>
 										</c:choose>
-										<button type="submit">검색하기</button>
+										<button type="submit" class="gp-btn btn-dark" style="padding:7px 15px;">검색하기</button>
 										<c:if test="${ !empty sessionScope.loginMember }">
-											<button type="button" id="writeBoard"
-												style="text-align: right">작성하기</button>
+											<button type="button" id="writeBoard" class="gp-btn btn-dark"
+												style="text-align: right; padding:7px 15px;">작성하기</button>
 										</c:if>
 									</div>
 								</form>
@@ -287,5 +288,6 @@
 					});
 			});
 	</script>
+	
 </body>
 </html>

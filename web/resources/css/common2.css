@@ -16,7 +16,7 @@ ul, li {
     letter-spacing: -1px;
 }
 .notice-sec .container {
-    padding: 100px 0;
+    padding: 50px 0 !important;
 }
 .table {
     text-align: center;
@@ -33,7 +33,7 @@ ul, li {
 }
 .panel-wrap .table th {
     padding: 12px !important;
-    border-top: 2px solid #0f0f0f !important;
+    /* border-top: 2px solid #0f0f0f !important; */
     background-color: #fafafa;
 }
 .panel-wrap .table td {
@@ -51,7 +51,7 @@ ul, li {
 }
 .page-submenu {
     margin-top: 26px;
-    border-top: 2px solid #0f0f0f;
+   border-top: 2px solid #FDC647;
 }
 .page-submenu ul {
     margin: 0;
@@ -83,7 +83,8 @@ ul, li {
     opacity: .5;
 }
 .page-submenu ul li a.active {
-    background-color: #eaeaea;
+    background-color: #FDC647;
+
 }
 .page-submenu ul li a.active span {
     font-weight: 600;
@@ -104,66 +105,70 @@ ul, li {
     opacity: 1;
 }
 .input-text, select {
-	width: 15% !important;
+   width: 15% !important;
+   padding-bottom: 5px;
 }
 .faq-list-box {
-	width: 100%;
-	padding: 0; 
-	margin-bottom: 70px;
-	border-top: 2px solid #0f0f0f;
+   width: 100%;
+   padding: 0; 
+   margin-bottom: 10px;
+
 }
 .faq-list-box li{
-	border-top: 1px solid #4ebfbd; 
+   border-top: 1px solid #4ebfbd; 
 }
 .faq-list-box li:first-child{
-	border:0 none;
+   border:0 none;
 }
 .faq-list-box li a {
-	position: relative;
+   position: relative;
     padding: 16px 26px;
-    background-color: #36b2b0;
-	display:block; 
-	text-decoration:none; 
+    background-color: #FFCD00;
+    background: rgba(30, 30, 30, 0.1);
+   display:block; 
+   text-decoration:none; 
 }
+.faq-list-box li a:hover {background-color: #FFCD00; color: #fff; }
 .faq-list-box li a span {
-	font-size: 15px;
-	color: #fff;
+   font-size: 15px;
+   color: #fff;
+   color: #303030;
 }
 .faq-list-box li a .fa-chevron-down {
-	position: absolute;
+   position: absolute;
     top: 20px;
     right: 18px;
     color: #fff;
 }
 .faq-list-box li p {
-	padding: 26px;
-	color:#0f0f0f;
-	font-size: 15px;
+   padding: 26px;
+   color:#0f0f0f;
+   font-size: 15px;
     margin-bottom: 0;
-    background: #d0f5f4;
+    background: #fff;
 }
 .form-user-input {
     margin-top: 20px;
 }
 .form-user-input ul {
-	padding-left: 0;
+   padding-left: 0;
 }
 .form-user-input ul li select {
-	width: 100% !important;
+   width: 100% !important;
 }
 .form-user-input ul li label.fieldlabels {
-	width: 100%;
+   width: 100%;
 }
 .reserv-listbox {
-	margin: 20px 0 50px 0 !important;
-	border-top: 2px solid #0f0f0f !important;
-	border-bottom: 1px solid #0f0f0f !important;
+   margin: 20px 0 50px 0 !important;
+   border-top: 2px solid #0f0f0f !important;
+   border-bottom: 1px solid #0f0f0f !important;
 }
 .reserv-listbox th {
-	width: 210px;
+   width: 210px;
     background-color: #eee;
     padding: 15px 0 !important;
 }
 .reserv-listbox td {
-	padding: 15px 0 !important;
+   padding: 15px 0 !important;
 }

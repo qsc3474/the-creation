@@ -12,7 +12,7 @@
             background: #fff;
         }
         .gp-testimonial-two{background:#F0F0EB;}
-        .gp-testimonial-two {padding: 15px;}
+        .gp-testimonial-two {padding: 25px !important; background:#E5E9ED ;}
         .gp-testmonial-content img {max-height: 200px;}
         .tag {background: #FF8C64; color: #fff; padding: 5px; border-radius: 4px;}
         .name {font-size: 16px;}
@@ -27,7 +27,7 @@
 		<div id="main_content">
 		
 			<!-- title -->
-			<section class="step-title">
+			<section class="step-title bg-white">
             <div class="section-title ht-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
                 <h2>갤러리 게시판</h2>
                 <h3 class="underline-magical"><span class="underline--magical"> 베스트게시판</span></h3>
@@ -172,7 +172,6 @@
 	                                class="swiper-pagination-bullet"></span><span
 	                                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
 	                        </div>
-	
 	                    </div>
 	                    <!-- /.gp-testimonial-wrapper -->
 	                </div>

@@ -24,18 +24,24 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/creation/resources/js/event.js"></script>
+    
+    <style>
+    .pagingArea {margin-top: 50px;}
+   	b {color: #555; font-weight:0;}
+    </style>
+    
 
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/hotel/common/header.jsp"/>
-	 <section class="title-sec">
-	    <div class="row">
-	        <h2 class="section-title section-title-upper section-title-line text-center">
-	            FAQ
-	        </h2>
-	    </div>
-	 </section>
-	<section class="notice-sec">
+	 <!-- title -->
+        <section class="step-title bg-white">
+            <div class="section-title ht-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
+                <h2>자주하는질문</h2>
+            </div>
+        </section>
+        <!-- /title -->
+		<section class="notice-sec bg-white pt-null">
 	    <div class="container">
 	     	<div class="col-lg-2">
 	            <aside class="page-submenu">
@@ -55,18 +61,6 @@
 	                    <li>
 	                        <a href="${ pageContext.servletContext.contextPath }/ht/QNA/list">
 	                            <span>문의사항</span>
-	                            <i class="fas fa-chevron-right"></i>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="#">
-	                            <span>갤러리</span>
-	                            <i class="fas fa-chevron-right"></i>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="#">
-	                            <span>사용후기</span>
 	                            <i class="fas fa-chevron-right"></i>
 	                        </a>
 	                    </li>
@@ -177,41 +171,37 @@
 							</c:choose>
 						</div> 
 						<!-- pagingArea end --> 
-
-						
 						<c:if test="${ sessionScope.loginMember.kind eq 'M'}">
 							<button id="writeFAQ">작성하기</button>			
 						</c:if>
-						
+						<!-- 검색 폼 -->
+						<form id="searchForm" action="${ pageContext.servletContext.contextPath }/ht/FAQ/search" method="get" style="padding-top:10px">
+							<div class="search-area" align="center">
+								<c:choose>
+									<c:when test="${ !empty requestScope.searchValue }">
+										<select id="searchCondition" name="searchCondition">
+											<option value="writer" <c:if test="${requestScope.searchCondition eq 'writer' }">selected</c:if>>작성자</option>
+											<option value="title" <c:if test="${requestScope.searchCondition eq 'title' }">selected</c:if>>제목</option>
+											<option value="content" <c:if test="${requestScope.searchCondition eq 'content' }">selected</c:if>>내용</option>
+										</select>
+										<input type="search" id="searchValue" name="searchValue" value="${requestScope.searchValue}" >
+									</c:when>
+									<c:otherwise>
+										<select id="searchCondition" name="searchCondition">
+											<option value="writer">작성자</option>
+											<option value="title">제목</option>
+											<option value="content">내용</option>
+										</select>
+										<input type="search" id="searchValue" name="searchValue">
+									</c:otherwise>
+								</c:choose>
+								<button type="submit" class="gp-btn btn-dark" style="padding:7px 15px;">검색하기</button>
+							</div>
+						</form>  
 	       			</div>
 	    		</div>
 	    	</div>
-	    </div>
-	    
-		<!-- 검색 폼 -->
-		<form id="searchForm" action="${ pageContext.servletContext.contextPath }/ht/FAQ/search" method="get">
-			<div class="search-area" align="center">
-				<c:choose>
-					<c:when test="${ !empty requestScope.searchValue }">
-						<select id="searchCondition" name="searchCondition">
-							<option value="writer" <c:if test="${requestScope.searchCondition eq 'writer' }">selected</c:if>>작성자</option>
-							<option value="title" <c:if test="${requestScope.searchCondition eq 'title' }">selected</c:if>>제목</option>
-							<option value="content" <c:if test="${requestScope.searchCondition eq 'content' }">selected</c:if>>내용</option>
-						</select>
-						<input type="search" id="searchValue" name="searchValue" value="${requestScope.searchValue}" >
-					</c:when>
-					<c:otherwise>
-						<select id="searchCondition" name="searchCondition">
-							<option value="writer">작성자</option>
-							<option value="title">제목</option>
-							<option value="content">내용</option>
-						</select>
-						<input type="search" id="searchValue" name="searchValue">
-					</c:otherwise>
-				</c:choose>
-				<button type="submit">검색하기</button>
-			</div>
-		</form>    
+	    </div>  
 	</section>
 	
 
@@ -308,7 +298,7 @@ const searchLink = "${ pageContext.servletContext.contextPath }/ht/FAQ/search";
 			$(".faq-list-box li a").eq(0).trigger("click");
 		});
     </script>
-
+<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 </body>
 </html>
 

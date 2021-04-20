@@ -29,8 +29,10 @@
 </style>
 </head>
 <body class="bg-white">
-	<div class="col-lg-2">
-		<aside class="page-submenu">
+	
+	<section class="notice-sec bg-white p-null">
+		<div class="col-lg-2">
+		<aside class="page-submenu mt-null">
 			<ul>
 				<li><a
 					href="${ pageContext.servletContext.contextPath }/hp/notice/select/list"
@@ -60,5 +62,6 @@
 			</ul>
 		</aside>
 	</div>
+	</section>
 </body>
 </html>

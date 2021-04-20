@@ -14,20 +14,31 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <title>개편한병원- 게시판 작성</title>
+    
+    <style>
+    .custom-select{height: 24px !important;}
+    </style>
+    
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
+	<!-- title -->
+	<section class="step-title bg-white pb-null">
+		<div class="section-title ht-title text-center"
+			data-wow-duration="1000ms" data-wow-delay="0.3s">
+			<h2>게시판 작성</h2>
+		</div>
+	</section>
+	<!-- /title -->
 	<section>
 		<div class="container">
-			<h1 align="center">글쓰기</h1>
 			<div class="container" role="main">
 				<form name="form" id="form" role="form"
 					action="${ pageContext.servletContext.contextPath }/hp/board/insert"
 					method="post">
 					<div class="mb-12">
-						<label for="title">카테고리</label> <select
-							class="custom-select mr-sm-2" name="boardCategory"
-							id="boardCategory">
+						<label for="title">카테고리</label> 
+						<select  class="form-control" name="boardCategory" id="boardCategory">
 							<c:if test="${ requestScope.categoryNo eq 'HP_RV' }">
 								<option value="HP_RV" selected>후기게시판</option>
 							</c:if>

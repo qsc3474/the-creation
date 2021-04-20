@@ -20,7 +20,7 @@
 	
 		<div id="main_content">
 		
-			<!-- title -->
+		<!-- title -->
         <section class="step-title bg-white">
             <div class="section-title ht-title text-center" data-wow-duration="1000ms" data-wow-delay="0.3s">
                 <h2>이용안내</h2>

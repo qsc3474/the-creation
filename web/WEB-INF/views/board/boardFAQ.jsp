@@ -1,47 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <title>개편한 병원-FAQ</title>
 <style>
-.title-sec {margin-top: 107.628px; height: 100px; margin-bottom: 0; padding: 30px;}
-.section-title {margin-bottom: 10px;}
-.notice-sec .container{padding: 100px 0;}
+html{background: #f8f8f8;}
+.title-sec {
+	margin-top: 107.628px;
+	height: 100px;
+	margin-bottom: 0;
+	padding: 30px;
+}
+
+.section-title {
+	margin-bottom: 10px;
+}
+
+.notice-sec .container {
+	padding: 100px 0;
+}
+.panel-body {
+    background-color: #fff!important;
+}
+.top-buttom {float:right; margin-top: -40px; margin-right:30px;}
+.update-buttom {margin-right:10px; margin-top: 20px; padding:7px 15px; float: right;}
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-	<section class="title-sec">
-		<div class="row">
-			<h2
-				class="section-title section-title-upper section-title-line text-center">
-				F&amp;Q</h2>
+
+	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
+	<!-- title -->
+	<section class="step-title bg-white">
+		<div class="section-title ht-title text-center"
+			data-wow-duration="1000ms" data-wow-delay="0.3s">
+			<h2>이용안내</h2>
 		</div>
 	</section>
-	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
-	<section id="reviewdetail" class="notice-sec">
+	<!-- /title -->
+
+	<section id="reviewdetail" class="notice-sec bg-white pt-null">
 		<div class="container">
 			<jsp:include page="/WEB-INF/views/board/pageSubmenu.jsp"></jsp:include>
+			<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
+				<button type="button" id="insertFAQboard" class="gp-btn btn-dark small top-buttom">작성하기</button>
+			</c:if>
 			<div class="col-lg-10">
-				<div id="page-wrapper">
-					<div id="page-inner">
-						<div class="row">
-							<div class="bhoechie-tab-content col-md-12">
-								<div align="center">
-									<h2 style="margin-top: 0; color: #F2B138" class="pt pb hide">F&amp;Q</h2>
-									<div class="col-md-12 mb">
-										<div class="choose wow fadeInUp" data-wow-delay="0.5s">
-											<c:if test="${ sessionScope.loginMember.kind eq 'M' }">
-												<button type="button" id="insertFAQboard">작성하기</button>
-											</c:if>
-											<div class="panel-group" id="accordion"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+				<div class="col-md-12 mb">
+					<div class="choose wow fadeInUp" data-wow-delay="0.5s">
+						<div class="panel-group" id="accordion"></div>
 					</div>
 				</div>
 			</div>
@@ -90,7 +100,7 @@
 	                     var $div4 = $("<div>").addClass("panel-collapse collapse collapse" + returnData[key].no);
 	                     var $accordionBody = $("<div>").addClass("panel-body").text(returnData[key].content);
 	                     var $line = $("<br>");
-	                     var $buttons = $("<c:if test='${ sessionScope.loginMember.kind eq \'M\' }'><input type='hidden' value='" + returnData[key].no + "'><button type='button' class='updateFAQboard'>수정하기</button><button type='button' class='deleteFAQboard'>삭제하기</button></c:if>");
+	                     var $buttons = $("<c:if test='${ sessionScope.loginMember.kind eq \'M\' }'><input type='hidden' value='" + returnData[key].no + "'><button type='button' class='updateFAQboard gp-btn btn-dark update-buttom'>수정하기</button><button type='button' class='deleteFAQboard gp-btn btn-dark update-buttom'>삭제하기</button></c:if>");
 	                     
 	                     $div3.append($accordionTitle2);
 	                     $div2.append($div3);
